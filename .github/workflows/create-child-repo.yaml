@@ -148,6 +148,13 @@ jobs:
             echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
       
+      - name: Authenticate git for pushes (use gh credential helper)
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN_PAT }}
+        run: |
+          gh auth status
+          gh auth setup-git
+    
       - name: Commit and push changes
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN_PAT }}
