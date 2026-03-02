@@ -70,7 +70,15 @@ jobs:
         run: |
           OWNER="${{ inputs.owner }}"
           REPO_NAME="${{ inputs.repo_name }}"
-          
+
+          for i in {1..30}; do
+            if git ls-remote --exit-code --heads "https://github.com/$OWNER/$REPO.git" main >/dev/null 2>&1; then
+              echo "main is ready"
+              break
+            fi
+            echo "waiting for main..."
+            sleep 2
+          done
           # Clone the newly created repository
           gh repo clone "$OWNER/$REPO_NAME" new-repo
           
