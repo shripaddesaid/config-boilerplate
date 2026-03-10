@@ -1,2 +1,3 @@
-/blocks/columns
+/eds/blocks/cards
 configs
+
