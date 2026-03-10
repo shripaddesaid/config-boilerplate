@@ -15,10 +15,6 @@ on:
           - IBU
           - Brands
           - HCP
-      folder_name:
-        description: 'Folder name'
-        required: true
-        type: string
       visibility:
         description: 'Repository visibility'
         required: true
@@ -96,7 +92,7 @@ jobs:
           CONFIG: ${{ inputs.config }}
         run: |
           set -e
-          FOLDER_NAME="${{ inputs.folder_name }}"
+          # FOLDER_NAME="${{ inputs.folder_name }}"
           
           OVERLAY_DIR="configs/$CONFIG/overlay"
           DELETE_FILE="configs/$CONFIG/delete.txt"
@@ -106,7 +102,7 @@ jobs:
           # Copy overlay files if they exist
           if [ -d "../$OVERLAY_DIR" ]; then
             echo "📦 Copying overlay files from configs/$CONFIG/overlay/"
-            cp -r ../$FOLDER_NAME/$OVERLAY_DIR/. .
+            cp -r ../$OVERLAY_DIR/. .
             echo "✅ Overlay files copied"
           else
             echo "ℹ️  No overlay directory found at configs/$CONFIG/overlay/"
