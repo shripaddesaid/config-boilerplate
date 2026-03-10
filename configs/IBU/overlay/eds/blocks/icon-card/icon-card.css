@@ -1,0 +1,9 @@
+/* Component styles are dynamically loaded via JavaScript */
+/* Add any EDS-specific Component overrides here if needed */
+.icon-card-container .two-col {
+  grid-gap: var(--lds-g-spacing-800);
+}
+
+.icon-card-wrapper .icon-card-container .card {
+  padding: 0 !important;
+}

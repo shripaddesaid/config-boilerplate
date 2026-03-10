@@ -1,0 +1,1 @@
+{"version":3,"file":"breakpoints-xVQ0t8-X.js","sources":["src/constants/breakpoints.ts"],"sourcesContent":["export const MOBILE_BREAKPOINT = 834; // px\r\nexport const CONTAINER_WIDTH = 303;"],"names":[],"mappings":"AAAa,MAAA,iBAAiB,GAAG,IAAI;AAC9B,MAAM,eAAe,GAAG;;;;"}

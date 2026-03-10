@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/federated-components/_federated-components.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/federated-components/_federated-components.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "federated-components",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/federated-components/_federated-components.json#/models/federated-components/fields"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/bulleted-icon-list/_bulleted-icon-list.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/bulleted-icon-list/_bulleted-icon-list.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "bulleted-icon-list",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/bulleted-icon-list/_bulleted-icon-list.json#/models/bulleted-icon-list/fields",
+          "exclude": ["classes_ctastyleone", "classes_ctacolorone"]
+        }
+      ]
+    }
+  ]
+}

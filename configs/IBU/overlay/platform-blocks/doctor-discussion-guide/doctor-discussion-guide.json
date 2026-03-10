@@ -1,0 +1,41 @@
+{
+  "definitions": [
+    {
+      "title": "Doctor Discussion Guide",
+      "id": "doctor-discussion-guide",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Doctor Discussion Guide",
+              "model": "doctor-discussion-guide",
+              "filter": "doctor-discussion-guide"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "doctor-discussion-guide",
+      "fields": [
+        {
+          "component": "select",
+          "name": "aria-match",
+          "label": "ARIA Label Match",
+          "description": "This is the value that is associated with the ARIA label of the CTA to open the modal.",
+          "value": "doctor-discussion-guide",
+          "options": [
+            {
+              "name": "doctor-discussion-guide",
+              "value": "doctor-discussion-guide"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/image-block/_image-block.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/image-block/_image-block.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "image-block",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/image-block/_image-block.json#/models/image-block/fields",
+          "exclude": ["mobImage", "mobImageMimeType", "mobImageAlt"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+/* Component styles are dynamically loaded via JavaScript */
+/* Add any EDS-specific Component overrides here if needed */
+/* Increased specificity to override platform styles loaded via JS */
+.primary-hero.primary-hero [class*="hero"] .lds-layout-container {
+  row-gap: var(--lds-g-spacing-300);
+}
+@media (max-width: 767px) {
+  .primary-hero.primary-hero .btn-container {
+    flex-direction: column;
+  }
+}
+
+/* Apply blackish gradient when text color is white (light container) */
+.primary-hero .container.light ~ .dimmer {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.0) 100%);
+  z-index: -1;
+}
+.primary-hero .title.Garamond * {
+  font-family: var(--lds-g-font-family-serif) !important;
+}
+
+.primary-hero .title.Ringside * {
+  font-family: var(--lds-g-font-family-sans-serif-wide) !important;
+}

@@ -1,0 +1,2470 @@
+{
+  "definitions": [
+    {
+      "title": "Brand Card",
+      "id": "brand-card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Brand Card",
+              "model": "brand-card",
+              "filter": "brand-card",
+              "classes": "highlight-lime-green",
+              "classes_ctanumber": "ctaNumber-none",
+              "classes_ctatypefieldone": "ctaType-button",
+              "classes_ctacolorone": "ctaColor-light",
+              "classes_ctastyleone": "ctaStyle-primary",
+              "classes_ctatypeone": "ctaSelection-link",
+              "classes_targetpathone": "ctaTarget-sameTab",
+              "classes_exitinterstitial": "ctaExitInterstitial-select",
+              "classes_ctatypefieldtwo": "ctaType-button_two",
+              "classes_ctacolortwo": "ctaColor-light-two",
+              "classes_ctastyletwo": "ctaStyle-primary-two",
+              "classes_ctatypetwo": "ctaSelection-link_two",
+              "classes_targetpathtwo": "ctaTarget-sameTab_two",
+              "classes_exitinterstitialtwo": "ctaExitInterstitial-select_two",
+              "classes_elementSelector": "element-ctas",
+              "classes_ctaNum": "ctaNumber-one_bottom",
+              "classes_ctatypefieldthree": "ctaType-button_three",
+              "classes_ctacolorthree": "ctaColor-light-three",
+              "classes_ctastylethree": "ctaStyle-primary-three",
+              "classes_ctatypethree": "ctaSelection-link_three",
+              "classes_targetpaththree": "ctaTarget-sameTab_three",
+              "classes_exitinterstitialthree": "ctaExitInterstitial-select_three",
+              "classes_ctatypefieldfour": "ctaType-button_four",
+              "classes_ctacolorfour": "ctaColor-light-four",
+              "classes_ctastylefour": "ctaStyle-primary-four",
+              "classes_ctatypefour": "ctaSelection-link_four",
+              "classes_targetpathfour": "ctaTarget-sameTab_four",
+              "classes_exitinterstitialfour": "ctaExitInterstitial-select_four",
+              "classes_quicklinksctanumber": "ctaNumber-quicklink_one",
+              "classes_ctacolorfive": "ctaColor-light-five",
+              "classes_ctastylefive": "ctaStyle-primary-five",
+              "classes_quicklinksctatypeone": "ctaSelection-quicklink-link",
+              "classes_quicklinkstargetpathone": "ctaTarget-quicklink-sameTab",
+              "classes_quicklinksexitinterstitial": "ctaExitInterstitial-quicklink-select",
+              "classes_ctacolorsix": "ctaColor-light-six",
+              "classes_ctastylesix": "ctaStyle-primary-six",
+              "classes_quicklinksctatypetwo": "ctaSelection-quicklink-link-two",
+              "classes_quicklinkstargetpathtwo": "ctaTarget-quicklink-sameTab_two",
+              "classes_quicklinksexitinterstitialtwo": "ctaExitInterstitial-quicklink-select_two",
+              "classes_ctacolorseven": "ctaColor-light-seven",
+              "classes_ctastyleseven": "ctaStyle-primary-seven",
+              "classes_quicklinksctatypethree": "ctaSelection-quicklink-link-three",
+              "classes_quicklinkstargetpaththree": "ctaTarget-quicklink-sameTab_three",
+              "classes_quicklinksexitinterstitialthree": "ctaExitInterstitial-quicklink-select_three",
+              "item0": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Jump Link Item",
+                "model": "jump-link-item"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [
+    {
+      "id": "brand-card",
+      "components": ["jump-link-item"]
+    }
+  ],
+  "models": [
+    {
+      "id": "brand-card",
+      "fields": [
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "media_image",
+          "label": "Desktop Image",
+          "description": "Upload the background image for Desktop",
+          "required": true
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "media_imageMimeType"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "media_imageAlt",
+          "label": "Desktop Image Alt Text",
+          "description": "Enter alternative text for the background. Can override AEM DAM alt text.",
+          "required": true
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "media_mobImage",
+          "label": "Mobile Image",
+          "description": "Upload the background image for Mobile",
+          "required": true
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "media_mobImageMimeType"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "media_mobImageAlt",
+          "label": "Mobile Image Alt Text",
+          "description": "Enter alternative text for the background. Can override AEM DAM alt text.",
+          "required": true
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "eyebrow",
+          "label": "Eyebrow",
+          "description": "Enter the Eyebrow text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "intro",
+          "label": "Intro",
+          "description": "Enter the Intro text that will be above the Title"
+        },
+        {
+          "component": "richtext",
+          "name": "title",
+          "label": "Title",
+          "required": true,
+          "valueType": "string",
+          "description": "Enter the title"
+        },
+        {
+          "component": "select",
+          "name": "classes_titleRteFontSize",
+          "label": "Title Font Size",
+          "description": "Select the font size for the title",
+          "options": [
+            { "name": "100px", "value": "title-fs-100px" },
+            { "name": "60px", "value": "title-fs-60px" },
+            { "name": "48px", "value": "title-fs-48px" },
+            { "name": "36px", "value": "title-fs-36px" },
+            { "name": "32px", "value": "title-fs-32px" },
+            { "name": "28px", "value": "title-fs-28px" },
+            { "name": "24px", "value": "title-fs-24px" },
+            { "name": "20px", "value": "title-fs-20px" },
+            { "name": "16px", "value": "title-fs-16px" },
+            { "name": "14px", "value": "title-fs-14px" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Highlight Color",
+          "valueType": "string",
+          "value": "highlight-lime-green",
+          "description": "Select the color highlight to be applied (for underlined portion in Title)",
+          "options": [
+            {
+              "name": "Primary",
+              "value": "highlight-lime-green"
+            }
+          ]
+        },
+        {
+          "component": "checkbox-group",
+          "name": "enableSmallTextItalic",
+          "valueType": "boolean",
+          "description": "Enable small text for italic",
+          "options": [
+            {
+              "name": "Enable small text for italic",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description",
+          "valueType": "string",
+          "description": "Enter the description"
+        },
+        {
+          "component": "select",
+          "name": "classes_descriptionRteFontSize",
+          "label": "Description Font Size",
+          "description": "Select the font size for the description",
+          "options": [
+            { "name": "100px", "value": "description-fs-100px" },
+            { "name": "60px", "value": "description-fs-60px" },
+            { "name": "48px", "value": "description-fs-48px" },
+            { "name": "36px", "value": "description-fs-36px" },
+            { "name": "32px", "value": "description-fs-32px" },
+            { "name": "28px", "value": "description-fs-28px" },
+            { "name": "24px", "value": "description-fs-24px" },
+            { "name": "20px", "value": "description-fs-20px" },
+            { "name": "16px", "value": "description-fs-16px" },
+            { "name": "14px", "value": "description-fs-14px" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_ctanumber",
+          "label": "Number of CTA(s)",
+          "value": "ctaNumber-none",
+          "description": "Select the number of CTA(s) required",
+          "options": [
+            {
+              "name": "None",
+              "value": "ctaNumber-none"
+            },
+            {
+              "name": "One",
+              "value": "ctaNumber-one"
+            },
+            {
+              "name": "Two",
+              "value": "ctaNumber-two"
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "brandCard_oneButton",
+          "label": "First Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "or": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctanumber"
+                  },
+                  "ctaNumber-one"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_ctanumber"
+                  },
+                  "ctaNumber-two"
+                ]
+              }
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_ctatypefieldone",
+              "label": "CTA Type",
+              "description": "Select the type of CTA for component",
+              "value": "ctaType-button",
+              "options": [
+                {
+                  "name": "Button",
+                  "value": "ctaType-button"
+                },
+                {
+                  "name": "Text Link",
+                  "value": "ctaType-textLink"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctacolorone",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF ",
+              "value": "ctaColor-light",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_oneButton|classes_ctatypefieldone"
+                  },
+                  "ctaType-button"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-light"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-dark"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctastyleone",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-primary",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_oneButton|classes_ctatypefieldone"
+                  },
+                  "ctaType-button"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-primary"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-secondary"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-neutral"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctatypeone",
+              "label": "CTA Selection",
+              "description": "ⓘ Select the CTA Selection Link/Asset(PDF/Image)",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-link"
+                },
+                {
+                  "name": "Asset (PDF/Image)",
+                  "value": "ctaSelection-asset"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "linkText",
+              "label": "CTA Text",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-link"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlinkText",
+              "label": "CTA Text Asset",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA for Asset(PDF/Image)",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-asset"
+                ]
+              }
+            },
+            {
+              "component": "aem-content",
+              "name": "link",
+              "label": "CTA Link",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_oneButton|classes_ctatypeone"
+                      },
+                      "ctaSelection-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_oneButton|linkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "assetlink",
+              "label": "Asset (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_oneButton|classes_ctatypeone"
+                      },
+                      "ctaSelection-asset"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_oneButton|assetlinkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "linkTitle",
+              "label": "ARIA Label for CTA link",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-link"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlinkTitle",
+              "label": "ARIA Label for CTA Asset",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-asset"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_targetpathone",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-sameTab",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-sameTab"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-newTab"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_oneButton|classes_ctatypeone"
+                      },
+                      "ctaSelection-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_oneButton|linkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_exitinterstitial",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-select",
+              "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-select"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-general-third-parties"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-telehealth"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-account"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-account-wellbeing"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-embedded-tools-healthgrades"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-embedded-tools-nourish"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_oneButton|classes_ctatypeone"
+                      },
+                      "ctaSelection-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_oneButton|linkText"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "brandCard_twoButton",
+          "label": "Second Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctanumber"
+              },
+              "ctaNumber-two"
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_ctatypefieldtwo",
+              "label": "CTA Type",
+              "description": "Select the type of CTA for component",
+              "value": "ctaType-button_two",
+              "options": [
+                {
+                  "name": "Button",
+                  "value": "ctaType-button_two"
+                },
+                {
+                  "name": "Text Link",
+                  "value": "ctaType-textLink_two"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctacolortwo",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF ",
+              "value": "ctaColor-light-two",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_twoButton|classes_ctatypefieldtwo"
+                  },
+                  "ctaType-button_two"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-light-two"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-dark-two"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctastyletwo",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-primary-two",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_twoButton|classes_ctatypefieldtwo"
+                  },
+                  "ctaType-button_two"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-primary-two"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-secondary-two"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-neutral-two"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctatypetwo",
+              "label": "CTA Selection",
+              "description": "ⓘ Select the CTA Selection Link/Asset(PDF/Image)",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-link_two"
+                },
+                {
+                  "name": "Asset (PDF/Image)",
+                  "value": "ctaSelection-asset_two"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "link1Text",
+              "label": "CTA Text",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_twoButton|classes_ctatypetwo"
+                  },
+                  "ctaSelection-link_two"
+                ]
+              }
+            },
+            {
+              "component": "aem-content",
+              "name": "link1",
+              "label": "CTA Link",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_twoButton|classes_ctatypetwo"
+                      },
+                      "ctaSelection-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_twoButton|link1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlink1Text",
+              "label": "CTA Text Asset",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA for Asset(PDF/Image)",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_twoButton|classes_ctatypetwo"
+                  },
+                  "ctaSelection-asset_two"
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "assetlink1",
+              "label": "Asset (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_twoButton|classes_ctatypetwo"
+                      },
+                      "ctaSelection-asset_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_twoButton|assetlink1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "link1Title",
+              "label": "ARIA Label for CTA link",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_twoButton|classes_ctatypetwo"
+                  },
+                  "ctaSelection-link_two"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlink1Title",
+              "label": "ARIA Label for CTA Asset",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_twoButton|classes_ctatypetwo"
+                  },
+                  "ctaSelection-asset_two"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_targetpathtwo",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-sameTab_two",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-sameTab_two"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-newTab_two"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_twoButton|classes_ctatypetwo"
+                      },
+                      "ctaSelection-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_twoButton|link1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_exitinterstitialtwo",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-select_two",
+              "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-select_two"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-general-third-parties_two"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-telehealth_two"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-account_two"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-account-wellbeing_two"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-embedded-tools-healthgrades_two"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-embedded-tools-nourish_two"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_twoButton|classes_ctatypetwo"
+                      },
+                      "ctaSelection-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_twoButton|link1Text"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "checkbox-group",
+          "name": "enableBottomSection",
+          "valueType": "boolean",
+          "description": "Select to display the Bottom Section",
+          "options": [
+            {
+              "name": "Enable Bottom Section",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "labelBottomSection",
+          "label": "Label",
+          "valueType": "string",
+          "description": "Enter the label for Bottom Section",
+          "condition": {
+            "in": [
+              "true",
+              {
+                "var": "enableBottomSection"
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_labelRteFontSize",
+          "label": "Bottom Label Font Size",
+          "description": "Select the font size for the bottom label",
+          "condition": {
+            "in": [
+              "true",
+              {
+                "var": "enableBottomSection"
+              }
+            ]
+          },
+          "options": [
+            { "name": "100px", "value": "label-fs-100px" },
+            { "name": "60px", "value": "label-fs-60px" },
+            { "name": "48px", "value": "label-fs-48px" },
+            { "name": "36px", "value": "label-fs-36px" },
+            { "name": "32px", "value": "label-fs-32px" },
+            { "name": "28px", "value": "label-fs-28px" },
+            { "name": "24px", "value": "label-fs-24px" },
+            { "name": "20px", "value": "label-fs-20px" },
+            { "name": "16px", "value": "label-fs-16px" },
+            { "name": "14px", "value": "label-fs-14px" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_elementSelector",
+          "value": "element-ctas",
+          "label": "Element Selector",
+          "description": "Select the element for Bottom Section. Note: When Jump Links is selected as your element type, use the item authoring functionality to add and configure each jump link entry.",
+          "options": [
+            {
+              "name": "CTAs",
+              "value": "element-ctas"
+            },
+            {
+              "name": "Jump Links",
+              "value": "element-jump-links"
+            }
+          ],
+          "condition": {
+            "in": [
+              "true",
+              {
+                "var": "enableBottomSection"
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_ctaNum",
+          "label": "Number of CTA(s)",
+          "value": "ctaNumber-one_bottom",
+          "description": "Select the number of CTA(s) required",
+          "condition": {
+            "and": [
+              {
+                "in": [
+                  "true",
+                  {
+                    "var": "enableBottomSection"
+                  }
+                ]
+              },
+              {
+                "===": [{ "var": "classes_elementSelector" }, "element-ctas"]
+              }
+            ]
+          },
+          "options": [
+            {
+              "name": "One",
+              "value": "ctaNumber-one_bottom"
+            },
+            {
+              "name": "Two",
+              "value": "ctaNumber-two_bottom"
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "brandCard_threeButton",
+          "label": "First Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "in": [
+                  "true",
+                  {
+                    "var": "enableBottomSection"
+                  }
+                ]
+              },
+              {
+                "===": [{ "var": "classes_elementSelector" }, "element-ctas"]
+              }
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_ctatypefieldthree",
+              "label": "CTA Type",
+              "description": "Select the type of CTA for component",
+              "value": "ctaType-button_three",
+              "options": [
+                {
+                  "name": "Button",
+                  "value": "ctaType-button_three"
+                },
+                {
+                  "name": "Text Link",
+                  "value": "ctaType-textLink_three"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctacolorthree",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF ",
+              "value": "ctaColor-light-three",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_threeButton|classes_ctatypefieldthree"
+                  },
+                  "ctaType-button_three"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-light-three"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-dark-three"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctastylethree",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-primary-three",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_threeButton|classes_ctatypefieldthree"
+                  },
+                  "ctaType-button_three"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-primary-three"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-secondary-three"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-neutral-three"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctatypethree",
+              "label": "CTA Selection",
+              "description": "ⓘ Select the CTA Selection Link/Asset(PDF/Image)",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-link_three"
+                },
+                {
+                  "name": "Asset (PDF/Image)",
+                  "value": "ctaSelection-asset_three"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "link2Text",
+              "label": "CTA Text",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_threeButton|classes_ctatypethree"
+                  },
+                  "ctaSelection-link_three"
+                ]
+              }
+            },
+            {
+              "component": "aem-content",
+              "name": "link2",
+              "label": "CTA Link",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_threeButton|classes_ctatypethree"
+                      },
+                      "ctaSelection-link_three"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_threeButton|link2Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlink2Text",
+              "label": "CTA Text Asset",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA for Asset(PDF/Image)",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_threeButton|classes_ctatypethree"
+                  },
+                  "ctaSelection-asset_three"
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "assetlink2",
+              "label": "Asset (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_threeButton|classes_ctatypethree"
+                      },
+                      "ctaSelection-asset_three"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_threeButton|assetlink2Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "link2Title",
+              "label": "ARIA Label for CTA link",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_threeButton|classes_ctatypethree"
+                  },
+                  "ctaSelection-link_three"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlink2Title",
+              "label": "ARIA Label for CTA Asset",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_threeButton|classes_ctatypethree"
+                  },
+                  "ctaSelection-asset_three"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_targetpaththree",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-sameTab_three",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-sameTab_three"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-newTab_three"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_threeButton|classes_ctatypethree"
+                      },
+                      "ctaSelection-link_three"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_threeButton|link2Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_exitinterstitialthree",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-select_three",
+              "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-select_three"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-general-third-parties_three"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-telehealth_three"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-account_three"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-account-wellbeing_three"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-embedded-tools-healthgrades_three"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-embedded-tools-nourish_three"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_threeButton|classes_ctatypethree"
+                      },
+                      "ctaSelection-link_three"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_threeButton|link2Text"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "brandCard_fourButton",
+          "label": "Second Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "in": [
+                  "true",
+                  {
+                    "var": "enableBottomSection"
+                  }
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_ctaNum"
+                  },
+                  "ctaNumber-two_bottom"
+                ]
+              },
+              {
+                "===": [{ "var": "classes_elementSelector" }, "element-ctas"]
+              }
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_ctatypefieldfour",
+              "label": "CTA Type",
+              "description": "Select the type of CTA for component",
+              "value": "button",
+              "options": [
+                { "name": "Button", "value": "ctaType-button_four" },
+                { "name": "Text Link", "value": "ctaType-textLink_four" }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctacolorfour",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF ",
+              "value": "ctaColor-light-four",
+              "condition": {
+                "===": [
+                  { "var": "brandCard_fourButton|classes_ctatypefieldfour" },
+                  "ctaType-button_four"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-light-four"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-dark-four"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctastylefour",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-primary-four",
+              "condition": {
+                "===": [
+                  { "var": "brandCard_fourButton|classes_ctatypefieldfour" },
+                  "ctaType-button_four"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-primary-four"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-secondary-four"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-neutral-four"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctatypefour",
+              "label": "CTA Selection",
+              "description": "ⓘ Select the CTA Selection Link/Asset(PDF/Image)",
+              "options": [
+                { "name": "Link", "value": "ctaSelection-link_four" },
+                {
+                  "name": "Asset (PDF/Image)",
+                  "value": "ctaSelection-asset_four"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "link4Text",
+              "label": "CTA Text",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA",
+              "condition": {
+                "===": [
+                  { "var": "brandCard_fourButton|classes_ctatypefour" },
+                  "ctaSelection-link_four"
+                ]
+              }
+            },
+            {
+              "component": "aem-content",
+              "name": "link4",
+              "label": "CTA Link",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked",
+              "validation": { "rootPath": "/content" },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      { "var": "brandCard_fourButton|classes_ctatypefour" },
+                      "ctaSelection-link_four"
+                    ]
+                  },
+                  { "!!": { "var": "brandCard_fourButton|link4Text" } }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlink4Text",
+              "label": "CTA Text Asset",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA for Asset(PDF/Image)",
+              "condition": {
+                "===": [
+                  { "var": "brandCard_fourButton|classes_ctatypefour" },
+                  "ctaSelection-asset_four"
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "assetlink4",
+              "label": "Asset (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      { "var": "brandCard_fourButton|classes_ctatypefour" },
+                      "ctaSelection-asset_four"
+                    ]
+                  },
+                  { "!!": { "var": "brandCard_fourButton|assetlink4Text" } }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "link4Title",
+              "label": "ARIA Label for CTA link",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  { "var": "brandCard_fourButton|classes_ctatypefour" },
+                  "ctaSelection-link_four"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlink4Title",
+              "label": "ARIA Label for CTA Asset",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  { "var": "brandCard_fourButton|classes_ctatypefour" },
+                  "ctaSelection-asset_four"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_targetpathfour",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-sameTab",
+              "options": [
+                { "name": "Same Tab", "value": "ctaTarget-sameTab_four" },
+                { "name": "New Tab", "value": "ctaTarget-newTab_four" }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      { "var": "brandCard_fourButton|classes_ctatypefour" },
+                      "ctaSelection-link_four"
+                    ]
+                  },
+                  { "!!": { "var": "brandCard_fourButton|link4Text" } }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_exitinterstitialfour",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-select_four",
+              "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-select_four"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-general-third-parties_four"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-telehealth_four"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-account_four"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-account-wellbeing_four"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-embedded-tools-healthgrades_four"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-embedded-tools-nourish_four"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      { "var": "brandCard_fourButton|classes_ctatypefour" },
+                      "ctaSelection-link_four"
+                    ]
+                  },
+                  { "!!": { "var": "brandCard_fourButton|link4Text" } }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "checkbox-group",
+          "label": "Enable Quick Links Card",
+          "name": "quickLinksEnabler",
+          "valueType": "boolean",
+          "description": "Select this checkbox to enable/show the Quick Links below the Brand Card",
+          "options": [
+            {
+              "name": "Enable Quick Links Card",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "eyebrowQuickLink",
+          "label": "Eyebrow",
+          "description": "Enter the Eyebrow text for Quick Links Card",
+          "condition": {
+            "in": [
+              "true",
+              {
+                "var": "quickLinksEnabler"
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_quicklinksctanumber",
+          "label": "Number of CTA(s)",
+          "description": "Select the number of CTA(s) required",
+          "value": "ctaNumber-quicklink_one",
+          "condition": {
+            "in": [
+              "true",
+              {
+                "var": "quickLinksEnabler"
+              }
+            ]
+          },
+          "options": [
+            {
+              "name": "One",
+              "value": "ctaNumber-quicklink_one"
+            },
+            {
+              "name": "Two",
+              "value": "ctaNumber-quicklink_two"
+            },
+            {
+              "name": "Three",
+              "value": "ctaNumber-quicklink_three"
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "brandCard_quicklinksoneButton",
+          "label": "First Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "in": [
+              "true",
+              {
+                "var": "quickLinksEnabler"
+              }
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_ctacolorfive",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF",
+              "value": "ctaColor-light-five",
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-light-five"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-dark-five"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctastylefive",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-primary-five",
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-primary-five"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-secondary-five"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-neutral-five"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_quicklinksctatypeone",
+              "label": "Link Selection",
+              "description": "ⓘ Select the Link selection for that CTA",
+              "value": "ctaSelection-quicklink-link",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-quicklink-link"
+                },
+                {
+                  "name": "Asset (PDF/Image)",
+                  "value": "ctaSelection-quicklink-asset"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "quicklinkText",
+              "label": "Link Headline",
+              "valueType": "string",
+              "description": "Enter display text for the link",
+              "required": true,
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinksoneButton|classes_quicklinksctatypeone"
+                  },
+                  "ctaSelection-quicklink-link"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "quickassetlinkText",
+              "label": "Link Headline for Asset",
+              "valueType": "string",
+              "description": "Enter display text for the asset",
+              "required": true,
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinksoneButton|classes_quicklinksctatypeone"
+                  },
+                  "ctaSelection-quicklink-asset"
+                ]
+              }
+            },
+            {
+              "component": "aem-content",
+              "name": "quicklink",
+              "label": "Link URL",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinksoneButton|classes_quicklinksctatypeone"
+                      },
+
+                      "ctaSelection-quicklink-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinksoneButton|quicklinkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "quickassetlink",
+              "label": "Asset Path (PDF/Image)",
+              "description": "Upload the asset that needs to open in new tab",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinksoneButton|classes_quicklinksctatypeone"
+                      },
+
+                      "ctaSelection-quicklink-asset"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinksoneButton|quickassetlinkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "quicklinkTitle",
+              "label": "Link Aria-label",
+              "valueType": "string",
+              "description": "Enter Aria label for the Button CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinksoneButton|classes_quicklinksctatypeone"
+                  },
+                  "ctaSelection-quicklink-link"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "quickassetlinkTitle",
+              "label": "Link Aria-label for Asset",
+              "valueType": "string",
+              "description": "Enter Aria label for the Button CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinksoneButton|classes_quicklinksctatypeone"
+                  },
+                  "ctaSelection-quicklink-asset"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_quicklinkstargetpathone",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-quicklink-sameTab",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-quicklink-sameTab"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-quicklink-newTab"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinksoneButton|classes_quicklinksctatypeone"
+                      },
+
+                      "ctaSelection-quicklink-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinksoneButton|quicklinkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_quicklinksexitinterstitial",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-quicklink-select",
+              "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-quicklink-select"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-quicklink-general-third-parties"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-quicklink-telehealth"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-quicklink-account"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-quicklink-account-wellbeing"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-quicklink-embedded-tools-healthgrades"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-quicklink-embedded-tools-nourish"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinksoneButton|classes_quicklinksctatypeone"
+                      },
+                      "ctaSelection-quicklink-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinksoneButton|quicklinkText"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "brandCard_quicklinkstwoButton",
+          "label": "Second Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "in": [
+                  "true",
+                  {
+                    "var": "quickLinksEnabler"
+                  }
+                ]
+              },
+              {
+                "or": [
+                  {
+                    "===": [
+                      { "var": "classes_quicklinksctanumber" },
+
+                      "ctaNumber-quicklink_two"
+                    ]
+                  },
+                  {
+                    "===": [
+                      { "var": "classes_quicklinksctanumber" },
+
+                      "ctaNumber-quicklink_three"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_ctacolorsix",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF",
+              "value": "ctaColor-light-six",
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-light-six"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-dark-six"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctastylesix",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-primary-six",
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-primary-six"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-secondary-six"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-neutral-six"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_quicklinksctatypetwo",
+              "label": "Link Selection",
+              "description": "ⓘ Select the Link selection for that CTA",
+              "value": "ctaSelection-quicklink-link-two",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-quicklink-link-two"
+                },
+                {
+                  "name": "Asset (PDF/Image)",
+                  "value": "ctaSelection-quicklink-asset-two"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "quicklink1Text",
+              "label": "Link Headline",
+              "valueType": "string",
+              "description": "Enter display text for the link",
+              "required": true,
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinkstwoButton|classes_quicklinksctatypetwo"
+                  },
+                  "ctaSelection-quicklink-link-two"
+                ]
+              }
+            },
+            {
+              "component": "aem-content",
+              "name": "quicklink1",
+              "label": "Link URL",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinkstwoButton|classes_quicklinksctatypetwo"
+                      },
+                      "ctaSelection-quicklink-link-two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinkstwoButton|quicklink1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "quickassetlink1Text",
+              "label": "Link Headline for Asset​",
+              "valueType": "string",
+              "description": "Enter display text for the asset",
+              "required": true,
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinkstwoButton|classes_quicklinksctatypetwo"
+                  },
+                  "ctaSelection-quicklink-asset-two"
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "quickassetlink1",
+              "label": "Asset Path (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinkstwoButton|classes_quicklinksctatypetwo"
+                      },
+                      "ctaSelection-quicklink-asset-two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinkstwoButton|quickassetlink1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "quicklink1Title",
+              "label": "Link Aria-label",
+              "valueType": "string",
+              "description": "Enter Aria label for the Button CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinkstwoButton|classes_quicklinksctatypetwo"
+                  },
+                  "ctaSelection-quicklink-link-two"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "quickassetlink1Title",
+              "label": "ARIA Label for CTA Asset",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinkstwoButton|classes_quicklinksctatypetwo"
+                  },
+                  "ctaSelection-quicklink-asset-two"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_quicklinkstargetpathtwo",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-quicklink-sameTab_two",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-quicklink-sameTab_two"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-quicklink-newTab_two"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinkstwoButton|classes_quicklinksctatypetwo"
+                      },
+                      "ctaSelection-quicklink-link-two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinkstwoButton|quicklink1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_quicklinksexitinterstitialtwo",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-quicklink-select_two",
+              "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-quicklink-select_two"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-quicklink-general-third-parties_two"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-quicklink-telehealth_two"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-quicklink-account_two"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-quicklink-account-wellbeing_two"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-quicklink-embedded-tools-healthgrades_two"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-quicklink-embedded-tools-nourish_two"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinkstwoButton|classes_quicklinksctatypetwo"
+                      },
+                      "ctaSelection-quicklink-link-two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinkstwoButton|quicklink1Text"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "brandCard_quicklinksthreeButton",
+          "label": "Third Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "in": [
+                  "true",
+                  {
+                    "var": "quickLinksEnabler"
+                  }
+                ]
+              },
+              {
+                "===": [
+                  { "var": "classes_quicklinksctanumber" },
+                  "ctaNumber-quicklink_three"
+                ]
+              }
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_ctacolorseven",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF",
+              "value": "ctaColor-light-seven",
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-light-seven"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-dark-seven"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctastyleseven",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-primary-seven",
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-primary-seven"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-secondary-seven"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-neutral-seven"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_quicklinksctatypethree",
+              "label": "Link Selection",
+              "description": "ⓘ Select the Link selection for that CTA",
+              "value": "ctaSelection-quicklink-link-three",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-quicklink-link-three"
+                },
+                {
+                  "name": "Asset (PDF/Image)",
+                  "value": "ctaSelection-quicklink-asset-three"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "quicklink2Text",
+              "label": "Link Headline​",
+              "valueType": "string",
+              "description": "Enter display text for the link",
+              "required": true,
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinksthreeButton|classes_quicklinksctatypethree"
+                  },
+                  "ctaSelection-quicklink-link-three"
+                ]
+              }
+            },
+            {
+              "component": "aem-content",
+              "name": "quicklink2",
+              "label": "Link URL",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinksthreeButton|classes_quicklinksctatypethree"
+                      },
+
+                      "ctaSelection-quicklink-link-three"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinksthreeButton|quicklink2Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "quickassetlink2Text",
+              "label": "Link Headline for Asset ​",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA for Asset(PDF/Image)",
+              "required": true,
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinksthreeButton|classes_quicklinksctatypethree"
+                  },
+                  "ctaSelection-quicklink-asset-three"
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "quickassetlink2",
+              "label": "Asset Path (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinksthreeButton|classes_quicklinksctatypethree"
+                      },
+
+                      "ctaSelection-quicklink-asset-three"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinksthreeButton|quickassetlink2Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "quicklink2Title",
+              "label": "Link Aria-label",
+              "valueType": "string",
+              "description": "Enter Aria label for the Button CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinksthreeButton|classes_quicklinksctatypethree"
+                  },
+                  "ctaSelection-quicklink-link-three"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "quickassetlink2Title",
+              "label": "Link Aria-label for Asset",
+              "valueType": "string",
+              "description": "Enter Aria label for the Button CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "brandCard_quicklinksthreeButton|classes_quicklinksctatypethree"
+                  },
+
+                  "ctaSelection-quicklink-asset-three"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_quicklinkstargetpaththree",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-quicklink-sameTab_three",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-quicklink-sameTab_three"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-quicklink-newTab_three"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinksthreeButton|classes_quicklinksctatypethree"
+                      },
+
+                      "ctaSelection-quicklink-link-three"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinksthreeButton|quicklink2Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_quicklinksexitinterstitialthree",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-quicklink-select_three",
+              "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-quicklink-select_three"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-quicklink-general-third-parties_three"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-quicklink-telehealth_three"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-quicklink-account_three"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-quicklink-account-wellbeing_three"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-quicklink-embedded-tools-healthgrades_three"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-quicklink-embedded-tools-nourish_three"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "brandCard_quicklinksthreeButton|classes_quicklinksctatypethree"
+                      },
+                      "ctaSelection-quicklink-link-three"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "brandCard_quicklinksthreeButton|quicklink2Text"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

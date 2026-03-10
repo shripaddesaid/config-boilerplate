@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/timeline-card/_timeline-card.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/timeline-card/_timeline-card.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "timeline-card",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/timeline-card/_timeline-card.json#/models/timeline-card/fields"
+        }
+      ]
+    }
+  ]
+}

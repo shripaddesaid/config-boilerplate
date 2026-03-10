@@ -1,0 +1,137 @@
+{
+  "definitions": [
+    {
+      "title": "Press Release Feed",
+      "id": "press-release-feed",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Press Release Feed",
+              "model": "press-release-feed",
+              "filter": "press-release-feed",
+              "componentType": "entirefeed"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "press-release-feed",
+      "fields": [
+        {
+          "component": "select",
+          "name": "componentType",
+          "label": "Component Type",
+          "description": "Select the desired type",
+          "value": "",
+          "options": [
+            {
+              "name": "Entire Feed",
+              "value": "entirefeed"
+            },
+            {
+              "name": "Custom Feed",
+              "value": "customfeed"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "title",
+          "label": "Title",
+          "valueType": "string",
+          "description": "Enter the title",
+          "required": true,
+          "condition": {
+            "===": [
+              {
+                "var": "componentType"
+              },
+              "entirefeed"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "titleRteFontSize",
+          "label": "Title Font Size",
+          "description": "Select the font size for the title",
+          "options": [
+            {
+              "name": "100px",
+              "value": "100px"
+            },
+            {
+              "name": "60px",
+              "value": "60px"
+            },
+            {
+              "name": "48px",
+              "value": "48px"
+            },
+            {
+              "name": "36px",
+              "value": "36px"
+            },
+            {
+              "name": "32px",
+              "value": "32px"
+            },
+            {
+              "name": "28px",
+              "value": "28px"
+            },
+            {
+              "name": "24px",
+              "value": "24px"
+            },
+            {
+              "name": "20px",
+              "value": "20px"
+            },
+            {
+              "name": "16px",
+              "value": "16px"
+            },
+            {
+              "name": "14px",
+              "value": "14px"
+            }
+          ],
+          "condition": {
+            "===": [
+              {
+                "var": "componentType"
+              },
+              "entirefeed"
+            ]
+          }
+        },
+        {
+          "component": "number",
+          "name": "numberOfPressReleases",
+          "label": "Number of Press Release results",
+          "value": 3,
+          "description": "Enter the desired number of press releases to be displayed",
+          "condition": {
+            "===": [
+              {
+                "var": "componentType"
+              },
+              "customfeed"
+            ]
+          },
+          "validation": {
+            "numberMin": 3,
+            "numberMax": 9
+          }
+        }
+      ]
+    }
+  ]
+}

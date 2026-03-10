@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/horizontal-numeric-tile/_numeric-tile.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/horizontal-numeric-tile/_numeric-tile.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "numeric-tile",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/horizontal-numeric-tile/_numeric-tile.json#/models/numeric-tile/fields"
+        }
+      ]
+    }
+  ]
+}

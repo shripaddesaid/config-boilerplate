@@ -1,0 +1,774 @@
+{
+  "definitions": [
+    {
+      "title": "Card",
+      "id": "card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Card",
+              "model": "card",
+              "card_titleType": "h3",
+              "classes": "ctaNumber-one",
+              "classes_ctacolorone": "ctaColor-light",
+              "classes_ctastyleone": "ctaStyle-primary",
+              "classes_targetpathone": "ctaTarget-sameTab",
+              "classes_exitinterstitial": "ctaExitInterstitial-select",
+              "classes_ctacolortwo": "ctaColor-light-two",
+              "classes_ctastyletwo": "ctaStyle-primary-two",
+              "classes_targetpathtwo": "ctaTarget-sameTab_two",
+              "classes_exitinterstitialtwo": "ctaExitInterstitial-select_two",
+              "classes_ctatypefieldtwo": "ctaType-textLink_two",
+              "classes_ctatypetieldone": "ctaType-textLink"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "card",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "heading",
+          "label": "Card Title",
+          "valueType": "string",
+          "description": "Enter the Card title to be displayed"
+        },
+        {
+          "component": "select",
+          "name": "classes_card_title_rtefontsize",
+          "label": "Title Font Size",
+          "description": "Select the font size for the Card Title",
+          "options": [
+            { "name": "100px", "value": "title-fs-100px" },
+            { "name": "60px", "value": "title-fs-60px" },
+            { "name": "48px", "value": "title-fs-48px" },
+            { "name": "36px", "value": "title-fs-36px" },
+            { "name": "32px", "value": "title-fs-32px" },
+            { "name": "28px", "value": "title-fs-28px" },
+            { "name": "24px", "value": "title-fs-24px" },
+            { "name": "20px", "value": "title-fs-20px" },
+            { "name": "16px", "value": "title-fs-16px" },
+            { "name": "14px", "value": "title-fs-14px" }
+          ]
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "card_image",
+          "label": "Image",
+          "required": true,
+          "description": "Upload images for the card"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "card_imageMimeType"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "card_imageAlt",
+          "label": "Image Alt Text ",
+          "description": "Pick alt text from AEM DAM with ability to override it"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "iconImage",
+          "label": "Icon",
+          "description": "Upload the image"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "iconImageMimeType"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "iconImageAlt",
+          "label": "Icon Alt Text ",
+          "description": "Add Image Alternate Text"
+        },
+        {
+          "component": "richtext",
+          "name": "title",
+          "label": "Title",
+          "valueType": "string",
+          "description": "Enter title for card"
+        },
+        {
+          "component": "select",
+          "name": "classes_card_titleone_rtefontsize",
+          "label": "Select the Font Size for Title",
+          "description": "Select the font size for the Title",
+          "required": true,
+          "options": [
+            { "name": "100px", "value": "titleone-fs-100px" },
+            { "name": "60px", "value": "titleone-fs-60px" },
+            { "name": "48px", "value": "titleone-fs-48px" },
+            { "name": "36px", "value": "titleone-fs-36px" },
+            { "name": "32px", "value": "titleone-fs-32px" },
+            { "name": "28px", "value": "titleone-fs-28px" },
+            { "name": "24px", "value": "titleone-fs-24px" },
+            { "name": "20px", "value": "titleone-fs-20px" },
+            { "name": "16px", "value": "titleone-fs-16px" },
+            { "name": "14px", "value": "titleone-fs-14px" }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description",
+          "valueType": "string",
+          "description": "Enter description for each card"
+        },
+        {
+          "component": "select",
+          "name": "classes_card_description_rtefontsize",
+          "label": "Description Font Size",
+          "description": "Select the font size for the Description",
+          "options": [
+            { "name": "100px", "value": "description-fs-100px" },
+            { "name": "60px", "value": "description-fs-60px" },
+            { "name": "48px", "value": "description-fs-48px" },
+            { "name": "36px", "value": "description-fs-36px" },
+            { "name": "32px", "value": "description-fs-32px" },
+            { "name": "28px", "value": "description-fs-28px" },
+            { "name": "24px", "value": "description-fs-24px" },
+            { "name": "20px", "value": "description-fs-20px" },
+            { "name": "16px", "value": "description-fs-16px" },
+            { "name": "14px", "value": "description-fs-14px" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Number of CTA(s)",
+          "description": "Select the number of CTA(s) required",
+          "value": "ctaNumber-one",
+          "options": [
+            {
+              "name": "One",
+              "value": "ctaNumber-one"
+            },
+            {
+              "name": "Two",
+              "value": "ctaNumber-two"
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "card_oneButton",
+          "label": "First Button CTA Fields",
+          "valueType": "string",
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_ctatypetieldone",
+              "label": "CTA Type",
+              "description": "Select the type of CTA",
+              "value": "ctaType-textLink",
+              "options": [
+                {
+                  "name": "Text Link",
+                  "value": "ctaType-textLink"
+                },
+                {
+                  "name": "Button",
+                  "value": "ctaType-button"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctacolorone",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF ",
+              "value": "ctaColor-light",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_oneButton|classes_ctatypetieldone"
+                  },
+                  "ctaType-button"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-light"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-dark"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctastyleone",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-primary",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_oneButton|classes_ctatypetieldone"
+                  },
+                  "ctaType-button"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-primary"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-secondary"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-neutral"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctatypeone",
+              "label": "CTA Selection",
+              "description": "ⓘ Select the CTA Selection Link/Asset(PDF/Image)",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-link"
+                },
+                {
+                  "name": "Asset (PDF/Image)",
+                  "value": "ctaSelection-asset"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "linkText",
+              "label": "CTA Label for link",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-link"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlinkText",
+              "label": "CTA Label for Asset",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA for Asset(PDF/Image)",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-asset"
+                ]
+              }
+            },
+
+            {
+              "component": "aem-content",
+              "name": "link",
+              "label": "CTA Link",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "card_oneButton|classes_ctatypeone"
+                      },
+                      "ctaSelection-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "card_oneButton|linkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "assetlink",
+              "label": "Asset (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "card_oneButton|classes_ctatypeone"
+                      },
+                      "ctaSelection-asset"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "card_oneButton|assetlinkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "linkTitle",
+              "label": "CTA ARIA Label for link",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-link"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlinkTitle",
+              "label": "CTA ARIA Label for Asset",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-asset"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_targetpathone",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-sameTab",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-sameTab"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-newTab"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "card_oneButton|classes_ctatypeone"
+                      },
+                      "ctaSelection-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "card_oneButton|linkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_exitinterstitial",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-select",
+              "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-select"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-general-third-parties"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-telehealth"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-account"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-account-wellbeing"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-embedded-tools-healthgrades"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-embedded-tools-nourish"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "card_oneButton|classes_ctatypeone"
+                      },
+                      "ctaSelection-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "card_oneButton|linkText"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "card_twoButton",
+          "label": "Second Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "===": [
+              {
+                "var": "classes"
+              },
+              "ctaNumber-two"
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_ctatypefieldtwo",
+              "label": "CTA Type",
+              "description": "Select the type of CTA for component",
+              "value": "ctaType-textLink_two",
+              "options": [
+                {
+                  "name": "Text Link",
+                  "value": "ctaType-textLink_two"
+                },
+                {
+                  "name": "Button",
+                  "value": "ctaType-button_two"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctacolortwo",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF ",
+              "value": "ctaColor-light-two",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_twoButton|classes_ctatypefieldtwo"
+                  },
+                  "ctaType-button_two"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-light-two"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-dark-two"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctastyletwo",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-primary-two",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_twoButton|classes_ctatypefieldtwo"
+                  },
+                  "ctaType-button_two"
+                ]
+              },
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-primary-two"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-secondary-two"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-neutral-two"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_ctatypetwo",
+              "label": "CTA Selection",
+              "description": "ⓘ Select the CTA Selection Link/Asset(PDF/Image)",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-link_two"
+                },
+                {
+                  "name": "Asset (PDF/Image)",
+                  "value": "ctaSelection-asset_two"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "link1Text",
+              "label": "CTA Label for link",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_twoButton|classes_ctatypetwo"
+                  },
+                  "ctaSelection-link_two"
+                ]
+              }
+            },
+            {
+              "component": "aem-content",
+              "name": "link1",
+              "label": "CTA Link",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "card_twoButton|classes_ctatypetwo"
+                      },
+                      "ctaSelection-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "card_twoButton|link1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlink1Text",
+              "label": "CTA Label for Asset",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA for Asset(PDF/Image)",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_twoButton|classes_ctatypetwo"
+                  },
+                  "ctaSelection-asset_two"
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "assetlink1",
+              "label": "Asset (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "card_twoButton|classes_ctatypetwo"
+                      },
+                      "ctaSelection-asset_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "card_twoButton|assetlink1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "link1Title",
+              "label": "CTA ARIA Label for link",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_twoButton|classes_ctatypetwo"
+                  },
+                  "ctaSelection-link_two"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "assetlink1Title",
+              "label": "CTA ARIA Label for Asset",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "card_twoButton|classes_ctatypetwo"
+                  },
+                  "ctaSelection-asset_two"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_targetpathtwo",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-sameTab",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-sameTab_two"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-newTab_two"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "card_twoButton|classes_ctatypetwo"
+                      },
+                      "ctaSelection-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "card_twoButton|link1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_exitinterstitialtwo",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-select_two",
+              "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-select_two"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-general-third-parties_two"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-telehealth_two"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-account_two"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-account-wellbeing_two"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-embedded-tools-healthgrades_two"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-embedded-tools-nourish_two"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "card_twoButton|classes_ctatypetwo"
+                      },
+                      "ctaSelection-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "card_twoButton|link1Text"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

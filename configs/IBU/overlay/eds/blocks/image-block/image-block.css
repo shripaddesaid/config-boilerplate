@@ -1,0 +1,15 @@
+/* Component styles are dynamically loaded via JavaScript */
+/* Add any EDS-specific Component overrides here if needed */
+
+.image-block-wrapper .image-label {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px;
+  color: var(--lds-g-color-brand-1) !important;
+  font-size: var(--lds-g-font-size-4);
+  font-weight: var(--lds-g-font-weight-900);
+  padding-bottom: var(--lds-g-spacing-600);
+  margin-top: var(--lds-g-spacing-600);
+  cursor: pointer;
+}

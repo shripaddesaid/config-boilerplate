@@ -1,0 +1,18 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/relatedlinks/_relatedlink.json#/definitions"
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "relatedlink",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/relatedlinks/_relatedlink.json#/models/relatedlink/fields"
+        }
+      ]
+    }
+  ]
+}

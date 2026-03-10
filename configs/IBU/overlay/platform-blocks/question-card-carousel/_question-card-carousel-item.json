@@ -1,0 +1,45 @@
+{
+  "definitions": [
+    {
+      "title": "Question Card Carousel Item",
+      "id": "question-card-carousel-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Question Card Carousel Item",
+              "model": "question-card-carousel-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "question-card-carousel-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "eyebrowText",
+          "label": "Eyebrow",
+          "valueType": "string",
+          "description": "Enter the callout eyebrow text"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description",
+          "description": "Enter description",
+          "required": true
+        },
+        {
+          "...": "../utils/eds-commons/_rte-description.json#/rte-description"
+        }
+      ]
+    }
+  ]
+}

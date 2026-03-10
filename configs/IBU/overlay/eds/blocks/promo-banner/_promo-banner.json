@@ -1,0 +1,40 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/promo-banner/_promo-banner.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/promo-banner/_promo-banner.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "promo-banner",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/promo-banner/_promo-banner.json#/models/promo-banner/fields",
+          "exclude": ["classes_ctastyleone", "classes_ctacolorone"]
+        },
+        {
+          "...": "../../../platform-blocks/promo-banner/_promo-banner.json#/models/promo-banner/fields/classes_highlightcolor",
+          "options": [
+            {
+              "name": "Primary",
+              "value": "highlight-color-primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "highlight-color-secondary"
+            },
+            {
+              "name": "Tertiary",
+              "value": "highlight-color-tertiary"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

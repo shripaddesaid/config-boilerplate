@@ -1,0 +1,229 @@
+{
+  "cta-one": [
+    {
+      "component": "container",
+      "name": "cta_oneButton",
+      "valueType": "string",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes_ctatypeone",
+          "label": "CTA Selection",
+          "classes_ctatypeone": "ctaSelection-link",
+          "description": "ⓘ Select the CTA Selection Link/Asset(PDF/Image)",
+          "options": [
+            {
+              "name": "Link",
+              "value": "ctaSelection-link"
+            },
+            {
+              "name": "Asset (PDF/Image)",
+              "value": "ctaSelection-asset"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "linkText",
+          "label": "CTA Text",
+          "valueType": "string",
+          "description": "Enter label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "cta_oneButton|classes_ctatypeone"
+              },
+              "ctaSelection-link"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "assetlinkText",
+          "label": "CTA Text Asset",
+          "valueType": "string",
+          "description": "Enter label to display on the CTA for Asset(PDF/Image)",
+          "condition": {
+            "===": [
+              {
+                "var": "cta_oneButton|classes_ctatypeone"
+              },
+              "ctaSelection-asset"
+            ]
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "CTA Link",
+          "valueType": "string",
+          "description": "Enter the URL to navigate when CTA is clicked",
+          "validation": {
+            "rootPath": "/content"
+          },
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "cta_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-link"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "cta_oneButton|linkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "assetlink",
+          "label": "Asset (PDF/Image)",
+          "description": "Upload the Asset (PDF/Image)",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "cta_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-asset"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "cta_oneButton|assetlinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "linkTitle",
+          "label": "ARIA Label for CTA link",
+          "valueType": "string",
+          "description": "Enter ARIA label to comply ADA",
+          "condition": {
+            "===": [
+              {
+                "var": "cta_oneButton|classes_ctatypeone"
+              },
+              "ctaSelection-link"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "assetlinkTitle",
+          "label": "ARIA Label for CTA Asset",
+          "valueType": "string",
+          "description": "Enter ARIA label to comply ADA",
+          "condition": {
+            "===": [
+              {
+                "var": "cta_oneButton|classes_ctatypeone"
+              },
+              "ctaSelection-asset"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_targetpathone",
+          "label": "Target Path",
+          "description": "Select the target path for the authored CTA URL",
+          "value": "ctaTarget-sameTab",
+          "options": [
+            {
+              "name": "Same Tab",
+              "value": "ctaTarget-sameTab"
+            },
+            {
+              "name": "New Tab",
+              "value": "ctaTarget-newTab"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "cta_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-link"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "cta_oneButton|linkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "label": "Exit Interstitial",
+          "name": "classes_exitinterstitial",
+          "valueType": "string",
+          "value": "ctaExitInterstitial-select",
+          "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+          "options": [
+            {
+              "name": "select",
+              "value": "ctaExitInterstitial-select"
+            },
+            {
+              "name": "General Third Parties",
+              "value": "ctaExitInterstitial-general-third-parties"
+            },
+            {
+              "name": "Telehealth",
+              "value": "ctaExitInterstitial-telehealth"
+            },
+            {
+              "name": "Account",
+              "value": "ctaExitInterstitial-account"
+            },
+            {
+              "name": "Account Wellbeing",
+              "value": "ctaExitInterstitial-account-wellbeing"
+            },
+            {
+              "name": "Embedded Tools Healthgrades",
+              "value": "ctaExitInterstitial-embedded-tools-healthgrades"
+            },
+            {
+              "name": "Embedded Tools Nourish",
+              "value": "ctaExitInterstitial-embedded-tools-nourish"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "cta_oneButton|classes_ctatypeone"
+                  },
+                  "ctaSelection-link"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "cta_oneButton|linkText"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

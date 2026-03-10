@@ -1,0 +1,177 @@
+{
+  "definitions": [
+    {
+      "title": "Green Card",
+      "id": "green-card",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Green Card",
+              "model": "green-card",
+              "classes_cardcolor": "cardcolor-primary",
+              "classes_highlightcolor": "highlight-deep-secondary"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "green-card",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes_cardcolor",
+          "label": "Card Color",
+          "description": "Select the Background color for the card",
+          "value": "cardcolor-primary",
+          "required": true,
+          "options": [
+            {
+              "name": "Primary Green",
+              "value": "cardcolor-primary"
+            },
+            {
+              "name": "Secondary Green",
+              "value": "cardcolor-secondary"
+            },
+            {
+              "name": "Tertiary Green",
+              "value": "cardcolor-tertiary"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "greenCardText1",
+          "label": "Green card Text 1",
+          "valueType": "string",
+          "description": "Enter the text to be displayed on the green card"
+        },
+        {
+          "component": "select",
+          "name": "classes_greenCardText1Rtefontsize",
+          "label": "Green card text1 Font Size",
+          "description": "Select the font size for the Green card Text 1",
+          "options": [
+            { "name": "100px", "value": "greencardtext1-fs-100px" },
+            { "name": "60px", "value": "greencardtext1-fs-60px" },
+            { "name": "48px", "value": "greencardtext1-fs-48px" },
+            { "name": "36px", "value": "greencardtext1-fs-36px" },
+            { "name": "32px", "value": "greencardtext1-fs-32px" },
+            { "name": "28px", "value": "greencardtext1-fs-28px" },
+            { "name": "24px", "value": "greencardtext1-fs-24px" },
+            { "name": "20px", "value": "greencardtext1-fs-20px" },
+            { "name": "16px", "value": "greencardtext1-fs-16px" },
+            { "name": "14px", "value": "greencardtext1-fs-14px" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_highlightcolor",
+          "label": "Highlight color",
+          "description": "Select the color for highlighted text",
+          "value": "highlight-deep-secondary",
+          "options": [
+            {
+              "name": "Secondary",
+              "value": "highlight-color-secondary"
+            },
+            {
+              "name": "Inverse",
+              "value": "highlight-color-inverse"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "greenCardText2",
+          "label": "Green card Text 2",
+          "valueType": "string",
+          "description": "Enter the text to be displayed on the green card"
+        },
+        {
+          "component": "select",
+          "name": "classes_greenCardText2Rtefontsize",
+          "label": "Green card text2 Font Size",
+          "description": "Select the font size for the Green card Text 2",
+          "options": [
+            { "name": "100px", "value": "greencardtext2-fs-100px" },
+            { "name": "60px", "value": "greencardtext2-fs-60px" },
+            { "name": "48px", "value": "greencardtext2-fs-48px" },
+            { "name": "36px", "value": "greencardtext2-fs-36px" },
+            { "name": "32px", "value": "greencardtext2-fs-32px" },
+            { "name": "28px", "value": "greencardtext2-fs-28px" },
+            { "name": "24px", "value": "greencardtext2-fs-24px" },
+            { "name": "20px", "value": "greencardtext2-fs-20px" },
+            { "name": "16px", "value": "greencardtext2-fs-16px" },
+            { "name": "14px", "value": "greencardtext2-fs-14px" }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "priceCardItem_greenCardTitle",
+          "label": "Green card Title",
+          "valueType": "string",
+          "description": "Enter the card title",
+          "required": true
+        },
+        {
+          "component": "select",
+          "name": "classes_greenCardTitleRtefontsize",
+          "label": "Green card title Font Size",
+          "description": "Select the font size for the Green card Title",
+          "options": [
+            { "name": "100px", "value": "greencardtitle-fs-100px" },
+            { "name": "60px", "value": "greencardtitle-fs-60px" },
+            { "name": "48px", "value": "greencardtitle-fs-48px" },
+            { "name": "36px", "value": "greencardtitle-fs-36px" },
+            { "name": "32px", "value": "greencardtitle-fs-32px" },
+            { "name": "28px", "value": "greencardtitle-fs-28px" },
+            { "name": "24px", "value": "greencardtitle-fs-24px" },
+            { "name": "20px", "value": "greencardtitle-fs-20px" },
+            { "name": "16px", "value": "greencardtitle-fs-16px" },
+            { "name": "14px", "value": "greencardtitle-fs-14px" }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "greenCardText3",
+          "label": "Green card Text 3",
+          "valueType": "string",
+          "description": "Enter the text to be displayed on the Green card"
+        },
+        {
+          "component": "select",
+          "name": "classes_greenCardText3Rtefontsize",
+          "label": "Green card Text 3 Font Size",
+          "description": "Select the font size for the Green card Text 3",
+          "options": [
+            { "name": "100px", "value": "greencardtext3-fs-100px" },
+            { "name": "60px", "value": "greencardtext3-fs-60px" },
+            { "name": "48px", "value": "greencardtext3-fs-48px" },
+            { "name": "36px", "value": "greencardtext3-fs-36px" },
+            { "name": "32px", "value": "greencardtext3-fs-32px" },
+            { "name": "28px", "value": "greencardtext3-fs-28px" },
+            { "name": "24px", "value": "greencardtext3-fs-24px" },
+            { "name": "20px", "value": "greencardtext3-fs-20px" },
+            { "name": "16px", "value": "greencardtext3-fs-16px" },
+            { "name": "14px", "value": "greencardtext3-fs-14px" }
+          ]
+        },
+        {
+          "component": "text",
+          "label": "Pills to be displayed",
+          "name": "pillsTags",
+          "valueType": "string",
+          "description": "Select the tag for respective pill to be displayed",
+          "multi": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+/* Component styles are dynamically loaded via JavaScript */
+/* Add any EDS-specific Component overrides here if needed */
+
+.icon-tile-box.icon-tile-grid-content.lds-layout-container {
+  row-gap: var(--lds-g-spacing-0) !important;
+}

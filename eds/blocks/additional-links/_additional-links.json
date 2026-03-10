@@ -1,0 +1,13 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/additional-links/_additional-links.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/additional-links/_additional-links.json#/filters"
+    }
+  ],
+  "models": []
+}

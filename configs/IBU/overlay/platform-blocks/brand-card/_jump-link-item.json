@@ -1,0 +1,48 @@
+{
+  "definitions": [
+    {
+      "title": "Jump Link Item",
+      "id": "jump-link-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Jump Link Item",
+              "model": "jump-link-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "jump-link-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "jumpItem_text",
+          "label": "Jump Link Label",
+          "valueType": "string",
+          "description": "Enter the jump link label"
+        },
+        {
+          "component": "text",
+          "name": "jumpItem_aria",
+          "label": "Jump Link Aria Label",
+          "valueType": "string",
+          "description": "Enter the aria label for the jump link"
+        },
+        {
+          "component": "text",
+          "name": "jumpItem_id",
+          "label": "Section ID",
+          "valueType": "string",
+          "description": "Enter the ID of the section for Jump Link"
+        }
+      ]
+    }
+  ]
+}

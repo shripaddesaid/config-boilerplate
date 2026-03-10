@@ -1,0 +1,224 @@
+{
+  "definitions": [
+    {
+      "title": "Video Carousel Item",
+      "id": "video-carousel-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/item",
+            "template": {
+              "name": "Video Carousel Item",
+              "model": "video-carousel-item",
+              "template": {
+                "name": "Video Carousel Item",
+                "model": "video-carousel-item",
+                "linkVideoStandardText": "Watch now",
+                "linkVideoWithQuoteText": "Watch patient storyS"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "video-carousel-item",
+      "fields": [
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image Thumbnail",
+          "description": "Upload the image thumbnail",
+          "required": true
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "imageMimeType"
+        },
+        {
+          "component": "text",
+          "name": "imageAlt",
+          "valueType": "string",
+          "label": "Image Alt Text",
+          "description": "Pick alt text from AEM DAM with ability to override it",
+          "required": true
+        },
+        {
+          "component": "select",
+          "name": "classes_videoType",
+          "label": "Video Type",
+          "description": "Select the appropriate variation",
+          "value": "videoStandard",
+          "options": [
+            {
+              "name": "Video [Standard]",
+              "value": "videoStandard"
+            },
+            {
+              "name": "Video with Quote",
+              "value": "videoWithQuote"
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "name": "videoStandardContainer",
+          "label": "Video [Standard] Fields",
+          "valueType": "string",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_videoType"
+              },
+              "videoStandard"
+            ]
+          },
+          "fields": [
+            {
+              "component": "text",
+              "name": "title",
+              "label": "Title",
+              "valueType": "string",
+              "description": "Enter main heading of the video"
+            },
+            {
+              "component": "text",
+              "name": "description",
+              "label": "Description",
+              "valueType": "string",
+              "description": "Enter description of the video"
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "name": "videoWithQuoteContainer",
+          "label": "Video With Quote Fields",
+          "valueType": "string",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_videoType"
+              },
+              "videoWithQuote"
+            ]
+          },
+          "fields": [
+            {
+              "component": "checkbox-group",
+              "label": "Quote Icon",
+              "name": "quotrIcon",
+              "valueType": "string",
+              "description": "Select to display the quote icon",
+              "options": [
+                {
+                  "name": "Quote Icon",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "component": "richtext",
+              "name": "quote",
+              "label": "Quote",
+              "valueType": "string",
+              "description": "Enter the patient quote"
+            },
+            {
+              "component": "richtext",
+              "name": "patientName",
+              "label": "Name",
+              "valueType": "string",
+              "description": "Enter the Patient name"
+            },
+            {
+              "component": "richtext",
+              "name": "condition",
+              "label": "Condition",
+              "valueType": "string",
+              "description": "Enter the Patient condition"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_ctaStyle",
+          "label": "CTA Style",
+          "description": "Select the style of the Button CTA",
+          "value": "primary",
+          "options": [
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "linkVideoStandardText",
+          "label": "CTA Label",
+          "valueType": "string",
+          "description": "Enter label to display on the CTA",
+          "value": "Watch now",
+          "required": true,
+          "condition": {
+            "===": [
+              {
+                "var": "classes_videoType"
+              },
+              "videoStandard"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "linkVideoWithQuoteText",
+          "label": "CTA Label",
+          "valueType": "string",
+          "description": "Enter label to display on the CTA",
+          "value": "Watch patient story",
+          "required": true,
+          "condition": {
+            "===": [
+              {
+                "var": "classes_videoType"
+              },
+              "videoWithQuote"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "video_videoPathStandard",
+          "label": "Video Path",
+          "description": "Upload the full-length video",
+          "required": true
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "video_videoPathStandardMimeType"
+        },
+        {
+          "component": "richtext",
+          "name": "rte",
+          "label": "Video Transcript",
+          "valueType": "string",
+          "description": "Enter the video transcript"
+        }
+      ]
+    }
+  ]
+}

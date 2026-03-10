@@ -1,0 +1,139 @@
+{
+  "definitions": [
+    {
+      "title": "CSR Form",
+      "id": "csr-form",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "CSR Form",
+              "model": "csr-form"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "csr-form",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "formTitleText",
+          "label": "Form Title",
+          "valueType": "string",
+          "description": "Enter the Form Title",
+          "required": true
+        },
+        {
+          "component": "select",
+          "name": "formTitleTextRteFontSize",
+          "label": "Description Font Size",
+          "description": "Select the font size for the description",
+          "options": [
+            {
+              "name": "100px",
+              "value": "100px"
+            },
+            {
+              "name": "60px",
+              "value": "60px"
+            },
+            {
+              "name": "48px",
+              "value": "48px"
+            },
+            {
+              "name": "36px",
+              "value": "36px"
+            },
+            {
+              "name": "32px",
+              "value": "32px"
+            },
+            {
+              "name": "28px",
+              "value": "28px"
+            },
+            {
+              "name": "24px",
+              "value": "24px"
+            },
+            {
+              "name": "20px",
+              "value": "20px"
+            },
+            {
+              "name": "16px",
+              "value": "16px"
+            },
+            {
+              "name": "14px",
+              "value": "14px"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "formTitleTextRteFontSize",
+          "label": "Description Font Size",
+          "description": "Select the font size for the description",
+          "options": [
+            {
+              "name": "100px",
+              "value": "100px"
+            },
+            {
+              "name": "60px",
+              "value": "60px"
+            },
+            {
+              "name": "48px",
+              "value": "48px"
+            },
+            {
+              "name": "36px",
+              "value": "36px"
+            },
+            {
+              "name": "32px",
+              "value": "32px"
+            },
+            {
+              "name": "28px",
+              "value": "28px"
+            },
+            {
+              "name": "24px",
+              "value": "24px"
+            },
+            {
+              "name": "20px",
+              "value": "20px"
+            },
+            {
+              "name": "16px",
+              "value": "16px"
+            },
+            {
+              "name": "14px",
+              "value": "14px"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "disclaimerText",
+          "label": "Disclaimer",
+          "valueType": "string",
+          "description": "Enter the disclaimer for the Form",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

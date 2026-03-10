@@ -1,0 +1,89 @@
+{
+  "definitions": [
+    {
+      "title": "Executive Grid",
+      "id": "executive-grid",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Executive Grid",
+              "model": "executive-grid",
+              "classes_targetpathone": "ctaTarget-sameTab",
+              "classes_exitinterstitial": "ctaExitInterstitial-select"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "executive-grid",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes_imagePlacement",
+          "label": "Image Placement",
+          "description": "Select the appropriate image placement option",
+          "required": true,
+          "value": "left",
+          "options": [
+            {
+              "name": "Top",
+              "value": "top"
+            },
+            {
+              "name": "Left",
+              "value": "left"
+            }
+          ]
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "description": "Upload the image. Note: Authors should upload an image if Image Placement is selected as 'Left'."
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "imageMimeType"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt Text ",
+          "description": "Pick alt text from AEM DAM with ability to override it"
+        },
+        {
+          "component": "richtext",
+          "name": "executiveName",
+          "label": "Name",
+          "valueType": "string",
+          "description": "Enter the Executive’s name",
+          "required": true
+        },
+        {
+          "...": "../utils/eds-commons/_rte-description.json#/rte-description"
+        },
+        {
+          "component": "text",
+          "name": "executiveGrid_designation",
+          "label": "Designation",
+          "valueType": "string",
+          "description": "Enter the Executive’s Designation",
+          "required": true
+        },
+        {
+          "...": "../utils/eds-commons/_single-ctafields.json#/cta-one"
+        }
+      ]
+    }
+  ]
+}

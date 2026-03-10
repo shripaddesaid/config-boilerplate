@@ -1,0 +1,72 @@
+{
+  "definitions": [
+    {
+      "title": "News And Story Card Item",
+      "id": "news-and-story-card-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "News And Story Card Item",
+              "model": "news-and-story-card-item",
+              "classes_ctatypeone": "ctaSelection-link",
+              "classes_exitinterstitial": "ctaExitInterstitial-select"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "news-and-story-card-item",
+      "fields": [
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "description": "Upload images for the card",
+          "required": true
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "imageMimeType"
+        },
+        {
+          "component": "text",
+          "name": "imageAlt",
+          "label": "Alt Text",
+          "valueType": "string",
+          "description": "Pick alt text from AEM DAM with ability to override it",
+          "required": true
+        },
+        {
+          "component": "date-time",
+          "label": "Date",
+          "name": "date",
+          "valueType": "date",
+          "description": "Select the date for the component"
+        },
+        {
+          "component": "richtext",
+          "name": "title",
+          "label": "Title",
+          "valueType": "string",
+          "description": "Enter title for each card",
+          "required": true
+        },
+        {
+          "...": "../utils/eds-commons/_rte-title.json#/rte-title"
+        },
+        {
+          "...": "../utils/eds-commons/_single-ctafields.json#/cta-one"
+        }
+      ]
+    }
+  ]
+}

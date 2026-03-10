@@ -1,0 +1,2003 @@
+{
+  "definitions": [
+    {
+      "title": "Accordion-Item",
+      "id": "accordion-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Accordion-Item",
+              "model": "accordion-item",
+              "titleStyle": "standardTitle",
+              "classes_column1ctaNumber": "ctaNumber-column1-one",
+              "classes_column1ctacolorone": "ctaColor-column1-light",
+              "classes_column1ctastyleone": "ctaStyle-column1-primary",
+              "classes_column1targetpathone": "ctaTarget-column1-sameTab",
+              "classes_column1exitinterstitial": "ctaExitInterstitial-column1-select",
+              "classes_column1ctacolortwo": "ctaColor-column1-light-two",
+              "classes_column1ctastyletwo": "ctaStyle-column1-primary-two",
+              "classes_column1targetpathtwo": "ctaTarget-column1-sameTab_two",
+              "classes_column1exitinterstitialtwo": "ctaExitInterstitial-column1-select_two",
+              "classes_column2ctaNumber": "ctaNumber-column2-one",
+              "classes_column2ctacolorone": "ctaColor-column2-light",
+              "classes_column2ctastyleone": "ctaStyle-column2-primary",
+              "classes_column2targetpathone": "ctaTarget-column2-sameTab",
+              "classes_column2exitinterstitialone": "ctaExitInterstitial-column2-select",
+              "classes_column2ctacolortwo": "ctaColor-column2-light-two",
+              "classes_column2ctastyletwo": "ctaStyle-column2-primary-two",
+              "classes_column2targetpathtwo": "ctaTarget-column2-sameTab_two",
+              "classes_column2exitinterstitialtwo": "ctaExitInterstitial-column2-select_two"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "accordion-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "accordion_title",
+          "label": "Title",
+          "valueType": "string",
+          "description": "Enter title of each accordion item",
+          "required": true
+        },
+        {
+          "component": "select",
+          "name": "classes_titleRteFontSize",
+          "label": "Title Font Size",
+          "description": "Select the font size for the title",
+          "options": [
+            { "name": "100px", "value": "title-fs-100px" },
+            { "name": "60px", "value": "title-fs-60px" },
+            { "name": "48px", "value": "title-fs-48px" },
+            { "name": "36px", "value": "title-fs-36px" },
+            { "name": "32px", "value": "title-fs-32px" },
+            { "name": "28px", "value": "title-fs-28px" },
+            { "name": "24px", "value": "title-fs-24px" },
+            { "name": "20px", "value": "title-fs-20px" },
+            { "name": "16px", "value": "title-fs-16px" },
+            { "name": "14px", "value": "title-fs-14px" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_titlestyle",
+          "label": "Accordion Title Style",
+          "description": "Select the style applied to Title for all Accordion items",
+          "options": [
+            {
+              "name": "Use Standard Title",
+              "value": "titlestyle-standardTitle"
+            },
+            {
+              "name": "Use Stylized Title",
+              "value": "titlestyle-stylizedTitle"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_layout",
+          "label": "Accordion Layout",
+          "description": "Select the dropdown option to enable full width layout or 2-column layout inside accordion; This gets applied to all accordion items",
+          "options": [
+            {
+              "name": "1-Column",
+              "value": "layout-1Column"
+            },
+            {
+              "name": "2-Column",
+              "value": "layout-2Column"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "accordionLayout1_description",
+          "label": "Description",
+          "valueType": "string",
+          "description": "Enter detailed description of each accordion item",
+          "required": true,
+          "condition": {
+            "===": [
+              {
+                "var": "classes_layout"
+              },
+              "layout-1Column"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_descriptionRteFontSize",
+          "label": "Description Font Size",
+          "description": "Select the font size for the description",
+          "options": [
+            { "name": "100px", "value": "description-fs-100px" },
+            { "name": "60px", "value": "description-fs-60px" },
+            { "name": "48px", "value": "description-fs-48px" },
+            { "name": "36px", "value": "description-fs-36px" },
+            { "name": "32px", "value": "description-fs-32px" },
+            { "name": "28px", "value": "description-fs-28px" },
+            { "name": "24px", "value": "description-fs-24px" },
+            { "name": "20px", "value": "description-fs-20px" },
+            { "name": "16px", "value": "description-fs-16px" },
+            { "name": "14px", "value": "description-fs-14px" }
+          ],
+          "condition": {
+            "===": [
+              {
+                "var": "classes_layout"
+              },
+              "layout-1Column"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_contentType",
+          "label": "Select content type for column 1",
+          "description": "Select content type inside accordion",
+          "options": [
+            {
+              "name": "Image",
+              "value": "column1-contentTypeImage"
+            },
+            {
+              "name": "Description",
+              "value": "column1-contentTypeDescription"
+            },
+            {
+              "name": "Icon, Sub-Title & Description",
+              "value": "column1-contentTypeIcon"
+            },
+            {
+              "name": "None",
+              "value": "column1-contentTypeNone"
+            }
+          ],
+          "condition": {
+            "===": [
+              {
+                "var": "classes_layout"
+              },
+              "layout-2Column"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "accordionImage_contentTypeImageImage",
+          "label": "Image",
+          "required": true,
+          "description": "Upload a image inside an accordion item",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeImage"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "accordionImage_contentTypeImageImageMimeType"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "accordionImage_contentTypeImageImageAlt",
+          "label": "Image Alt Text ",
+          "description": "Pick alt text from AEM DAM with ability to override it",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeImage"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "richtext",
+          "name": "accordionDescription_contentTypeDescription",
+          "label": "Description",
+          "valueType": "string",
+          "description": "Enter description for each card",
+          "required": true,
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeDescription"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_contentTypeDescriptionRteFontSize",
+          "label": "Description Font Size",
+          "description": "Select the font size for the description",
+          "options": [
+            { "name": "100px", "value": "contentTypeDescription-fs-100px" },
+            { "name": "60px", "value": "contentTypeDescription-fs-60px" },
+            { "name": "48px", "value": "contentTypeDescription-fs-48px" },
+            { "name": "36px", "value": "contentTypeDescription-fs-36px" },
+            { "name": "32px", "value": "contentTypeDescription-fs-32px" },
+            { "name": "28px", "value": "contentTypeDescription-fs-28px" },
+            { "name": "24px", "value": "contentTypeDescription-fs-24px" },
+            { "name": "20px", "value": "contentTypeDescription-fs-20px" },
+            { "name": "16px", "value": "contentTypeDescription-fs-16px" },
+            { "name": "14px", "value": "contentTypeDescription-fs-14px" }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeDescription"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_column1ctaNumber",
+          "label": "Number of CTA(s)",
+          "description": "Select the number of CTA(s) required",
+          "value": "ctaNumber-column1-one",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeDescription"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          },
+          "options": [
+            {
+              "name": "One",
+              "value": "ctaNumber-column1-one"
+            },
+            {
+              "name": "Two",
+              "value": "ctaNumber-column1-two"
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "oneButtonColumn1",
+          "label": "First Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeDescription"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_column1ctacolorone",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF ",
+              "value": "ctaColor-column1-light",
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-column1-light"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-column1-dark"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_column1ctastyleone",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-column1-primary",
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-column1-primary"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-column1-secondary"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-column1-neutral"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_column1ctatypeone",
+              "label": "CTA Selection",
+              "description": "Select the CTA selection",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-column1-link"
+                },
+                {
+                  "name": "Asset",
+                  "value": "ctaSelection-column1-asset"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "column1linkText",
+              "label": "CTA label",
+              "valueType": "string",
+              "description": "Enter the label to display on each card",
+              "condition": {
+                "===": [
+                  {
+                    "var": "oneButtonColumn1|classes_column1ctatypeone"
+                  },
+                  "ctaSelection-column1-link"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column1assetlinkText",
+              "label": "CTA Label",
+              "valueType": "string",
+              "description": "Enter the label to display on each card",
+              "condition": {
+                "===": [
+                  {
+                    "var": "oneButtonColumn1|classes_column1ctatypeone"
+                  },
+                  "ctaSelection-column1-asset"
+                ]
+              }
+            },
+
+            {
+              "component": "aem-content",
+              "name": "column1link",
+              "label": "CTA Link",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked for each card",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "oneButtonColumn1|classes_column1ctatypeone"
+                      },
+                      "ctaSelection-column1-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "oneButtonColumn1|column1linkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "column1assetlink",
+              "label": "Asset (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "oneButtonColumn1|classes_column1ctatypeone"
+                      },
+                      "ctaSelection-column1-asset"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "oneButtonColumn1|column1assetlinkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column1linkTitle",
+              "label": "CTA Aria label",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "oneButtonColumn1|classes_column1ctatypeone"
+                  },
+                  "ctaSelection-column1-link"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column1assetlinkTitle",
+              "label": "CTA ARIA Label",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "oneButtonColumn1|classes_column1ctatypeone"
+                  },
+                  "ctaSelection-column1-asset"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_column1targetpathone",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-column1-sameTab",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-column1-sameTab"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-column1-newTab"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "oneButtonColumn1|classes_column1ctatypeone"
+                      },
+                      "ctaSelection-column1-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "oneButtonColumn1|column1linkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_column1exitinterstitial",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-column1-select",
+              "description": "Select this option to enable the modal experience that notifies the user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-column1-select"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-column1-general-third-parties"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-column1-telehealth"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-column1-account"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-column1-account-wellbeing"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-column1-embedded-tools-healthgrades"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-column1-embedded-tools-nourish"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "oneButtonColumn1|classes_column1ctatypeone"
+                      },
+                      "ctaSelection-column1-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "oneButtonColumn1|column1linkText"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "twoButtonColumn1",
+          "label": "Second Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeDescription"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_column1ctaNumber"
+                  },
+                  "ctaNumber-column1-two"
+                ]
+              }
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_column1ctacolortwo",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF ",
+              "value": "ctaColor-column1-light-two",
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-column1-light-two"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-column1-dark-two"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_column1ctastyletwo",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-column1-primary-two",
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-column1-primary-two"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-column1-secondary-two"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-column1-neutral-two"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_column1ctatypetwo",
+              "label": "CTA Selection",
+              "description": "Select the CTA selection",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-column1-link_two"
+                },
+                {
+                  "name": "Asset (PDF/Image)",
+                  "value": "ctaSelection-column1-asset_two"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "column1link1Text",
+              "label": "CTA Label for link",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "twoButtonColumn1|classes_column1ctatypetwo"
+                  },
+                  "ctaSelection-column1-link_two"
+                ]
+              }
+            },
+            {
+              "component": "aem-content",
+              "name": "column1link1",
+              "label": "CTA Link",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "twoButtonColumn1|classes_column1ctatypetwo"
+                      },
+                      "ctaSelection-column1-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "twoButtonColumn1|column1link1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column1assetlink1Text",
+              "label": "CTA Label",
+              "valueType": "string",
+              "description": "Enter the label to display on each card",
+              "condition": {
+                "===": [
+                  {
+                    "var": "twoButtonColumn1|classes_column1ctatypetwo"
+                  },
+                  "ctaSelection-column1-asset_two"
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "column1assetlink1",
+              "label": "Asset (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "twoButtonColumn1|classes_column1ctatypetwo"
+                      },
+                      "ctaSelection-column1-asset_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "twoButtonColumn1|column1assetlink1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column1link1Title",
+              "label": "CTA ARIA Label",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "twoButtonColumn1|classes_column1ctatypetwo"
+                  },
+                  "ctaSelection-column1-link_two"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column1assetlink1Title",
+              "label": "CTA ARIA Label",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "twoButtonColumn1|classes_column1ctatypetwo"
+                  },
+                  "ctaSelection-column1-asset_two"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_column1targetpathtwo",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-column1-sameTab_two",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-column1-sameTab_two"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-column1-newTab_two"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "twoButtonColumn1|classes_column1ctatypetwo"
+                      },
+                      "ctaSelection-column1-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "twoButtonColumn1|column1link1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_column1exitinterstitialtwo",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-column1-select_two",
+              "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-column1-select_two"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-column1-general-third-parties_two"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-column1-telehealth_two"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-column1-account_two"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-column1-account-wellbeing_two"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-column1-embedded-tools-healthgrades_two"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-column1-embedded-tools-nourish_two"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "twoButtonColumn1|classes_column1ctatypetwo"
+                      },
+                      "ctaSelection-column1-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "twoButtonColumn1|column1link1Text"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "accordionIcon_contentTypeIconImage",
+          "label": "Image",
+          "required": true,
+          "description": "Upload a icon inside the accordion",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeIcon"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "accordionIcon_contentTypeIconImageMimeType"
+        },
+        {
+          "component": "text",
+          "name": "accordionIcon_contentTypeIconImageAlt",
+          "label": "Alt Text",
+          "required": true,
+          "valueType": "string",
+          "description": "Pick alt text from AEM DAM with ability to override it for the icon",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeIcon"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "accordionIcon_contentTypeIconSubtitle",
+          "label": "Sub-Title",
+          "valueType": "string",
+          "description": "Enter sub-title",
+          "required": true,
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeIcon"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "richtext",
+          "name": "contentTypeIconDescription",
+          "label": "Description",
+          "valueType": "string",
+          "description": "Enter description",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeIcon"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_contentTypeIconDescriptionRteFontSize",
+          "label": "Description Font Size",
+          "description": "Select the font size for the description",
+          "options": [
+            { "name": "100px", "value": "contentTypeIconDescription-fs-100px" },
+            { "name": "60px", "value": "contentTypeIconDescription-fs-60px" },
+            { "name": "48px", "value": "contentTypeIconDescription-fs-48px" },
+            { "name": "36px", "value": "contentTypeIconDescription-fs-36px" },
+            { "name": "32px", "value": "contentTypeIconDescription-fs-32px" },
+            { "name": "28px", "value": "contentTypeIconDescription-fs-28px" },
+            { "name": "24px", "value": "contentTypeIconDescription-fs-24px" },
+            { "name": "20px", "value": "contentTypeIconDescription-fs-20px" },
+            { "name": "16px", "value": "contentTypeIconDescription-fs-16px" },
+            { "name": "14px", "value": "contentTypeIconDescription-fs-14px" }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_contentType"
+                  },
+                  "column1-contentTypeIcon"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_secContentType",
+          "label": "Select content type for column 2",
+          "description": "Select content type inside accordion",
+          "options": [
+            {
+              "name": "Image",
+              "value": "column2-secContentTypeImage"
+            },
+            {
+              "name": "Description",
+              "value": "column2-secContentTypeDescription"
+            },
+            {
+              "name": "Icon, Sub-Title & Description",
+              "value": "column2-secContentTypeIcon"
+            },
+            {
+              "name": "None",
+              "value": "column2-secContentTypeNone"
+            }
+          ],
+          "condition": {
+            "===": [
+              {
+                "var": "classes_layout"
+              },
+              "layout-2Column"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "accordionSecImage_secContentTypeImage",
+          "label": "Image",
+          "required": true,
+          "description": "Upload a image inside an accordion item",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeImage"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "accordionSecImage_secContentTypeImageMimeType"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "accordionSecImage_secContentTypeImageAlt",
+          "label": "Image Alt Text ",
+          "required": true,
+          "description": "Pick alt text from AEM DAM with ability to override it",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeImage"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "richtext",
+          "name": "accordionSecDesc_secContentTypeDescription",
+          "label": "Description",
+          "valueType": "string",
+          "description": "Enter description for each card",
+          "required": true,
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeDescription"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_secContentTypeDescriptionRteFontSize",
+          "label": "Description Font Size",
+          "description": "Select the font size for the description",
+          "options": [
+            { "name": "100px", "value": "secContentDescription-fs-100px" },
+            { "name": "60px", "value": "secContentDescription-fs-60px" },
+            { "name": "48px", "value": "secContentDescription-fs-48px" },
+            { "name": "36px", "value": "secContentDescription-fs-36px" },
+            { "name": "32px", "value": "secContentDescription-fs-32px" },
+            { "name": "28px", "value": "secContentDescription-fs-28px" },
+            { "name": "24px", "value": "secContentDescription-fs-24px" },
+            { "name": "20px", "value": "secContentDescription-fs-20px" },
+            { "name": "16px", "value": "secContentDescription-fs-16px" },
+            { "name": "14px", "value": "secContentDescription-fs-14px" }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeDescription"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_column2ctaNumber",
+          "label": "Number of CTA(s)",
+          "description": "Select the number of CTA(s) required",
+          "value": "ctaNumber-column2-one",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeDescription"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          },
+          "options": [
+            {
+              "name": "One",
+              "value": "ctaNumber-column2-one"
+            },
+            {
+              "name": "Two",
+              "value": "ctaNumber-column2-two"
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "oneButtoncolumn2",
+          "label": "First Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeDescription"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_column2ctacolorone",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF ",
+              "value": "ctaColor-column2-light",
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-column2-light"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-column2-dark"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_column2ctastyleone",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-column2-primary",
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-column2-primary"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-column2-secondary"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-column2-neutral"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_column2ctatypeone",
+              "label": "CTA Selection",
+              "description": "Select the CTA selection",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-column2-link"
+                },
+                {
+                  "name": "Asset",
+                  "value": "ctaSelection-column2-asset"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "column2linkText",
+              "label": "CTA label",
+              "valueType": "string",
+              "description": "Enter the label to display on each card",
+              "condition": {
+                "===": [
+                  {
+                    "var": "oneButtoncolumn2|classes_column2ctatypeone"
+                  },
+                  "ctaSelection-column2-link"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column2assetlinkText",
+              "label": "CTA Label",
+              "valueType": "string",
+              "description": "Enter the label to display on each card",
+              "condition": {
+                "===": [
+                  {
+                    "var": "oneButtoncolumn2|classes_column2ctatypeone"
+                  },
+                  "ctaSelection-column2-asset"
+                ]
+              }
+            },
+
+            {
+              "component": "aem-content",
+              "name": "column2link",
+              "label": "CTA Link",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked for each card",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "oneButtoncolumn2|classes_column2ctatypeone"
+                      },
+                      "ctaSelection-column2-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "oneButtoncolumn2|column2linkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "column2assetlink",
+              "label": "Asset (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "oneButtoncolumn2|classes_column2ctatypeone"
+                      },
+                      "ctaSelection-column2-asset"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "oneButtoncolumn2|column2assetlinkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column2linkTitle",
+              "label": "CTA Aria label",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "oneButtoncolumn2|classes_column2ctatypeone"
+                  },
+                  "ctaSelection-column2-link"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column2assetlinkTitle",
+              "label": "CTA ARIA Label",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "oneButtoncolumn2|classes_column2ctatypeone"
+                  },
+                  "ctaSelection-column2-asset"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_column2targetpathone",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-column2-sameTab",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-column2-sameTab"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-column2-newTab"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "oneButtoncolumn2|classes_column2ctatypeone"
+                      },
+                      "ctaSelection-column2-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "oneButtoncolumn2|column2linkText"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_column2exitinterstitialone",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-column2-select",
+              "description": "Select this option to enable the modal experience that notifies the user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-column2-select"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-column2-general-third-parties"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-column2-telehealth"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-column2-account"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-column2-account-wellbeing"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-column2-embedded-tools-healthgrades"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-column2-embedded-tools-nourish"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "oneButtoncolumn2|classes_column2ctatypeone"
+                      },
+                      "ctaSelection-column2-link"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "oneButtoncolumn2|column2linkText"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "container",
+          "collapsible": true,
+          "name": "twoButtoncolumn2",
+          "label": "Second Button CTA Fields",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeDescription"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_column2ctaNumber"
+                  },
+                  "ctaNumber-column2-two"
+                ]
+              }
+            ]
+          },
+          "fields": [
+            {
+              "component": "select",
+              "name": "classes_column2ctacolortwo",
+              "label": "CTA Color",
+              "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF ",
+              "value": "ctaColor-column2-light-two",
+              "options": [
+                {
+                  "name": "Light",
+                  "value": "ctaColor-column2-light-two"
+                },
+                {
+                  "name": "Dark",
+                  "value": "ctaColor-column2-dark-two"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_column2ctastyletwo",
+              "label": "CTA Style",
+              "description": "Select the style of the Button CTA",
+              "value": "ctaStyle-column2-primary-two",
+              "options": [
+                {
+                  "name": "Primary",
+                  "value": "ctaStyle-column2-primary-two"
+                },
+                {
+                  "name": "Secondary",
+                  "value": "ctaStyle-column2-secondary-two"
+                },
+                {
+                  "name": "Neutral",
+                  "value": "ctaStyle-column2-neutral-two"
+                }
+              ]
+            },
+            {
+              "component": "select",
+              "name": "classes_column2ctatypetwo",
+              "label": "CTA Selection",
+              "description": "Select the CTA selection",
+              "options": [
+                {
+                  "name": "Link",
+                  "value": "ctaSelection-column2-link_two"
+                },
+                {
+                  "name": "Asset (PDF/Image)",
+                  "value": "ctaSelection-column2-asset_two"
+                }
+              ]
+            },
+            {
+              "component": "text",
+              "name": "column2link1Text",
+              "label": "CTA Label for link",
+              "valueType": "string",
+              "description": "Enter label to display on the CTA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "twoButtoncolumn2|classes_column2ctatypetwo"
+                  },
+                  "ctaSelection-column2-link_two"
+                ]
+              }
+            },
+            {
+              "component": "aem-content",
+              "name": "column2link1",
+              "label": "CTA Link",
+              "valueType": "string",
+              "description": "Enter the URL to navigate when CTA is clicked",
+              "validation": {
+                "rootPath": "/content"
+              },
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "twoButtoncolumn2|classes_column2ctatypetwo"
+                      },
+                      "ctaSelection-column2-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "twoButtoncolumn2|column2link1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column2assetlink1Text",
+              "label": "CTA Label",
+              "valueType": "string",
+              "description": "Enter the label to display on each card",
+              "condition": {
+                "===": [
+                  {
+                    "var": "twoButtoncolumn2|classes_column2ctatypetwo"
+                  },
+                  "ctaSelection-column2-asset_two"
+                ]
+              }
+            },
+            {
+              "component": "custom-asset-namespace:custom-asset",
+              "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+              "name": "column2assetlink1",
+              "label": "Asset (PDF/Image)",
+              "description": "Upload the Asset (PDF/Image)",
+              "valueType": "string",
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "twoButtoncolumn2|classes_column2ctatypetwo"
+                      },
+                      "ctaSelection-column2-asset_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "twoButtoncolumn2|column2assetlink1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column2link1Title",
+              "label": "CTA ARIA Label",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "twoButtoncolumn2|classes_column2ctatypetwo"
+                  },
+                  "ctaSelection-column2-link_two"
+                ]
+              }
+            },
+            {
+              "component": "text",
+              "name": "column2assetlink1Title",
+              "label": "CTA ARIA Label",
+              "valueType": "string",
+              "description": "Enter ARIA label to comply ADA",
+              "condition": {
+                "===": [
+                  {
+                    "var": "twoButtoncolumn2|classes_column2ctatypetwo"
+                  },
+                  "ctaSelection-column2-asset_two"
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "name": "classes_column2targetpathtwo",
+              "label": "Target Path",
+              "description": "Select the target path for the authored CTA URL",
+              "value": "ctaTarget-column2-sameTab_two",
+              "options": [
+                {
+                  "name": "Same Tab",
+                  "value": "ctaTarget-column2-sameTab_two"
+                },
+                {
+                  "name": "New Tab",
+                  "value": "ctaTarget-column2-newTab_two"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "twoButtoncolumn2|classes_column2ctatypetwo"
+                      },
+                      "ctaSelection-column2-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "twoButtoncolumn2|column2link1Text"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "component": "select",
+              "label": "Exit Interstitial",
+              "name": "classes_column2exitinterstitialtwo",
+              "valueType": "string",
+              "value": "ctaExitInterstitial-column2-select_two",
+              "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+              "options": [
+                {
+                  "name": "Select",
+                  "value": "ctaExitInterstitial-column2-select_two"
+                },
+                {
+                  "name": "General Third Parties",
+                  "value": "ctaExitInterstitial-column2-general-third-parties_two"
+                },
+                {
+                  "name": "Telehealth",
+                  "value": "ctaExitInterstitial-column2-telehealth_two"
+                },
+                {
+                  "name": "Account",
+                  "value": "ctaExitInterstitial-column2-account_two"
+                },
+                {
+                  "name": "Account Wellbeing",
+                  "value": "ctaExitInterstitial-column2-account-wellbeing_two"
+                },
+                {
+                  "name": "Embedded Tools Healthgrades",
+                  "value": "ctaExitInterstitial-column2-embedded-tools-healthgrades_two"
+                },
+                {
+                  "name": "Embedded Tools Nourish",
+                  "value": "ctaExitInterstitial-column2-embedded-tools-nourish_two"
+                }
+              ],
+              "condition": {
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "twoButtoncolumn2|classes_column2ctatypetwo"
+                      },
+                      "ctaSelection-column2-link_two"
+                    ]
+                  },
+                  {
+                    "!!": {
+                      "var": "twoButtoncolumn2|column2link1Text"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "accordionSecIcon_secContentTypeIconImage",
+          "label": "Image",
+          "required": true,
+          "description": "Upload a icon inside the accordion",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeIcon"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "accordionSecIcon_secContentTypeIconImageMimeType"
+        },
+        {
+          "component": "text",
+          "name": "accordionSecIcon_secContentTypeIconImageAlt",
+          "label": "Alt Text",
+          "valueType": "string",
+          "required": true,
+          "description": "Pick alt text from AEM DAM with ability to override it for the icon",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeIcon"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "accordionSecIcon_secContentTypeIconSubtitle",
+          "label": "Sub-Title",
+          "valueType": "string",
+          "description": "Enter sub-title",
+          "required": true,
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeIcon"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "richtext",
+          "name": "secContentTypeIconDescription",
+          "label": "Description",
+          "valueType": "string",
+          "description": "Enter description",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeIcon"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_secContentTypeIconDescriptionRteFontSize",
+          "label": "Description Font Size",
+          "description": "Select the font size for the description",
+          "options": [
+            { "name": "100px", "value": "secContentIconDescription-fs-100px" },
+            { "name": "60px", "value": "secContentIconDescription-fs-60px" },
+            { "name": "48px", "value": "secContentIconDescription-fs-48px" },
+            { "name": "36px", "value": "secContentIconDescription-fs-36px" },
+            { "name": "32px", "value": "secContentIconDescription-fs-32px" },
+            { "name": "28px", "value": "secContentIconDescription-fs-28px" },
+            { "name": "24px", "value": "secContentIconDescription-fs-24px" },
+            { "name": "20px", "value": "secContentIconDescription-fs-20px" },
+            { "name": "16px", "value": "secContentIconDescription-fs-16px" },
+            { "name": "14px", "value": "secContentIconDescription-fs-14px" }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secContentType"
+                  },
+                  "column2-secContentTypeIcon"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_layout"
+                  },
+                  "layout-2Column"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

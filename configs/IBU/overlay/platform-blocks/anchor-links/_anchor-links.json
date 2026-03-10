@@ -1,0 +1,71 @@
+{
+  "definitions": [
+    {
+      "title": "Anchor Links",
+      "id": "anchor-links",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Anchor Links",
+              "model": "anchor-links",
+              "filter": "anchor-links",
+              "item0": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Anchor Links Item",
+                "model": "anchor-links-item"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [
+    {
+      "id": "anchor-links",
+      "components": ["anchor-links-item"]
+    }
+  ],
+  "models": [
+    {
+      "id": "anchor-links",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "heading",
+          "label": "Anchor Links Title",
+          "valueType": "string",
+          "description": "Enter the anchor links title",
+          "required": true
+        },
+        {
+          "component": "select",
+          "name": "classes_heading",
+          "label": "Title Font Size",
+          "description": "Select the font size for the title",
+          "options": [
+            { "name": "100px", "value": "heading-fs-100px" },
+            { "name": "60px", "value": "heading-fs-60px" },
+            { "name": "48px", "value": "heading-fs-48px" },
+            { "name": "36px", "value": "heading-fs-36px" },
+            { "name": "32px", "value": "heading-fs-32px" },
+            { "name": "28px", "value": "heading-fs-28px" },
+            { "name": "24px", "value": "heading-fs-24px" },
+            { "name": "20px", "value": "heading-fs-20px" },
+            { "name": "16px", "value": "heading-fs-16px" },
+            { "name": "14px", "value": "heading-fs-14px" }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "anchor_dropdowntitle",
+          "label": "Dropdown Title",
+          "valueType": "string",
+          "description": "Enter the dropdown title  ⓘ To be displayed only on mobile viewport"
+        }
+      ]
+    }
+  ]
+}

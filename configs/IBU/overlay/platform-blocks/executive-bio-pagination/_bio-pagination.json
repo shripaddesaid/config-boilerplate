@@ -1,0 +1,285 @@
+{
+  "definitions": [
+    {
+      "title": "Executive Bio Pagination",
+      "id": "bio-pagination",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Executive Bio Pagination",
+              "model": "bio-pagination"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "bio-pagination",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes_ctatypeone",
+          "label": "CTA Selection - Previous Page",
+          "classes_ctatypeone": "ctaSelection-link",
+          "description": "ⓘ Select the CTA Selection Link/Asset(PDF/Image)",
+          "options": [
+            {
+              "name": "Link",
+              "value": "ctaSelection-link"
+            },
+            {
+              "name": "Asset (PDF/Image)",
+              "value": "ctaSelection-asset"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "linkText",
+          "label": "CTA Label for Link - Previous Page",
+          "valueType": "string",
+          "description": "Enter label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypeone"
+              },
+              "ctaSelection-link"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "assetlinkText",
+          "label": "CTA Label for Assets - Previous Page",
+          "valueType": "string",
+          "description": "Enter label to display on the CTA for Asset(PDF/Image)",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypeone"
+              },
+              "ctaSelection-asset"
+            ]
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "CTA Link - Previous Page",
+          "valueType": "string",
+          "description": "Enter the URL to navigate when CTA is clicked",
+          "validation": {
+            "rootPath": "/content"
+          },
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatypeone"
+                  },
+                  "ctaSelection-link"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "linkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "assetlink",
+          "label": "Asset (PDF/Image)",
+          "description": "Upload the Asset (PDF/Image)",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatypeone"
+                  },
+                  "ctaSelection-asset"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "assetlinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "bio-pagination-aria-label-link-previous",
+          "label": "ARIA Label for CTA link",
+          "valueType": "string",
+          "description": "Enter ARIA label to comply ADA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypeone"
+              },
+              "ctaSelection-link"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "bio-pagination-aria-label-asset-previous",
+          "label": "ARIA Label for CTA Asset",
+          "valueType": "string",
+          "description": "Enter ARIA label to comply ADA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypeone"
+              },
+              "ctaSelection-asset"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_ctatypetwo",
+          "label": "CTA Selection - Next Page",
+          "classes_ctatypetwo": "ctaSelection-link",
+          "description": "ⓘ Select the CTA Selection Link/Asset(PDF/Image)",
+          "options": [
+            {
+              "name": "Link",
+              "value": "ctaSelection-link"
+            },
+            {
+              "name": "Asset (PDF/Image)",
+              "value": "ctaSelection-asset"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "linkTextNext",
+          "label": "CTA Label for Link - Next Page",
+          "valueType": "string",
+          "description": "Enter label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypetwo"
+              },
+              "ctaSelection-link"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "assetlinkTextNext",
+          "label": "CTA Label for Asset - Next Page",
+          "valueType": "string",
+          "description": "Enter label to display on the CTA for Asset(PDF/Image)",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypetwo"
+              },
+              "ctaSelection-asset"
+            ]
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "linkNext",
+          "label": "CTA Link - Next Page",
+          "valueType": "string",
+          "description": "Enter the URL to navigate when CTA is clicked",
+          "validation": {
+            "rootPath": "/content"
+          },
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatypetwo"
+                  },
+                  "ctaSelection-link"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "linkTextNext"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "assetlinkNext",
+          "label": "Asset (PDF/Image)",
+          "description": "Upload the Asset (PDF/Image)",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatypetwo"
+                  },
+                  "ctaSelection-asset"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "assetlinkTextNext"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "bio-pagination-aria-label-link-next",
+          "label": "ARIA Label for CTA link",
+          "valueType": "string",
+          "description": "Enter ARIA label to comply ADA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypetwo"
+              },
+              "ctaSelection-link"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "bio-pagination-aria-label-asset-next",
+          "label": "ARIA Label for CTA Asset",
+          "valueType": "string",
+          "description": "Enter ARIA label to comply ADA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypetwo"
+              },
+              "ctaSelection-asset"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

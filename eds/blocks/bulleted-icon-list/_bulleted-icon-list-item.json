@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/bulleted-icon-list/_bulleted-icon-list-item.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/bulleted-icon-list/_bulleted-icon-list-item.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "bulleted-icon-list-item",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/bulleted-icon-list/_bulleted-icon-list-item.json#/models/bulleted-icon-list-item/fields"
+        }
+      ]
+    }
+  ]
+}

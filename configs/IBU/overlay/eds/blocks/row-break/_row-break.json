@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/row-break/_row-break.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/row-break/_row-break.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "row-break",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/row-break/_row-break.json#/models"
+        }
+      ]
+    }
+  ]
+}

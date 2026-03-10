@@ -1,0 +1,43 @@
+{
+  "definitions": [
+    {
+      "title": "Tab",
+      "id": "tab",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Tab",
+              "model": "tab"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "tab",
+      "fields": [
+        {
+          "component": "text",
+          "name": "text",
+          "required": true,
+          "label": "Tabs Label",
+          "valueType": "string",
+          "description": "Enter the Tab/pill name"
+        },
+        {
+          "component": "text",
+          "name": "text-id",
+          "required": true,
+          "label": "Tabs ID",
+          "valueType": "string",
+          "description": "Enter the ID of the Section you want to render under this Tab"
+        }
+      ]
+    }
+  ]
+}

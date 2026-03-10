@@ -1,0 +1,1216 @@
+@import "./themes.css";
+@import "./base.css";
+@import "./breadcrumb.css";
+@import "./cta.css";
+@import "./chatbot.css";
+@import "./isi.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.lds-layout-container {
+  margin: 0 auto;
+}
+
+body:not(.appear) {
+  display: none;
+}
+
+.default-content-wrapper.lds-layout-container > * {
+  grid-column: span 12;
+}
+
+.text-component.lds-layout-container > * {
+  grid-column: span 12;
+}
+
+main .section-hidden___hideblock {
+  display: none !important;
+}
+
+main .section-block___viewblock {
+  display: block !important;
+}
+
+main .section-block___viewblock.tab-hide-section {
+  display: none !important;
+}
+
+@media (width >= 1200px) {
+  /* Narrow Content Section Container */
+  /* Offset Column Container Sections */
+  /* Ideally this should be handled in aem.js as we decorate sections / blocks */
+  .lds-content-section-padding-narrow
+    > [class*="-wrapper"]:not(.form-wrapper)
+    > .lds-layout-container
+    > [class*="col-"],
+  .section.multi-column-split.offset > [class*="col-"] {
+    grid-column-start: 2;
+    grid-column-end: span 10;
+  }
+
+  .lds-content-section-padding-narrow
+    > [class*="-wrapper"]:not(.form-wrapper)
+    > .lds-layout-container
+    > .carousel-indicators {
+    grid-column-end: span 2;
+  }
+
+  /* Narrow content section container fix for text components */
+  .lds-content-section-padding-narrow .text-component.block > div {
+    grid-column-start: 2;
+    grid-column-end: span 10;
+  }
+
+  .lds-content-section-padding-narrow .default-content-wrapper > * {
+    grid-column-start: 2;
+    grid-column-end: span 10;
+  }
+
+  .lds-content-section-padding-slim .default-content-wrapper > * {
+    padding: var(--lds-g-spacing-500);
+  }
+
+  /* Wide content section container fix for text components */
+  .lds-content-section-padding-wide .text-component.block > div {
+    grid-column-start: 3;
+    grid-column-end: span 8;
+  }
+
+  .lds-content-section-padding-wide .default-content-wrapper > * {
+    grid-column-start: 3;
+    grid-column-end: span 8;
+  }
+
+  /* Wide Content Section Container */
+  /* Ideally this should be handled in aem.js as we decorate sections / blocks */
+  .lds-content-section-padding-wide
+    > [class*="-wrapper"]:not(.form-wrapper)
+    > .lds-layout-container
+    > [class*="col-"] {
+    grid-column-start: 3;
+    grid-column-end: span 8;
+  }
+}
+
+/* LDS adjustment for native-aem-columns */
+[class*="columns-"] > div {
+  grid-column: span 12;
+}
+
+main .background-primary-red {
+  background-color: var(--lds-g-color-palette-red-005);
+}
+
+main .lds-content-section-bg-background-dark {
+  background-color: var(--lds-g-color-surface-inverse-1);
+}
+
+main .lds-content-section-text-light *:not(a, button, input),
+main .lds-content-section-text-muted *:not(a, button, input),
+main .lds-content-section-text-subtle *:not(a, button, input),
+main .lds-content-section-text-delicate *:not(a, button, input),
+main .lds-content-section-text-custom *:not(a, button, input),
+main .lds-content-section-text-primary *:not(a, button, input),
+main .lds-content-section-text-neutral *:not(a, button, input),
+main .lds-content-section-text-premium .icon-card-body *:not(a, button, input),
+main
+  .lds-content-section-text-premium
+  .transcript-description
+  *:not(a, button, input),
+main .lds-content-section-text-premium .table-wrapper *:not(a, button, input),
+main
+  .lds-content-section-text-premium
+  .price-card-green-card
+  *:not(a, button, input),
+main .brand-card *:not[class="wrap-breadcrumb-container"] {
+  color: var(--lds-g-color-palette-tertiary-001) !important;
+}
+
+/* Higher specificity rules for video carousel content override */
+main
+  [class*="lds-content-section-text-"]
+  .video-carousel-content-box
+  *:not(a, button, input),
+main
+  [class*="lds-content-section-text-"]
+  .video-carousel-content
+  *:not(a, button, input),
+main
+  [class*="lds-content-section-text-"]
+  .video-carousel-video
+  *:not(a, button, input),
+main
+  [class*="lds-content-section-text-"]
+  .smallwidthmedia-content
+  *:not(a, button, input),
+main
+  [class*="lds-content-section-text-"]
+  .smallwidthmedia-content-div
+  *:not(a, button, input),
+main
+  [class*="lds-content-section-text-"]
+  .external-video-content
+  *:not(a, button, input),
+main
+  [class*="lds-content-section-text-"]
+  .external-video-content-container
+  *:not(a, button, input) {
+  color: var(--lds-g-color-surface-base) !important;
+}
+
+main .lds-content-section-text-dark *:not(a, button, input, #selected-menu) {
+  color: var(--lds-g-color-surface-base) !important;
+}
+
+main .lds-content-section-bg-background-light {
+  background-color: var(--lds-g-color-surface-3);
+}
+
+main .lds-content-section-bg-background-subtle {
+  background-color: var(--lds-g-color-surface-neutral);
+}
+
+main .lds-content-section-bg-background-muted {
+  background-color: var(--lds-g-color-surface-1);
+}
+
+main .lds-content-section-bg-background-delicate {
+  background-color: var(--lds-g-color-surface-container-2);
+}
+
+main .lds-content-section-bg-background-custom {
+  background-color: var(--lds-g-color-surface-container-3);
+}
+
+main .lds-content-section-bg-background-primary {
+  background-color: var(--lds-g-color-accent-1);
+}
+
+main .lds-content-section-bg-background-premium {
+  background-color: var(--lds-g-color-surface-inverse-1);
+}
+
+main .lds-content-section-bg-background-neutral {
+  background-color: var(--lds-g-color-surface-base);
+}
+
+main
+  .lds-content-section-text-premium
+  *:not(
+    a,
+    button,
+    input,
+    .pb-highlight-color-secondary,
+    .pb-highlight-color-primary,
+    .number-of-total,
+    .numerical-pagination-container,
+    .transcript-container.video-carousel-shared-transcript,
+    .page-info-wrapper,
+    .current-index-box,
+    .of-total-text
+  ) {
+  color: var(--lds-g-color-surface-base) !important;
+}
+
+main .lds-content-section-text-premium .cta-text {
+  color: var(--lds-g-color-action-container-inverse-1) !important;
+}
+main
+  .lds-content-section-text-premium
+  .page-info-wrapper
+  div.total-page-info-container {
+  color: var(--lds-g-color-on-surface-1) !important;
+}
+main
+  .lds-content-section-text-premium
+  .transcript-container.video-carousel-shared-transcript
+  .transcript-description
+  * {
+  color: var(--lds-g-color-on-surface-1) !important;
+}
+main .lds-content-section-text-premium .cta-text:visited {
+  color: var(--lds-g-color-action-container-inverse-3) !important;
+}
+
+main .lds-content-section-text-premium .cta-text:hover {
+  color: var(--lds-g-color-action-container-inverse-1) !important;
+}
+
+main .lds-content-section-text-premium .cta-text:focus-visible {
+  color: var(--lds-g-color-action-container-inverse-2) !important;
+  outline: var(--lds-g-sizing-border-2) solid
+    var(--lds-g-color-action-container-inverse-2);
+}
+
+main .lds-content-section-text-premium .cta-text:active {
+  color: var(--lds-g-color-action-container-inverse-2) !important;
+  text-decoration: underline;
+}
+
+main .lds-content-section-bg-image {
+  background-image: var(--bg-image-url-desktop);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100%;
+  display: block;
+}
+
+main .lds-content-section-manual-text-white *:not(a, button, input) {
+  color: var(--lds-g-color-surface-base) !important;
+}
+
+main .lds-content-section-manual-text-black *:not(a, button, input) {
+  color: var(--lds-g-color-palette-transparent-black-100);
+}
+
+main .background-secondary-red {
+  background-color: var(--lds-g-color-palette-red-010);
+}
+
+main .background-tertiary-blue {
+  background-color: var(--lds-g-color-palette-stone-005);
+}
+
+main .background-quaternary-gray {
+  background-color: var(--lds-g-color-palette-stone-020);
+}
+
+main .background-secondary-green {
+  background-color: var(--lds-g-color-palette-teal-020);
+}
+
+main .lds-content-section-padding-wide {
+  padding: var(--lds-g-spacing-1800) 0;
+}
+
+main .lds-content-section-padding-narrow {
+  padding: var(--lds-g-spacing-800) 0;
+}
+
+main .lds-content-section-padding-slim {
+  padding: var(--lds-g-spacing-500);
+}
+
+main .lds-content-section-margin-narrow {
+  margin: var(--lds-g-spacing-800);
+}
+
+main .lds-content-section-margin-wide {
+  margin: var(--lds-g-spacing-1600);
+}
+
+main .lds-content-section-rounded-borders {
+  border-radius: var(--lds-g-radius-4);
+}
+
+main .default-content-wrapper picture img {
+  width: 100%;
+  gap: 8px;
+  border-radius: var(--corner-radius-48px, 48px);
+}
+
+main .default-content-wrapper picture {
+  display: flex;
+  padding: 72px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+
+main .tabs-container-background-primary {
+  background-color: var(--lds-g-color-accent-1);
+}
+
+main .tabs-container-background-neutral {
+  background-color: var(--lds-g-color-surface-container-base);
+}
+
+main .tabs-container-background-custom {
+  background-color: var(--lds-g-color-surface-container-3);
+}
+
+main .tabs-container-background-premium {
+  background-color: var(--lds-g-color-surface-inverse-1);
+}
+
+main .tabs-container-background-delicate {
+  background-color: var(--lds-g-color-surface-container-2);
+}
+
+main .tabs-container-background-muted {
+  background-color: var(--lds-g-color-surface-1);
+}
+
+main .tabs-container-background-subtle {
+  background-color: var(--lds-g-color-neutral-base-005);
+}
+
+main .tabs-container-background-none {
+  background-color: transparent;
+}
+
+@media (width > 1440px) {
+  main .lds-content-section-margin-narrow {
+    margin: var(--lds-g-spacing-800)
+      calc((100vw - 1440px) / 2 + var(--lds-g-spacing-800)) !important;
+  }
+
+  main .lds-content-section-margin-wide {
+    margin: var(--lds-g-spacing-1600)
+      calc((100vw - 1440px) / 2 + var(--lds-g-spacing-1600)) !important;
+  }
+}
+
+@media (width < 900px) {
+  .lds-content-section-padding-narrow
+    > [class*="-wrapper"]:not(.form-wrapper)
+    > .lds-layout-container
+    > .carousel-indicators {
+    grid-column-end: span 4;
+  }
+
+  main .lds-content-section-padding-slim {
+    padding: var(--lds-g-spacing-300);
+  }
+
+  main .default-content-wrapper picture img {
+    display: flex;
+    width: 100%;
+    height: 458.691px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 24px;
+    padding: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  main .default-content-wrapper picture {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: var(--color-lillybrand-white, #fff);
+  }
+
+  main .lds-content-section-bg-image {
+    background-image: var(--bg-image-url-mobile);
+  }
+}
+
+/* section metadata */
+main .section.light,
+main .section.highlight {
+  background-color: var(--light-color);
+}
+
+/* New Styles - LDS 3.0 */
+/* Extra Large Display Style */
+.lds-ringside-display-extra-large {
+  /* Ringside/Display 1 */
+  font: var(--lds-g-typography-ringside-display-1-default);
+  letter-spacing: var(--lds-g-typography-ringside-display-1-letter-spacing);
+}
+
+/* Extra Display Style */
+.lds-ringside-display-extra {
+  /* Ringside/Display 2 */
+  font: var(--lds-g-typography-ringside-display-2-default);
+  letter-spacing: var(--lds-g-typography-ringside-display-2-letter-spacing);
+}
+
+/* Heading Styles */
+.lds-ringside-heading-1 {
+  /* Ringside/Heading 1 */
+  font: var(--lds-g-typography-ringside-heading-1-default);
+  letter-spacing: var(--lds-g-typography-ringside-heading-1-letter-spacing);
+}
+
+.lds-ringside-heading-2 {
+  /* Ringside/Heading 2 */
+  font: var(--lds-g-typography-ringside-heading-2-default);
+  letter-spacing: var(--lds-g-typography-ringside-heading-2-letter-spacing);
+}
+
+.lds-ringside-heading-3 {
+  /* Ringside/Heading 3 */
+  font: var(--lds-g-typography-ringside-heading-3-default);
+  letter-spacing: var(--lds-g-typography-ringside-heading-3-letter-spacing);
+}
+
+.lds-ringside-heading-3-desktop {
+  /* Ringside/Heading 3 */
+  font: var(--lds-g-typography-ringside-heading-3-desktop);
+  letter-spacing: var(--lds-g-typography-ringside-heading-3-letter-spacing);
+}
+
+.lds-ringside-heading-4 {
+  /* Ringside/Heading 4 */
+  font: var(--lds-g-typography-ringside-heading-4-default);
+  letter-spacing: var(--lds-g-typography-ringside-heading-4-letter-spacing);
+}
+
+.lds-ringside-heading-5 {
+  /* Ringside/Heading 5 */
+  font: var(--lds-g-typography-ringside-heading-5-default);
+}
+
+.lds-ringside-heading-6 {
+  /* Ringside/Heading 6 */
+  font: var(--lds-g-typography-ringside-heading-6-default);
+}
+
+/* Body Text Styles */
+.lds-ringside-body-large {
+  /* Ringside/Body Large */
+  font: var(--lds-g-typography-ringside-body-large);
+}
+
+.lds-ringside-body-medium {
+  /* Ringside/Body Medium */
+  font: var(--lds-g-typography-ringside-body-medium);
+}
+
+.lds-ringside-body-small {
+  /* Ringside/Body Small */
+  font: var(--lds-g-typography-ringside-body-small);
+}
+
+/* CTA Styles */
+.lds-ringside-cta-button {
+  /* Ringside/CTA Button */
+  font: var(--lds-g-typography-ringside-special-cta-button-default);
+}
+
+.lds-ringside-cta-text-link {
+  /* Ringside/CTA Text Link */
+  font: var(--lds-g-typography-ringside-special-cta-text-link-default);
+}
+
+/* Caption Style */
+.lds-ringside-caption {
+  /* Ringside/Caption */
+  font: var(--lds-g-typography-ringside-special-caption-default);
+}
+
+/* Garamond Styles */
+.lds-ringside-garamond-extra {
+  /* Garamond/Display 1 */
+  font: var(--lds-g-typography-garamond-display-1-default);
+  letter-spacing: var(--lds-g-typography-garamond-display-1-letter-spacing);
+}
+
+.lds-garamond-heading-1 {
+  /* Garamond/Heading 1 */
+  font: var(--lds-g-typography-garamond-heading-1-default);
+  letter-spacing: var(--lds-g-typography-garamond-heading-1-letter-spacing);
+}
+
+.lds-garamond-heading-2 {
+  /* Garamond/Heading 2 */
+  font: var(--lds-g-typography-garamond-heading-2-default);
+  letter-spacing: var(--lds-g-typography-garamond-heading-2-letter-spacing);
+}
+
+.lds-garamond-heading-3 {
+  /* Garamond/Heading 3 */
+  font: var(--lds-g-typography-garamond-heading-3-default);
+  letter-spacing: var(--lds-g-typography-garamond-heading-3-letter-spacing);
+}
+
+.lds-garamond-heading-4 {
+  /* Garamond/Heading 4 */
+  font: var(--lds-g-typography-garamond-heading-4-default);
+}
+
+.lds-garamond-heading-5 {
+  /* Garamond/Heading 5 */
+  font: var(--lds-g-typography-garamond-heading-5-default);
+}
+
+.lds-garamond-heading-6 {
+  /* Garamond/Heading 6 */
+  font: var(--lds-g-typography-garamond-heading-6-default);
+}
+
+.lds-rte-garamond-font-14 {
+  font-family: var(--lds-g-font-family-serif);
+  font-size: var(--lds-g-font-size-neg-1);
+  line-height: var(--lds-g-font-line-height-3);
+}
+
+.lds-rte-garamond-font-16 {
+  font-family: var(--lds-g-font-family-serif);
+  font-size: var(--lds-g-font-size-base);
+  line-height: var(--lds-g-font-line-height-5);
+}
+
+.lds-rte-garamond-font-20 {
+  font-family: var(--lds-g-font-family-serif);
+  font-size: var(--lds-g-font-size-1);
+  line-height: var(--lds-g-font-line-height-7);
+}
+
+em.lds-garamond-heading-1,
+em.lds-garamond-heading-2,
+em.lds-garamond-heading-3,
+em.lds-garamond-heading-4,
+em.lds-garamond-heading-5,
+em.lds-garamond-heading-6 {
+  font-family: var(--typography-font-family-garamond-std-italic);
+}
+strong.lds-garamond-heading-1,
+strong.lds-garamond-heading-2,
+strong.lds-garamond-heading-3,
+strong.lds-garamond-heading-4,
+strong.lds-garamond-heading-5,
+strong.lds-garamond-heading-6 {
+  font-family: var(--typography-font-family-garamond-std-bold);
+}
+
+/* Desktop Transformations */
+@media (min-width: 768px) {
+  /* Extra Large Display Style */
+  .lds-ringside-display-extra-large {
+    font: var(--lds-g-typography-ringside-display-1-desktop);
+    letter-spacing: var(--lds-g-typography-ringside-display-1-letter-spacing);
+  }
+
+  /* Extra Display Style */
+  .lds-ringside-display-extra {
+    font: var(--lds-g-typography-ringside-display-2-desktop);
+    letter-spacing: var(--lds-g-typography-ringside-display-2-letter-spacing);
+  }
+
+  /* Heading Styles */
+  .lds-ringside-heading-1 {
+    font: var(--lds-g-typography-ringside-heading-1-desktop);
+    letter-spacing: var(--lds-g-typography-ringside-heading-1-letter-spacing);
+  }
+
+  .lds-ringside-heading-2 {
+    font: var(--lds-g-typography-ringside-heading-2-desktop);
+    letter-spacing: var(--lds-g-typography-ringside-heading-2-letter-spacing);
+  }
+
+  .lds-ringside-heading-3 {
+    font: var(--lds-g-typography-ringside-heading-3-desktop);
+    letter-spacing: var(--lds-g-typography-ringside-heading-3-letter-spacing);
+  }
+
+  .lds-ringside-heading-4 {
+    font: var(--lds-g-typography-ringside-heading-4-desktop);
+    letter-spacing: var(--lds-g-typography-ringside-heading-4-letter-spacing);
+  }
+
+  .lds-ringside-heading-5 {
+    font: var(--lds-g-typography-ringside-heading-5-desktop);
+  }
+
+  .lds-ringside-heading-6 {
+    font: var(--lds-g-typography-ringside-heading-6-desktop);
+  }
+
+  /* Body Text Styles */
+  .lds-ringside-body-large {
+    font: var(--lds-g-typography-ringside-body-large-desktop);
+  }
+
+  .lds-ringside-body-medium {
+    font: var(--lds-g-typography-ringside-body-medium-desktop);
+  }
+
+  .lds-ringside-body-small {
+    font: var(--lds-g-typography-ringside-body-small-desktop);
+  }
+
+  .lds-ringside-body-xsmall {
+    font: var(--lds-g-typography-ringside-body-xsmall);
+  }
+
+  /* CTA Styles */
+  .lds-ringside-cta-button {
+    font: var(--lds-g-typography-ringside-special-cta-button-desktop);
+  }
+
+  .lds-ringside-cta-text-link {
+    font: var(--lds-g-typography-ringside-special-cta-text-link-desktop);
+  }
+
+  /* Caption Style */
+  .lds-ringside-caption {
+    font: var(--lds-g-typography-ringside-special-caption-desktop);
+  }
+
+  /* Garamond Styles */
+  .lds-ringside-garamond-extra {
+    font: var(--lds-g-typography-garamond-display-1-desktop);
+    letter-spacing: var(--lds-g-typography-garamond-display-1-letter-spacing);
+  }
+
+  .lds-garamond-heading-1 {
+    /* Garamond/Heading 1 */
+    font: var(--lds-g-typography-garamond-heading-1-desktop);
+    letter-spacing: var(--lds-g-typography-garamond-heading-1-letter-spacing);
+  }
+
+  .lds-garamond-heading-2 {
+    /* Garamond/Heading 2 */
+    font: var(--lds-g-typography-garamond-heading-2-desktop);
+    letter-spacing: var(--lds-g-typography-garamond-heading-2-letter-spacing);
+  }
+
+  .lds-garamond-heading-3 {
+    /* Garamond/Heading 3 */
+    font: var(--lds-g-typography-garamond-heading-3-desktop);
+    letter-spacing: var(--lds-g-typography-garamond-heading-3-letter-spacing);
+  }
+
+  .lds-garamond-heading-4 {
+    /* Garamond/Heading 4 */
+    font: var(--lds-g-typography-garamond-heading-4-desktop);
+  }
+
+  .lds-garamond-heading-5 {
+    /* Garamond/Heading 5 */
+    font: var(--lds-g-typography-garamond-heading-5-desktop);
+  }
+
+  .lds-garamond-heading-6 {
+    /* Garamond/Heading 6 */
+    font: var(--lds-g-typography-garamond-heading-6-desktop);
+  }
+
+  .lds-rte-garamond-font-14 {
+    font-family: var(--lds-g-font-family-serif);
+    font-size: var(--lds-g-font-size-neg-1);
+    line-height: var(--lds-g-font-line-height-3);
+  }
+
+  .lds-rte-garamond-font-16 {
+    font-family: var(--lds-g-font-family-serif);
+    font-size: var(--lds-g-font-size-base);
+    line-height: var(--lds-g-font-line-height-5);
+  }
+
+  .lds-rte-garamond-font-20 {
+    font-family: var(--lds-g-font-family-serif);
+    font-size: var(--lds-g-font-size-2);
+    line-height: var(--lds-g-font-line-height-8);
+  }
+}
+
+/* -----------------rte link styles-------------------- */
+
+.gray-inline-link,
+.black-inline-link {
+  box-shadow: none;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 4%;
+  text-underline-offset: 24%;
+  text-underline-position: from-font;
+  width: fit-content;
+  cursor: pointer;
+  background: none;
+  outline: none;
+}
+
+.gray-inline-link:visited {
+  color: var(--lds-g-color-palette-primary-080);
+}
+
+.gray-inline-link:focus-visible {
+  color: var(--lds-g-color-palette-primary-base);
+  border-radius: var(--lds-g-radius-1);
+  border: var(--lds-g-sizing-border-2) solid var(--lds-g-color-neutral-base-070);
+  padding: var(--lds-g-spacing-050) var(--lds-g-spacing-0);
+}
+
+.gray-inline-link:hover {
+  color: var(--lds-g-color-palette-primary-070);
+}
+
+.gray-inline-link:active {
+  color: var(--lds-g-color-palette-primary-080);
+}
+
+.black-inline-link {
+  color: var(--lds-g-color-neutral-base-080);
+}
+
+.black-inline-link:visited {
+  color: var(--lds-g-color-neutral-base-060);
+}
+
+.black-inline-link:focus-visible {
+  color: var(--lds-g-color-neutral-base-080);
+  border-radius: var(--lds-g-radius-1);
+  border: var(--lds-g-sizing-border-2) solid var(--lds-g-color-neutral-base-070);
+  padding: var(--lds-g-spacing-050) var(--lds-g-spacing-0);
+}
+
+.black-inline-link:hover {
+  color: var(--lds-g-color-neutral-base-080);
+}
+
+.black-inline-link:active {
+  color: var(--lds-g-color-neutral-base-090);
+}
+
+/* -----------------carousel css-------------------- */
+.numerical-pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  padding: var(--lds-g-spacing-0) var(--lds-g-spacing-100);
+  gap: var(--lds-g-spacing-100);
+  border-radius: var(--lds-g-radius-8);
+  background-color: var(--lds-g-color-neutral-base-005);
+  width: 160px;
+  margin-top: var(--lds-g-spacing-420);
+}
+
+.numerical-pagination-container .arrow-prev,
+.numerical-pagination-container .arrow-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  background-color: transparent;
+  transition: color 0.3s ease;
+  font-size: var(--typography-ringside-body-medium-font-size);
+  color: var(--lds-g-color-neutral-base-100);
+}
+
+.numerical-pagination-container .arrow-prev.disabled,
+.numerical-pagination-container .arrow-next.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.page-info-wrapper {
+  display: flex;
+  gap: var(--lds-g-spacing-50);
+  align-items: center;
+}
+
+.active-page-container {
+  width: 12px;
+  height: 20px;
+  border-radius: 5px;
+  margin-right: 2px;
+  background-color: #333;
+  color: var(--lds-g-color-palette-transparent-white-100);
+  text-align: center;
+  font: var(--lds-g-typography-ringside-body-small);
+}
+
+.page-info-container {
+  display: flex;
+  gap: var(--lds-g-spacing-100);
+  font-size: var(--typography-ringside-body-small-font-size);
+  color: var(--lds-g-color-palette-transparent-black-100);
+}
+
+.page-info-container .page-number {
+  padding: var(--lds-g-spacing-50) var(--lds-g-spacing-100);
+  border-radius: var(--lds-g-radius-8);
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--lds-g-color-palette-transparent-black-100);
+  border: 1px solid transparent;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.total-page-info-container {
+  font-style: normal;
+}
+
+@media (width <= 768px) {
+  .lds-content-section-padding-narrow
+    > [class*="-wrapper"]:not(.form-wrapper)
+    > .lds-layout-container
+    > .carousel-indicators {
+    grid-column-end: span 4;
+  }
+
+  main .lds-content-section-padding-wide {
+    padding: var(--lds-g-spacing-1200) 0;
+  }
+
+  main
+    .lds-content-section-padding-wide
+    .lds-layout-container:not(.disable-layout-margins) {
+    padding-left: var(--lds-g-grid-gutter-tablet);
+    padding-right: var(--lds-g-grid-gutter-tablet);
+  }
+
+  main .lds-content-section-padding-narrow {
+    padding: var(--lds-g-spacing-500) 0;
+  }
+
+  main .lds-content-section-padding-slim {
+    padding: var(--lds-g-spacing-300);
+  }
+
+  main .lds-content-section-margin-narrow {
+    margin: var(--lds-g-spacing-200) !important;
+  }
+
+  main .lds-content-section-margin-wide {
+    margin: var(--lds-g-spacing-400) !important;
+  }
+
+  .numerical-pagination-container .arrow-prev,
+  .numerical-pagination-container .arrow-next {
+    display: none;
+  }
+
+  .pagination-container {
+    background-color: transparent;
+  }
+
+  .numerical-pagination-container {
+    justify-content: center;
+    border-radius: var(--lds-g-radius-9);
+    height: 36px;
+    width: 60px;
+    margin-top: var(--lds-g-spacing-300);
+  }
+}
+
+.dots-pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 48px;
+  gap: 5px;
+  border-radius: 56px;
+  background-color: var(--lds-g-color-neutral-base-005);
+  margin-top: var(--lds-g-spacing-300);
+  padding: var(--lds-g-spacing-0) var(--lds-g-spacing-100);
+}
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border-radius: var(--lds-g-radius-6);
+}
+
+.arrow.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.dot-pagination {
+  display: flex;
+  align-items: center;
+  gap: var(--lds-g-spacing-100);
+  position: relative;
+  padding-left: var(--lds-g-spacing-100);
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s, width 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.dot.active {
+  background-color: #333;
+  height: 8px;
+  border-radius: 5px;
+}
+
+.dot-indicator {
+  position: absolute;
+  height: 6px;
+  width: 24px;
+  background-color: var(--lds-g-color-palette-transparent-black-100);
+  border-radius: 3px;
+  bottom: 2px;
+  left: var(--lds-g-spacing-0);
+  transition: transform 0.3s ease, width 0.3s ease;
+  z-index: 0;
+}
+
+@media (width <= 768px) {
+  .arrow {
+    display: none;
+  }
+
+  .dots-pagination-container {
+    justify-content: center;
+    padding: 5px;
+    background-color: transparent;
+    margin-left: var(--lds-g-spacing-0);
+    margin-top: var(--lds-g-spacing-300);
+  }
+
+  .dot.active {
+    width: 24px;
+    height: 8px;
+  }
+}
+
+.pagination-wrapper .of-total-text,
+.pagination-wrapper
+  .numerical-pagination-container
+  .page-info-wrapper
+  .total-page-info-container {
+  color: var(--lds-g-color-on-surface-1) !important;
+}
+
+/* -----------------rte text styles-------------------- */
+
+strong,
+strong * {
+  font-weight: var(--lds-g-font-weight-900) !important;
+}
+
+.em,
+.i,
+dfn,
+em,
+i {
+  font-style: italic !important;
+}
+
+.block u {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 4%;
+  text-underline-offset: 24%;
+  text-underline-position: from-font;
+}
+
+ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+em strong,
+strong em,
+em strong *,
+strong em * {
+  font-style: italic !important;
+  font-weight: var(--lds-g-font-weight-900) !important;
+}
+
+.federated-components.block.lds-layout-container:has(unex-crm-form) {
+  max-width: 100%;
+  padding: 0;
+}
+
+/* -----------------Zebound specific styles-------------------- */
+
+.zepbound .horizontal-grid-container .text-grid-item .horizontal-grid-title *,
+.zepbound
+  .horizontal-grid-container
+  .content-paragraphs.red-black-variation
+  .horizontal-grid-red-title,
+.zepbound
+  .horizontal-grid-container
+  .content-paragraphs.red-black-variation
+  .horizontal-grid-red-title
+  * {
+  color: var(--lds-g-color-accent-3) !important;
+}
+.zepbound .icon-tile-box.icon-tile-grid-content .icon-tile-section-title {
+  padding-bottom: var(--lds-g-sizing-9);
+}
+.zepbound .horizontal-numeric-tile .horizontal-red-bar {
+  background-color: var(--lds-g-color-accent-3);
+}
+
+.zepbound .icon-tile-box.icon-tile-grid-content .icon-tile-section-title em {
+  color: var(--lds-g-color-palette-primary-060);
+}
+
+.zepbound
+  .icon-tile-box.icon-tile-grid-content
+  .icon-grid-content-wrapper
+  .icon-grid-image {
+  width: 40px;
+  max-width: 40px;
+  height: 40px;
+}
+
+.zepbound .bulleted-icon-list-wrapper .list-description {
+  color: var(--lds-g-color-neutral-base-100);
+}
+.zepbound .bulleted-icon-list-wrapper .bullet-list-container {
+  gap: var(--lds-g-spacing-0);
+}
+.zepbound .bulleted-icon-list-wrapper .bullet-list-description {
+  padding-bottom: var(--lds-g-spacing-700);
+}
+
+.zepbound .bulleted-icon-list-wrapper .list-container {
+  gap: var(--lds-g-spacing-400);
+  padding-bottom: var(--lds-g-spacing-700);
+}
+
+.zepbound .bulleted-icon-list-wrapper .list-icon {
+  width: 56px;
+  height: 53px;
+  aspect-ratio: 56 / 53;
+}
+
+.zepbound .horizontal-numeric-tile-wrapper .red-bar-content {
+  gap: var(--lds-g-spacing-600);
+}
+
+.zepbound .horizontal-grid-footer * {
+  color: var(--lds-g-color-neutral-base-060);
+}
+
+.zepbound .additional-resource-card-left-col .icon-img {
+  width: 19rem;
+  height: 19rem;
+}
+
+@media (320px <= width < 375px) {
+  .zepbound .additional-resource-card-content-area {
+    width: 90%;
+  }
+
+  .zepbound .additional-resource-card-section-wrapper,
+  .zepbound .additional-resource-card-item,
+  .zepbound .additional-resource-card-midpart,
+  .zepbound .additional-resource-card-title,
+  .zepbound .additional-resource-card-description,
+  .zepbound .additional-resource-card-midpart-contents,
+  .zepbound .additional-resource-card-middle-col,
+  .zepbound .additional-resource-card-right-col,
+  .zepbound .additional-resource-card-left-col .icon-img {
+    max-width: 90vw;
+  }
+}
+
+@media (320px <= width <= 1024px) {
+  .zepbound .additional-resource-card-left-col .icon-img {
+    width: 21.438rem;
+    height: 21.563rem;
+  }
+}
+
+.zepbound .additional-resource-card-tile {
+  gap: var(--lds-g-spacing-700);
+}
+
+@media (320px <= width <= 1024px) {
+  .zepbound .additional-resource-card-divider {
+    display: flex !important;
+  }
+
+  .zepbound .additional-resource-card-midpart-contents {
+    gap: var(--lds-g-spacing-300);
+  }
+
+  .zepbound .bulleted-icon-list-wrapper .bullet-list-container {
+    width: 100%;
+  }
+}
+
+.zepbound .tabs-wrapper .tab-item.selected {
+  background-color: var(--lds-g-color-palette-primary-060);
+}
+
+.zepbound .tabs-wrapper .tabs-component-container {
+  margin-bottom: var(--lds-g-spacing-0);
+}
+
+.transcript-container .transcript-label-icon svg {
+  fill: var(--lds-g-color-on-surface-1);
+}
+
+.zepbound .scroll-container .description {
+  background: transparent;
+}
+
+.zepbound .table-block .description-container .description {
+  border-radius: var(--lds-g-radius-4);
+  background: var(--lds-g-color-neutral-base-005);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  max-height: 69.875rem;
+  position: relative;
+  overflow-y: auto;
+  scrollbar-width: none;
+  margin-top: var(--lds-g-spacing-400);
+}
+
+.zepbound input[type="checkbox"],
+.zepbound input[type="radio"] {
+  cursor: pointer;
+}
+
+@media (width <= 768px) {
+  .zepbound .table-wrapper .table-header-data {
+    padding: var(--lds-g-spacing-200) var(--lds-g-spacing-200)
+      var(--lds-g-spacing-200) var(--lds-g-spacing-0);
+  }
+
+  .zepbound
+    .table-block
+    .table-wrapper
+    tr:not(:first-child)
+    .table-header-data {
+    max-width: 8.75rem;
+    word-wrap: break-word;
+  }
+
+  .zepbound .icon-tile-box.icon-tile-grid-content .eyebrow-text * {
+    font-size: var(--lds-g-font-size-neg-2);
+  }
+  .zepbound .bulleted-icon-list-wrapper .bullet-list-container {
+    gap: var(--lds-g-spacing-0);
+  }
+
+  .zepbound .bulleted-icon-list-wrapper .bullet-list-description,
+  .zepbound .bulleted-icon-list-wrapper .list-container {
+    padding-bottom: var(--lds-g-spacing-300);
+  }
+}
+
+.lds-content-section-bg-background-delicate .gray-inline-link {
+  color: var(--lds-g-color-action-container-1);
+}
+
+.section.adjacent-section-spacing {
+  padding-top: 0;
+  margin-top: 0;
+}

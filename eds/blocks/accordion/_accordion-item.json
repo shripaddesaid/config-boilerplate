@@ -1,0 +1,30 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/accordion/_accordion-item.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/accordion/_accordion-item.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "accordion-item",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/accordion/_accordion-item.json#/models/accordion-item/fields",
+          "exclude": [
+            "classes_column1ctaNumber",
+            "oneButtonColumn1",
+            "twoButtonColumn1",
+            "classes_column2ctaNumber",
+            "oneButtoncolumn2",
+            "twoButtoncolumn2"
+          ]
+        }
+      ]
+    }
+  ]
+}

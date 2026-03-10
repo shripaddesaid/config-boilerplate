@@ -1,0 +1,144 @@
+/* Chatbot Button Styles */
+#LMChatbotContainer {
+  z-index: 1000;
+  position: relative;
+}
+
+.button-container-chatnow {
+  position: fixed;
+  bottom: 10rem;
+  right: 20px;
+  z-index: 49;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #d72660;
+  /* Red background like the reference image */
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  animation: slideInRight 0.5s ease-out;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button-container-chatnow:hover {
+  /* Darker red on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  width: 160px;
+  /* Expand to show text */
+  border-radius: 30px;
+  /* Rounded rectangle on hover */
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+.lilly-chatbot-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: .2rem;
+}
+
+.lilly-chatbot-icon svg {
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Hover state - show "Chat now!" text */
+.button-container-chatnow:hover .lilly-chatbot-icon::after {
+  content: "Chat now!";
+  position: absolute;
+  right: -80px;
+  color: white;
+  font-family: var(--Typography-Font-Family-Ringside, Ringside);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.lilly-chatbot-text-bubble {
+  display: none !important;
+}
+
+/* Show text bubble on hover */
+.button-container-chatnow:hover .lilly-chatbot-text-bubble {
+  display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .button-container-chatnow {
+    bottom: 8rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+  }
+
+  .button-container-chatnow:hover {
+    width: 130px;
+  }
+
+  .lilly-chatbot-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .button-container-chatnow:hover .lilly-chatbot-icon::after {
+    font-size: 12px;
+    right: -65px;
+  }
+
+  .lilly-chatbot-text-bubble {
+    font-size: var(--lds-g-typography-ringside-body-small-font-size);
+    line-height: 1.2;
+  }
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .button-container-chatnow {
+    border: 2px solid var(--lds-g-color-border-1);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .button-container-chatnow {
+    animation: none;
+  }
+
+  .button-container-chatnow.attention-state {
+    animation: none;
+  }
+
+  .button-container-chatnow:hover {
+    transform: none;
+  }
+}

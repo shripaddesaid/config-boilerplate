@@ -1,0 +1,167 @@
+{
+  "definitions": [
+    {
+      "title": "Federated Components",
+      "id": "federated-components",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Federated Components",
+              "model": "federated-components"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "federated-components",
+      "fields": [
+        {
+          "component": "select",
+          "name": "federated-components",
+          "label": "Federated Component",
+          "description": "Select the appropriate Federated Component from option",
+          "value": "",
+          "options": [
+            {
+              "name": "CRM Form",
+              "value": "unex-crm-form"
+            },
+            {
+              "name": "Well Being Carousel",
+              "value": "unex-wellbeing-carousel"
+            },
+            {
+              "name": "Thrive AI",
+              "value": "unex-thrive-ai"
+            }
+          ]
+        },
+        {
+          "component": "multiselect",
+          "name": "condition",
+          "label": "Condition",
+          "description": "Select Condition values for Wellbeing Carousel",
+          "options": [
+            {
+              "name": "Diabetes",
+              "value": "diabetes"
+            },
+            {
+              "name": "Migraine",
+              "value": "migraine"
+            },
+            {
+              "name": "Obesity",
+              "value": "obesity"
+            },
+            {
+              "name": "Sleep Apnea",
+              "value": "sleep-apnea"
+            },
+            {
+              "name": "Memory and Thinking",
+              "value": "memory and thinking"
+            },
+            {
+              "name": "General Wellness",
+              "value": "general wellness"
+            },
+            {
+              "name": "Dermatology",
+              "value": "dermatology"
+            }
+          ],
+          "condition": {
+            "===": [
+              { "var": "federated-components" },
+              "unex-wellbeing-carousel"
+            ]
+          }
+        },
+        {
+          "component": "multiselect",
+          "name": "pillar",
+          "label": "Pillar",
+          "description": "Select Pillar values for Wellbeing Carousel",
+          "options": [
+            {
+              "name": "Food",
+              "value": "food"
+            },
+            {
+              "name": "Connection",
+              "value": "connection"
+            },
+            {
+              "name": "Movement",
+              "value": "movement"
+            },
+            {
+              "name": "Sleep",
+              "value": "sleep"
+            },
+            {
+              "name": "Stress Management",
+              "value": "stress management"
+            }
+          ],
+          "condition": {
+            "===": [
+              { "var": "federated-components" },
+              "unex-wellbeing-carousel"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "ids",
+          "label": "IDS",
+          "valueType": "string",
+          "description": "Provide one or more UUID to display specific articles",
+          "condition": {
+            "===": [
+              { "var": "federated-components" },
+              "unex-wellbeing-carousel"
+            ]
+          }
+        },
+        {
+          "component": "checkbox-group",
+          "label": "Is Featured Content",
+          "name": "is-featured-content",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Is Featured Content",
+              "value": "true"
+            }
+          ],
+          "condition": {
+            "===": [
+              { "var": "federated-components" },
+              "unex-wellbeing-carousel"
+            ]
+          }
+        },
+        {
+          "component": "number",
+          "name": "max-articles",
+          "label": "Maximum Number of Articles",
+          "description": "Enter the desired number of articles to be displayed",
+          "condition": {
+            "===": [
+              { "var": "federated-components" },
+              "unex-wellbeing-carousel"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

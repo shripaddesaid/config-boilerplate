@@ -1,0 +1,1828 @@
+{
+  "definitions": [
+    {
+      "title": "Medicine Card Item",
+      "id": "medicine-card-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Medicine Card Item",
+              "model": "medicine-card-item",
+              "classes_medicineUrllinkTargetPath": "medicineUrllink-sameTab",
+              "classes_medicineUrllinkExitInterstitial": "medicineUrlLinkExitInterstitial-select",
+              "classes_targetPath": "ctatarget-sameTab-one",
+              "classes_exitinterstitial": "ctaexitInterstitial-select-one",
+              "classes_sectargetpath": "ctatarget-sameTab-two",
+              "classes_secexitinterstitial": "ctaexitInterstitial-select-two",
+              "classes_thirdtargetpath": "ctatarget-sameTab-three",
+              "classes_thirdexitinterstitial": "ctaexitinterstitial-select-three",
+              "classes_fourthtargetpath": "ctatarget-sameTab-four",
+              "classes_fourthexitinterstitial": "ctaexitinterstitial-select-four",
+              "classes_fifthtargetpath": "ctatarget-sameTab-five",
+              "classes_fifthexitinterstitial": "ctaexitinterstitial-select-five",
+              "classes_sixthtargetpath": "ctatarget-sameTab-six",
+              "classes_sixthexitinterstitial": "ctaexitinterstitial-select-six"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "medicine-card-item",
+      "fields": [
+        {
+          "component": "aem-tag",
+          "label": "Tag",
+          "name": "medicineCardTags",
+          "valueType": "string",
+          "description": "Select one or more tag(s) for the medicine card.Author can multiple tags (upto 2) tags per card",
+          "required": true,
+          "rootPath": "/content/cq:tags/lilly-tags"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "description": "Upload the image"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "imageMimeType"
+        },
+        {
+          "component": "text",
+          "name": "imageAlt",
+          "label": "Image Alt Text",
+          "description": "Pick alt text from AEM DAM with ability to override it"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "logoImage",
+          "label": "Logo Image",
+          "description": "Upload the logo"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "logoImageMimeType"
+        },
+        {
+          "component": "text",
+          "name": "logoImageAlt",
+          "label": "Logo Image Alt Text",
+          "description": "Pick alt text from AEM DAM with ability to override it"
+        },
+        {
+          "component": "select",
+          "name": "classes_medicineUrlCtaType",
+          "label": "CTA Selection for Medicine Card/Logo",
+          "description": "Select the dropdown option to navigate to link/asset for Medicine Card/Logo",
+          "options": [
+            {
+              "name": "Link",
+              "value": "medicineUrllink"
+            },
+            {
+              "name": "Asset (PDF/Image)",
+              "value": "medicineUrlAsset"
+            }
+          ]
+        },
+        {
+          "component": "aem-content",
+          "name": "medicineUrllink",
+          "label": "CTA Link for Medicine Card/Logo",
+          "valueType": "string",
+          "description": "Enter the URL or pull the EDS page for Medicine Card/Logo",
+          "validation": {
+            "rootPath": "/content"
+          },
+          "condition": {
+            "===": [
+              {
+                "var": "classes_medicineUrlCtaType"
+              },
+              "medicineUrllink"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_medicineUrllinkTargetPath",
+          "label": "Target Path for Medicine Card/Logo",
+          "description": "Select the target path for the URL for Medicine Card/Logo",
+          "value": "medicineUrllink-sameTab",
+          "options": [
+            {
+              "name": "Same Tab",
+              "value": "medicineUrllink-sameTab"
+            },
+            {
+              "name": "New Tab",
+              "value": "medicineUrllink-newTab"
+            }
+          ],
+          "condition": {
+            "===": [
+              {
+                "var": "classes_medicineUrlCtaType"
+              },
+              "medicineUrllink"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_medicineUrllinkExitInterstitial",
+          "label": "Exit interstitial for Medicine Card/Logo",
+          "description": "Select this Dropdown option to enable the modal experience when clicked on Medicine Card/Logo",
+          "valueType": "string",
+          "value": "medicineUrlLinkExitInterstitial-select",
+          "options": [
+            {
+              "name": "select",
+              "value": "medicineUrlLinkExitInterstitial-select"
+            },
+            {
+              "name": "General Third Parties",
+              "value": "medicineUrlLinkExitInterstitial-general-third-parties"
+            },
+            {
+              "name": "Telehealth",
+              "value": "medicineUrlLinkExitInterstitial-telehealth"
+            },
+            {
+              "name": "Account",
+              "value": "medicineUrlLinkExitInterstitial-account"
+            },
+            {
+              "name": "Account Wellbeing",
+              "value": "medicineUrlLinkExitInterstitial-account-wellbeing"
+            },
+            {
+              "name": "Embedded Tools Healthgrades",
+              "value": "medicineUrlLinkExitInterstitial-embedded-tools-healthgrades"
+            },
+            {
+              "name": "Embedded Tools Nourish",
+              "value": "medicineUrlLinkExitInterstitial-embedded-tools-nourish"
+            }
+          ],
+          "condition": {
+            "===": [
+              {
+                "var": "classes_medicineUrlCtaType"
+              },
+              "medicineUrllink"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "medicineUrlAssetlink",
+          "label": "Asset (PDF/Image) for Medicine Card/Logo",
+          "description": "Add asset (image/pdf) for Medicine Card/Logo",
+          "valueType": "string",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_medicineUrlCtaType"
+              },
+              "medicineUrlAsset"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "medicineUrllinkImageOrPdfMime"
+        },
+        {
+          "component": "richtext",
+          "name": "medicineCardTitle",
+          "label": "Title",
+          "valueType": "string",
+          "description": "Enter the title for the medicine card",
+          "required": true
+        },
+        {
+          "...": "../utils/eds-commons/_rte-title.json#/rte-title"
+        },
+        {
+          "component": "text",
+          "name": "medicinecardreq_medicineName",
+          "valueType": "string",
+          "label": "Medicine Name",
+          "description": "Enter the medicine names & details in the card description",
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "medicinecardnonreq_dosingInformation",
+          "label": "Dosing Information",
+          "description": "Enter the dosing information below medicine name"
+        },
+        {
+          "component": "text",
+          "name": "medicinecardnonreq_disclaimer",
+          "label": "Disclaimer",
+          "description": "Enter the disclaimer for any authorized information for medicine"
+        },
+        {
+          "component": "select",
+          "name": "classes_multipleCtaSelectionDropDown",
+          "label": "Select number of CTA Links required for this card",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "1",
+              "value": "cta-1"
+            },
+            {
+              "name": "2",
+              "value": "cta-2"
+            },
+            {
+              "name": "3",
+              "value": "cta-3"
+            },
+            {
+              "name": "4",
+              "value": "cta-4"
+            },
+            {
+              "name": "5",
+              "value": "cta-5"
+            },
+            {
+              "name": "6",
+              "value": "cta-6"
+            }
+          ]
+        },
+        {
+          "component": "tab",
+          "name": "firstCtaLink",
+          "label": "First CTA LINK"
+        },
+        {
+          "component": "select",
+          "name": "classes_ctatype",
+          "label": "CTA Selection",
+          "description": "Select the dropdown option to navigate to link/asset",
+          "options": [
+            {
+              "name": "Link",
+              "value": "ctaselection-link-one"
+            },
+            {
+              "name": "Asset (PDF/Image)",
+              "value": "ctaselection-asset-one"
+            }
+          ],
+          "condition": {
+            "or": [
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-1"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-2"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-3"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-4"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-5"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-6"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "ctalinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatype"
+              },
+              "ctaselection-link-one"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "ctalinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatype"
+              },
+              "ctaselection-link-one"
+            ]
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "ctalink",
+          "label": "CTA Link",
+          "valueType": "string",
+          "description": "Enter the URL or pull the EDS page",
+          "validation": {
+            "rootPath": "/content"
+          },
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatype"
+                  },
+                  "ctaselection-link-one"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "ctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_targetPath",
+          "label": "Target Path",
+          "description": "Select the target path for the URL",
+          "value": "ctatarget-sameTab-one",
+          "options": [
+            {
+              "name": "Same Tab",
+              "value": "ctatarget-sameTab-one"
+            },
+            {
+              "name": "New Tab",
+              "value": "ctatarget-newTab-one"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatype"
+                  },
+                  "ctaselection-link-one"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "ctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_exitinterstitial",
+          "label": "Exit Interstitial",
+          "description": "Select this Dropdown option to enable the modal experience that notifies user that they are leaving the site",
+          "valueType": "string",
+          "value": "ctaexitInterstitial-select-one",
+          "options": [
+            {
+              "name": "select",
+              "value": "ctaexitInterstitial-select-one"
+            },
+            {
+              "name": "General Third Parties",
+              "value": "ctaexitInterstitial-general-third-parties-one"
+            },
+            {
+              "name": "Telehealth",
+              "value": "ctaexitInterstitial-telehealth-one"
+            },
+            {
+              "name": "Account",
+              "value": "ctaexitInterstitial-account-one"
+            },
+            {
+              "name": "Account Wellbeing",
+              "value": "ctaexitInterstitial-account-wellbeing-one"
+            },
+            {
+              "name": "Embedded Tools Healthgrades",
+              "value": "ctaexitInterstitial-embedded-tools-healthgrades-one"
+            },
+            {
+              "name": "Embedded Tools Nourish",
+              "value": "ctaexitInterstitial-embedded-tools-nourish-one"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatype"
+                  },
+                  "ctaselection-link-one"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "ctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "ctaAssetlinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatype"
+              },
+              "ctaselection-asset-one"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "ctaAssetlinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatype"
+              },
+              "ctaselection-asset-one"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "ctaAssetlink",
+          "label": "Asset (PDF/Image)",
+          "description": "Add asset (image/pdf)",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatype"
+                  },
+                  "ctaselection-asset-one"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "ctaAssetlinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "ctaImageOrPdfMime"
+        },
+        {
+          "component": "tab",
+          "label": "Second CTA Link",
+          "name": "secondctaLinkForSecondLink"
+        },
+        {
+          "component": "select",
+          "name": "classes_secctatype",
+          "label": "CTA Selection",
+          "description": "Select the dropdown option to navigate to link/asset",
+          "options": [
+            {
+              "name": "Link",
+              "value": "ctaselection-link-two"
+            },
+            {
+              "name": "Asset (PDF/Image)",
+              "value": "ctaselection-asset-two"
+            }
+          ],
+          "condition": {
+            "or": [
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-2"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-3"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-4"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-5"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-6"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "secctalinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_secctatype"
+              },
+              "ctaselection-link-two"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "secctalinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_secctatype"
+              },
+              "ctaselection-link-two"
+            ]
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "secctalink",
+          "label": "CTA Link",
+          "valueType": "string",
+          "description": "Enter the URL or pull the EDS page",
+          "validation": {
+            "rootPath": "/content"
+          },
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secctatype"
+                  },
+                  "ctaselection-link-two"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "secctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_sectargetpath",
+          "label": "Target Path",
+          "description": "Select the target path for the URL",
+          "value": "ctatarget-sameTab-two",
+          "options": [
+            {
+              "name": "Same Tab",
+              "value": "ctatarget-sameTab-two"
+            },
+            {
+              "name": "New Tab",
+              "value": "ctatarget-newTab-two"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secctatype"
+                  },
+                  "ctaselection-link-two"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "secctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_secexitinterstitial",
+          "label": "Exit Interstitial",
+          "description": "Select this Dropdown option to enable the modal experience that notifies user that they are leaving the site",
+          "valueType": "string",
+          "value": "ctaexitinterstitial-select-two",
+          "options": [
+            {
+              "name": "select",
+              "value": "ctaexitinterstitial-select-two"
+            },
+            {
+              "name": "General Third Parties",
+              "value": "ctaexitinterstitial-general-third-parties-two"
+            },
+            {
+              "name": "Telehealth",
+              "value": "ctaexitinterstitial-telehealth-two"
+            },
+            {
+              "name": "Account",
+              "value": "ctaexitinterstitial-account-two"
+            },
+            {
+              "name": "Account Wellbeing",
+              "value": "ctaexitinterstitial-account-wellbeing-two"
+            },
+            {
+              "name": "Embedded Tools Healthgrades",
+              "value": "ctaexitinterstitial-embedded-tools-healthgrades-two"
+            },
+            {
+              "name": "Embedded Tools Nourish",
+              "value": "ctaexitinterstitial-embedded-tools-nourish-two"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secctatype"
+                  },
+                  "ctaselection-link-two"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "secctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "secctaassetlinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_secctatype"
+              },
+              "ctaselection-asset-two"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "secctaassetlinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_secctatype"
+              },
+              "ctaselection-asset-two"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "secctaassetlink",
+          "label": "Asset (PDF/Image)",
+          "description": "Add asset (image/pdf)",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_secctatype"
+                  },
+                  "ctaselection-asset-two"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "secctaassetlinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "ctaImageOrPdfMimeForSecondLink"
+        },
+        {
+          "component": "tab",
+          "label": "Third CTA Link",
+          "name": "thirdCtaLink"
+        },
+        {
+          "component": "select",
+          "name": "classes_thirdctatype",
+          "label": "CTA Selection",
+          "description": "Select the dropdown option to navigate to link/asset",
+          "options": [
+            {
+              "name": "Link",
+              "value": "ctaselection-link-three"
+            },
+            {
+              "name": "Asset (PDF/Image)",
+              "value": "ctaselection-asset-three"
+            }
+          ],
+          "condition": {
+            "or": [
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-3"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-4"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-5"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-6"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "thirdctalinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_thirdctatype"
+              },
+              "ctaselection-link-three"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "thirdctalinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_thirdctatype"
+              },
+              "ctaselection-link-three"
+            ]
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "thirdctalink",
+          "label": "CTA Link",
+          "valueType": "string",
+          "description": "Enter the URL or pull the EDS page",
+          "validation": {
+            "rootPath": "/content"
+          },
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_thirdctatype"
+                  },
+                  "ctaselection-link-three"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "thirdctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_thirdtargetpath",
+          "label": "Target Path",
+          "description": "Select the target path for the URL",
+          "value": "ctatarget-sameTab-three",
+          "options": [
+            {
+              "name": "Same Tab",
+              "value": "ctatarget-sameTab-three"
+            },
+            {
+              "name": "New Tab",
+              "value": "ctatarget-newTab-three"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_thirdctatype"
+                  },
+                  "ctaselection-link-three"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "thirdctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_thirdexitinterstitial",
+          "label": "Exit Interstitial",
+          "description": "Select this Dropdown option to enable the modal experience that notifies user that they are leaving the site",
+          "valueType": "string",
+          "value": "ctaexitinterstitial-select-three",
+          "options": [
+            {
+              "name": "select",
+              "value": "ctaexitinterstitial-select-three"
+            },
+            {
+              "name": "General Third Parties",
+              "value": "ctaexitinterstitial-general-third-parties-three"
+            },
+            {
+              "name": "Telehealth",
+              "value": "ctaexitinterstitial-telehealth-three"
+            },
+            {
+              "name": "Account",
+              "value": "ctaexitinterstitial-account-three"
+            },
+            {
+              "name": "Account Wellbeing",
+              "value": "ctaexitinterstitial-account-wellbeing-three"
+            },
+            {
+              "name": "Embedded Tools Healthgrades",
+              "value": "ctaexitinterstitial-embedded-tools-healthgrades-three"
+            },
+            {
+              "name": "Embedded Tools Nourish",
+              "value": "ctaexitinterstitial-embedded-tools-nourish-three"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_thirdctatype"
+                  },
+                  "ctaselection-link-three"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "thirdctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "thirdassetlinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_thirdctatype"
+              },
+              "ctaselection-asset-three"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "thirdassetlinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_thirdctatype"
+              },
+              "ctaselection-asset-three"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "thirdctaassetlink",
+          "label": "Asset (PDF/Image)",
+          "description": "Add asset (image/pdf)",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_thirdctatype"
+                  },
+                  "ctaselection-asset-three"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "thirdassetlinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "ctaImageOrPdfMimeTypeForThirdLink"
+        },
+        {
+          "component": "tab",
+          "label": "Fourth CTA Link",
+          "name": "fourthctaLink"
+        },
+
+        {
+          "component": "select",
+          "name": "classes_fourthctatype",
+          "label": "CTA Selection",
+          "description": "Select the dropdown option to navigate to link/asset",
+          "options": [
+            {
+              "name": "Link",
+              "value": "ctaselection-link-four"
+            },
+            {
+              "name": "Asset (PDF/Image)",
+              "value": "ctaselection-asset-four"
+            }
+          ],
+          "condition": {
+            "or": [
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-4"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-5"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-6"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "fourthctalinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_fourthctatype"
+              },
+              "ctaselection-link-four"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "fourthctalinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_fourthctatype"
+              },
+              "ctaselection-link-four"
+            ]
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "fourthctalink",
+          "label": "CTA Link",
+          "valueType": "string",
+          "description": "Enter the URL or pull the EDS page",
+          "validation": {
+            "rootPath": "/content"
+          },
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_fourthctatype"
+                  },
+                  "ctaselection-link-four"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "fourthctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_fourthtargetpath",
+          "label": "Target Path",
+          "description": "Select the target path for the URL",
+          "value": "ctatarget-sameTab-four",
+          "options": [
+            {
+              "name": "Same Tab",
+              "value": "ctatarget-sameTab-four"
+            },
+            {
+              "name": "New Tab",
+              "value": "ctatarget-newTab-four"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_fourthctatype"
+                  },
+                  "ctaselection-link-four"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "fourthctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_fourthexitinterstitial",
+          "label": "Exit Interstitial",
+          "description": "Select this Dropdown option to enable the modal experience that notifies user that they are leaving the site",
+          "valueType": "string",
+          "value": "ctaexitinterstitial-select-four",
+          "options": [
+            {
+              "name": "select",
+              "value": "ctaexitinterstitial-select-four"
+            },
+            {
+              "name": "General Third Parties",
+              "value": "ctaexitinterstitial-general-third-parties-four"
+            },
+            {
+              "name": "Telehealth",
+              "value": "ctaexitinterstitial-telehealth-four"
+            },
+            {
+              "name": "Account",
+              "value": "ctaexitinterstitial-account-four"
+            },
+            {
+              "name": "Account Wellbeing",
+              "value": "ctaexitinterstitial-account-wellbeing-four"
+            },
+            {
+              "name": "Embedded Tools Healthgrades",
+              "value": "ctaexitinterstitial-embedded-tools-healthgrades-four"
+            },
+            {
+              "name": "Embedded Tools Nourish",
+              "value": "ctaexitinterstitial-embedded-tools-nourish-four"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_fourthctatype"
+                  },
+                  "ctaselection-link-four"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "fourthctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "fourthassetlinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_fourthctatype"
+              },
+              "ctaselection-asset-four"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "fourthassetlinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_fourthctatype"
+              },
+              "ctaselection-asset-four"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "fourthctaassetlink",
+          "label": "Asset (PDF/Image)",
+          "description": "Add asset (image/pdf)",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_fourthctatype"
+                  },
+                  "ctaselection-asset-four"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "fourthassetlinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "ctaImageOrPdfMimeTypeForFourthLink"
+        },
+        {
+          "component": "tab",
+          "label": "Fifth CTA Link",
+          "name": "fifthctaLink"
+        },
+
+        {
+          "component": "select",
+          "name": "classes_fifthctatype",
+          "label": "CTA Selection",
+          "description": "Select the dropdown option to navigate to link/asset",
+          "options": [
+            {
+              "name": "Link",
+              "value": "ctaselection-link-five"
+            },
+            {
+              "name": "Asset (PDF/Image)",
+              "value": "ctaselection-asset-five"
+            }
+          ],
+          "condition": {
+            "or": [
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-5"
+                ]
+              },
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-6"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "fifthctalinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_fifthctatype"
+              },
+              "ctaselection-link-five"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "fifthctalinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_fifthctatype"
+              },
+              "ctaselection-link-five"
+            ]
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "fifthctalink",
+          "label": "CTA Link",
+          "valueType": "string",
+          "description": "Enter the URL or pull the EDS page",
+          "validation": {
+            "rootPath": "/content"
+          },
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_fifthctatype"
+                  },
+                  "ctaselection-link"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "fifthctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_fifthtargetpath",
+          "label": "Target Path",
+          "description": "Select the target path for the URL",
+          "value": "ctatarget-sameTab-five",
+          "options": [
+            {
+              "name": "Same Tab",
+              "value": "ctatarget-sameTab-five"
+            },
+            {
+              "name": "New Tab",
+              "value": "ctatarget-newTab-five"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_fifthctatype"
+                  },
+                  "ctaselection-link-five"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "fifthctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_fifthexitinterstitial",
+          "label": "Exit Interstitial",
+          "description": "Select this Dropdown option to enable the modal experience that notifies user that they are leaving the site",
+          "valueType": "string",
+          "value": "ctaexitinterstitial-select-five",
+          "options": [
+            {
+              "name": "select",
+              "value": "ctaexitinterstitial-select-five"
+            },
+            {
+              "name": "General Third Parties",
+              "value": "ctaexitinterstitial-general-third-parties-five"
+            },
+            {
+              "name": "Telehealth",
+              "value": "ctaexitinterstitial-telehealth-five"
+            },
+            {
+              "name": "Account",
+              "value": "ctaexitinterstitial-account-five"
+            },
+            {
+              "name": "Account Wellbeing",
+              "value": "ctaexitinterstitial-account-wellbeing-five"
+            },
+            {
+              "name": "Embedded Tools Healthgrades",
+              "value": "ctaexitinterstitial-embedded-tools-healthgrades-five"
+            },
+            {
+              "name": "Embedded Tools Nourish",
+              "value": "ctaexitinterstitial-embedded-tools-nourish-five"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_fifthctatype"
+                  },
+                  "ctaselection-link-five"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "fifthctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "fifthctaassetlinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_fifthctatype"
+              },
+              "ctaselection-asset-five"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "fifthctaassetlinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_fifthctatype"
+              },
+              "ctaselection-asset-five"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "fifthctaassetlink",
+          "label": "Asset (PDF/Image)",
+          "description": "Add asset (image/pdf)",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_fifthctatype"
+                  },
+                  "ctaselection-asset-five"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "fifthctaassetlinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "ctaImageOrPdfMimeTypeForFifthLink",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_fifthctatype"
+                  },
+                  "ctaselection-asset-five"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "fifthctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "tab",
+          "label": "Sixth CTA Link",
+          "name": "sixthctaLink"
+        },
+
+        {
+          "component": "select",
+          "name": "classes_sixthctatype",
+          "label": "CTA Selection",
+          "description": "Select the dropdown option to navigate to link/asset",
+          "options": [
+            {
+              "name": "Link",
+              "value": "ctaselection-link-six"
+            },
+            {
+              "name": "Asset (PDF/Image)",
+              "value": "ctaselection-asset-six"
+            }
+          ],
+          "condition": {
+            "or": [
+              {
+                "===": [
+                  {
+                    "var": "classes_multipleCtaSelectionDropDown"
+                  },
+                  "cta-6"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "sixthctalinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_sixthctatype"
+              },
+              "ctaselection-link-six"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "sixthctalinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_sixthctatype"
+              },
+              "ctaselection-link-six"
+            ]
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "sixthctalink",
+          "label": "CTA Link",
+          "valueType": "string",
+          "description": "Enter the URL or pull the EDS page",
+          "validation": {
+            "rootPath": "/content"
+          },
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_sixthctatype"
+                  },
+                  "ctaselection-link-six"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "sixthctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_sixthtargetpath",
+          "label": "Target Path",
+          "description": "Select the target path for the URL",
+          "value": "ctatarget-sameTab-six",
+          "options": [
+            {
+              "name": "Same Tab",
+              "value": "ctatarget-sameTab-six"
+            },
+            {
+              "name": "New Tab",
+              "value": "ctatarget-newTab-six"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_sixthctatype"
+                  },
+                  "ctaselection-link-six"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "sixthctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_sixthexitinterstitial",
+          "label": "Exit Interstitial",
+          "description": "Select this Dropdown option to enable the modal experience that notifies user that they are leaving the site",
+          "valueType": "string",
+          "value": "ctaexitinterstitial-select-six",
+          "options": [
+            {
+              "name": "select",
+              "value": "ctaexitinterstitial-select-six"
+            },
+            {
+              "name": "General Third Parties",
+              "value": "ctaexitinterstitial-general-third-parties-six"
+            },
+            {
+              "name": "Telehealth",
+              "value": "ctaexitinterstitial-telehealth-six"
+            },
+            {
+              "name": "Account",
+              "value": "ctaexitinterstitial-account-six"
+            },
+            {
+              "name": "Account Wellbeing",
+              "value": "ctaexitinterstitial-account-wellbeing-six"
+            },
+            {
+              "name": "Embedded Tools Healthgrades",
+              "value": "ctaexitinterstitial-embedded-tools-healthgrades-six"
+            },
+            {
+              "name": "Embedded Tools Nourish",
+              "value": "ctaexitinterstitial-embedded-tools-nourish-six"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_sixthctatype"
+                  },
+                  "ctaselection-link-six"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "sixthctalinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "sixthctaassetlinkText",
+          "label": "CTA Label",
+          "description": "Enter the label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_sixthctatype"
+              },
+              "ctaselection-asset-six"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "sixthctaassetlinkTitle",
+          "label": "Aria Label Field",
+          "description": "Enter label to display on the Aria label",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_sixthctatype"
+              },
+              "ctaselection-asset-six"
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "sixthctaassetlink",
+          "label": "Asset (PDF/Image)",
+          "description": "Add asset (image/pdf)",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_sixthctatype"
+                  },
+                  "ctaselection-asset-six"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "sixthctaassetlinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "ctaImageOrPdfMimeTypeForSixthLink"
+        }
+      ]
+    }
+  ]
+}

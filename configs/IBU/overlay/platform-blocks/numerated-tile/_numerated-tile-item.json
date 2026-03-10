@@ -1,0 +1,108 @@
+{
+  "definitions": [
+    {
+      "title": "Numerated-Tile-Item",
+      "id": "numerated-tile-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Numerated-Tile-Item",
+              "model": "numerated-tile-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "numerated-tile-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "numerated_eyebrow",
+          "label": "Eyebrow",
+          "description": "Enter the eyebrow text",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "numerated_title",
+          "label": "Title",
+          "description": "Enter the title",
+          "required": true
+        },
+        {
+          "...": "../utils/eds-commons/_rte-title.json#/rte-title"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "subtitle",
+          "label": "Subtitle",
+          "description": "Enter the subtitle"
+        },
+        {
+          "component": "select",
+          "name": "classes_ subtitleRteFontSize",
+          "label": "Subtitle Font Size",
+          "description": "Select the font size for the subtitle",
+          "options": [
+            { "name": "100px", "value": "subtitle-fs-100px" },
+            { "name": "60px", "value": "subtitle-fs-60px" },
+            { "name": "48px", "value": "subtitle-fs-48px" },
+            { "name": "36px", "value": "subtitle-fs-36px" },
+            { "name": "32px", "value": "subtitle-fs-32px" },
+            { "name": "28px", "value": "subtitle-fs-28px" },
+            { "name": "24px", "value": "subtitle-fs-24px" },
+            { "name": "20px", "value": "subtitle-fs-20px" },
+            { "name": "16px", "value": "subtitle-fs-16px" },
+            { "name": "14px", "value": "subtitle-fs-14px" }
+          ]
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "description",
+          "label": "Description",
+          "description": "Enter the description"
+        },
+        {
+          "...": "../utils/eds-commons/_rte-description.json#/rte-description"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "description": "Upload the image"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "imageMimeType"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Image Alt Text",
+          "description": "Pick alt text from AEM DAM with ability to override it",
+          "required": true,
+          "default": "Alt text from AEM DAM",
+          "condition": {
+            "!!": {
+              "var": "image"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

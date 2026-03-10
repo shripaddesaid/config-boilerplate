@@ -1,0 +1,137 @@
+{
+  "definitions": [
+    {
+      "title": "Spacer and Divider",
+      "id": "spacer-and-divider",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Spacer and Divider",
+              "model": "spacer-and-divider",
+              "classes": "divider",
+              "classes_spacerheight": "small",
+              "classes_dividercolor": "contrast",
+              "classes_topbottomspacing": "small_one"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "spacer-and-divider",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Element Selector",
+          "description": "Select the appropriate option",
+          "value": "divider",
+          "required": true,
+          "options": [
+            {
+              "name": "Horizontal Divider",
+              "value": "divider"
+            },
+            {
+              "name": "Spacer",
+              "value": "spacer"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_spacerheight",
+          "label": "Spacer height - Desktop",
+          "value": "small",
+          "description": "Select the appropriate spacer height. Mobile height will be auto calculated on selection made",
+          "options": [
+            {
+              "name": "Small",
+              "value": "small"
+            },
+            {
+              "name": "Medium",
+              "value": "medium"
+            },
+            {
+              "name": "Large",
+              "value": "large"
+            }
+          ],
+          "condition": {
+            "===": [
+              {
+                "var": "classes"
+              },
+              "spacer"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_dividercolor",
+          "label": "Divider Color",
+          "description": "Select the Divider color",
+          "value": "contrast",
+          "required": true,
+          "options": [
+            {
+              "name": "Contrast",
+              "value": "contrast"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "name": "Warm",
+              "value": "warm"
+            }
+          ],
+          "condition": {
+            "===": [
+              {
+                "var": "classes"
+              },
+              "divider"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_topbottomspacing",
+          "label": "Top & Bottom spacing",
+          "value": "small_one",
+          "description": "Select the appropriate padding",
+          "options": [
+            {
+              "name": "Small",
+              "value": "small_one"
+            },
+            {
+              "name": "Medium",
+              "value": "medium_one"
+            },
+            {
+              "name": "Large",
+              "value": "large_one"
+            }
+          ],
+          "condition": {
+            "===": [
+              {
+                "var": "classes"
+              },
+              "divider"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

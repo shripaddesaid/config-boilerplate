@@ -1,0 +1,160 @@
+{
+  "definitions": [
+    {
+      "title": "Two Column Text Carousel Item",
+      "id": "two-column-text-carousel-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Two Column Text Carousel Item",
+              "model": "two-column-text-carousel-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "two-column-text-carousel-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "leftcolumneyebrow",
+          "label": "Left Column Eyebrow",
+          "valueType": "string",
+          "description": "Enter the eyebrow"
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "leftcolumntext",
+          "label": "Left Column Text",
+          "description": "Enter the title",
+          "required": true
+        },
+        {
+          "component": "select",
+          "name": "classes_leftcolumntextrtefontsize",
+          "label": "Left Column Text Font Size",
+          "description": "Select the font size for the left column text Font Size",
+          "options": [
+            {
+              "name": "100px",
+              "value": "leftColumntext-fs-100px"
+            },
+            {
+              "name": "60px",
+              "value": "leftColumntext-fs-60px"
+            },
+            {
+              "name": "48px",
+              "value": "leftColumntext-fs-48px"
+            },
+            {
+              "name": "36px",
+              "value": "leftColumntext-fs-36px"
+            },
+            {
+              "name": "32px",
+              "value": "leftColumntext-fs-32px"
+            },
+            {
+              "name": "28px",
+              "value": "leftColumntext-fs-28px"
+            },
+            {
+              "name": "24px",
+              "value": "leftColumntext-fs-24px"
+            },
+            {
+              "name": "20px",
+              "value": "leftColumntext-fs-20px"
+            },
+            {
+              "name": "16px",
+              "value": "leftColumntext-fs-16px"
+            },
+            {
+              "name": "14px",
+              "value": "leftColumntext-fs-14px"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "rightcolumneyebrow",
+          "label": "Right Column Eyebrow",
+          "valueType": "string",
+          "description": "Enter the eyebrow"
+        },
+        {
+          "component": "richtext",
+          "name": "rightcolumntext",
+          "label": "Right Column Text",
+          "valueType": "string",
+          "description": "Enter the description",
+          "required": true
+        },
+        {
+          "component": "select",
+          "name": "classes_rightColumntextrtefontsize",
+          "label": "Right Column Text Font Size",
+          "description": "Select the font size for the right column text Font Size",
+          "options": [
+            {
+              "name": "100px",
+              "value": "rightColumntext-fs-100px"
+            },
+            {
+              "name": "60px",
+              "value": "rightColumntext-fs-60px"
+            },
+            {
+              "name": "48px",
+              "value": "rightColumntext-fs-48px"
+            },
+            {
+              "name": "36px",
+              "value": "rightColumntext-fs-36px"
+            },
+            {
+              "name": "32px",
+              "value": "rightColumntext-fs-32px"
+            },
+            {
+              "name": "28px",
+              "value": "rightColumntext-fs-28px"
+            },
+            {
+              "name": "24px",
+              "value": "rightColumntext-fs-24px"
+            },
+            {
+              "name": "20px",
+              "value": "rightColumntext-fs-20px"
+            },
+            {
+              "name": "16px",
+              "value": "rightColumntext-fs-16px"
+            },
+            {
+              "name": "14px",
+              "value": "rightColumntext-fs-14px"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "twocolumntextcarouselitemnonreq_arialabel",
+          "label": "ARIA Label",
+          "valueType": "string",
+          "description": "Enter ARIA label to comply ADA"
+        }
+      ]
+    }
+  ]
+}

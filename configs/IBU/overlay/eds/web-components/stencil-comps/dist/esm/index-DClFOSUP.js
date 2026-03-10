@@ -1,0 +1,1664 @@
+const NAMESPACE = 'stencil-library';
+const BUILD = /* stencil-library */ { hydratedSelectorName: "hydrated", lazyLoad: true, propChangeCallback: true, updatable: true};
+
+const globalScripts = () => {};
+const globalStyles = ":root{--lds-g-grid-layout-max-width:90rem;--lds-g-grid-column-desktop:12;--lds-g-grid-column-tablet:8;--lds-g-grid-column-mobile:4;--lds-g-grid-margin-desktop:4rem;--lds-g-grid-margin-tablet:3rem;--lds-g-grid-margin-mobile:1rem;--lds-g-grid-gutter-desktop:2rem;--lds-g-grid-gutter-tablet:1.5rem;--lds-g-grid-gutter-mobile:1rem;--lds-g-grid-breakpoint-xsmall-min-width:0px;--lds-g-grid-breakpoint-xsmall-max-width:575.99px;--lds-g-grid-breakpoint-small-min-width:576px;--lds-g-grid-breakpoint-small-max-width:767.99px;--lds-g-grid-breakpoint-medium-min-width:768px;--lds-g-grid-breakpoint-medium-max-width:991.99px;--lds-g-grid-breakpoint-large-min-width:992px;--lds-g-grid-breakpoint-large-max-width:1199.99px;--lds-g-grid-breakpoint-xlarge-min-width:1200px;--lds-g-grid-breakpoint-xlarge-max-width:1399.99px;--lds-g-grid-breakpoint-xxlarge-min-width:1400px;--lds-g-grid-breakpoint-xxlarge-max-width:9999px;--lds-g-shadow-top-1:0px -2px 4px 0px rgba(52, 63, 65, 0.2);--lds-g-shadow-top-2:0px -2px 4px 0px rgba(52, 63, 65, 0.16), 0px -4px 6px 0px rgba(52, 63, 65, 0.1);--lds-g-shadow-top-3:0px -4px 8px 0px rgba(52, 63, 65, 0.04), 0px -8px 12px 0px rgba(52, 63, 65, 0.12);--lds-g-shadow-top-4:0px -4px 12px 0px rgba(52, 63, 65, 0.08), 0px -18px 28px 0px rgba(52, 63, 65, 0.12);--lds-g-shadow-bottom-1:0px 2px 4px 0px rgba(52, 63, 65, 0.2);--lds-g-shadow-bottom-2:0px 2px 4px 0px rgba(52, 63, 65, 0.16), 0px 4px 6px 0px rgba(52, 63, 65, 0.1);--lds-g-shadow-bottom-3:0px 4px 8px 0px rgba(52, 63, 65, 0.04), 0px 8px 12px 0px rgba(52, 63, 65, 0.12);--lds-g-shadow-bottom-4:0px 4px 12px 0px rgba(52, 63, 65, 0.08), 0px 18px 28px 0px rgba(52, 63, 65, 0.12);--lds-g-typography-letter-spacing-minus-1:-0.01em;--lds-g-typography-letter-spacing-minus-1-half:-0.015em;--lds-g-typography-letter-spacing-minus-2:-0.02em;--lds-g-typography-letter-spacing-minus-2-half:-0.025em;--lds-g-typography-letter-spacing-minus-4:-0.04em;--lds-g-typography-letter-spacing-minus-5:-0.05em;--lds-g-typography-ringside-display-1-default:900 2.5rem/1.1 \"Ringside Extra Wide\", \"Ringside Extra Wide Fallback\", \"Ringside Extra Wide Android Fallback\", sans-serif;--lds-g-typography-ringside-display-1-desktop:900 6.25rem/1 \"Ringside Extra Wide\", \"Ringside Extra Wide Fallback\", \"Ringside Extra Wide Android Fallback\", sans-serif;--lds-g-typography-ringside-display-1-fluid-font-size:clamp(2.5rem, 1.1795774647887323rem + 5.633802816901409vw, 6.25rem);--lds-g-typography-ringside-display-1-letter-spacing:-0.05em;--lds-g-typography-ringside-display-2-default:900 2.25rem/1.22 \"Ringside Extra Wide\", \"Ringside Extra Wide Fallback\", \"Ringside Extra Wide Android Fallback\", sans-serif;--lds-g-typography-ringside-display-2-desktop:900 3.75rem/1.1 \"Ringside Extra Wide\", \"Ringside Extra Wide Fallback\", \"Ringside Extra Wide Android Fallback\", sans-serif;--lds-g-typography-ringside-display-2-fluid-font-size:clamp(2.25rem, 1.721830985915493rem + 2.253521126760563vw, 3.75rem);--lds-g-typography-ringside-display-2-letter-spacing:-0.04em;--lds-g-typography-ringside-heading-1-default:400 2.5rem/1.1 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-1-desktop:400 3.75rem/1.1 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-1-fluid-font-size:clamp(2.5rem, 2.0598591549295775rem + 1.8779342723004695vw, 3.75rem);--lds-g-typography-ringside-heading-1-letter-spacing:-0.025em;--lds-g-typography-ringside-heading-2-default:400 2.25rem/1.22 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-2-desktop:400 3rem/1.21 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-2-fluid-font-size:clamp(2.25rem, 1.9859154929577465rem + 1.1267605633802815vw, 3rem);--lds-g-typography-ringside-heading-2-letter-spacing:-0.02em;--lds-g-typography-ringside-heading-3-default:400 2rem/1.19 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-3-desktop:400 2.25rem/1.22 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-3-fluid-font-size:clamp(2rem, 1.9119718309859155rem + 0.3755868544600939vw, 2.25rem);--lds-g-typography-ringside-heading-3-letter-spacing:-0.02em;--lds-g-typography-ringside-heading-4-default:400 1.75rem/1.21 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-4-desktop:400 2rem/1.19 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-4-fluid-font-size:clamp(1.75rem, 1.6619718309859155rem + 0.3755868544600939vw, 2rem);--lds-g-typography-ringside-heading-4-letter-spacing:-0.02em;--lds-g-typography-ringside-heading-5-default:400 1.5rem/1.33 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-5-desktop:400 1.75rem/1.29 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-5-fluid-font-size:clamp(1.5rem, 1.4119718309859155rem + 0.3755868544600939vw, 1.75rem);--lds-g-typography-ringside-heading-6-default:400 1.25rem/1.3 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-6-desktop:400 1.5rem/1.33 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-heading-6-fluid-font-size:clamp(1.25rem, 1.1619718309859155rem + 0.3755868544600939vw, 1.5rem);--lds-g-typography-ringside-body-small:400 0.875rem/1.43 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-body-small-desktop:400 0.875rem/1.43 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-body-medium:400 1rem/1.5 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-body-medium-desktop:400 1rem/1.5 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-body-large:400 1.125rem/1.56 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-body-large-desktop:400 1.25rem/1.5 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-special-cta-button-default:400 1rem/1.25 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-special-cta-button-desktop:400 1.25rem/1.2 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-special-cta-text-link-default:900 1rem/1.25 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-special-cta-text-link-desktop:900 1.25rem/1.2 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-special-caption-default:400 0.75rem/1.5 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-special-caption-desktop:400 0.875rem/1.57 Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-typography-ringside-special-eyebrow-default:400 0.75rem/1.33 \"Ringside Extra Wide\", \"Ringside Extra Wide Fallback\", \"Ringside Extra Wide Android Fallback\", sans-serif;--lds-g-typography-ringside-special-eyebrow-desktop:400 0.875rem/1.29 \"Ringside Extra Wide\", \"Ringside Extra Wide Fallback\", \"Ringside Extra Wide Android Fallback\", sans-serif;--lds-g-typography-garamond-display-1-default:400 3rem/1 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-display-1-desktop:400 6.25rem/1 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-display-1-fluid-font-size:clamp(3rem, 1.8556338028169015rem + 4.882629107981221vw, 6.25rem);--lds-g-typography-garamond-display-1-letter-spacing:-0.015em;--lds-g-typography-garamond-heading-1-default:400 2.5rem/1.05 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-1-desktop:400 3.75rem/1.1 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-1-fluid-font-size:clamp(2.5rem, 2.0598591549295775rem + 1.8779342723004695vw, 3.75rem);--lds-g-typography-garamond-heading-1-letter-spacing:-0.01em;--lds-g-typography-garamond-heading-2-default:400 2.25rem/1.11 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-2-desktop:400 3rem/1.08 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-2-fluid-font-size:clamp(2.25rem, 1.9859154929577465rem + 1.1267605633802815vw, 3rem);--lds-g-typography-garamond-heading-2-letter-spacing:-0.01em;--lds-g-typography-garamond-heading-3-default:400 2rem/1.19 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-3-desktop:400 2.25rem/1.22 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-3-fluid-font-size:clamp(2rem, 1.9119718309859155rem + 0.3755868544600939vw, 2.25rem);--lds-g-typography-garamond-heading-3-letter-spacing:-0.01em;--lds-g-typography-garamond-heading-4-default:400 1.75rem/1.21 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-4-desktop:400 2rem/1.19 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-4-fluid-font-size:clamp(1.75rem, 1.6619718309859155rem + 0.3755868544600939vw, 2rem);--lds-g-typography-garamond-heading-5-default:400 1.5rem/1.33 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-5-desktop:400 1.75rem/1.29 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-5-fluid-font-size:clamp(1.5rem, 1.4119718309859155rem + 0.3755868544600939vw, 1.75rem);--lds-g-typography-garamond-heading-6-default:400 1.25rem/1.3 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-6-desktop:400 1.5rem/1.33 \"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-typography-garamond-heading-6-fluid-font-size:clamp(1.25rem, 1.1619718309859155rem + 0.3755868544600939vw, 1.5rem);--lds-g-blur-1:25;--lds-g-blur-2:100;--lds-g-color-palette-stone-100:#0f1b21;--lds-g-color-palette-stone-105:#071218;--lds-g-color-palette-stone-090:#1e2a30;--lds-g-color-palette-stone-080:#303b42;--lds-g-color-palette-stone-070:#465158;--lds-g-color-palette-stone-060:#606c73;--lds-g-color-palette-stone-050:#818c94;--lds-g-color-palette-stone-040:#a5b1b9;--lds-g-color-palette-stone-030:#bbc7cf;--lds-g-color-palette-stone-020:#d8e4ec;--lds-g-color-palette-stone-010:#ebf2f7;--lds-g-color-palette-stone-005:#f3f7fa;--lds-g-color-palette-teal-100:#041c23;--lds-g-color-palette-teal-105:#00131a;--lds-g-color-palette-teal-090:#002c36;--lds-g-color-palette-teal-080:#05404c;--lds-g-color-palette-teal-070:#0a5969;--lds-g-color-palette-teal-060:#00758a;--lds-g-color-palette-teal-050:#1899b3;--lds-g-color-palette-teal-040:#4fbed9;--lds-g-color-palette-teal-030:#87d1e6;--lds-g-color-palette-teal-020:#c3e9f6;--lds-g-color-palette-teal-010:#e5f3f9;--lds-g-color-palette-teal-005:#f0f8fc;--lds-g-color-palette-sage-100:#011e1b;--lds-g-color-palette-sage-105:#001412;--lds-g-color-palette-sage-090:#022d2c;--lds-g-color-palette-sage-080:#02413d;--lds-g-color-palette-sage-070:#005a56;--lds-g-color-palette-sage-060:#007773;--lds-g-color-palette-sage-050:#299b93;--lds-g-color-palette-sage-040:#54c2b9;--lds-g-color-palette-sage-030:#81d5ce;--lds-g-color-palette-sage-020:#beebe6;--lds-g-color-palette-sage-010:#e6f4f2;--lds-g-color-palette-sage-005:#f0f8f6;--lds-g-color-palette-green-100:#031f13;--lds-g-color-palette-green-105:#00150b;--lds-g-color-palette-green-090:#022f1e;--lds-g-color-palette-green-080:#00422c;--lds-g-color-palette-green-070:#005c3f;--lds-g-color-palette-green-060:#007a55;--lds-g-color-palette-green-050:#009f6f;--lds-g-color-palette-green-040:#21c88f;--lds-g-color-palette-green-030:#79d9ad;--lds-g-color-palette-green-020:#beeed3;--lds-g-color-palette-green-010:#e7f4ea;--lds-g-color-palette-green-005:#f0f9f2;--lds-g-color-palette-lime-100:#0c1e01;--lds-g-color-palette-lime-105:#061400;--lds-g-color-palette-lime-090:#132f00;--lds-g-color-palette-lime-080:#1b4300;--lds-g-color-palette-lime-070:#2a5b00;--lds-g-color-palette-lime-060:#3c7908;--lds-g-color-palette-lime-050:#539d19;--lds-g-color-palette-lime-040:#79c343;--lds-g-color-palette-lime-030:#9ed676;--lds-g-color-palette-lime-020:#ccebb1;--lds-g-color-palette-lime-010:#ecf3e1;--lds-g-color-palette-lime-005:#f5f8eb;--lds-g-color-palette-gold-100:#211801;--lds-g-color-palette-gold-105:#171000;--lds-g-color-palette-gold-090:#332600;--lds-g-color-palette-gold-080:#483700;--lds-g-color-palette-gold-070:#644d00;--lds-g-color-palette-gold-060:#846700;--lds-g-color-palette-gold-050:#ac8700;--lds-g-color-palette-gold-040:#daaa00;--lds-g-color-palette-gold-030:#f4c003;--lds-g-color-palette-gold-020:#f7e0ac;--lds-g-color-palette-gold-010:#f9f0e0;--lds-g-color-palette-gold-005:#fcf5ed;--lds-g-color-palette-orange-100:#2c1201;--lds-g-color-palette-orange-105:#210b00;--lds-g-color-palette-orange-090:#421f00;--lds-g-color-palette-orange-080:#5b2d00;--lds-g-color-palette-orange-070:#7e3f02;--lds-g-color-palette-orange-060:#a55500;--lds-g-color-palette-orange-050:#d7700a;--lds-g-color-palette-orange-040:#fb984d;--lds-g-color-palette-orange-030:#fab88b;--lds-g-color-palette-orange-020:#ffdcc6;--lds-g-color-palette-orange-010:#fceee7;--lds-g-color-palette-orange-005:#fcf5f2;--lds-g-color-palette-red-100:#3d0101;--lds-g-color-palette-red-105:#2d0000;--lds-g-color-palette-red-090:#501009;--lds-g-color-palette-red-080:#6e1911;--lds-g-color-palette-red-070:#9f180f;--lds-g-color-palette-red-060:#d31710;--lds-g-color-palette-red-050:#f7513f;--lds-g-color-palette-red-040:#fd9485;--lds-g-color-palette-red-030:#f6b8ae;--lds-g-color-palette-red-020:#ffdad4;--lds-g-color-palette-red-010:#f9eeed;--lds-g-color-palette-red-005:#fbf5f4;--lds-g-color-palette-pink-100:#3a0118;--lds-g-color-palette-pink-105:#26050f;--lds-g-color-palette-pink-090:#540523;--lds-g-color-palette-pink-080:#730932;--lds-g-color-palette-pink-070:#9c1349;--lds-g-color-palette-pink-060:#ce1562;--lds-g-color-palette-pink-050:#f15082;--lds-g-color-palette-pink-040:#f694ab;--lds-g-color-palette-pink-030:#f1b8c2;--lds-g-color-palette-pink-020:#ffd8df;--lds-g-color-palette-pink-010:#fcedee;--lds-g-color-palette-pink-005:#fff4f4;--lds-g-color-palette-magenta-100:#370324;--lds-g-color-palette-magenta-105:#29001a;--lds-g-color-palette-magenta-090:#500637;--lds-g-color-palette-magenta-080:#72024e;--lds-g-color-palette-magenta-070:#970d6b;--lds-g-color-palette-magenta-060:#c2248b;--lds-g-color-palette-magenta-050:#ee4baf;--lds-g-color-palette-magenta-040:#ff89c9;--lds-g-color-palette-magenta-030:#f7b2d3;--lds-g-color-palette-magenta-020:#ffd9e9;--lds-g-color-palette-magenta-010:#fcedf1;--lds-g-color-palette-magenta-005:#fcedf1;--lds-g-color-palette-indigo-100:#121441;--lds-g-color-palette-indigo-105:#080a38;--lds-g-color-palette-indigo-090:#1d205f;--lds-g-color-palette-indigo-080:#2a2e86;--lds-g-color-palette-indigo-070:#393dbd;--lds-g-color-palette-indigo-060:#565adf;--lds-g-color-palette-indigo-050:#7b80f5;--lds-g-color-palette-indigo-040:#a5a8ff;--lds-g-color-palette-indigo-030:#c1c2f9;--lds-g-color-palette-indigo-020:#e2e0f9;--lds-g-color-palette-indigo-010:#f1effc;--lds-g-color-palette-indigo-005:#f9f5fc;--lds-g-color-palette-purple-100:#240e3b;--lds-g-color-palette-purple-105:#1b0432;--lds-g-color-palette-purple-090:#371855;--lds-g-color-palette-purple-080:#4d2475;--lds-g-color-palette-purple-070:#6a32a2;--lds-g-color-palette-purple-060:#8c45d3;--lds-g-color-palette-purple-050:#ab71e9;--lds-g-color-palette-purple-040:#cc9bfd;--lds-g-color-palette-purple-030:#cc9bfd;--lds-g-color-palette-purple-020:#d8bbf2;--lds-g-color-palette-purple-010:#f9edfc;--lds-g-color-palette-purple-005:#fcf4fc;--lds-g-color-palette-azure-100:#021a35;--lds-g-color-palette-azure-105:#001127;--lds-g-color-palette-azure-090:#00284e;--lds-g-color-palette-azure-080:#003a6c;--lds-g-color-palette-azure-070:#12518e;--lds-g-color-palette-azure-060:#1b6cba;--lds-g-color-palette-azure-050:#468ee0;--lds-g-color-palette-azure-040:#86b3f2;--lds-g-color-palette-azure-030:#a4c9ff;--lds-g-color-palette-azure-020:#d4e3ff;--lds-g-color-palette-azure-010:#edf1fd;--lds-g-color-palette-azure-005:#f5f6fc;--lds-g-color-palette-blue-100:#031c28;--lds-g-color-palette-blue-105:#00131d;--lds-g-color-palette-blue-090:#012c3f;--lds-g-color-palette-blue-080:#003e57;--lds-g-color-palette-blue-070:#025676;--lds-g-color-palette-blue-060:#00729e;--lds-g-color-palette-blue-050:#0696cc;--lds-g-color-palette-blue-040:#4bbbf3;--lds-g-color-palette-blue-030:#90cef4;--lds-g-color-palette-blue-020:#cde6f9;--lds-g-color-palette-blue-010:#e8f2fa;--lds-g-color-palette-blue-005:#f2f7fc;--lds-g-color-palette-transparent-black-0:rgba(0, 0, 0, 0);--lds-g-color-palette-transparent-black-100:#000000;--lds-g-color-palette-transparent-black-090:rgba(0, 0, 0, 0.9);--lds-g-color-palette-transparent-black-080:rgba(0, 0, 0, 0.8);--lds-g-color-palette-transparent-black-070:rgba(0, 0, 0, 0.7);--lds-g-color-palette-transparent-black-060:rgba(0, 0, 0, 0.6);--lds-g-color-palette-transparent-black-050:rgba(0, 0, 0, 0.5);--lds-g-color-palette-transparent-black-040:rgba(0, 0, 0, 0.4);--lds-g-color-palette-transparent-black-030:rgba(0, 0, 0, 0.3);--lds-g-color-palette-transparent-black-020:rgba(0, 0, 0, 0.2);--lds-g-color-palette-transparent-black-010:rgba(0, 0, 0, 0.1);--lds-g-color-palette-transparent-black-005:rgba(0, 0, 0, 0.05);--lds-g-color-palette-transparent-white-0:rgba(255, 255, 255, 0);--lds-g-color-palette-transparent-white-100:#ffffff;--lds-g-color-palette-transparent-white-090:rgba(255, 255, 255, 0.9);--lds-g-color-palette-transparent-white-080:rgba(255, 255, 255, 0.8);--lds-g-color-palette-transparent-white-070:rgba(255, 255, 255, 0.7);--lds-g-color-palette-transparent-white-060:rgba(255, 255, 255, 0.6);--lds-g-color-palette-transparent-white-050:rgba(255, 255, 255, 0.5);--lds-g-color-palette-transparent-white-040:rgba(255, 255, 255, 0.4);--lds-g-color-palette-transparent-white-030:rgba(255, 255, 255, 0.3);--lds-g-color-palette-transparent-white-020:rgba(255, 255, 255, 0.2);--lds-g-color-palette-transparent-white-010:rgba(255, 255, 255, 0.1);--lds-g-color-palette-transparent-white-005:rgba(255, 255, 255, 0.05);--lds-g-color-palette-primary-100:#3d0101;--lds-g-color-palette-primary-105:#2d0000;--lds-g-color-palette-primary-base:#d31710;--lds-g-color-palette-primary-090:#501009;--lds-g-color-palette-primary-080:#6e1911;--lds-g-color-palette-primary-070:#9f180f;--lds-g-color-palette-primary-060:#d31710;--lds-g-color-palette-primary-050:#f7513f;--lds-g-color-palette-primary-040:#fd9485;--lds-g-color-palette-primary-030:#f6b8ae;--lds-g-color-palette-primary-020:#ffdad4;--lds-g-color-palette-primary-010:#f9eeed;--lds-g-color-palette-primary-005:#fbf5f4;--lds-g-color-palette-secondary-100:#191919;--lds-g-color-palette-secondary-105:#111111;--lds-g-color-palette-secondary-base:#111111;--lds-g-color-palette-secondary-090:#282828;--lds-g-color-palette-secondary-080:#3a3a3a;--lds-g-color-palette-secondary-070:#505050;--lds-g-color-palette-secondary-060:#6a6a6a;--lds-g-color-palette-secondary-050:#8a8a8a;--lds-g-color-palette-secondary-040:#afafaf;--lds-g-color-palette-secondary-030:#c5c5c5;--lds-g-color-palette-secondary-020:#e2e2e2;--lds-g-color-palette-secondary-010:#f0f0f0;--lds-g-color-palette-secondary-005:#ffffff;--lds-g-color-palette-tertiary-100:#191919;--lds-g-color-palette-tertiary-105:#111111;--lds-g-color-palette-tertiary-base:#ffffff;--lds-g-color-palette-tertiary-090:#282828;--lds-g-color-palette-tertiary-080:#3a3a3a;--lds-g-color-palette-tertiary-070:#505050;--lds-g-color-palette-tertiary-060:#6a6a6a;--lds-g-color-palette-tertiary-050:#8a8a8a;--lds-g-color-palette-tertiary-040:#afafaf;--lds-g-color-palette-tertiary-030:#c5c5c5;--lds-g-color-palette-tertiary-020:#e2e2e2;--lds-g-color-palette-tertiary-010:#f0f0f0;--lds-g-color-palette-tertiary-005:#f5f5f5;--lds-g-color-neutral-base-100:#191919;--lds-g-color-neutral-base-105:#111111;--lds-g-color-neutral-base-090:#282828;--lds-g-color-neutral-base-080:#3a3a3a;--lds-g-color-neutral-base-070:#505050;--lds-g-color-neutral-base-060:#6a6a6a;--lds-g-color-neutral-base-050:#8a8a8a;--lds-g-color-neutral-base-040:#afafaf;--lds-g-color-neutral-base-030:#c5c5c5;--lds-g-color-neutral-base-020:#e2e2e2;--lds-g-color-neutral-base-010:#f0f0f0;--lds-g-color-neutral-base-005:#f5f5f5;--lds-g-color-neutral-base-000:#ffffff;--lds-g-color-surface-1:#fbf5f4;--lds-g-color-surface-2:#f9eeed;--lds-g-color-surface-3:#f3f7fa;--lds-g-color-surface-4:#d8e4ec;--lds-g-color-surface-base:#ffffff;--lds-g-color-surface-neutral:#f5f5f5;--lds-g-color-surface-inverse-1:#d31710;--lds-g-color-surface-inverse-2:#111111;--lds-g-color-surface-container-1:#fbf5f4;--lds-g-color-surface-container-2:#f9eeed;--lds-g-color-surface-container-3:#f2f7fc;--lds-g-color-surface-container-4:#d8e4ec;--lds-g-color-surface-container-base:#ffffff;--lds-g-color-surface-container-neutral:#f5f5f5;--lds-g-color-surface-container-inverse-1:#9f180f;--lds-g-color-surface-container-inverse-2:#005a56;--lds-g-color-on-surface-1:#191919;--lds-g-color-on-surface-2:#3a3a3a;--lds-g-color-on-surface-3:#6a6a6a;--lds-g-color-on-surface-inverse-1:#ffffff;--lds-g-color-on-surface-inverse-2:#e2e2e2;--lds-g-color-on-surface-inverse-3:#f0f0f0;--lds-g-color-border-1:#111111;--lds-g-color-border-2:#6a6a6a;--lds-g-color-border-3:#c5c5c5;--lds-g-color-border-4:#f0f0f0;--lds-g-color-border-inverse-1:rgba(255, 255, 255, 0.6);--lds-g-color-border-inverse-2:rgba(255, 255, 255, 0.3);--lds-g-color-border-inverse-3:rgba(255, 255, 255, 0.2);--lds-g-color-border-inverse-4:rgba(255, 255, 255, 0.1);--lds-g-color-accent-1:#ffdad4;--lds-g-color-accent-2:#d31710;--lds-g-color-accent-3:#003e57;--lds-g-color-accent-container-1:#d31710;--lds-g-color-accent-container-2:#d31710;--lds-g-color-accent-container-3:#d31710;--lds-g-color-on-accent-1:#ffffff;--lds-g-color-on-accent-2:#ffffff;--lds-g-color-on-accent-3:#ffffff;--lds-g-color-border-accent-1:#d31710;--lds-g-color-border-accent-2:#d31710;--lds-g-color-border-accent-3:#d31710;--lds-g-color-action-1:#d31710;--lds-g-color-action-2:#9f180f;--lds-g-color-action-3:#6e1911;--lds-g-color-action-inverse-1:#ffffff;--lds-g-color-action-inverse-2:#ffdad4;--lds-g-color-action-inverse-3:#f6b8ae;--lds-g-color-action-container-1:#d31710;--lds-g-color-action-container-2:#9f180f;--lds-g-color-action-container-3:#6e1911;--lds-g-color-action-container-inverse-1:#ffffff;--lds-g-color-action-container-inverse-2:#ffdad4;--lds-g-color-action-container-inverse-3:#f6b8ae;--lds-g-color-on-action-1:#ffffff;--lds-g-color-on-action-2:#ffffff;--lds-g-color-on-action-3:#ffffff;--lds-g-color-on-action-inverse-1:#191919;--lds-g-color-on-action-inverse-2:#191919;--lds-g-color-on-action-inverse-3:#191919;--lds-g-color-border-action-1:#d31710;--lds-g-color-border-action-2:#9f180f;--lds-g-color-border-action-3:#6e1911;--lds-g-color-border-action-inverse-1:#ffffff;--lds-g-color-border-action-inverse-2:#ffdad4;--lds-g-color-border-action-inverse-3:#f6b8ae;--lds-g-color-info-1:#12518e;--lds-g-color-info-container-1:#edf1fd;--lds-g-color-on-info-1:#191919;--lds-g-color-border-info-1:#edf1fd;--lds-g-color-border-info-2:#12518e;--lds-g-color-success-1:#005c3f;--lds-g-color-success-container-1:#e7f4ea;--lds-g-color-on-success-1:#191919;--lds-g-color-on-success-2:#191919;--lds-g-color-border-success-1:#e7f4ea;--lds-g-color-border-success-2:#005c3f;--lds-g-color-warning-1:#7e3f02;--lds-g-color-warning-container-1:#fceee7;--lds-g-color-on-warning-1:#191919;--lds-g-color-border-warning-1:#fceee7;--lds-g-color-border-warning-2:#7e3f02;--lds-g-color-error-1:#9f180f;--lds-g-color-error-container-1:#ffdad4;--lds-g-color-on-error-1:#191919;--lds-g-color-on-error-2:#191919;--lds-g-color-border-error-1:#ffdad4;--lds-g-color-border-error-2:#9f180f;--lds-g-color-disabled-1:#6a6a6a;--lds-g-color-disabled-container-1:#e2e2e2;--lds-g-color-disabled-container-2:#c5c5c5;--lds-g-color-on-disabled-1:#6a6a6a;--lds-g-color-on-disabled-2:#6a6a6a;--lds-g-color-border-disabled-1:#6a6a6a;--lds-g-color-border-disabled-2:#3a3a3a;--lds-g-color-brand-base-100:#3d0101;--lds-g-color-brand-base-105:#2d0000;--lds-g-color-brand-base-090:#501009;--lds-g-color-brand-base-080:#6e1911;--lds-g-color-brand-base-070:#9f180f;--lds-g-color-brand-base-060:#d31710;--lds-g-color-brand-base-050:#f7513f;--lds-g-color-brand-base-040:#fd9485;--lds-g-color-brand-base-030:#f6b8ae;--lds-g-color-brand-base-020:#ffdad4;--lds-g-color-brand-base-010:#f9eeed;--lds-g-color-brand-base-005:#fbf5f4;--lds-g-color-brand-1:#d31710;--lds-g-color-brand-2:#9f180f;--lds-g-color-brand-3:#6e1911;--lds-g-color-brand-container-1:#d31710;--lds-g-color-brand-container-2:#9f180f;--lds-g-color-brand-container-3:#6e1911;--lds-g-color-on-brand-1:#ffffff;--lds-g-color-border-brand-1:#d31710;--lds-g-color-border-brand-2:#9f180f;--lds-g-color-border-brand-3:#6e1911;--lds-g-motion-bezier-inertia:cubic-bezier(0.4, 0.2, 0.12, 1);--lds-g-motion-bezier-standard:cubic-bezier(0, 0.56, 0.4, 1);--lds-g-motion-bezier-transition:cubic-bezier(0.08, 0.36, 0.4, 1);--lds-g-motion-linear:cubic-bezier(0, 1, 0, 1);--lds-g-motion-duration-short:220ms;--lds-g-motion-duration-medium:380ms;--lds-g-motion-duration-long:600ms;--lds-g-motion-duration-mega:720ms;--lds-g-font-family-serif:\"ITC Garamond Narrow\", \"ITC Garamond Narrow Fallback\", \"ITC Garamond Narrow Android Fallback\", \"ITC Garamond Std\", Garamond, garamond, serif;--lds-g-font-family-sans-serif-wide:\"Ringside Extra Wide\", \"Ringside Extra Wide Fallback\", \"Ringside Extra Wide Android Fallback\", sans-serif;--lds-g-font-family-sans-serif:Ringside, \"Ringside Fallback\", \"Ringside Android Fallback\", sans-serif;--lds-g-font-line-height-1:1rem;--lds-g-font-line-height-2:1.125rem;--lds-g-font-line-height-3:1.25rem;--lds-g-font-line-height-4:1.375rem;--lds-g-font-line-height-5:1.5rem;--lds-g-font-line-height-6:1.625rem;--lds-g-font-line-height-7:1.75rem;--lds-g-font-line-height-8:1.875rem;--lds-g-font-line-height-9:2rem;--lds-g-font-line-height-10:2.125rem;--lds-g-font-line-height-11:2.25rem;--lds-g-font-line-height-12:2.375rem;--lds-g-font-line-height-13:2.5rem;--lds-g-font-line-height-14:2.625rem;--lds-g-font-line-height-15:2.75rem;--lds-g-font-line-height-16:3rem;--lds-g-font-line-height-17:3.25rem;--lds-g-font-line-height-18:3.625rem;--lds-g-font-line-height-19:4.125rem;--lds-g-font-line-height-20:6.25rem;--lds-g-font-line-height-010:1;--lds-g-font-line-height-011:1.100000023841858;--lds-g-font-line-height-012:1.2000000476837158;--lds-g-font-line-height-013:1.2999999523162842;--lds-g-font-line-height-014:1.399999976158142;--lds-g-font-line-height-015:1.5;--lds-g-font-list-spacing-1:0.375rem;--lds-g-font-list-spacing-2:0.5rem;--lds-g-font-list-spacing-3:0.625rem;--lds-g-font-list-spacing-4:0.75rem;--lds-g-font-size-1:1.125rem;--lds-g-font-size-2:1.25rem;--lds-g-font-size-3:1.5rem;--lds-g-font-size-4:1.75rem;--lds-g-font-size-5:2rem;--lds-g-font-size-6:2.25rem;--lds-g-font-size-7:2.5rem;--lds-g-font-size-8:3rem;--lds-g-font-size-9:3.75rem;--lds-g-font-size-10:6.25rem;--lds-g-font-size-neg-2:0.75rem;--lds-g-font-size-neg-1:0.875rem;--lds-g-font-size-base:1rem;--lds-g-font-style-serif-regular:400;--lds-g-font-style-serif-italic:400 italic;--lds-g-font-style-italic:400 italic;--lds-g-font-style-regular:400;--lds-g-font-style-bold:900;--lds-g-font-weight-400:400;--lds-g-font-weight-900:900;--lds-g-radius-1:0.75rem;--lds-g-radius-2:1rem;--lds-g-radius-3:1.25rem;--lds-g-radius-4:1.5rem;--lds-g-radius-5:1.75rem;--lds-g-radius-6:2rem;--lds-g-radius-7:2.5rem;--lds-g-radius-8:3rem;--lds-g-radius-neg-2:0.25rem;--lds-g-radius-neg-1:0.5rem;--lds-g-radius-full:624.9375rem;--lds-g-sizing-1:0.125rem;--lds-g-sizing-2:0.25rem;--lds-g-sizing-3:0.5rem;--lds-g-sizing-4:0.75rem;--lds-g-sizing-5:1rem;--lds-g-sizing-6:1.25rem;--lds-g-sizing-7:1.5rem;--lds-g-sizing-8:2rem;--lds-g-sizing-9:4rem;--lds-g-sizing-10:4.5rem;--lds-g-sizing-11:5rem;--lds-g-sizing-12:10rem;--lds-g-sizing-13:15rem;--lds-g-sizing-14:20rem;--lds-g-sizing-15:30rem;--lds-g-sizing-border-1:0.0625rem;--lds-g-sizing-border-2:0.125rem;--lds-g-sizing-border-3:0.1875rem;--lds-g-sizing-border-4:0.25rem;--lds-g-spacing-0:0;--lds-g-spacing-100:0.5rem;--lds-g-spacing-150:0.75rem;--lds-g-spacing-200:1rem;--lds-g-spacing-250:1.25rem;--lds-g-spacing-300:1.5rem;--lds-g-spacing-400:2rem;--lds-g-spacing-500:2.5rem;--lds-g-spacing-600:3rem;--lds-g-spacing-700:3.5rem;--lds-g-spacing-800:4rem;--lds-g-spacing-900:4.5rem;--lds-g-spacing-1000:5rem;--lds-g-spacing-1200:6rem;--lds-g-spacing-1400:7rem;--lds-g-spacing-1500:7.5rem;--lds-g-spacing-1600:8rem;--lds-g-spacing-1700:8.5rem;--lds-g-spacing-1800:9rem;--lds-g-spacing-1900:9.5rem;--lds-g-spacing-2000:10rem;--lds-g-spacing-2100:10.5rem;--lds-g-spacing-minus-200:-1rem;--lds-g-spacing-minus-100:-0.5rem;--lds-g-spacing-minus-050:-0.25rem;--lds-g-spacing-minus-025:-0.125rem;--lds-g-spacing-025:0.125rem;--lds-g-spacing-050:0.25rem}:root{--lds-icon-alopecia:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m80.1001%2029.55c-1.67-2.13-3.48-3.68-5.32-4.76-1.06-4.41-3.61-8.06-7.27-9.89-2.47-1.24-5.8-1.58-9.37-.59-.44-3.36-1.41-5.75997-2.88-7.17997-1.02-.97-2.83-1.98-5.68-1.29-2.34.57-4.24%202.8-4.51%205.29997-.23%201.99.66%203.68%202.37%204.52%202.69%201.33%205.01-1.06%205.86-2.51.31-.55.13-1.25-.41-1.57s-1.24-.13-1.57.41c-.01.02-1.41%202.34-2.87%201.62-1.06-.52-1.19-1.5-1.11-2.22.15-1.32%201.17-2.92997%202.78-3.31997%201.5-.37%202.66-.13%203.55.72%201.27%201.21997%201.96%203.52997%202.26%206.28997-3.01%201.28-6.1%203.53-8.92%206.99-2.66%203.26-4.75%206.81-6.38%2010.41-.76-.42-1.55-.85-2.37-1.3-.74-.41-1.4-.76-1.91-1.05-1.6-.89-2.42-1.98-2.31-3.06.1-.86.78-1.63%201.71-1.92.6-.18%201.77-.29%202.88%201.03.4.49%201.12.55%201.61.14.48-.4.55-1.13.14-1.61-1.41-1.67-3.38-2.32-5.3-1.74-1.79.54-3.12%202.09-3.31%203.85-.22%202.02%201.04%203.96%203.46%205.31.52.29%201.19.65%201.94%201.06.9.49%201.75.95%202.55%201.4-.79%201.95-1.45%203.9-2%205.82-2.7-.95-5.44-.85-7.34.27-3.1%201.83-3.55%204.68-2.66%206.55.96%202.01%203.23%202.82%205.52%201.97.59-.23.89-.88.67-1.48-.22-.59-.88-.89-1.47-.67-1.42.53-2.32-.1-2.65-.81-.48-.99-.12-2.49%201.76-3.59%201.31-.77%203.39-.8%205.45-.06.04.01.08.03.12.05-1.74%207.03-2.02%2013.38-1.72%2017.14.11%201.41-.09%202.79-.6%203.99l-.08.19c-.39.9-.95%201.81-1.73%202.79-.31.39-.7.87-1.16%201.41-3.51%204.21-10.83%2012.98-10.54%2023.12.03%201.39.74%202.73%201.89%203.57.85.63%201.78.94%202.76.94%201.5%200%203.15-.72%204.92-2.17%206.05-4.95%2010.83-17.7%2012.03-21.78.36-1.23.92-2.35%201.67-3.33.19-.24.38-.48.57-.72.79-.96%201.78-1.73%202.92-2.29.56-.27%201.19-.58%201.87-.93.2%202.52%201.47%204.41%203.57%205.27.74.3%201.51.44%202.27.44%201.5%200%202.94-.55%203.93-1.58%201.34-1.4%201.56-3.42.59-5.52-.27-.57-.95-.82-1.52-.56-.58.27-.83.95-.56%201.52.4.86.69%202.08-.17%202.98-.82.86-2.4%201.12-3.67.6-1.43-.58-2.21-1.98-2.18-3.93%200-.14.01-.27.02-.41%203.62-1.96%207.85-4.52%2010.53-7.07%204.33-4.13%209.83-12.8%2011.95-21.37.59-2.39.77-4.78.59-7.05%201.03.8%202.04%201.81%203.03%203.07.23.29.56.44.9.44.25%200%20.5-.08.71-.24.5-.39.58-1.11.19-1.61zm-13.84-12.15c2.32%201.16%204.09%203.28%205.14%205.92-1.09-.32-2.18-.5-3.22-.54-.59-1.13-1.41-2.02-2.46-2.6-.89-.49-1.88-.73-2.94-.73-1.37%200-2.85.39-4.37%201.14.04-1.21.03-2.34-.02-3.4%203.24-1.01%206.1-.68%207.87.21zm-17.08%206.44c2.26-2.78%204.65-4.61%206.94-5.74.04%201.26.02%202.57-.05%203.87h-.01c-3.48%202.43-7.02%206.48-9.87%2011.63-.29.52-.57%201.05-.83%201.58-.71-.42-1.47-.86-2.27-1.32%201.54-3.46%203.53-6.88%206.09-10.02zm-6.98%2012.16c.78.45%201.5.88%202.17%201.28-.86%201.99-1.54%203.99-2.02%205.91-.65-.58-1.33-1.09-2.04-1.53.51-1.85%201.13-3.75%201.89-5.66zm8.07%2025.24c-1.38.73-2.6%201.34-3.45%201.75-1.5.73-2.79%201.75-3.85%203.03-.21.26-.43.53-.63.8-.96%201.26-1.67%202.68-2.13%204.23-1.37%204.67-6.07%2016.28-11.12%2020.41-2.44%201.99-3.56%201.65-4.26%201.14-.46-.33-.74-.86-.75-1.4-.26-9.08%206.6-17.3%209.9-21.25.47-.57.88-1.06%201.21-1.48.92-1.16%201.6-2.28%202.09-3.4l.1-.22c.67-1.61.95-3.44.8-5.29-.23-2.86-.06-8.77%201.53-15.55.75.52%201.46%201.15%202.11%201.86-.09.62-.16%201.23-.2%201.83-.33%204.7.95%208.1%203.63%209.57.89.5%201.88.73%202.94.73s2.3-.26%203.52-.76c-.56%201.33-1.11%202.68-1.44%204zm-3.58-6.58c-1.23-.68-1.98-2.36-2.11-4.71.29.59.55%201.21.79%201.85.17.46.61.75%201.07.75.13%200%20.27-.02.4-.07.59-.22.9-.87.68-1.47-.69-1.89-1.6-3.6-2.68-5.09.36-2.22%201.07-4.61%202.09-7.03%202.44%201.61%203.71%202.75%203.79%203.38-.08.48-.28.66-.43.75-.59.38-1.68.2-2.03.11-.59-.17-1.23.18-1.4.79-.18.6.18%201.24.78%201.41.13.03.79.21%201.62.21.71%200%201.54-.13%202.25-.58.79-.5%201.3-1.3%201.47-2.31.27-1.63-1.46-3.47-5.09-5.87.29-.58.59-1.16.91-1.74%202.13-3.85%204.59-6.9%206.96-9.02-.28%202.71-.66%205.12-.98%206.7-.12.62.29%201.22.91%201.34.07.02.15.02.22.02.53%200%201.01-.37%201.12-.92.04-.19.82-4.17%201.2-9.06%202.45-1.6%204.64-2.08%206.05-1.31.15.08.3.18.43.3-1.55.35-2.9.99-3.94%201.79-.5.38-.6%201.1-.21%201.6.38.5%201.1.6%201.6.21.84-.65%202.19-1.25%203.83-1.5%201.1%203.55.09%2010.12-3.83%2017.22-1.78%203.23-3.78%205.89-5.78%207.92.14-1.64-.16-3.24-1.21-4.7-.37-.51-1.08-.62-1.59-.25-.52.37-.63%201.08-.26%201.59%201.17%201.62.93%203.65.18%205.87-2.76%202.01-5.26%202.68-6.81%201.82zm25.27-20.39c-1.98%208.05-7.12%2016.16-11.16%2020.02-1.92%201.82-4.83%203.72-7.59%205.32.29-.76.63-1.53.97-2.32.26-.6.53-1.22.78-1.85%203.47-2.42%206.99-6.45%209.82-11.58%203.86-7%205.31-14%204.25-18.71%201.02.13%202.08.4%203.17.88.52%202.54.47%205.38-.24%208.24z%22%2F%3E%3Cpath%20d%3D%22m63.3899%2034.2c-.61%200-1.12-.48-1.14-1.09l-.18-4.09c-.03-.63.46-1.17%201.09-1.19.63-.03%201.17.46%201.19%201.09l.18%204.09c.03.63-.46%201.17-1.09%201.19-.02%200-.03%200-.05%200z%22%2F%3E%3Cpath%20d%3D%22m57.4499%2045.29c-.61%200-1.12-.48-1.14-1.09l-.21-4.79c-.03-.63.46-1.17%201.09-1.19.63-.03%201.17.46%201.19%201.09l.21%204.79c.03.63-.46%201.17-1.09%201.19-.02%200-.03%200-.05%200z%22%2F%3E%3Cpath%20d%3D%22m49.93%2052.01c-.63%200-1.14-.51-1.14-1.14v-3.33c0-.63.51-1.14%201.14-1.14s1.14.51%201.14%201.14v3.33c0%20.63-.51%201.14-1.14%201.14z%22%2F%3E%3Cpath%20d%3D%22m60.27%2039.56c-.61%200-1.12-.48-1.14-1.09l-.21-4.79c-.03-.63.46-1.17%201.09-1.19.64-.03%201.17.46%201.19%201.09l.21%204.79c.03.63-.46%201.17-1.09%201.19-.02%200-.03%200-.05%200z%22%2F%3E%3Cpath%20d%3D%22m53.04%2039.56c-.61%200-1.12-.48-1.14-1.09l-.21-4.79c-.03-.63.46-1.17%201.09-1.19.62-.03%201.17.46%201.19%201.09l.21%204.79c.03.63-.46%201.17-1.09%201.19-.02%200-.03%200-.05%200z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-anatomical-heart:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m25.14%2066.57c-1.95%200-3.64-1.48-5-4.39-4.95-10.57-.72-20.27%201.32-24.94.25-.58.47-1.08.64-1.51.77-1.98%203.52-4.92%206.69-8.32%203.43-3.68%207.33-7.85%208.41-10.59.8-2.04%201.05-4.11.73-6.16-.17-1.11001.2-2.23001%201-3.00001.79-.76%201.87-1.08%202.95-.87%202.91.56%204.55%201.4%205.17%202.63%201.06%202.13001-.33%207.98001-.97%2010.40001l-.13.31c-2.39%204.26-2.6%206.11-2.35%206.92.17.58.7.87%201.62%201.34.44.22.89.45%201.33.76%202.62%201.85%203.93%203.95%203.9%206.24-.04%202.73-2.05%205.03-3.93%206.28-9.54%206.35-11.36%2011.19-12.34%2013.79-.09.24-.18.47-.26.68-1.54%203.85-4.71%2010.32-8.65%2010.43-.04%200-.07%200-.11%200zm16.09-57.13001c-.2%200-.34.09-.42.18-.08.08-.26.29-.2.63001.39%202.49.08%205.11-.89%207.57-1.27%203.22-5.17%207.4-8.95%2011.45-2.73%202.93-5.56%205.96-6.15%207.46-.18.45-.41.99-.68%201.6-2.02%204.63-5.77%2013.25-1.35%2022.71.86%201.85%201.8%202.86%202.58%202.83%201.62-.05%204.18-3.64%206.22-8.73.08-.19.15-.4.24-.62%201.09-2.89%203.11-8.27%2013.37-15.1%201-.67%202.7-2.27%202.72-4.06.02-1.34-.91-2.68-2.75-3.99-.27-.19-.62-.37-.99-.56-1.04-.53-2.47-1.25-2.99-2.96-.6-1.96.17-4.71%202.5-8.88.97-3.69%201.5-7.56%201.12-8.33%200%200-.43-.64001-3.26-1.19001%200%200-.09-.01-.13-.01z%22%2F%3E%3Cpath%20d%3D%22m64.88%2096.62c-1%200-2.01-.13-2.98-.41-1.79-.51-17.64-5.15-23.23-10.44-10.14-9.6-11.76-21.13-11.82-21.62-.1-.74.42-1.42%201.16-1.52s1.42.42%201.52%201.16c.01.11%201.58%2011.09%2011%2020.01%204.16%203.94%2015.85%208.02%2022.11%209.8%204.46%201.28%209.84-1.58%2011.31-5.98%202.02-6.07%203.57-12.7%203.94-16.88.09-1.02.24-2.26.41-3.64.66-5.44%201.65-13.66-.24-17.1-2.47-4.49-6.98-5.74-10.95-6.85-3.91-1.09-7.61-2.12-8.48-6-2.66-11.89%2013.34-19.08%2018.31-20.99.19-.07.32-.26.32-.47v-2.16c0-.51-.35-.96-.84-1.09l-1.84-.49c-1.46-.39-2.48-1.71-2.48-3.21999v-1.78c0-.5-.37-.92-.87-.98l-1.65-.2c-.25-.04-.46.11-.54.33l-1.22%203.29c-.41%201.10999-1.43%201.88999-2.61%201.98999l-2.13.19c-1.52.14-2.95-.83-3.41-2.28999l-.45-1.43c-.05-.16-.21-.24-.36-.2l-2.38.63c-.12.03-.2.13-.2.25.01.75%200%201.82999-.04%203.24999-.12%203.44-7.29%206.89-10.37%208.21-.69.29-1.48-.02-1.78-.71-.29-.69.02-1.48.71-1.78%204.53-1.95%208.69-4.72%208.73-5.82.05-1.36.05-2.38999.04-3.10999-.02-1.36.89-2.56%202.21-2.91l2.38-.63c1.58-.42%203.17.47%203.65%202.02l.44%201.43c.08.25.3.41.58.39l2.13-.19c.14-.01.26-.1.31-.23l1.22-3.29c.52-1.41%201.93-2.26%203.41-2.08l1.64.2c1.85.23%203.25%201.8%203.25%203.67v1.78c0%20.28.19.53.47.61l1.84.49c1.68.43999%202.86%201.96999%202.86%203.70999v2.16c0%201.34-.8%202.52-2.05%203-4.46%201.72-18.83%208.1-16.65%2017.88.49%202.19%202.7%202.91%206.56%203.98%204.27%201.19%209.58%202.67%2012.6%208.15%202.31%204.2%201.3%2012.6.56%2018.73-.16%201.34-.31%202.55-.4%203.55-.39%204.37-1.98%2011.24-4.07%2017.49-1.61%204.83-6.62%208.14-11.64%208.14z%22%2F%3E%3Cpath%20d%3D%22m48.1401%2033.87s-.07%200-.11%200c-.75-.06-1.3-.71-1.24-1.46.12-1.53.89-9.28%204.3-11.34%201.47-.89%202.75-.97%204.1-1.06.81-.05%201.64-.11%202.69-.33%202.61-.56%203.6-1.73%204.75-3.09.98-1.16%202.09-2.47%204.19-3.11%204.02-1.23%2010.23-1.2%2010.5-1.2.75%200%201.35.62%201.34%201.36%200%20.74-.61%201.34-1.35%201.34%200%200%200%200-.07%200-.66%200-6.21.03-9.63%201.08-1.33.41-2.03%201.23-2.91%202.27-1.22%201.44-2.74%203.23-6.25%203.99-1.24.27-2.22.33-3.08.39-1.18.08-1.96.13-2.87.68-1.64.99-2.75%206-3%209.23-.06.71-.65%201.25-1.35%201.25z%22%2F%3E%3Cpath%20d%3D%22m77.8901%2048.02c-.32%200-.63-.11-.89-.33-.56-.49-.62-1.35-.13-1.91l1.22-1.4c1.2-1.38%201.27-3.43.17-4.89l-.89-1.18c-1.21-1.61-1.07-3.82.34-5.25l2.23-2.27-1.82-1.66c-.17-.16-.43-.16-.57-.01-1.04%201.11-3.02%202.52-6.52%202.9-6.24.68-9.4-3.64-9.54-3.82-.44-.61-.3-1.45.31-1.89s1.45-.3%201.88.3c.11.15%202.44%203.22%207.05%202.72%202.68-.29%204.11-1.28%204.84-2.06%201.15-1.22%203.11-1.28%204.37-.14l2.01%201.83c.49.45.79%201.09.81%201.76s-.24%201.32-.71%201.8l-2.4%202.44c-.46.47-.51%201.2-.11%201.73l.89%201.18c1.86%202.47%201.74%205.96-.29%208.29l-1.22%201.4c-.27.31-.64.46-1.02.46z%22%2F%3E%3Cpath%20d%3D%22m40.04%2063.46c-.15%200-.29-.02-.44-.07-.71-.24-1.08-1.01-.84-1.72.3-.87%203.1-8.47%208.23-8.14%203.43.22%208.96-.83%209.86-2.97.53-1.28-.67-3.3-3.39-5.69-.56-.49-.61-1.35-.12-1.91.5-.56%201.35-.62%201.91-.12%203.76%203.31%205.14%206.26%204.1%208.76-1.67%204.01-9.18%204.86-12.53%204.64-.05%200-.09%200-.14%200-2.59%200-4.78%204.66-5.36%206.32-.19.56-.72.91-1.28.91z%22%2F%3E%3Cpath%20d%3D%22m53.2299%2055.58c-.08%200-.17%200-.25-.02-5.1-.96-6.79-6.1-6.97-8.68-.05-.75.51-1.39%201.26-1.44.74-.06%201.39.51%201.44%201.25.02.22.46%205.4%204.77%206.21.74.14%201.22.84%201.08%201.58-.12.65-.69%201.1-1.33%201.1z%22%2F%3E%3Cpath%20d%3D%22m55.6499%2086.17c-.63%200-1.19-.44-1.32-1.07-1.91-8.93-.51-11.03%203.12-15.33%201.13-1.34%202.53-3%204.1-5.31%201.92-2.83%202.56-5.64%201.9-8.36-1.38-5.71-8-9.38-8.07-9.41-.66-.36-.9-1.18-.54-1.84s1.18-.9%201.83-.54c.31.17%207.73%204.26%209.4%2011.14.85%203.49.08%207.03-2.29%2010.53-1.65%202.43-3.1%204.15-4.27%205.54-3.18%203.76-4.25%205.03-2.54%2013.01.16.73-.31%201.45-1.04%201.61-.1.02-.19.03-.28.03z%22%2F%3E%3Cpath%20d%3D%22m66.2201%2085.83c-.22%200-.44-.05-.64-.16-.17-.09-4.11-2.27-5.55-6.66-.98-2.98-3.91-3.29-4.03-3.3-.74-.07-1.29-.72-1.23-1.46s.72-1.29%201.45-1.24c.2.02%204.84.43%206.39%205.16%201.09%203.34%204.24%205.1%204.27%205.12.65.36.9%201.18.54%201.84-.25.45-.71.71-1.19.71z%22%2F%3E%3Cpath%20d%3D%22m44.79%2071.04c-.65%200-1.22-.47-1.33-1.13-.13-.74.37-1.43%201.1-1.56.15-.03%203.19-.63%205.9-3.98%201.98-2.45%204.11-2.69%205.54-2.46%203.27.52%205.77%203.86%206.26%205.17.26.7-.09%201.48-.79%201.75-.69.26-1.48-.09-1.75-.79-.29-.76-2.16-3.13-4.16-3.45-1.08-.17-2.06.31-3.01%201.48-3.39%204.2-7.37%204.92-7.54%204.95-.08.01-.15.02-.23.02z%22%2F%3E%3Cpath%20d%3D%22m75.13%2058.29c-.56%200-1.09-.35-1.28-.91%200-.02-.9-2.43-2.45-2.56-3.59-.3-5.1%202-5.17%202.1-.4.63-1.24.82-1.86.42-.63-.39-.83-1.21-.44-1.85.1-.16%202.4-3.82%207.7-3.38%203.34.28%204.73%204.21%204.79%204.38.24.71-.13%201.48-.84%201.72-.15.05-.29.07-.44.07z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-arrow-down:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M205.66%2C149.66l-72%2C72a8%2C8%2C0%2C0%2C1-11.32%2C0l-72-72a8%2C8%2C0%2C0%2C1%2C11.32-11.32L120%2C196.69V40a8%2C8%2C0%2C0%2C1%2C16%2C0V196.69l58.34-58.35a8%2C8%2C0%2C0%2C1%2C11.32%2C11.32Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-arrow-left:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M224%2C128a8%2C8%2C0%2C0%2C1-8%2C8H59.31l58.35%2C58.34a8%2C8%2C0%2C0%2C1-11.32%2C11.32l-72-72a8%2C8%2C0%2C0%2C1%2C0-11.32l72-72a8%2C8%2C0%2C0%2C1%2C11.32%2C11.32L59.31%2C120H216A8%2C8%2C0%2C0%2C1%2C224%2C128Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-arrow-right:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M221.66%2C133.66l-72%2C72a8%2C8%2C0%2C0%2C1-11.32-11.32L196.69%2C136H40a8%2C8%2C0%2C0%2C1%2C0-16H196.69L138.34%2C61.66a8%2C8%2C0%2C0%2C1%2C11.32-11.32l72%2C72A8%2C8%2C0%2C0%2C1%2C221.66%2C133.66Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-arrow-square-out-bold:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M228%2C104a12%2C12%2C0%2C0%2C1-24%2C0V69l-59.51%2C59.51a12%2C12%2C0%2C0%2C1-17-17L187%2C52H152a12%2C12%2C0%2C0%2C1%2C0-24h64a12%2C12%2C0%2C0%2C1%2C12%2C12Zm-44%2C24a12%2C12%2C0%2C0%2C0-12%2C12v64H52V84h64a12%2C12%2C0%2C0%2C0%2C0-24H48A20%2C20%2C0%2C0%2C0%2C28%2C80V208a20%2C20%2C0%2C0%2C0%2C20%2C20H176a20%2C20%2C0%2C0%2C0%2C20-20V140A12%2C12%2C0%2C0%2C0%2C184%2C128Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-arrow-square-out:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20fill%3D%22none%22%2F%3E%3Cpolyline%20points%3D%22216%20104%20215.99%2040.01%20152%2040%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3Cline%20x1%3D%22136%22%20y1%3D%22120%22%20x2%3D%22216%22%20y2%3D%2240%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3Cpath%20d%3D%22M184%2C136v72a8%2C8%2C0%2C0%2C1-8%2C8H48a8%2C8%2C0%2C0%2C1-8-8V80a8%2C8%2C0%2C0%2C1%2C8-8h72%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3C%2Fsvg%3E\");--lds-icon-arrow-up:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M205.66%2C117.66a8%2C8%2C0%2C0%2C1-11.32%2C0L136%2C59.31V216a8%2C8%2C0%2C0%2C1-16%2C0V59.31L61.66%2C117.66a8%2C8%2C0%2C0%2C1-11.32-11.32l72-72a8%2C8%2C0%2C0%2C1%2C11.32%2C0l72%2C72A8%2C8%2C0%2C0%2C1%2C205.66%2C117.66Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-arthritis:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m72.97%2019.75s-.02%200-.03-.02c-.62-.32-.85-1.08-.53-1.7l3.99-7.63c.32-.60999%201.06-.84999%201.67-.54999.01%200%20.02%200%20.03.02.62.31999.85%201.07999.53%201.69999l-3.99%207.63c-.32.61-1.06.85-1.67.55z%22%2F%3E%3Cpath%20d%3D%22m76.5201%2024.62c-.29-.14-.52-.39-.63-.72-.23-.66.12-1.37.77-1.6l8.84-3.08c.66-.23%201.37.12%201.6.77.23.66-.12%201.37-.77%201.6l-8.84%203.08c-.33.12-.68.08-.97-.06z%22%2F%3E%3Cpath%20d%3D%22m76.3898%2030.94c-.55-.27-.83-.91-.64-1.51.21-.66.92-1.03%201.58-.82l10.28%203.25c.67.21%201.03.92.82%201.58s-.92%201.03-1.58.82l-10.28-3.25c-.06-.02-.12-.04-.18-.07z%22%2F%3E%3Cpath%20d%3D%22m82.0298%2044.69c.71-2.68.99-4.79.84-6.26-.16-1.53-1.48-2.64-3.01-2.54-5.03.36-8.18%204.86-8.88%2012.68-.04.4-.19.78-.47%201.1-.75.89-1.29%202.02-1.69%203.15-.38-4.44-.72-11.17-.51-14.84.07-1.17.18-2.7.33-4.55%201.62-1.41%202.54-3.43%202.54-5.6%200-1.77-.62-3.46-1.75-4.79.38-6.11.32-9.11-.19-10.32-.53-1.25-1.4-2.14-2.5-2.57-1.87-.72-3.72.11-3.93.21-1.17.54-2.85%202.4-4.01%2012.32-1.32%201.37-2.07%203.23-2.07%205.15%200%201.46.42%202.86%201.21%204.07-.38%203.99-.88%206.35-1.29%207.59-.61-2.33-1.41-7.28-1.91-12.64%201.17-1.35%201.8-3.06%201.8-4.86%200-2.21-.99-4.31-2.68-5.72-.24-3.53-.62-8.19-2.92-10.11-.84-.7-1.84-.98-2.99-.86-1.2.14-2.16.67-2.86%201.59-1.81%202.38-1.13%206.7-.83%208.54.04.24.08.51.08.56%200%20.16.03.46.15%201.49-.98%201.29-1.52%202.86-1.52%204.5%200%202.24%201.02%204.36%202.75%205.77.27%202.48.46%204.44.57%205.97.29%204.04-.12%206.06-.45%206.87-.93-1.38-2.65-5.22-3.31-7.65.74-1.18%201.13-2.54%201.13-3.95%200-2.47-1.24-4.79-3.27-6.16-.37-1.78-.69-3.33-.87-4.15-.47-2.18-1.44-6.74-5.15-5.96-3.68.76-4.3%205.16-3.65%209.03.11.68.28%201.63.47%202.72-1%201.29-1.54%202.88-1.54%204.53%200%202.65%201.37%205.04%203.62%206.38.01.07.02.1.02.11%201.11%205.34%202.27%2011.23%202.73%2014.11-.3-.19-.55-.38-.64-.5-.11-.17-.86-1.54-2.17-3.99.34-.86.51-1.76.51-2.7%200-3.46-2.34-6.41-5.64-7.23-.12-.24-.22-.47-.32-.68-1.26-2.73-2.53-4.24-4-4.73-.93-.31-1.91-.2-2.92.34-1.4.75-2.76%202.48-1.33%206.45.25.7.58%201.54.98%202.52-.51%201.02-.78%202.16-.78%203.33%200%203.43%202.31%206.37%205.58%207.2.74%201.5%201.37%202.72%201.81%203.48.51.9%201.17%202.64%201.8%204.53-.02.05-.04.1-.06.16l-5.22%2017.46c-.09.31-.03.65.18.9s.52.38.85.35l6.8-.75-4.56%2014.33c-.2.65.04%201.32.62%201.68.25.16.53.23.8.23.36%200%20.73-.14%201.01-.41l8.97-8.44c.27.63.62%201.52%201.05%202.76%201.16%203.41%202.21%207.44%202.22%207.48.16.59.76.95%201.35.79s.95-.76.79-1.35c0-.04-1.08-4.14-2.27-7.63-.6-1.76-1.07-2.9-1.44-3.65l10.41-9.79%201.02-.97c.29-.27.38-.7.23-1.07s-.5-.61-.9-.61l-9.41.08%206.88-9.8c.2-.29.23-.67.08-.99-.16-.31-.47-.52-.83-.54l-16.39-.71c-.7-2.1-1.44-4.08-2.06-5.16-.46-.8-1.16-2.17-1.98-3.84-.16-.32-.46-.55-.81-.6-2.49-.44-4.31-2.61-4.31-5.15%200-.95.26-1.88.74-2.69.18-.3.21-.67.08-1-.48-1.15-.87-2.13-1.15-2.91-1.09-3.01-.04-3.57.29-3.75.59-.31.93-.27%201.17-.19.57.19%201.5.97%202.69%203.56.16.35.35.75.57%201.21.16.32.46.55.82.61%202.53.42%204.36%202.59%204.36%205.16%200%20.79-.17%201.56-.52%202.27-.16.32-.15.69.02%201.01%201.06%201.99%202.3%204.27%202.5%204.6.54.85%202.92%202.28%203.8%202.28.33%200%20.66-.16.88-.42.4-.49.66-.82-2.72-17.1%200%200-.04-.22-.11-.58-.06-.34-.28-.63-.59-.79-1.78-.89-2.88-2.68-2.88-4.67%200-1.29.47-2.53%201.33-3.48.23-.26.33-.6.27-.94-.23-1.28-.43-2.41-.56-3.19-.1-.6-.91-5.91%201.91-6.49%201.3-.27%201.93%201.43%202.54%204.26.19.89.55%202.63.96%204.59.07.31.26.58.53.74%201.6.93%202.6%202.67%202.6%204.52%200%201.12-.35%202.19-1.01%203.09-.19.26-.26.59-.19.9.03.1%202.99%2010%205.45%2010.16.54.04%201.05-.17%201.47-.58%201.52-1.52%201.56-5.73%201.33-9-.12-1.66-.33-3.79-.63-6.53-.04-.31-.2-.6-.47-.78-1.39-.98-2.22-2.57-2.22-4.27%200-1.27.46-2.49%201.29-3.43.21-.24.31-.55.27-.86-.05-.37-.18-1.5-.19-1.7%200-.19-.03-.42-.11-.91-.23-1.43-.82-5.23.41-6.86.33-.43.75-.66%201.35-.73.53-.06.94.05%201.31.36%201.64%201.36%201.95%205.87%202.15%208.85v.2c.04.33.2.63.47.82%201.36.99%202.18%202.57%202.18%204.25%200%201.39-.54%202.7-1.52%203.68-.23.23-.35.55-.32.88.13%201.48%201.34%2014.45%203.17%2015.89.3.23.66.33%201.01.28.83-.12%202.55-.38%203.52-11.03.03-.27-.05-.54-.21-.76-.67-.9-1.03-1.98-1.03-3.11%200-1.47.59-2.83%201.67-3.82.19-.18.32-.43.35-.69%201.14-10.09%202.76-10.94%202.8-10.96.32-.15%201.33-.47%202.18-.14.55.21.96.65%201.25%201.36.24.58.44%202.74%200%209.79-.02.31.09.62.31.84.94.97%201.46%202.26%201.46%203.62%200%201.64-.75%203.16-2.06%204.16-.25.19-.41.48-.43.79-.16%202.08-.3%203.78-.37%205.07-.32%205.58.57%2018%201.13%2019.84.3.96.88%201.14%201.3%201.13%201-.03%201.21-.91%201.56-2.37.35-1.49.95-3.99%202.11-5.36.57-.67.91-1.49.98-2.34.42-4.67%201.94-10.32%206.83-10.66.33-.03.62.22.66.55.08.83.02%202.45-.78%205.48-.13.49-.16.99-.1%201.48.16%201.21.47%204.36.01%207.34-.74%204.74-6.62%2018.08-9.11%2023.6-.73%201.62-1.21%203.36-1.4%205.19-.34%203.03-1.33%208.5-4.22%2011.06-.46.4-.5%201.1-.09%201.56.22.25.52.38.83.38.26%200%20.52-.09.74-.28%203.44-3.05%204.58-9.12%204.95-12.47.18-1.6.59-3.12%201.22-4.52%203.14-6.96%208.53-19.34%209.28-24.17.51-3.26.16-6.66%200-7.96-.02-.2%200-.42.05-.64zm-52.09%2016.18.54-1.81%201.24.05%2013.9.61-6.95%209.89c-.21.3-.23.69-.07%201.01.17.32.5.52.86.52l8.83-.08-9.39%208.83-1.62%201.52-8.02%207.54%204.21-13.22.17-.55.09-.28c.1-.31.03-.65-.18-.91-.11-.14-.26-.24-.43-.3-.1-.04-.21-.05-.31-.05-.04%200-.07%200-.11%200l-6.82.75%204.04-13.53z%22%2F%3E%3Cpath%20d%3D%22m23.2498%2064.06s.02.01.02.02c.53.44.6%201.24.16%201.77l-5.52%206.61c-.44.53-1.21.6-1.75.18%200%200-.02-.01-.02-.02-.53-.44-.6-1.24-.16-1.77l5.52-6.61c.44-.53%201.21-.6%201.75-.18z%22%2F%3E%3Cpath%20d%3D%22m20.8102%2058.55c.25.2.42.49.47.83.08.69-.41%201.32-1.1%201.4l-9.3%201.13c-.69.08-1.31997-.41-1.39997-1.1s.41-1.32%201.09997-1.4l9.3-1.13c.35-.04.68.06.93.26z%22%2F%3E%3Cpath%20d%3D%22m22.2801%2052.41c.48.38.62%201.06.31%201.61-.35.6-1.11.81-1.72.47l-9.35-5.35c-.61-.35-.81-1.11-.47-1.72.35-.6%201.11-.81%201.72-.47l9.35%205.35c.06.03.11.07.16.11z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-autoimmune:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m43.84%2097.27c-1.37%200-2.73-.32-4-1.05-2.09-1.2-2.86-3.01-3.6-4.75-.79-1.87-1.62-3.8-4.26-5.51-1.46-.94-2.71-.48-4.8.43-2.39%201.04-5.67%202.46-8.99-1.16-2.09-2.27-1.86-4.82-1.67-6.87.07-.72.13-1.4.1-2.04-.0334-.74-.2334-1.4467-.6-2.12-.58-1.06-1.8-1.65-3.22-2.33-2.51-1.2-5.95004-2.84-6.96004-7.93-1.25-6.3%201.64001-8.51%203.55001-9.97%201.47003-1.12%201.70003-1.41%201.40003-2.5-.13-.47-.78-1.32-1.41004-2.15-.79-1.03-1.77-2.32-2.53-3.82-1.78-3.48-2.79-5.84-1.29-10.23%201.08-3.17%205.09004-5.12%208.31004-6.69%201.39-.68%202.83-1.38%203.29-1.85%202.39-2.49%202.26-4.34%202.11-6.49-.14-2-.3-4.27%201.96-6.44%203.15-3.02%206.83-3.81%2010.65-2.3%201.76.7%203.67-.19%204.79-1.39.28-.3.63-.96.97-1.59.62-1.15%201.26-2.35%202.23-3.01%203.29-2.26%207.51-1.64%2011.3%201.66.34.3.62.61.9.92.33.37.64.71.95.89%201.74%201%202.33.65%204.54-.99l.43-.32c2.3-1.69%205.36-1.95%207.61-.63%202.15%201.25%203.28%203.44%204.28%205.37.34.65.65%201.26%201%201.83.31.52.66.94%201.03%201.24%201.04.86%203.03%201.16%204.53%201.07.54-.03%201.12-.1%201.71-.16%202.72-.31%206.1-.69%208.51%201.83%201.39%201.45%203.42%205.5%201.15%2010.41-1.6%203.46-2.14%205.34-.89%206.71.57.62%201.63.84%202.85%201.1%202.33.48%205.51%201.15%206.85%205.34%201.1%203.45-.81%207-4.75%208.82-.28.13-.56.25-.85.37-1.94.82-2.91%201.23-2.46%204.16.24%201.57%202.05%203.72%203.51%205.08%201.41%201.31%202.21%203.31%202.26%205.64.05%202.5-.76%205.01-2%206.26-2.91%202.92-5.57%203.1-9%203.03-2.59-.07-3.91.38-5.26%201.71-1.7%201.67-.75%204.85-.19%206.75.17.59.31%201.05.37%201.44.62%204.51-1.81%208.39-6.2%209.91-3.96%201.36-8.72.45-12.43-2.39l-.56-.44c-1.68-1.32-2.95-2.22-3.93-1.79-.49.21-.94.79-1.41%201.41l-.24.31c-2.26%202.92-5.97%205.22-9.62%205.22zm-13.51-14.85c1.04%200%202.13.27%203.26%201%203.42%202.21%204.52%204.79%205.4%206.86.65%201.52%201.12%202.63%202.33%203.33%203.09%201.77%207.38-.34%209.75-3.4l.22-.29c.62-.82%201.4-1.84%202.62-2.36%202.7-1.16%205.16.78%206.96%202.19l.54.42c2.92%202.24%206.61%202.98%209.63%201.94%203.06-1.06%204.63-3.55%204.21-6.66-.02-.16-.15-.6-.27-.99-.71-2.38-2.02-6.81.96-9.74%201.94-1.92%204.02-2.64%207.42-2.58%203.19.06%204.79-.12%206.82-2.15.48-.48%201.16-2.1%201.13-4.08-.02-.87-.21-2.49-1.3-3.5-1.19-1.1-4-3.97-4.44-6.82-.81-5.24%202.24-6.53%204.25-7.38.25-.11.51-.21.76-.33%202.08-.96%203.87-2.94%203.15-5.18-.81-2.53-2.48-2.88-4.6-3.32-1.52-.32-3.24-.67-4.46-2.01-2.81-3.08-.97-7.07.38-9.99%201.99-4.31-.57-7.05-.6-7.08-1.38-1.44-3.63-1.19-6.01-.92-.65.07-1.28.14-1.87.18-.98.05-4.37.09-6.61-1.75-.64-.52-1.21-1.2-1.7-2.01-.4-.66-.75-1.34-1.1-2-.89-1.72-1.73-3.34-3.13-4.16-1.21-.71-2.99-.52-4.32.46l-.42.31c-2.21%201.64-4.3%203.19-7.81%201.18-.73-.42-1.24-.99-1.69-1.49-.22-.25-.43-.48-.63-.66-1.29-1.12-4.62-3.52-7.63-1.45-.38.26-.9%201.24-1.29%201.96-.45.84-.88%201.63-1.42%202.22-1.67%201.8-4.79%203.43-8.08%202.13-2.76-1.09-5.14-.56-7.47%201.68-1.19%201.14-1.18%202.12-1.04%204.06.16%202.25.37%205.33-2.93%208.78-.83.86-2.29%201.58-4.15%202.48-2.58%201.25-6.10004%202.97-6.78004%204.96-1.12%203.28-.51%204.71%201.12%207.9.64004%201.26%201.49004%202.38%202.25004%203.36.87%201.14%201.63%202.13%201.91%203.15.89%203.14-1.04%204.62-2.46%205.7-1.71004%201.3-3.31004%202.54-2.43004%207%20.72%203.62%202.95004%204.68%205.31004%205.81%201.73.83%203.52%201.68%204.53%203.53.81%201.49.92%201.8%201%203.49.04.84-.04%201.66-.11%202.44-.19%202.03-.24%203.33.89%204.57%201.8%201.95%203.08%201.52%205.59.43%201.28-.55%202.75-1.19%204.35-1.19z%22%2F%3E%3Cpath%20d%3D%22m38.4699%2074.75c-1.37%200-2.95-.29-4.95-.65-4.09-.74-6.34-1.15-8.48-3.07-2.35-2.11-3.12-4.71-3.54-6.11-.62-2.1-1.66-5.62.16-8.57.8-1.3%201.8-1.88%202.6-2.35.77-.45%201.15-.69%201.44-1.35.04-.08.08-.17.12-.26.28-.57.63-1.27-.12-2.89-.96-2.09-2.79-6.94-2.83-10.29-.05-4.6%201.7-8.21%205.34-11.02%201.19-.92%203.27-2%206.47-1.89%202%20.06%202.97.46%205.31%201.43.61.25%201.33.55%202.21.9%202.71%201.08%203.85%201.51%204.87%201.34%201-.17%201.46-.67%202.39-1.78.77-.92%201.73-2.05%203.36-3.15%201.48-.99%206.69-4.07%2011.75-1.95%203.08%201.29%206.2%204.54%206.21%208.87%200%203.05-1.64%205.98-4.41%207.84-1.28.85-3.36%201.96-6.61%201.72l-.59-.04c-2.17-.16-4.21-.3-7.26-1.46-.57-.21-1.14-.47-1.71-.72-2.81-1.24-3.53-1.32-4.05-.45-.32.53-1.05%201.93-2.36%205.32-1.81%204.68-4.57%205.71-6.59%206.47-.93.35-1.66.62-2.17%201.17-.3.32-1.09%201.18-1.03%202.12.08%201.22%201.69%202.27%202.55%202.84%201.71%201.12%202.42%201.43%202.99%201.68.81.35%201.38.63%202.79%201.82%202.43%202.04%203.64%205.29%203.09%208.26-.11.61-.82%203.74-3.69%205.41-1.03.6-2.09.83-3.31.83zm-14.09-10.69c.38%201.27.95%203.19%202.66%204.73%201.5%201.35%203.23%201.66%207.01%202.35%203.44.63%205.02.87%206.21.18%201.77-1.04%202.21-3.13%202.25-3.37.41-2.2-.75-4.31-2.07-5.42-1.15-.97-1.47-1.11-2.05-1.36-.64-.28-1.52-.66-3.44-1.92-1.21-.79-3.74-2.44-3.91-5.17-.14-2.21%201.33-3.81%201.81-4.33.99-1.08%202.18-1.52%203.33-1.95%201.81-.68%203.52-1.32%204.84-4.74s2.14-5.04%202.58-5.78c2-3.32%205.51-1.78%207.83-.75.52.23%201.04.46%201.56.66%202.64%201%204.38%201.12%206.41%201.27l.6.04c2.29.18%203.66-.52%204.71-1.22%201.93-1.29%203.08-3.29%203.08-5.34%200-2.94-2.27-5.23-4.37-6.11-3.68-1.54-7.75.89-8.91%201.67-1.29.86-2.02%201.74-2.74%202.59-1%201.2-2.04%202.43-4.17%202.8-1.89.33-3.53-.32-6.49-1.5-.9-.36-1.63-.66-2.25-.92-2.27-.94-2.81-1.16-4.26-1.21-2.27-.06-3.74.65-4.54%201.27-2.89%202.23-4.21%204.96-4.17%208.61.03%202.64%201.54%206.87%202.55%209.07%201.34%202.92.46%204.71.08%205.47l-.08.16c-.7%201.56-1.79%202.2-2.67%202.71-.64.38-1.15.67-1.56%201.34-1.12%201.82-.35%204.42.16%206.14z%22%2F%3E%3Cpath%20d%3D%22m72.8502%2054.45c-2.44%200-8.17%200-8.17-5.3s5.72-5.3%208.17-5.3c2.57%200%208.58%200%208.58%205.3s-6.01%205.3-8.58%205.3zm0-7.6c-3.91%200-5.17.56-5.17%202.3s1.26%202.3%205.17%202.3c4.12%200%205.58-.6%205.58-2.3s-1.46-2.3-5.58-2.3z%22%2F%3E%3Cpath%20d%3D%22m54.95%2057.34c-2.61%200-4.74-2.13-4.74-4.74s2.13-4.74%204.74-4.74%204.74%202.13%204.74%204.74-2.13%204.74-4.74%204.74zm0-6.48c-.96%200-1.74.78-1.74%201.74s.78%201.74%201.74%201.74%201.74-.78%201.74-1.74-.78-1.74-1.74-1.74z%22%2F%3E%3Cpath%20d%3D%22m65.5301%2071.59c-4.21%200-7.39-4.49-7.39-7.41s3.17-7.25%207.39-7.25%206.05%204.28%206.05%207.33-1.88%207.33-6.05%207.33zm0-11.65c-2.36%200-4.39%202.85-4.39%204.25s2.03%204.41%204.39%204.41%203.05-2.97%203.05-4.33-.77-4.33-3.05-4.33z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-biologic-pharmaceuticals:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m38.4898%2085.68-15.54-.04c-4.45-.01-8.15-1.56-10.17-4.23-1.27-1.69-2.5-4.7-1.15-9.44.92-3.23%202.35-5.43%204.72-9.09l.88-1.36c3.65-5.65%2016.28-27.36%2017.87-31.8%201.77-4.95%202.26-9.67%202.31-10.23v-9.93c0-2.02%201.64-3.66%203.66-3.66h7.42c2.11%200%203.83%201.72%203.83%203.83v9.76c.05.56.54%205.28%202.31%2010.23.47%201.31%201.02%202.5%203.19%206.48.4.73.13%201.64-.6%202.04s-1.64.13-2.04-.6c-2.07-3.79-2.8-5.28-3.38-6.91-2.02-5.64-2.46-10.83-2.48-11.05%200-.04%200-.08%200-.12v-9.82c0-.46-.37-.83-.83-.83h-7.42c-.36%200-.66.29-.66.66v10%20.12c-.02.22-.46%205.41-2.48%2011.05-1.68%204.7-14.37%2026.53-18.17%2032.42l-.88%201.36c-2.3%203.53-3.56%205.48-4.36%208.27-.81%202.86-.59%205.15.66%206.82%201.44%201.92%204.28%203.03%207.78%203.04l15.53.04c.83%200%201.5.67%201.5%201.5s-.67%201.5-1.5%201.5z%22%2F%3E%3Cpath%20d%3D%22m53.8701%2085.67c-.83%200-1.5-.67-1.5-1.5s.67-1.5%201.5-1.5l12.91-.03c3.5-.01%206.33-1.12%207.77-3.04%201.25-1.67%201.48-3.96.66-6.82-.8-2.8-2.06-4.75-4.36-8.28l-.88-1.35c-1.29-2-3.65-5.91-6.3-10.46-.42-.72-.18-1.63.54-2.05.71-.42%201.63-.18%202.05.54%202.64%204.51%204.97%208.38%206.23%2010.34l.87%201.34c2.38%203.66%203.81%205.86%204.73%209.1%201.35%204.74.12%207.75-1.15%209.44-2.01%202.68-5.72%204.22-10.16%204.23l-12.91.03z%22%2F%3E%3Cpath%20d%3D%22m43.6902%2093.26c-.13%200-.27-.02-.4-.05-.8-.22-1.27-1.05-1.05-1.84.43-1.56%208.45-30.33%2017.38-48.13.04-.1.08-.19.14-.28%202.56-5.07%205.2-9.22%207.75-11.56%2011.56-10.6%2021.22-11.51%2021.62-11.54.45-.03.9.13%201.22.47.31.33.46.79.39%201.24-.06.45-1.69%2011.01-11.46%2018.81-6.81%205.43-14.54%205.3-17.4%205.02-8.64%2017.68-16.64%2046.4-16.75%2046.78-.18.67-.79%201.1-1.44%201.1zm19.67-50.8c3.03.09%208.91-.35%2014.04-4.44%206.31-5.03%208.89-11.47%209.85-14.76-3.3.85-10.07%203.33-17.72%2010.34-2%201.84-4.09%204.97-6.17%208.86z%22%2F%3E%3Cpath%20d%3D%22m46.98%2078.95c-.12%200-.25-.01-.37-.05-.61-.16-14.87-4.17-7.53-34.5.11-.46.44-.84.88-1.03.44-.18.94-.15%201.35.09.54.32%2013.3%208.17%209.88%2029.06-.13.82-.9%201.37-1.72%201.24s-1.37-.91-1.24-1.72c2.37-14.45-3.63-21.88-6.74-24.67-2.78%2012.96-1.14%2020.03.8%2023.72%202.13%204.05%204.97%204.88%205.09%204.92.79.22%201.27%201.04%201.05%201.83-.18.67-.78%201.11-1.44%201.11z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-blood-cancer:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m67.4702%2077.45c-11.33%200-20.54-9.21-20.54-20.54s9.21-20.54%2020.54-20.54%2020.54%209.21%2020.54%2020.54-9.21%2020.54-20.54%2020.54zm0-38.08c-9.67%200-17.54%207.87-17.54%2017.54s7.87%2017.54%2017.54%2017.54%2017.54-7.87%2017.54-17.54-7.87-17.54-17.54-17.54z%22%2F%3E%3Cpath%20d%3D%22m63.9598%2072.48c-.39%200-.79-.07-1.21-.21-3.6-1.24-3.77-3.94-3.92-6.1-.05-.7-.09-1.42-.24-2.12-.21-1.03-1.08-1.66-2.5-2.56-1.66-1.05-4.16-2.65-3.17-5.99.24-.82.91-1.94%202.72-2.66.39-.22%201.08-1.4%201.04-1.83-.59-1.44-.38-3.08.6-4.31.88-1.11%202.21-1.68%203.48-1.47.58.09%201.11.29%201.57.47.92.36%201.23.43%201.6.21.12-.07.31-.39.49-.69.3-.51.72-1.22%201.44-1.91%201.19-1.15%202.74-1.79%204.15-1.68%201.25.08%202.35.7%203.19%201.77%201.05%201.33%201.12%202.7%201.18%203.8.06%201.15.13%201.56.69%201.96.34.25.65.24%201.44.16.97-.09%202.3-.23%203.71.78%202.11%201.52%203.24%204.88%202.46%207.34-.58%201.82-1.96%202.55-2.97%203.08-.95.5-1.3.73-1.45%201.32-.11.42-.03.73.14%201.33.23.79.54%201.87.11%203.35-.66%202.23-2.64%204.32-4.82%203.96-1.26-.21-2.56-1.3-3.37-2.12-.05.05-.1.1-.14.13l-.35.32c-2.23%202.08-3.95%203.68-5.87%203.68zm-3.7-24.3c-.17%200-.42.12-.63.38-.18.22-.43.7-.14%201.4.32.79.25%201.77-.21%202.84-.44%201.02-1.36%202.37-2.53%202.83-.53.21-.87.47-.95.72-.3%201.01-.03%201.38%201.91%202.61%201.5.95%203.36%202.14%203.83%204.5.18.9.24%201.76.29%202.52.14%202.19.27%202.9%201.9%203.46.74.26%202.28-1.17%204.06-2.83l.32-.3c.44-.42%201.36-1.31%202.76-1.19.4.03.76.22%201.02.52.77.89%201.88%201.81%202.29%201.88.26%200%201.12-.73%201.44-1.85.19-.64.08-1.03-.11-1.67-.22-.75-.49-1.68-.16-2.93.5-1.91%201.92-2.66%202.95-3.2.88-.47%201.31-.72%201.51-1.34.4-1.24-.27-3.22-1.35-4-.47-.33-.85-.31-1.66-.23-.93.09-2.2.22-3.49-.71-1.77-1.27-1.86-2.98-1.93-4.23-.05-.95-.11-1.56-.54-2.11-.42-.53-.79-.61-1.04-.63-.55-.04-1.29.3-1.86.85-.43.41-.68.84-.95%201.29-.36.61-.77%201.29-1.56%201.75-1.68.98-3.2.39-4.2%200-.35-.14-.68-.27-.95-.31-.01%200-.03%200-.04%200z%22%2F%3E%3Cpath%20d%3D%22m49.7002%2089.26c-.99%200-1.99-.07-3.01-.2-8.41-1.13-15.16-6.85-17.63-14.93-6.28-20.59%208.36-52.8%2014.94-65.69999.82-1.61%202.47-2.57%204.26-2.53%201.81.05%203.39%201.11%204.12%202.77%202.71%206.13999%207.81%2017.43999%2011.47%2024.12999.4.73.13%201.64-.6%202.04s-1.64.13-2.04-.6c-3.53-6.45-8.25-16.81-11.58-24.35999-.26-.6-.81-.96-1.46-.98-.65-.04-1.21.32-1.51.89-6.42%2012.56999-20.71%2043.91999-14.75%2063.45999%202.53%208.29%209.49%2012.06%2015.16%2012.83%206.5.87%2012.43-1.56%2015.46-6.35.44-.7%201.37-.91%202.07-.46.7.44.91%201.37.46%202.07-3.19%205.03-8.92%207.92-15.39%207.92z%22%2F%3E%3Cpath%20d%3D%22m69.3%2058.86c-1.82%200-3.3-1.53-3.3-3.42s1.48-3.42%203.3-3.42%203.3%201.53%203.3%203.42-1.48%203.42-3.3%203.42zm0-4.71c-.64%200-1.17.58-1.17%201.29s.52%201.29%201.17%201.29%201.17-.58%201.17-1.29-.52-1.29-1.17-1.29z%22%2F%3E%3Cpath%20d%3D%22m66.0401%2060.58c0%20.82-.67%201.49-1.49%201.49s-1.49-.67-1.49-1.49.67-1.49%201.49-1.49%201.49.66%201.49%201.49z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-bookmark-simple:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M192%2C224l-64-40L64%2C224V48a8%2C8%2C0%2C0%2C1%2C8-8H184a8%2C8%2C0%2C0%2C1%2C8%2C8Z%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3C%2Fsvg%3E\");--lds-icon-brain:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m19.93%2054.8701c-.79%200-1.44-.64-1.46-1.43-.15-8.22%205.95-11.14%209.2-11.54.8-.1%201.53.47%201.62%201.27.1.8-.47%201.52-1.26%201.62-.3.04-6.78%201-6.64%208.59.01.81-.63%201.47-1.43%201.48h-.03z%22%2F%3E%3Cpath%20d%3D%22m19.93%2048.93c-.22%200-.44-.05-.65-.15-.21-.11-5.18-2.64-6.52-7.3-.71-2.48-.27-5.05%201.31-7.63%201.76-2.88%204.05-4.5699%206.78-5.0299%201.76-.3%203.47-.03%204.95.45-.8-2.49-.84-5.52%201.16-8.52%202.16-3.24%205.73-5.39%209.8-5.88%203.24-.4%206.25.3499%208.07%202.0099%204.04%203.68%202.12%209.2501%202.04%209.4801-.27.76-1.11%201.15-1.86.89-.76-.27-1.15-1.1001-.89-1.8601.05-.16%201.34-3.9799-1.26-6.3499-1.18-1.07-3.38-1.56-5.75-1.27-3.23.4-6.04%202.0699-7.73%204.6099-3.24%204.85%201.13%209.3801%201.31%209.5701.55.55.56%201.4399.04%202.0099-.53.57-1.4.63-2%20.14-.04-.03-3.76-3.02-7.41-2.39-1.86.32-3.47%201.55-4.77%203.68-1.15%201.88-1.47%203.61-1%205.29.97%203.43%204.98%205.49%205.02%205.51.72.36%201.01%201.2401.65%201.9601-.26.51-.77.8-1.3.8z%22%2F%3E%3Cpath%20d%3D%22m56.42%2034.67c-.94%200-1.92-.09-2.94-.27-.79-.14-1.32-.9-1.17-1.7.14-.79.9-1.31%201.69-1.17%203.71.67%206.74-.15%208.13-2.21%201.34-1.98%201.01-4.96-.88-7.95-1.07-1.7-2.42-2.67-4.13-2.97-4.43-.77-9.69%203.29-9.74%203.33-.64.5-1.55.39-2.05-.25-.5-.63-.39-1.55.24-2.05.25-.2%206.3-4.9%2012.03-3.92%202.53.43%204.58%201.88%206.11%204.29%202.53%204%202.84%208.17.83%2011.14-1.63%202.41-4.56%203.72-8.13%203.72z%22%2F%3E%3Cpath%20d%3D%22m63.8299%2040.08c-.26%200-.52-.07-.76-.21-.68-.42-.9-1.31-.49-2%200%200%202.52-4.28.51-8.41-.35-.72-.05-1.6.67-1.95.73-.35%201.6-.05%201.95.67%202.73%205.59-.5%2010.98-.64%2011.2-.27.45-.75.7-1.25.7z%22%2F%3E%3Cpath%20d%3D%22m81.95%2026.34c-.52%200-1.02-.28-1.28-.77-6-11.12-17.98-5.36-18.48-5.11-.72.36-1.59.06-1.95-.66s-.07-1.59.65-1.95c.15-.08%2015-7.28%2022.35%206.33.38.71.12%201.59-.59%201.98-.22.12-.46.18-.69.18z%22%2F%3E%3Cpath%20d%3D%22m87.5901%2049.87-.43-.34c-2.26-1.76-5.91-6.41-3.56-11.42.34-.73%201.21-1.04%201.94-.7s1.04%201.21.7%201.94c-1.6%203.42%201.15%206.45%202.28%207.5%201.52-.29%205.39-1.65%205.26-8.04-.11-5.74-1.05-8.45-6.54-10.41-7.07-2.53-13.04%204.08-13.1%204.14-.54.6-1.46.65-2.06.12s-.66-1.45-.13-2.05c.3-.33%207.34-8.14%2016.26-4.96%206.96%202.48%208.35%206.52%208.48%2013.1.21%2010.49-8.47%2011.08-8.56%2011.09l-.55.03z%22%2F%3E%3Cpath%20d%3D%22m86.4099%2049.9501c-7.07%200-11.64-5.42-11.85-5.67-.51-.62-.43-1.54.19-2.05s1.53-.43%202.05.19c.09.11%204.61%205.37%2011.06%204.52.8-.11%201.53.46%201.64%201.25.11.8-.46%201.53-1.25%201.64-.63.08-1.24.12-1.84.12z%22%2F%3E%3Cpath%20d%3D%22m86.8499%2066c-1.09%200-2.03-.25-2.71-.52-2.96-1.15-5.46-4.21-5.46-6.7%200-.81.65-1.46%201.46-1.46s1.46.65%201.46%201.46c0%20.91%201.36%203.12%203.59%203.98%201.99.77%203.91.16%205.71-1.82%201.95-2.14%202.71-5.05%202.03-7.77-.46-1.85-1.54-3.25-2.89-3.73-.76-.27-1.15-1.11-.88-1.86.27-.76%201.1-1.15%201.86-.88%202.27.81%204.04%202.97%204.74%205.77.92%203.67-.1%207.57-2.7%2010.44-2.2%202.41-4.41%203.09-6.2%203.09z%22%2F%3E%3Cpath%20d%3D%22m76.3499%2074.21c-3.56%200-6.0899-2.02-7.1199-3.46-.47-.65-.3201-1.56.3299-2.04.65-.47%201.56-.32%202.03.32.13.17%202.8701%203.75%207.9601%201.53%201.54-.67%203.7399-4.39%204.2199-5.71.27-.76%201.11-1.15%201.87-.88s1.15%201.11.88%201.87-2.7799%206.08-5.7999%207.4c-1.58.69-3.04.97-4.36.97z%22%2F%3E%3Cpath%20d%3D%22m80.14%2089.28c-3.79%200-5.21-2.03-7.63-5.5-.84-1.21-1.89-2.71-3.25-4.45-5.08-6.49-9.61-4.1-9.96-3.9-.02%200-.03.02-.04.02l-1.5-2.5s.01%200%20.03-.02c.4-.23%209.74-5.81%207.64-14.71-.19-.78.3-1.57%201.09-1.75.78-.19%201.57.3%201.75%201.08%201.54%206.53-1.74%2011.51-4.77%2014.54%202.37.41%205.21%201.82%208.05%205.44%201.41%201.8%202.48%203.34%203.35%204.57%202.62%203.74%203.21%204.45%205.97%204.23.59-.05%201.1-.48%201.37-1.15%201.53-3.87%202.39-8.44%201.95-19.28-.03-.8.59-1.48%201.4-1.52s1.48.59%201.52%201.4c.47%2011.36-.48%2016.25-2.15%2020.48-.68%201.71-2.15%202.85-3.85%202.99-.33.03-.65.04-.95.04z%22%2F%3E%3Cpath%20d%3D%22m65.2301%2059.51c-3.21%200-6.0401-1.41-6.2001-1.49-.72-.36-1.01-1.24-.64-1.96s1.24-1.01%201.96-.64c0%200%204.0401%202%207.0901.8%201.35-.53%202.3099-1.61%202.9399-3.31.28-.75%201.1201-1.14%201.8801-.86s1.14%201.12.86%201.88c-.93%202.49-2.4801%204.17-4.6301%205.01-1.07.42-2.1899.58-3.2599.58z%22%2F%3E%3Cpath%20d%3D%22m37.69%2079.41c-.63%200-1.28-.05-1.97-.15-5.73-.83-9.8-4.18-10.37-8.53-.54-4.11%202.22-7.88%207.37-10.08.73-.32%201.6.02%201.91.77s-.03%201.6-.77%201.91c-3.88%201.66-5.98%204.29-5.62%207.03.39%202.98%203.56%205.4%207.9%206.03%208.67%201.26%2010.33-8.44%2010.39-8.85.13-.79.85-1.34%201.67-1.21.79.13%201.34.87%201.21%201.66-.65%204.15-3.93%2011.42-11.72%2011.43z%22%2F%3E%3Cpath%20d%3D%22m32.6801%2063.47c-5.72%200-7.9-4.87-8.25-7.55-.11-.8.46-1.53%201.26-1.64.79-.1%201.53.46%201.63%201.25.08.55.95%205.34%205.88%205%20.79-.06%201.5.55%201.55%201.36s-.55%201.5-1.36%201.55c-.24.02-.48.02-.71.02z%22%2F%3E%3Cpath%20d%3D%22m51.9601%2077.58c-3.81%200-6.21-1.79-6.36-1.9-.64-.49-.76-1.4-.27-2.04s1.4-.76%202.04-.28c.19.14%204.34%203.11%2010.43-.43.69-.41%201.59-.17%201.99.53.41.7.17%201.59-.53%201.99-2.76%201.6-5.24%202.13-7.3%202.13z%22%2F%3E%3Cpath%20d%3D%22m49.45%2062.46c-.67%200-1.28-.47-1.42-1.15-1.49-6.9-9.35-5.53-9.69-5.47-.79.14-1.55-.38-1.7-1.17s.37-1.55%201.16-1.7c3.79-.72%2011.41-.03%2013.08%207.72.17.79-.33%201.56-1.12%201.73-.1.02-.21.03-.31.03z%22%2F%3E%3Cpath%20d%3D%22m46.4901%2056.35c-.34%200-.68-.12-.96-.36-.61-.53-.67-1.45-.14-2.06%203.23-3.69%203.51-7.14%202.69-9.13-.49-1.18-1.36-1.9-2.39-1.98-1.04-.07-1.86.3-2.9.77-1.36.62-3.06%201.37-5.55%201.17-2.08-.17-3.66-.96-4.71-2.34-1.74-2.29-1.24-5.26-1.18-5.59.15-.79.91-1.32%201.7-1.16.79.15%201.31.91%201.16%201.7%200%20.06-.34%202.02.64%203.29.54.7%201.4%201.09%202.62%201.19%201.73.15%202.89-.37%204.11-.92%201.19-.54%202.53-1.15%204.31-1.02%202.14.15%203.97%201.56%204.88%203.77%201.15%202.8.92%207.47-3.19%2012.17-.29.33-.69.5-1.1.5z%22%2F%3E%3Cpath%20d%3D%22m50.7801%2048.11c-.43%200-.85-.18-1.13-.54-.51-.63-.41-1.54.22-2.05%204.13-3.35%207.98-4.75%2011.45-4.15%203.86.66%205.69%203.6%205.77%203.72.42.69.21%201.58-.48%202.01-.68.42-1.58.21-2-.47-.06-.09-1.29-1.97-3.83-2.39-2.59-.42-5.64.77-9.07%203.55-.27.22-.59.32-.92.32z%22%2F%3E%3Cpath%20d%3D%22m19.71%2078.61c-1.63%200-3.45-.33-5.44-1.14-8.61003-3.5-7.64003-11.01-6.82003-14.08.11-.4-.02-.82-.31-1.02-4.35-3.04-4.39-8.41-3.1-12.08%202.46-7%2011.85003-7.08%2012.25003-7.08.8%200%201.46.65%201.46%201.46%200%20.8-.65%201.46-1.45%201.46-.08%200-7.73003.09-9.50003%205.13-.95%202.71-1%206.62%202.02%208.72%201.29003.9%201.88003%202.57%201.46003%204.16-.94003%203.52-.81003%208.22%205.1%2010.63%207.32%202.98%2010.67-2.11%2010.81-2.32.43-.68%201.33-.88%202.01-.45s.89%201.32.46%202c-1.19%201.91-4.28%204.62-8.93%204.62z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-breast-cancer:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m71.7%2082.88c-5.67%200-12.21-2.45-18.22-11.78-.45-.7-.25-1.62.45-2.07.69-.45%201.62-.25%202.07.45%207.57%2011.74%2015.67%2011.21%2021.89%209.43%205.25-1.5%208.86-4.95%209.66-9.24.15-.81.93-1.35%201.75-1.2.81.15%201.35.94%201.2%201.75-1.02%205.43-5.42%209.75-11.79%2011.57-2.07.59-4.45%201.09-7.01%201.09z%22%2F%3E%3Cpath%20d%3D%22m77%2033.62c-.62%200-1.2-.38-1.42-1-2.7-7.66-3.99-13.63-4.04-13.88-.17-.81.34-1.61%201.15-1.78.81-.18%201.61.34%201.78%201.15.01.06%201.31%206.05%203.94%2013.52.28.78-.13%201.64-.92%201.91-.16.06-.33.08-.5.08z%22%2F%3E%3Cpath%20d%3D%22m25.1002%2083.07c-2.56%200-4.94-.5-7.01-1.09-6.47-1.85-11.56004-8.76-12.56004-14.1-1.01-5.4-.41-9.82%205.75004-20.33%207.42-12.64%2011-29.09%2011.03-29.25.17-.81.97-1.32%201.78-1.15s1.33.97%201.15%201.78c-.15.69-3.71%2017.07-11.38%2030.14-6.20004%2010.57-6.15004%2014.24-5.39004%2018.26.71%203.79%204.84004%2010.17%2010.43004%2011.77%206.22%201.78%2014.33%202.31%2021.89-9.43.45-.7%201.38-.9%202.07-.45.7.45.9%201.38.45%202.07-6.01%209.33-12.56%2011.78-18.23%2011.78z%22%2F%3E%3Cpath%20d%3D%22m77.0099%2070.47c-9.85%200-17.86-8.01-17.86-17.86s8.01-17.86%2017.86-17.86%2017.86%208.01%2017.86%2017.86-8.01%2017.86-17.86%2017.86zm0-32.72c-8.19%200-14.86%206.67-14.86%2014.86s6.67%2014.86%2014.86%2014.86%2014.86-6.67%2014.86-14.86-6.67-14.86-14.86-14.86z%22%2F%3E%3Cpath%20d%3D%22m73.59%2063.89c-.28%200-.57-.04-.87-.13-2.97-.86-3.01-3.17-3.04-4.71%200-.5-.02-.97-.09-1.43-.07-.47-.53-.78-1.48-1.34-1.17-.68-3.34-1.96-2.37-4.75.23-.65.8-1.54%202.24-2.15.18-.12.55-.67.64-.97-.35-1.11-.14-2.32.59-3.26.74-.96%201.88-1.48%202.95-1.37.47.05.87.18%201.23.3.65.22.72.2.88.11.05-.04.19-.27.3-.43.25-.39.59-.92%201.16-1.46%201.02-.96%202.33-1.49%203.5-1.4.97.07%201.83.53%202.46%201.33.84%201.06.85%202.17.85%202.99%200%20.79.04.82.19.92.1.07.27.05.74-.02.74-.11%201.85-.27%203%20.5%201.72%201.15%202.51%203.72%201.76%205.73-.53%201.42-1.61%202.01-2.4%202.44-.69.38-.89.52-.98.82-.06.18-.04.28.06.69.15.58.37%201.45-.05%202.64-.59%201.69-2.19%203.38-3.98%203.17-.89-.1-1.76-.7-2.38-1.25l-.15.14c-1.8%201.64-3.18%202.89-4.74%202.89zm-1.74-17.12s-.21.11-.32.3c-.12.21-.08.37-.04.48.63%201.66-1.01%204.05-2.34%204.61-.48.2-.57.37-.57.38-.14.41-.16.46%201.05%201.18%201.1.65%202.61%201.53%202.92%203.45.11.67.12%201.3.13%201.85.03%201.59.1%201.65.88%201.88.36.08%201.86-1.27%202.76-2.1l.18-.17c.43-.4%201.19-1.1%202.34-1.07.42.01.81.2%201.09.51.39.44.95.91%201.24%201.05.23-.13.66-.58.86-1.15.12-.34.08-.49-.03-.92-.13-.52-.33-1.31%200-2.33.47-1.49%201.59-2.1%202.4-2.55.65-.36.91-.52%201.03-.86.28-.75-.11-1.85-.62-2.19-.16-.11-.3-.11-.9-.02-.71.1-1.77.25-2.84-.46-1.5-1.01-1.51-2.5-1.51-3.38%200-.64-.02-.92-.2-1.15-.14-.18-.25-.2-.33-.21-.29-.02-.83.22-1.22.59-.3.29-.49.58-.7.9-.3.47-.64%201-1.28%201.38-1.38.83-2.62.41-3.37.16-.23-.08-.44-.15-.59-.16z%22%2F%3E%3Cpath%20d%3D%22m78.5102%2054.95c-1.55%200-2.81-1.31-2.81-2.91s1.26-2.91%202.81-2.91%202.81%201.31%202.81%202.91-1.26%202.91-2.81%202.91zm0-4.02c-.55%200-1%20.49-1%201.1s.45%201.1%201%201.1%201-.49%201-1.1-.45-1.1-1-1.1z%22%2F%3E%3Cpath%20d%3D%22m74.0498%2053.31c0%20.7-.57%201.27-1.27%201.27s-1.27-.57-1.27-1.27.57-1.27%201.27-1.27%201.27.57%201.27%201.27z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-calendar-blank:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20fill%3D%22none%22%2F%3E%3Crect%20x%3D%2240%22%20y%3D%2240%22%20width%3D%22176%22%20height%3D%22176%22%20rx%3D%228%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3Cline%20x1%3D%22176%22%20y1%3D%2224%22%20x2%3D%22176%22%20y2%3D%2256%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3Cline%20x1%3D%2280%22%20y1%3D%2224%22%20x2%3D%2280%22%20y2%3D%2256%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3Cline%20x1%3D%2240%22%20y1%3D%2288%22%20x2%3D%22216%22%20y2%3D%2288%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3C%2Fsvg%3E%0A\");--lds-icon-cancer-cell:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m49.9601%2081.65c-1.58%200-3.93-.84-6.16-4.85-1.81-3.26-5.72-4.88-9.31-3.86-3.54%201.01-6.16.7-7.79-.92-1.62-1.62-1.93-4.24-.92-7.79%201.02-3.58-.6-7.5-3.86-9.31-4-2.23-4.85-4.57-4.85-6.15s.84-3.94%204.85-6.16c3.26-1.81%204.88-5.72%203.85-9.31-1.01-3.54-.7-6.16.92-7.79%201.62-1.62%204.24-1.93%207.79-.92%203.59%201.02%207.5-.6%209.31-3.86%202.23-4.01%204.58-4.85%206.16-4.85s3.92.84%206.15%204.85c1.81%203.26%205.74%204.88%209.31%203.86%203.54-1.01%206.17-.7%207.79.92s1.93%204.24.92%207.79c-1.02%203.58.6%207.5%203.86%209.31%204.01%202.23%204.85%204.58%204.85%206.16s-.84%203.92-4.85%206.15c-3.26%201.81-4.88%205.73-3.86%209.31%201.01%203.54.7%206.16-.92%207.79-1.62%201.62-4.24%201.93-7.79.92-3.58-1.02-7.5.6-9.31%203.86-2.23%204-4.57%204.85-6.15%204.85zm-13.3-11.61c3.82%200%207.5%202.06%209.41%205.49%201.26%202.27%202.64%203.51%203.89%203.51s2.62-1.25%203.88-3.51c2.39-4.3%207.56-6.45%2012.29-5.1%202.5.71%204.36.62%205.24-.26s.97-2.74.26-5.24c-1.35-4.73.79-9.9%205.1-12.29%202.26-1.26%203.51-2.64%203.51-3.88s-1.25-2.63-3.51-3.89c-4.3-2.39-6.44-7.56-5.09-12.29.71-2.5.62-4.36-.26-5.24s-2.74-.97-5.24-.26c-4.73%201.35-9.9-.79-12.29-5.1-1.26-2.26-2.64-3.51-3.88-3.51s-2.63%201.25-3.89%203.51c-2.39%204.3-7.56%206.44-12.29%205.09-2.5-.71-4.36-.62-5.24.26s-.97%202.74-.26%205.24c1.35%204.73-.79%209.9-5.09%2012.29-2.27%201.26-3.51%202.64-3.51%203.89s1.25%202.62%203.51%203.88c4.3%202.39%206.45%207.56%205.1%2012.29-.71%202.5-.62%204.36.26%205.24s2.74.97%205.24.26c.95-.27%201.92-.4%202.88-.4z%22%2F%3E%3Cpath%20d%3D%22m73.93%2028.56c-.33%200-.67-.13-.92-.39-.5-.51-.5-1.33.01-1.84l3.84-3.8c.51-.5%201.33-.5%201.84.01.5.51.5%201.33-.01%201.84l-3.84%203.8c-.25.25-.58.38-.91.38z%22%2F%3E%3Cpath%20d%3D%22m81.7899%2026.25h-.05c-1.8-.01-3.49-.73-4.76-2.01-2.61-2.65-2.58-6.93.06-9.55%202.65-2.61%206.93-2.58%209.55.06%201.27%201.28%201.96%202.98%201.94%204.79-.01%201.8-.73%203.49-2.01%204.76-1.27%201.26-2.95%201.95-4.74%201.95zm-.01-10.9c-1.05%200-2.11.4-2.92%201.19-1.63%201.61-1.65%204.24-.04%205.87.78.79%201.82%201.23%202.93%201.24%201.11%200%202.15-.42%202.94-1.2s1.23-1.82%201.24-2.93c0-1.11-.42-2.15-1.2-2.94-.81-.82-1.88-1.23-2.96-1.23z%22%2F%3E%3Cpath%20d%3D%22m87.1901%2050.03-5.4-.03c-.72%200-1.3-.59-1.29-1.31%200-.71.58-1.29%201.3-1.29l5.4.03c.72%200%201.3.59%201.29%201.31%200%20.71-.58%201.29-1.3%201.29z%22%2F%3E%3Cpath%20d%3D%22m91.5202%2053.92h-.04c-2.84-.02-5.14-2.35-5.12-5.19%200-1.38.55-2.67%201.53-3.63.98-.97%202.28-1.48%203.65-1.48%201.38%200%202.67.55%203.63%201.53.97.98%201.49%202.28%201.49%203.65%200%201.38-.55%202.67-1.53%203.63-.97.96-2.25%201.49-3.62%201.49zm-.01-2.6h.02c1.4%200%202.55-1.13%202.55-2.54%200-.68-.26-1.33-.74-1.81-.48-.49-1.12-.76-1.8-.76h-.02c-.68%200-1.31.26-1.79.74-.49.48-.76%201.12-.76%201.8%200%201.41%201.13%202.56%202.54%202.57z%22%2F%3E%3Cpath%20d%3D%22m77.0501%2076.37c-.33%200-.67-.13-.92-.39l-3.8-3.84c-.5-.51-.5-1.33.01-1.84.51-.5%201.33-.5%201.84.01l3.8%203.84c.5.51.5%201.33-.01%201.84-.25.25-.58.38-.91.38z%22%2F%3E%3Cpath%20d%3D%22m81.0099%2085.83h-.05c-1.8-.01-3.49-.73-4.76-2.01-2.61-2.65-2.59-6.93.06-9.55%202.65-2.61%206.93-2.58%209.55.06%202.61%202.65%202.58%206.93-.06%209.55-1.27%201.26-2.95%201.95-4.74%201.95zm-.01-10.9c-1.05%200-2.11.4-2.92%201.19-1.63%201.61-1.65%204.24-.04%205.87.78.79%201.82%201.23%202.93%201.24%201.13%200%202.15-.42%202.95-1.2%201.63-1.61%201.65-4.24.04-5.87-.81-.82-1.88-1.23-2.96-1.23z%22%2F%3E%3Cpath%20d%3D%22m49.5%2087.68c-.72%200-1.3-.58-1.3-1.3v-5.4c.02-.72.5999-1.3%201.3099-1.3.72%200%201.3001.58%201.3001%201.3v5.4c-.02.72-.6%201.3-1.31%201.3z%22%2F%3E%3Cpath%20d%3D%22m49.47%2097.78h-.02c-3.18-.01-5.75-2.61-5.74-5.79.01-3.17%202.6-5.74%205.76-5.74h.02c3.18.01%205.75%202.61%205.74%205.79-.01%203.17-2.6%205.74-5.76%205.74zm0-8.93c-1.74%200-3.16%201.41-3.17%203.15%200%201.75%201.41%203.17%203.15%203.18h.01c1.74%200%203.16-1.41%203.17-3.15%200-1.75-1.41-3.17-3.15-3.18z%22%2F%3E%3Cpath%20d%3D%22m23.0001%2075.95c-.33%200-.67-.13-.92-.39-.5-.51-.5-1.33.01-1.84l3.84-3.8c.51-.5%201.33-.5%201.84.01.5.51.5%201.33-.01%201.84l-3.84%203.8c-.25.25-.58.38-.91.38z%22%2F%3E%3Cpath%20d%3D%22m18.9901%2085.36h-.05c-1.8-.01-3.49-.73-4.76-2.01-2.61-2.65-2.58-6.93.06-9.55%202.65-2.61%206.93-2.59%209.55.06%202.61%202.65%202.58%206.93-.06%209.55-1.27%201.26-2.95%201.95-4.74%201.95zm-2.92-9.71c-1.63%201.61-1.65%204.24-.04%205.87.78.79%201.82%201.23%202.93%201.24%201.11-.03%202.15-.42%202.94-1.2%201.63-1.61%201.65-4.24.04-5.87s-4.24-1.65-5.87-.04z%22%2F%3E%3Cpath%20d%3D%22m18.2202%2049.67-5.4-.03c-.72%200-1.3-.59-1.29-1.31%200-.71.58-1.29%201.3-1.29l5.4.03c.72%200%201.3.59%201.29%201.31%200%20.71-.58%201.29-1.3%201.29z%22%2F%3E%3Cpath%20d%3D%22m8.48008%2053.46h-.03c-1.38%200-2.67-.55-3.63-1.53s-1.49-2.28-1.49-3.65c0-1.38.55-2.67%201.53-3.63.98-.97%202.29-1.49%203.65-1.49%202.84002.02%205.14002%202.35%205.12002%205.19-.02%202.83-2.33%205.12-5.15002%205.12zm0-7.71c-1.4%200-2.55%201.14-2.56%202.54%200%20.68.26%201.33.74%201.81s1.12.76%201.8.76h.02c1.4%200%202.55002-1.14%202.56002-2.54%200-1.41-1.13002-2.56-2.54002-2.57z%22%2F%3E%3Cpath%20d%3D%22m25.7102%2028.23c-.33%200-.67-.13-.92-.39l-3.8-3.84c-.5-.51-.5-1.33.01-1.84s1.33-.5%201.84.01l3.8%203.84c.5.51.5%201.33-.01%201.84-.25.25-.58.38-.91.38z%22%2F%3E%3Cpath%20d%3D%22m17.9501%2025.83c-1.74%200-3.49-.67-4.8-2.01-1.27-1.28-1.96-2.98-1.94-4.79.01-1.8.73-3.49%202.01-4.76%201.27-1.26%202.95-1.95%204.74-1.95h.05c1.8.01%203.49.73%204.76%202.01%202.61%202.65%202.58%206.93-.06%209.55-1.31%201.3-3.03%201.94-4.74%201.94zm0-10.9c-1.1%200-2.13.42-2.92%201.2s-1.23%201.82-1.24%202.93c0%201.11.42%202.15%201.2%202.94%201.61%201.63%204.24%201.65%205.87.04s1.65-4.24.04-5.87c-.78-.79-1.82-1.23-2.93-1.24h-.03z%22%2F%3E%3Cpath%20d%3D%22m49.8902%2018.41c-.72%200-1.3-.59-1.29-1.31l.03-5.4c0-.71.58-1.29%201.3-1.29s1.3.59%201.29%201.31l-.03%205.4c0%20.71-.58%201.29-1.3%201.29z%22%2F%3E%3Cpath%20d%3D%22m49.9602%2012.52h-.04c-2.84-.02-5.14-2.35-5.12-5.18999%200-1.38.55-2.67%201.53-3.63.98-.97%202.28-1.53%203.65-1.48%202.84.02%205.14%202.35%205.12%205.19%200%201.38-.55%202.66999-1.53%203.62999-.97.96-2.25%201.48-3.62%201.48zm0-7.69999c-.68%200-1.31.26-1.79.74-.49.48-.75%201.12-.76%201.8%200%20.68.26%201.33.74%201.81.48.49%201.12.76%201.8.76h.02c.68%200%201.31-.26%201.79-.74.49-.48.76-1.12.76-1.8%200-1.41-1.13-2.56-2.54-2.57z%22%2F%3E%3Cpath%20d%3D%22m46.8601%2054.68c-3.07%200-5.96-1.9-7.08-4.94-1.42-3.9.59-8.23%204.49-9.65%203.89-1.42%208.23.59%209.65%204.49s-.59%208.23-4.49%209.65c-.85.31-1.72.46-2.58.46zm-.02-12.45c-.56%200-1.13.1-1.69.3-2.55.93-3.87%203.77-2.94%206.32s3.77%203.87%206.32%202.94%203.87-3.77%202.94-6.32c-.73-2-2.62-3.24-4.64-3.24z%22%2F%3E%3Cpath%20d%3D%22m37.6%2066.49c-.76%200-1.53-.17-2.24-.5-1.29-.6-2.27-1.67-2.76-3s-.43-2.78.17-4.07%201.66-2.27%203-2.76c1.33-.49%202.78-.43%204.07.17s2.27%201.66%202.76%203c1.01%202.76-.42%205.82-3.17%206.83-.59.22-1.21.33-1.83.33zm.01-8.05c-.31%200-.63.06-.94.17-.68.25-1.23.75-1.54%201.41s-.34%201.4-.09%202.08.75%201.23%201.41%201.54%201.4.34%202.09.09c1.41-.52%202.14-2.08%201.62-3.5-.25-.68-.75-1.23-1.41-1.54-.37-.17-.76-.26-1.15-.26z%22%2F%3E%3Cpath%20d%3D%22m61.4699%2063.06c-2.46%200-4.77-1.52-5.66-3.96-1.14-3.12.47-6.58%203.59-7.72%203.11-1.14%206.58.47%207.72%203.59.55%201.51.48%203.15-.2%204.6s-1.88%202.57-3.39%203.12c-.68.25-1.37.37-2.06.37zm-.01-9.45c-.39%200-.79.07-1.17.21-1.77.65-2.69%202.62-2.04%204.39s2.62%202.69%204.39%202.04c.86-.31%201.54-.94%201.93-1.77s.42-1.76.11-2.62c-.51-1.39-1.82-2.25-3.22-2.25z%22%2F%3E%3Cpath%20d%3D%22m61.4699%2041.94c-2.18%200-4.22-1.34-5.01-3.5-1.01-2.76.42-5.83%203.18-6.84%201.34-.49%202.78-.43%204.08.17s2.27%201.67%202.76%203c1.01%202.76-.42%205.83-3.18%206.84-.6.22-1.22.32-1.82.32zm0-8.07c-.32%200-.63.06-.94.17-1.41.52-2.15%202.09-1.63%203.5s2.09%202.15%203.5%201.63c1.42-.52%202.15-2.09%201.63-3.5-.25-.69-.75-1.23-1.41-1.54-.37-.17-.76-.26-1.15-.26z%22%2F%3E%3Cpath%20d%3D%22m36.1801%2040.84c-1.84%200-3.56-1.13-4.23-2.95-.41-1.13-.36-2.35.15-3.44s1.41-1.92%202.54-2.33%202.35-.36%203.44.15%201.92%201.41%202.33%202.54.36%202.35-.15%203.44-1.41%201.92-2.54%202.33c-.51.19-1.03.27-1.54.27zm0-6.4c-.22%200-.44.04-.65.12-.48.17-.86.52-1.07.98s-.24.98-.06%201.45c.36.98%201.45%201.5%202.44%201.13.48-.17.86-.52%201.07-.98s.24-.98.06-1.45c-.17-.48-.52-.86-.98-1.07-.25-.12-.53-.18-.8-.18z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-circle-down-fill:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M128%2C24A104%2C104%2C0%2C1%2C0%2C232%2C128%2C104.11%2C104.11%2C0%2C0%2C0%2C128%2C24Zm45.66%2C93.66-40%2C40a8%2C8%2C0%2C0%2C1-11.32%2C0l-40-40a8%2C8%2C0%2C0%2C1%2C11.32-11.32L128%2C140.69l34.34-34.35a8%2C8%2C0%2C0%2C1%2C11.32%2C11.32Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-circle-down:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M128%2C24A104%2C104%2C0%2C1%2C0%2C232%2C128%2C104.11%2C104.11%2C0%2C0%2C0%2C128%2C24Zm0%2C192a88%2C88%2C0%2C1%2C1%2C88-88A88.1%2C88.1%2C0%2C0%2C1%2C128%2C216Zm45.66-109.66a8%2C8%2C0%2C0%2C1%2C0%2C11.32l-40%2C40a8%2C8%2C0%2C0%2C1-11.32%2C0l-40-40a8%2C8%2C0%2C0%2C1%2C11.32-11.32L128%2C140.69l34.34-34.35A8%2C8%2C0%2C0%2C1%2C173.66%2C106.34Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-circle-up-fill:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M128%2C24A104%2C104%2C0%2C1%2C0%2C232%2C128%2C104.11%2C104.11%2C0%2C0%2C0%2C128%2C24Zm45.66%2C125.66a8%2C8%2C0%2C0%2C1-11.32%2C0L128%2C115.31%2C93.66%2C149.66a8%2C8%2C0%2C0%2C1-11.32-11.32l40-40a8%2C8%2C0%2C0%2C1%2C11.32%2C0l40%2C40A8%2C8%2C0%2C0%2C1%2C173.66%2C149.66Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-circle-up:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M128%2C24A104%2C104%2C0%2C1%2C0%2C232%2C128%2C104.11%2C104.11%2C0%2C0%2C0%2C128%2C24Zm0%2C192a88%2C88%2C0%2C1%2C1%2C88-88A88.1%2C88.1%2C0%2C0%2C1%2C128%2C216Zm45.66-77.66a8%2C8%2C0%2C0%2C1-11.32%2C11.32L128%2C115.31%2C93.66%2C149.66a8%2C8%2C0%2C0%2C1-11.32-11.32l40-40a8%2C8%2C0%2C0%2C1%2C11.32%2C0Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-down-fill:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M213.66%2C101.66l-80%2C80a8%2C8%2C0%2C0%2C1-11.32%2C0l-80-80A8%2C8%2C0%2C0%2C1%2C48%2C88H208a8%2C8%2C0%2C0%2C1%2C5.66%2C13.66Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-down:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M213.66%2C101.66l-80%2C80a8%2C8%2C0%2C0%2C1-11.32%2C0l-80-80A8%2C8%2C0%2C0%2C1%2C53.66%2C90.34L128%2C164.69l74.34-74.35a8%2C8%2C0%2C0%2C1%2C11.32%2C11.32Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-left:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M165.66%2C202.34a8%2C8%2C0%2C0%2C1-11.32%2C11.32l-80-80a8%2C8%2C0%2C0%2C1%2C0-11.32l80-80a8%2C8%2C0%2C0%2C1%2C11.32%2C11.32L91.31%2C128Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-right:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M181.66%2C133.66l-80%2C80a8%2C8%2C0%2C0%2C1-11.32-11.32L164.69%2C128%2C90.34%2C53.66a8%2C8%2C0%2C0%2C1%2C11.32-11.32l80%2C80A8%2C8%2C0%2C0%2C1%2C181.66%2C133.66Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-up-down-fill:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M183.39%2C172.94a8%2C8%2C0%2C0%2C1-1.73%2C8.72l-48%2C48a8%2C8%2C0%2C0%2C1-11.32%2C0l-48-48A8%2C8%2C0%2C0%2C1%2C80%2C168h96A8%2C8%2C0%2C0%2C1%2C183.39%2C172.94ZM80%2C88h96a8%2C8%2C0%2C0%2C0%2C5.66-13.66l-48-48a8%2C8%2C0%2C0%2C0-11.32%2C0l-48%2C48A8%2C8%2C0%2C0%2C0%2C80%2C88Z%22%2F%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-up-down:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M181.66%2C170.34a8%2C8%2C0%2C0%2C1%2C0%2C11.32l-48%2C48a8%2C8%2C0%2C0%2C1-11.32%2C0l-48-48a8%2C8%2C0%2C0%2C1%2C11.32-11.32L128%2C212.69l42.34-42.35A8%2C8%2C0%2C0%2C1%2C181.66%2C170.34Zm-96-84.68L128%2C43.31l42.34%2C42.35a8%2C8%2C0%2C0%2C0%2C11.32-11.32l-48-48a8%2C8%2C0%2C0%2C0-11.32%2C0l-48%2C48A8%2C8%2C0%2C0%2C0%2C85.66%2C85.66Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-up-fill:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M215.39%2C163.06A8%2C8%2C0%2C0%2C1%2C208%2C168H48a8%2C8%2C0%2C0%2C1-5.66-13.66l80-80a8%2C8%2C0%2C0%2C1%2C11.32%2C0l80%2C80A8%2C8%2C0%2C0%2C1%2C215.39%2C163.06Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-caret-up:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M213.66%2C165.66a8%2C8%2C0%2C0%2C1-11.32%2C0L128%2C91.31%2C53.66%2C165.66a8%2C8%2C0%2C0%2C1-11.32-11.32l80-80a8%2C8%2C0%2C0%2C1%2C11.32%2C0l80%2C80A8%2C8%2C0%2C0%2C1%2C213.66%2C165.66Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-check-circle-fill:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M128%2C24A104%2C104%2C0%2C1%2C0%2C232%2C128%2C104.11%2C104.11%2C0%2C0%2C0%2C128%2C24Zm45.66%2C85.66-56%2C56a8%2C8%2C0%2C0%2C1-11.32%2C0l-24-24a8%2C8%2C0%2C0%2C1%2C11.32-11.32L112%2C148.69l50.34-50.35a8%2C8%2C0%2C0%2C1%2C11.32%2C11.32Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-check-circle:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M173.66%2C98.34a8%2C8%2C0%2C0%2C1%2C0%2C11.32l-56%2C56a8%2C8%2C0%2C0%2C1-11.32%2C0l-24-24a8%2C8%2C0%2C0%2C1%2C11.32-11.32L112%2C148.69l50.34-50.35A8%2C8%2C0%2C0%2C1%2C173.66%2C98.34ZM232%2C128A104%2C104%2C0%2C1%2C1%2C128%2C24%2C104.11%2C104.11%2C0%2C0%2C1%2C232%2C128Zm-16%2C0a88%2C88%2C0%2C1%2C0-88%2C88A88.1%2C88.1%2C0%2C0%2C0%2C216%2C128Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E\");--lds-icon-check-toggle:url(\"data:image/svg+xml,%3Csvg%20enable-background%3D%22new%200%200%2032.1%2032.1%22%20viewBox%3D%220%200%2032.1%2032.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m24.3%208h-16.6c-4.3%200-7.7%203.5-7.7%208s3.4%208%207.7%208h16.7c4.3%200%207.7-3.5%207.7-8-.1-4.5-3.6-8-7.8-8zm-9.2%2014.6h-7.4c-3.5%200-6.4-3-6.4-6.6%200-3.7%202.8-6.6%206.4-6.6h10.8zm11.5-3.2c-.2.2-.7.2-.9%200l-2.4-2.5-2.4%202.5c-.2.2-.7.2-.9%200s-.2-.7%200-.9l2.4-2.5-2.4-2.5c-.2-.2-.2-.7%200-.9s.7-.2.9%200l2.4%202.5%202.4-2.5c.2-.2.7-.2.9%200s.2.7%200%20.9l-2.4%202.5%202.4%202.5c.2.2.2.7%200%20.9z%22%2F%3E%3Cpath%20d%3D%22m13.5%2012.7c.2.2.3.7.1.9l-4.6%205.6c-.1.1-.2.2-.3.2-.2.1-.5.1-.8-.1l-2.4-2.5c-.2-.2-.2-.7%200-.9s.7-.2.9%200l2%201.9%204.1-5.1c.2-.2.7-.2%201%200z%22%2F%3E%3C%2Fsvg%3E\");--lds-icon-check:url(\"data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20256%20256%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m229.66%2077.66-128%20128a8%208%200%200%201%20-11.32%200l-56-56a8%208%200%200%201%2011.32-11.32l50.34%2050.35%20122.34-122.35a8%208%200%200%201%2011.32%2011.32z%22%2F%3E%3C%2Fsvg%3E%0A\");--lds-icon-copy-simple:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20fill%3D%22none%22%2F%3E%3Crect%20x%3D%2240%22%20y%3D%2272%22%20width%3D%22144%22%20height%3D%22144%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3Cpolyline%20points%3D%2272%2040%20216%2040%20216%20184%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3C%2Fsvg%3E\");--lds-icon-cpap:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m33.95%2077.57c-4.37%200-9.33-1.14-13-4.03-2.78-2.2-4.41-5.16-4.74-8.56-.32-3.39-.13-6.25.56-8.76%201.5-5.48%205.04-8.35%208.78-11.38%202.93-2.38%205.97-4.83%208.68-8.89%201.69-2.52%201.98-5.7%202.26-8.78.24-2.6.49-5.28%201.59-7.56%203.21-6.63%208.99-10.31%2015.89-10.2%203.87.09%2010.87%201.27%2014.34%208.21%201.99%203.98%201.82%207.88%201.66%2011.32-.15%203.29-.27%205.9%201.41%207.81%201.61%201.84%203.08%203.38%204.38%204.75%204.44%204.67%207.37%207.75%208.39%2014.55.39%202.46.2%204.97-.57%207.45-1.14%203.73-2.9%206.68-5.25%208.79-5.11%204.63-12.23%204.51-17.14%204.01-1.41-.15-2.66-.42-3.73-.78l-1-.34v-12.22c0-1.61-.62-3.12-1.75-4.25-1.12-1.12-2.66-1.76-4.23-1.76-3.31%200-6%202.69-6%206v11.67l-.72.43c-1.55.92-3.1%201.56-4.73%201.96-1.5.36-3.24.56-5.09.56zm19.65-65.21c-3.4%200-9.29%201.18-12.86%208.54-.87%201.79-1.08%204.1-1.31%206.54-.3%203.28-.65%207-2.75%2010.15-2.96%204.43-6.31%207.15-9.28%209.55-3.65%202.96-6.54%205.29-7.79%209.87-.6%202.16-.76%204.67-.47%207.69.25%202.62%201.47%204.81%203.63%206.52%204.25%203.35%2011.05%204%2015.56%202.92%201.09-.26%202.14-.66%203.19-1.22v-9.96c0-4.94%204.02-8.96%208.96-8.96%202.35%200%204.66.96%206.33%202.62%201.69%201.69%202.62%203.94%202.62%206.34v10.05c.63.15%201.32.27%202.08.35%204.7.48%2010.65.54%2014.85-3.26%201.94-1.74%203.42-4.25%204.4-7.45.63-2.05.79-4.12.47-6.14-.89-5.89-3.28-8.4-7.61-12.96-1.32-1.38-2.81-2.95-4.46-4.83-2.47-2.81-2.31-6.25-2.15-9.9.15-3.23.3-6.57-1.35-9.87-2.78-5.55-8.56-6.5-11.76-6.58-.1%200-.21%200-.31%200z%22%2F%3E%3Cpath%20d%3D%22m59.44%2073.69h-2.96v.43h2.96z%22%2F%3E%3Cpath%20d%3D%22m56.48%2075.92v-12.96c0-1.61-.62-3.12-1.75-4.25-1.12-1.12-2.66-1.76-4.23-1.76-3.31%200-6%202.69-6%206v12.38l-2.21-1.26c-5.73-3.27-9.29-9.4-9.29-16%200-10.16%208.26-18.42%2018.41-18.42s18.42%208.27%2018.42%2018.42c0%207.43-4.43%2014.09-11.29%2016.98l-2.05.86zm-5.99-21.93c2.35%200%204.66.96%206.33%202.62%201.69%201.69%202.62%203.94%202.62%206.34v8.32c4.57-2.78%207.42-7.75%207.42-13.2%200-8.53-6.94-15.47-15.47-15.47s-15.45%206.94-15.45%2015.47c0%204.63%202.09%208.99%205.59%2011.9v-7.02c0-4.94%204.02-8.96%208.96-8.96z%22%2F%3E%3Cpath%20d%3D%22m11.8699%2078.44c-.54%200-1.07-.09-1.6-.26-1.28995-.43-2.32995-1.33-2.93995-2.54l-3.84-7.64c-1.25-2.5-.24-5.55%202.25-6.81l11.63995-5.86%203.74-3.74-1.51%205.42c-.6%202.15-.75%204.67-.47%207.69.25%202.62%201.47%204.81%203.63%206.52l1.82%201.44-10.46%205.24c-.72.36-1.49.54-2.27.54zm4.32-19.17-9.11995%204.57c-1.04.52-1.46%201.8-.94%202.84l3.84%207.64c.24995.51.68995.88%201.21995%201.06.54.18%201.11.14%201.62-.12l6.49-3.25c-1.78-1.97-2.84-4.36-3.1-7.03-.19-2.09-.2-3.98-.01-5.71z%22%2F%3E%3Cpath%20d%3D%22m88.12%2077.66c-.78%200-1.55-.18-2.26-.54l-11.11-5.59%201.61-1.45c1.94-1.74%203.42-4.25%204.39-7.45.63-2.05.79-4.12.47-6.14l-.45-2.84%2013.45%206.76c1.21.61%202.12%201.65%202.55%202.95.42%201.28.32%202.66-.29%203.86l-3.83%207.63c-.6%201.21-1.64%202.11-2.93%202.54-.53.18-1.07.26-1.62.26zm-8.31-6.89%207.38%203.71c.5.25%201.07.29%201.61.11s.97-.56%201.22-1.06l3.83-7.64c.25-.5.3-1.07.12-1.6-.18-.54-.55-.97-1.06-1.23l-8.57-4.31c-.02%201.58-.27%203.17-.76%204.75-.89%202.9-2.15%205.33-3.78%207.26z%22%2F%3E%3Cpath%20d%3D%22m55.48%2094.68h-10.11c-2.12%200-3.84-1.72-3.84-3.84v-17.06h2.96v17.06c0%20.49.4.89.89.89h10.11c.55%200%201-.45%201-1v-27.88c0-1.61-.62-3.12-1.75-4.25-1.12-1.12-2.66-1.76-4.23-1.76-3.31%200-6%202.69-6%206v9.83h-2.96v-9.83c0-4.94%204.02-8.96%208.96-8.96%202.35%200%204.66.96%206.33%202.62%201.69%201.69%202.62%203.94%202.62%206.34v27.88c0%202.18-1.77%203.95-3.95%203.95z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-cream:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m83.3002%2091c-.33%200-.64-.13-.87-.36l-3.75-3.71c-.24-.24-.37-.56-.37-.89%200-.34.14-.66.38-.89l1.27-1.21-2-1.82-3.45%203.8c-.44.49-1.19.54-1.71.12-.41-.34-41.47-34.13-47.62-38.27-1.76-1.19-3.72-2.56-5.8-4.01-4.91-3.44-10.47001-7.34-12.31001-7.86-.41-.12-.74-.44-.86-.85s-.01-.86.27-1.18l22.78001-25.02999c.32-.35.8-.49%201.26-.36.45.13.79.5.88.97%200%20.03%201.41%205.72999%2015.86%2019.71999%2015%2014.52%2039.47%2039.42%2039.71%2039.67.42.42.47%201.09.13%201.58l-3.17%204.58%202.18%201.98%201.38-1.52c.23-.25.55-.4.88-.41.33%200%20.67.12.91.36l3.75%203.71c.47.47.49%201.22.05%201.72l-8.87%209.76c-.23.25-.55.4-.88.41h-.03zm-1.98-4.94%201.93%201.9%207.2-7.92-1.99-1.97-1.35%201.48c-.22.24-.53.39-.86.41s-.65-.1-.89-.32l-3.9-3.55c-.46-.42-.54-1.11-.19-1.62l3.2-4.63c-4.16-4.23-25.42-25.8-38.95-38.9-10.5-10.17-14.36-16.1-15.78-18.97l-20.26001%2022.29c2.43001%201.27%206.24001%203.9%2011.31001%207.46%202.06%201.45%204.01%202.81%205.76%203.99%205.8%203.9%2040.63%2032.5%2046.9%2037.66l3.49-3.84c.22-.24.53-.39.86-.41.32-.01.65.1.89.32l3.9%203.55c.25.23.4.56.41.9%200%20.34-.14.67-.38.91l-1.31%201.25z%22%2F%3E%3Cpath%20d%3D%22m23.5202%2045.9c-.29%200-.58-.1-.81-.3-.52-.45-.57-1.23-.12-1.75l17.12-19.7c.45-.52%201.23-.57%201.75-.12s.57%201.23.12%201.75l-17.12%2019.7c-.25.28-.59.43-.94.43z%22%2F%3E%3Cpath%20d%3D%22m64.5098%2078.88c-.28%200-.57-.1-.8-.3-.52-.45-.58-1.23-.14-1.75l13.64-15.97c.44-.52%201.23-.58%201.75-.14.52.45.58%201.23.14%201.75l-13.64%2015.97c-.25.29-.59.43-.94.43z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-crohns:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m26.3501%2030.29c-.08.06-.16.13-.23.21.02-.03.04-.05.06-.07.05-.05.11-.1.17-.14z%22%2F%3E%3Cpath%20d%3D%22m81.9%2052.83c4.44-5.46%205.01-10.91%201.55-14.97-.6-.7-.72-1.6601-.31-2.4401%201.45-2.79%203.4-8.28.24-13.78-2.13-3.72-5.71-7.4799-14.45-3.6099-.08.03-.16.03-.22-.01-1.94-1.32-8.15-4.88-14.16-1.53v-7.07005c0-3.29-2.68-5.97-5.98-5.97h-.74c-3.29%200-5.97%202.68-5.97%205.97v7.26005c-1.43.18-2.74.77-3.86%201.74-1.6-1.2-4.69-3.01-7.95-2.34-2.61.53-4.72%202.46-6.28%205.75-1.88.32-6.14%201.45-8.46%205.18-1.99%203.19-2.03%207.3999-.12%2012.5199-.83%201.23-2.3%203.8601-2.02%206.7601.16%201.64.84%203.1099%202.01%204.3799-1.07%201.57-2.65%204.52-2.13%207.68.42%202.55%202.06%204.6501%204.89%206.2601%201.74.98%203.93%201.18%205.4%201.18.2%200%20.38-.0001.55-.0101.74%201.4%202.34%203.9101%204.76%205.1201.22.11.45.16.67.16.55%200%201.08-.31%201.35-.84.37-.74.06-1.64-.68-2.01-1.54-.77-2.69-2.4501-3.3-3.5401%202.61-2.16%203.99-4.5799%204.12-7.2199.16-3.17-1.57-5.74-2.7-7.07%201.69-2.78%203.15-7.58.23-11.84.22-.25.44-.56.63-.93.46-.91.63-2.0001.52-3.2401%202.4.88%205.74%201.3601%209.01-.3299%201.15.86%202.35%201.1399%203.36%201.1499v4.0501c0%203.29%202.68%205.9699%205.97%205.9699h.74c3.3%200%205.98-2.6799%205.98-5.9699v-5.5301c3.79%201.19%207.17.1601%209.52-1.2599.49%202.07%201.96%204.6799%205.93%206.6699%200%20.03%200%20.0701-.02.1201-2.57%204.65-2.51%209.38.13%2013.03-4%202.29-5.91%206.1099-5.25%2010.5299.01.09-.02.15-.06.18-.06.07-.13.0601-.15.0601-3.02-.4-7.17-.4301-9.76%201.6599-5.61%204.52-4.18%209.6001-2.3%2013.5201%201.41%202.94%202.02%205.73%201.93%208.76-.07%202.4%201.72%204.48%204.07%204.74.16.01.31.02.46.02%201.06%200%201.99-.41%202.66-1.17%201.42-1.61%201.65-4.73.69-9.73%202.09.48%205.07.73%207.53-.66%202.22-1.26%203.56-3.54%203.98-6.76.08-.59.45-1.11%201-1.4%202.89-1.49%207.91-4.72%209.07-9.59.67-2.83-.04-5.73-2.14-8.62-.2-.29-.18-.69.06-.98zm-40.04-20.6401c-.55-.01-1.33-.2099-2.08-1.0199-.5-.54-1.32-.63-1.93-.23-4.39%202.94-9.04-.16-9.62-.57-.02-.02-.04-.03-.05-.04h-.01c-.06-.06-.12-.1-.19-.14-.06-.03-.13-.07-.2-.1-.07-.02-.14-.05-.21-.06-.2-.04-.41-.05-.62-.01-.07.01-.14.03-.21.06-.07.02-.14.05-.2.09-.07.03-.13.07-.19.12-.08.06-.16.13-.23.21h-.01s-.01.02-.02.03c-.05.07-.1.14-.14.21-.09.14-.15.2999-.18.4699-.02.1-.03.1901-.03.2901%200%20.21.04.42.13.61.91%202.4.67%203.5799.45%204.0799-.22.48-.54.6301-.54.6301-.51.14-.9.53-1.04%201.04s0%201.05.35%201.43c4.29%204.54.09%2010.09-.09%2010.32-.48.62-.4%201.51.19%202.04.02.03%202.79%202.55%202.63%205.66-.1%201.9-1.3%203.7299-3.55%205.4499-1.1.09-3.39.0601-4.85-.7599-1.99-1.13-3.14-2.5201-3.41-4.1301-.53-3.13%202.27-6.3499%202.3-6.3799.27-.3.41-.7101.37-1.1201-.03-.41-.23-.7799-.55-1.0399-1.2-.97-1.84-2.05-1.97-3.31-.27-2.68%201.86-5.28%201.88-5.3.35-.43.45-1.0201.24-1.5301-1.83-4.52-1.98-8.0799-.44-10.5799%202.15-3.48%207.02-3.91%207.07-3.91.56-.04%201.05-.4%201.27-.92%201.18-2.79%202.68-4.39%204.46-4.76%203.1-.64%206.4%202.48%206.43%202.51.3.29.71.43%201.13.42.41-.02.8-.22%201.07-.54.75-.91%201.6-1.4701%202.59-1.7001zm9.69%207.0501c0%201.64-1.34%202.9699-2.98%202.9699h-.74c-1.64%200-2.97-1.3299-2.97-2.9699v-29.82005c0-1.64%201.33-2.97%202.97-2.97h.74c1.64%200%202.98%201.33%202.98%202.97zm29.51%2022.4899c-.91%203.84-5.56%206.6101-7.52%207.6301-1.43.73-2.4%202.1-2.61%203.67-.29%202.24-1.12%203.76-2.47%204.53-2.89%201.65-7.43-.26-7.47-.28-.52-.23-1.12-.14-1.56.22-.44.37-.63.95-.5%201.5%201.82%207.63.76%209.33.53%209.59-.07.07-.16.18-.55.14-.8-.09-1.42-.82-1.39-1.66.1-3.53-.6-6.75-2.22-10.14-2.19-4.58-1.79-7.2601%201.48-9.9001%201.37-1.11%204.03-1.4699%207.48-1.0199%201%20.13%201.98-.2101%202.68-.9201.71-.73%201.04-1.7199.89-2.7299-.62-4.15%201.82-6.4201%203.97-7.6001.71-.38%201.2-1.0499%201.37-1.8299.17-.79-.02-1.6201-.51-2.2601-2.81-3.68-1.24-7.83-.05-9.98.41-.75.5-1.6499.25-2.4699-.26-.82-.82-1.48-1.59-1.86-5.3-2.63-4.4-6.4001-4.35-6.5601.17-.67-.13-1.3699-.73-1.6999-.61-.34-1.37-.21-1.83.3-.18.19-4.24%204.53-9.81%202.09v-10.3601c4.82-4.01%2010.29-1.0999%2012.48.3801.92.62%202.08.72%203.11.26%206.84-3.03%208.93-.6101%2010.64%202.3599%202.33%204.05%201.12%208.16-.3%2010.9-.98%201.88-.71%204.1501.69%205.7801%203.32%203.9.42%208.64-1.6%2011.12-1.09%201.35-1.16%203.25-.16%204.64%201.58%202.18%202.12%204.1899%201.65%206.1599z%22%2F%3E%3Cpath%20d%3D%22m48.3099%2061.41c-3.52%200-6.38-2.86-6.38-6.38s2.86-6.38%206.38-6.38%206.38%202.86%206.38%206.38-2.86%206.38-6.38%206.38zm0-9.76c-1.86%200-3.38%201.52-3.38%203.38s1.52%203.38%203.38%203.38%203.38-1.52%203.38-3.38-1.52-3.38-3.38-3.38z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-diabetes:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m52.0901%2099.35h-4.2c-1.81%200-3.28-1.61-3.28-3.59v-17.64c0-1.98%201.47-3.59%203.28-3.59h4.2c1.82%200%203.29%201.61%203.29%203.59v17.64c0%201.98-1.48%203.59-3.29%203.59zm-4.19-22.37c-.45%200-.84.54-.84%201.15v17.64c0%20.61.39%201.15.84%201.15h4.2c.46%200%20.85-.54.85-1.15v-17.64c0-.61-.4-1.15-.85-1.15z%22%2F%3E%3Cpath%20d%3D%22m67.1599%2064.15h-12.5c-1.64%200-2.98-1.34-2.98-2.98v-3.64c0-1.64%201.34-2.98%202.98-2.98h12.5c1.64%200%202.98%201.34%202.98%202.98v3.64c0%201.64-1.34%202.98-2.98%202.98zm-12.5-7.16c-.29%200-.54.25-.54.54v3.64c0%20.29.25.54.54.54h12.5c.29%200%20.54-.25.54-.54v-3.64c0-.29-.25-.54-.54-.54z%22%2F%3E%3Cpath%20d%3D%22m45.3401%2064.15h-12.5c-1.64%200-2.98-1.34-2.98-2.98v-3.64c0-1.64%201.34-2.98%202.98-2.98h12.5c1.64%200%202.98%201.34%202.98%202.98v3.64c0%201.64-1.34%202.98-2.98%202.98zm-12.5-7.16c-.29%200-.54.25-.54.54v3.64c0%20.29.25.54.54.54h12.5c.29%200%20.54-.25.54-.54v-3.64c0-.29-.25-.54-.54-.54z%22%2F%3E%3Cpath%20d%3D%22m65.7501%2050.15h-31.49c-2.42%200-4.39-1.97-4.39-4.39v-27.27c0-2.42%201.97-4.39%204.39-4.39h31.49c2.42%200%204.39%201.97%204.39%204.39v27.27c0%202.42-1.97%204.39-4.39%204.39zm-31.5-33.62c-1.08%200-1.95.88-1.95%201.95v27.27c0%201.08.88%201.95%201.95%201.95h31.49c1.08%200%201.95-.88%201.95-1.95v-27.27c0-1.08-.88-1.95-1.95-1.95z%22%2F%3E%3Cpath%20d%3D%22m49.77%2041.98c-2.52%200-3.82-1.12-4.47-2.12-3.41-5.17%203.33-17.97%203.4-18.1l.34-.64.79-.05c.48%200%20.92.27%201.15.69%201.98%203.78%206.32%2013.05%203.81%2017.64-.57%201.04-1.77%202.33-4.26%202.54-.27.02-.54.03-.79.03zm.09-17.04c-1.92%204.25-4.2%2011.03-2.52%2013.57.19.29.78%201.19%203.02%201%201.52-.13%202.05-.79%202.32-1.28%201.39-2.54-.47-8.35-2.81-13.28z%22%2F%3E%3Cpath%20d%3D%22m54.1601%2092.17h-8.33v2.44h8.33z%22%2F%3E%3Cpath%20d%3D%22m40.1299%2079.85c-.22%200-.45-.04-.66-.11-10.96-3.81-18.32-14.16-18.32-25.77v-35c0-9.57999%207.79-17.36999%2017.37-17.36999h22.97c9.57%200%2017.36%207.79%2017.36%2017.35999v35.01c0%2011.18-7.01%2021.41-17.44%2025.44-.5.19-1.05.17-1.54-.05-.49-.23-.88-.66-1.06-1.18-1.7-4.95-4.39-7.26-8.47-7.26s-6.89%202.41-8.22%207.38c-.15.56-.53%201.04-1.04%201.31-.3.16-.63.24-.96.24zm-1.61-75.80999c-8.23%200-14.93%206.69999-14.93%2014.92999v35c0%2010.43%206.53%2019.75%2016.29%2023.32%202.09-7.27%206.83-8.81%2010.47-8.81%204.99%200%208.57%202.85%2010.63%208.47%209.25-3.79%2015.44-12.96%2015.44-22.99v-35c0-8.23-6.69-14.91999-14.92-14.91999h-22.97z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-dry-skin:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m81.6901%2044.2199c.74-2.78%201.03-4.98.87-6.54-.18-1.77-1.73-3.04-3.49-2.93-3.1.22-8.45%202.24-9.43%2013.31-.03.33-.17.65-.39.92-.47.55-.86%201.18-1.18%201.85-.33-4.44-.59-10.26-.41-13.55.09-1.63.28-3.87.49-6.47.81-10.11%201.32-17.43.43-19.54-.73-1.73996-1.91-2.49996-2.77-2.82996-1.57-.6-3.31-.25-4.32.22-.93.41-3.77%201.66996-5.02%2015.34996-.12%201.27-.23%202.49-.33%203.66-.26%202.92-.52%205.9-.82%208.19-.6-4.27-1.15-10.61-1.41-13.6-.16-1.9-.27-3.15-.34-3.65-.04-.26-.07-.83-.11-1.49-.18-3.53-.54-10.07996-3.54-12.60996-.99-.83-2.19-1.2-3.49-1.04-3.83.44-5.5%204.13-4.97%2010.94996.02.17.03.3.03.36%200%20.36.12%201.36.49%204.36.48%203.94%201.22%209.88%201.5%2013.81.13%201.77.2%203.13.23%204.18-.66-1.88-1.34-4.21-1.7-5.89-.22-.99-.83-3.93-1.44-6.9-.58-2.82-1.17-5.67-1.43-6.89-.77-3.58-3.19-7.1-6.63-6.4-4.03.83-4.73%205.54-4.04%209.67.58%203.5%202.55%2013.62%202.63%2014.07.77%203.7%201.56%207.63%202.13%2010.69-1.91-3.56-4.97-9.35-6.16-11.93-1.53-3.33-3.4-4.55-4.7-4.99-1.28-.43-2.63-.32-3.8.31-1.57.84-3.1%202.74-1.54%207.07%201.52%204.23%206.01%2013.87%207.78%2016.97%201.08%201.87%202.75%207.45%203.65%2010.45.29.97.52%201.74.66%202.16.23.7.45%201.9.69%203.18.32%201.78.69%203.81%201.28%205.62.53%201.63%202.13%205.38%204.39%207.85.85.94%202.78%206.88%204.08%2011.85.21.81%201.04%201.29%201.85%201.08s1.3-1.04%201.09-1.85c-.38-1.46-1.3-4.84-2.34-7.85l2.77.96c.16.06.33.08.5.08.26%200%20.52-.06.75-.2.38-.21.65-.58.73-1.01l1.28-6.36%206.52-2.28c.79-.28%201.2-1.14.93-1.93-.28-.79-1.15-1.21-1.94-.93l-7.32%202.56c-.51.18-.88.61-.99%201.14l-1.11%205.5-3.61-1.26c-.33-.67-.65-1.21-.95-1.54-1.76-1.93-3.23-5.16-3.75-6.75.15-.07.28-.19.4-.34l2.73-3.45%204.29.77c.09.02.18.02.27.02.72%200%201.36-.51%201.49-1.25.15-.82-.4-1.61-1.23-1.75l-4.09-.73-.78-6.01%204.56-3.86%204.72.86c.09.02.18.02.27.02.72%200%201.36-.51%201.49-1.24.15-.83-.4-1.61-1.22-1.76l-3.84-.7%201.07-4.47%207.95-2.13c.81-.22%201.29-1.05%201.07-1.86s-1.05-1.29-1.86-1.07l-8.82%202.36c-.54.15-.95.57-1.08%201.11l-1.54%206.43-4.77%204.02-5.37-1.28c-.79-2.42-1.56-4.49-2.24-5.67-1.56-2.73-5.97-12.08-7.56-16.49-.66-1.84-.62-2.97.12-3.37.3-.16.79-.31%201.41-.1%201.03.35%202.07%201.54%202.91%203.37%201.78%203.88%207.54%2014.56%207.96%2015.23.01.02%201.72%202.51%203.3%202.51.46%200%20.91-.22%201.2-.57.56-.7.79-.98-2.7-17.79-.02-.1-2.04-10.51-2.62-13.96-.04-.24-.91-5.68%201.66-6.21%201.36-.28%202.65%202.18%203.05%204.06.26%201.22.85%204.06%201.43%206.88.62%202.98%201.23%205.93%201.44%206.92.72%203.27%202.64%2010.88%205.11%2011.06.61.04%201.18-.17%201.61-.61%201.04-1.04%201.21-3.19.75-9.6-.29-4.01-1.03-10-1.52-13.96-.24-1.9-.46-3.7-.47-3.99%200-.1-.01-.31-.03-.6-.38-4.81996.41-7.47996%202.29-7.69996.47-.05.84.05%201.18.34%202%201.69%202.33%207.82996%202.48%2010.45996.04.8.07%201.37.13%201.76.06.42.17%201.77.32%203.48%201.37%2015.79%202.07%2018.71%203.22%2019.61.38.31.85.43%201.32.37%202.38-.36%202.76-3.55%203.73-14.57.1-1.16.21-2.38.33-3.65%201.07-11.76%203.21-12.83%203.3-12.87.26-.13%201.19-.43%201.94-.14.45.18.8.56%201.06%201.18.67%201.6-.2%2012.34-.67%2018.12-.21%202.61-.39%204.87-.48%206.54-.33%205.74.59%2018.53%201.17%2020.43.41%201.33%201.32%201.45%201.72%201.43%201.31-.04%201.59-1.22%201.95-2.71s.96-3.99%202.08-5.32c.63-.75%201.01-1.65%201.1-2.62.41-4.62%201.89-10.21%206.63-10.55.12-.03.24.09.26.23.08.81.01%202.42-.79%205.44-.15.56-.19%201.12-.12%201.67.16%201.23.48%204.41.01%207.4-.38%202.43-2.33%207.88-5.41%2015.2l-8.76-2.83h-.01l-5.23-5.94c-.3-.34-.74-.53-1.2-.51l-5.89.23c-.84.03-1.49.74-1.46%201.57.03.84.69%201.49%201.57%201.46l5.18-.21%203.79%204.31-5.14%202.86c-.73.4-.99%201.33-.59%202.06.28.5.8.78%201.33.78.25%200%20.5-.06.74-.19l6.2-3.46%208.27%202.67c-.83%201.91-1.72%203.93-2.67%206.03-.77%201.69-1.26%203.52-1.48%205.43-.57%205.18-2.1%209.21-4.18%2011.06-.63.56-.68%201.52-.13%202.14.3.34.72.51%201.14.51.35%200%20.71-.12%201-.38%203.43-3.04%204.72-8.75%205.19-13%20.17-1.59.59-3.11%201.22-4.51%203.22-7.13%208.74-19.82%209.52-24.81.53-3.37.18-6.9%200-8.26-.02-.15-.01-.32.04-.5zm-47.62%2017.02.81%206.26-1.79%202.27c-.11-.55-.2-1.1-.3-1.62-.26-1.44-.49-2.69-.79-3.59-.14-.4-.36-1.14-.64-2.07-.2-.69-.41-1.37-.62-2.05z%22%20fill%3D%22%23071218%22%2F%3E%3C%2Fsvg%3E%0A\");--lds-icon-eczema:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m72.8701%2029.28c-.18-.73-.56-2.24-18.49-10.42-.09-.04-.18-.07-.28-.1l-38.8-9.22004c-.82-.19-1.63.31-1.83%201.13004-.19.81.31%201.63%201.13%201.83l38.65%209.18c7.29%203.33%2015.3%207.34%2016.73%208.6.3%201.8%201.12%2010.17%201.66%2016.07-.83.13-2.05.13-3.2-.6-2.24-1.43-3.53-5.16-3.74-10.79-.02-.41-.21-.81-.52-1.08-.31-.28-.72-.4-1.14-.37-.09.01-1.28.09-2.87-.52-.06-.03-.12-.06-.18-.07-1.41-.58-3.12-1.71-4.66-3.9-.29-.42-.76-.7-1.28-.64-.5.01-.97.27-1.25.7-.06.1-.79%201.21-2.32%202.3-.01%200-.01.01-.01.01-.11.08-.24.16-.36.24-1.73%201.12-4.34%202.14-7.98%201.86-2.72-1.66-4.68-2.34-6.2-2.87-2.28-.79-2.98-1.03-4.15-4.18-.29-.79-1.17-1.18-1.95-.89-.79.29-1.19%201.17-.89%201.95%201.6%204.29%203.16%205.01%206%205.99%201.77.61%204.2%201.45%207.9%204.12%202.89%202.08%204.33%204.07%203.96%205.47-.34%201.3-2.25%202.27-3.47%202.4-1.13.09-4.59-2.75-6.25-4.13-2.14-1.79-3.22-2.65-4.19-2.82-.55-.1-1.74-.21-3.38-.37-3.42-.33-8.57-.82-10.85-1.47-1.96-.55-4.3-6.23-5.17-8.36-.49-1.17-.75-1.8-1-2.2-1-1.57-4.34001-2.14-6.97001-2.33-.82-.06-1.56.56-1.62%201.39-.07.84.56%201.57%201.39%201.63%201.98.15%204.16.62%204.68%201.01.14001.26.44001%201%20.71001%201.65%201.91%204.64%204.03%209.25%207.15%2010.13%202.54.72%207.65%201.21%2011.39%201.57%201.45.14%202.71.26%203.05.31.44.17%201.85%201.34%202.87%202.2%203.38%202.81%205.98%204.83%208.16%204.83.12%200%20.23-.01.35-.02%201.93-.2%205.29-1.64%206.09-4.65.64-2.42-.57-4.94-3.6-7.52%201.47-.24%202.75-.67%203.85-1.18.6%203.07%202.11%208.36%205.5%2010.66%201.1.74%202.33%201.12%203.62%201.12.63%200%201.28-.09%201.94-.28.71-.19%201.18-.88%201.1-1.62l-.9-8.62c.17.03.34.05.49.07.43%206.01%202.15%2010%205.11%2011.86%201.36.85%202.75%201.11%203.93%201.11%201.73%200%203.01-.55%203.1-.59.6-.26.96-.88.9-1.53-.25-2.74-1.51-16.48-1.91-18.05zm-13.89%2014.61c-.64-.01-1.22-.21-1.78-.59-2.66-1.8-3.99-7.12-4.43-9.87.51-.39.93-.78%201.29-1.14%201.33%201.5%202.74%202.47%204.03%203.1z%22%2F%3E%3Cpath%20d%3D%22m69.5202%2021.77s-.03%200-.04%200c-.84-.02-1.5-.72-1.48-1.55l.26-10.39002c.02-.83.7-1.48%201.52-1.48h.04c.84.02%201.5.71999%201.48%201.54999l-.26%2010.39003c-.02.83-.7%201.48-1.52%201.48z%22%2F%3E%3Cpath%20d%3D%22m75.96%2025.15c-.38%200-.77-.15-1.07-.44-.6-.59-.6-1.55-.01-2.15l7.94-8.04c.59-.6%201.55-.6%202.15-.01s.6%201.55.01%202.15l-7.94%208.04c-.3.3-.69.45-1.08.45z%22%2F%3E%3Cpath%20d%3D%22m79.1801%2032.06c-.74%200-1.38-.54-1.5-1.29-.13-.83.44-1.6%201.27-1.73l12.86-1.96c.84-.13%201.6.44%201.73%201.27s-.44%201.6-1.27%201.73l-12.86%201.96c-.08.01-.15.02-.23.02z%22%2F%3E%3Cpath%20d%3D%22m53.51%2094.23c-1.24%200-2.42-.72-2.99-1.93-1.33-2.85-2.23-8.55%206.75-14.65.26-.17.45-.43.56-.75.25-.71.63-1.39%201.07-2.02-3.95%201.79-9.07%204.31-11.8%206.03-1.34.85-3.17%202.06-5.28%203.47-8.23%205.49-14.22%209.39-16.47%209.59-1.44.14-2.73-.24-3.73-1.08-1.3-1.09-1.87-2.8-1.96-3.93-.29-2.8%203.19-6.63%2010.64-11.72%201.02-.7%202.01-1.37%202.95-2.01%202.34-1.59%204.86-3.29%206.71-4.68-3.93%201.46-9.72%204.01-12.43%205.2-1.7.75-2.82%201.24-3.28%201.41-.23.09-.76.34-1.32.61-3.07%201.47-8.77%204.22-12.43%202.83-1.23002-.47-2.16002-1.38-2.68002-2.62-1.87-4.5%202.75002-7.69%206.95002-9.58.15-.07.26-.12.33-.15.29-.16%201.06-.47%203.96-1.62%203.59-1.42%209.01-3.56%2012.49-5.15%201.64-.75%202.86-1.34%203.77-1.82-1.94.3-4.35.81-6%201.28-.96.28-3.82%201.14-6.69%202-2.66.8-5.31%201.6-6.47%201.93-3.43%201-7.62002.54-8.70002-2.84-1.27-3.97%202.43-6.82%206.32002-8.16l17.78-7.09c.78-.31%201.66.07%201.97.85s-.07%201.66-.85%201.97l-17.85%207.11c-.6.21-5.28002%201.91-4.48%204.39.46%201.43%203.23%201.36%204.96.85%201.15-.34%203.8-1.13%206.45-1.93%202.88-.87%205.76-1.73%206.72-2.01%202.45-.71%2010.54-2.84%2011.93-.69.34.52.42%201.14.25%201.73-.41%201.41-2.17%202.57-7.85%205.17-3.56%201.63-9.03%203.79-12.64%205.22-1.73.68-3.36%201.33-3.64%201.47-.07.04-.26.13-.52.24-4.33%201.94-6.14002%203.84-5.39%205.65.2.48.5.78.96.95%202.43.93%207.75-1.63%2010.03-2.73.7-.34%201.21-.58%201.57-.72.38-.14%201.65-.7%203.12-1.34%2014.1-6.19%2016.94-6.96%2018.3-6.39.45.19.79.54.96.98.9%202.37-2.24%204.5-10.62%2010.18-.94.64-1.92%201.3-2.94%202-9.46%206.47-9.33%208.87-9.33%208.89.03.38.25%201.39.89%201.93.37.31.86.44%201.5.38%201.7-.18%2010.39-5.98%2015.06-9.1%202.13-1.42%203.96-2.65%205.34-3.51%204.44-2.8%2015.92-8.17%2018.02-8.58%201.34-.26%201.88.49%202.05.82.59%201.16-.28%201.97-1.38%203-1.09%201.02-2.92%202.72-3.5%204.33-.33.92-.92%201.7-1.72%202.24-3.73%202.53-7.75%206.48-5.7%2010.86.07.15.22.2.3.17.73-.31%202.05-1.11%204.22-3.24.41-.4.88-.71%201.4-.91%201.12-.44%203.98-1.65%206.28-3.45%202.58-2.03%208.53-9.34%2015.9-19.55.43-.59%201.29-2.92%201.93-4.63.68-1.82%201.26-3.4%201.72-4.17%201.92-3.23%204.54-6.41%2010.65-7.83.82-.19%201.63.32%201.82%201.13.19.82-.32%201.63-1.13%201.82-5.25%201.22-7.26%203.96-8.73%206.43-.32.53-.94%202.2-1.49%203.67-.99%202.67-1.69%204.49-2.31%205.34-4.49%206.22-12.6%2017.11-16.48%2020.16-2.62%202.06-5.81%203.41-7.06%203.9-.13.05-.26.13-.37.25-2.02%201.98-3.76%203.28-5.18%203.88-.4.17-.82.25-1.23.25z%22%2F%3E%3Cpath%20d%3D%22m71.6199%2059.26c-.68%200-1.29-.46-1.47-1.14-.21-.81.28-1.64%201.09-1.85l3.69-.94.93-4.63c.16-.8.93-1.34%201.74-1.2l4.69.79c.83.14%201.38.92%201.25%201.75-.14.83-.92%201.38-1.75%201.25l-3.25-.54-.83%204.12c-.12.57-.55%201.03-1.11%201.17l-4.61%201.18c-.13.03-.25.05-.38.05z%22%2F%3E%3Cpath%20d%3D%22m45.59%2055.79c-.36%200-.73-.13-1.02-.39-.62-.56-.67-1.52-.1-2.14l3.72-4.09c.54-.59%201.45-.67%202.08-.16l2.46%201.99%201.89-1.32c.69-.48%201.63-.31%202.11.37.48.69.31%201.63-.37%202.11l-2.82%201.98c-.55.39-1.3.36-1.83-.06l-2.23-1.81-2.75%203.03c-.3.33-.71.5-1.12.5z%22%2F%3E%3Cpath%20d%3D%22m52.39%2068.78c-.19%200-.39-.04-.58-.12-.77-.32-1.14-1.21-.82-1.98l3.07-7.42c.32-.77%201.21-1.14%201.98-.82s1.14%201.21.82%201.98l-3.07%207.42c-.24.58-.81.94-1.4.94z%22%2F%3E%3Cpath%20d%3D%22m69.8%2070.21c-.83%200-1.51-.67-1.52-1.51l-.03-4.25c0-.84.67-1.52%201.51-1.53h.01c.83%200%201.51.67%201.52%201.51l.03%204.25c0%20.84-.67%201.52-1.51%201.53z%22%2F%3E%3Cpath%20d%3D%22m61.05%2063.26c-.83%200-1.51-.67-1.52-1.5l-.04-4.07c0-.84.66-1.52%201.5-1.53h.02c.83%200%201.51.67%201.52%201.5l.04%204.07c0%20.84-.66%201.52-1.5%201.53z%22%2F%3E%3Cpath%20d%3D%22m65.9501%2056.58c-.35%200-.7-.12-.99-.36l-3.23-2.77c-.64-.54-.71-1.5-.17-2.14s1.5-.71%202.14-.17l3.23%202.77c.64.54.71%201.5.17%202.14-.3.35-.73.53-1.15.53z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-endocrinology:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20clip-rule%3D%22evenodd%22%20fill%3D%22%23071218%22%20fill-rule%3D%22evenodd%22%3E%3Cpath%20d%3D%22m28.4942%2019.5843c-3.2599-2.0008-7.2104-3.5611-10.8492-3.0098-4.1523.6291-7.3061%202.0946-9.39787%204.3598-2.13536%202.3116-3.21441%205.4739-3.02209%209.5836.15158%203.2286%201.15673%205.0892%202.07473%206.7281.53052.9465%201.04873%201.7858%201.17663%202.9179.13073%201.1577-.15063%202.593-1.07432%204.7075-3.81883%208.747-1.16336%2015.281-1.16336%2015.281.17147.432.54284.7532.99473.8593.45284.107.92842-.0142%201.27421-.324l14.53164-13.015c.0881-.0786.1658-.1676.2312-.2652%200%200%20.7171-.9919.7569-2.7493.0332-1.4892-.4121-3.6407-2.5655-6.1976-1.7062-2.0255-3.2153-4.2423-3.8832-6.2716-.5078-1.5414-.5334-2.9586.6688-3.8918%202.845-2.2073%207.47-.8583%2010.1681%204.3892%203.1566%206.1408%206.587%2015.4619%207.2142%2018.9596.0606.3382%203.1367%2016.0332%207.3876%2025.4207%201.1624%202.5692%202.4318%204.6799%203.7278%205.9693%201.1151%201.1094%202.2974%201.6617%203.4579%201.6617s2.3429-.5523%203.4579-1.6617c1.296-1.2894%202.5655-3.4001%203.7279-5.9693%204.2508-9.3875%207.3269-25.0825%207.3876-25.4207.6271-3.4977%204.0575-12.8188%207.2141-18.9596%202.6981-5.2475%207.3232-6.5965%2010.1681-4.3892%201.2022.9332%201.1766%202.3504.6689%203.8918-.6679%202.0293-2.1771%204.2461-3.8833%206.2716-2.1534%202.5569-2.5986%204.7084-2.5655%206.1976.0398%201.7574.757%202.7493.757%202.7493.0654.0976.143.1866.2311.2652l14.5317%2013.015c.3458.3098.8214.431%201.2742.324.4519-.1061.8233-.4273.9947-.8593%200%200%202.6555-6.534-1.1633-15.281-.9237-2.1145-1.2051-3.5498-1.0743-4.7075.1278-1.1321.6461-1.9714%201.1766-2.9179.918-1.6389%201.9231-3.4995%202.0747-6.7281.1923-4.1097-.8867-7.272-3.0221-9.5836-2.0918-2.2652-5.2456-3.7307-9.3979-4.3598-3.6397-.5513-7.5912%201.009-10.8445%203.0221-2.7255%201.6418-6.1929%201.368-8.6276-.6802-.0029-.0019-.0047-.0038-.0076-.0057-2.5029-2.0785-6.5397-3.9107-13.0784-3.9107-6.5359%200-10.5697%201.8303-13.0831%203.8937-.0038.0038-.0085.0076-.0123.0113-2.431%202.0454-5.8926%202.3182-8.6135.6793zm-1.4807%202.4262c.0038.0019.0066.0038.0104.0057%203.7592%202.267%208.5424%201.8928%2011.9037-.9294%202.1609-1.7734%205.6586-3.2447%2011.2755-3.2447%205.6151%200%209.1127%201.4703%2011.2623%203.2542%203.3669%202.8279%208.1587%203.2021%2011.9245.9313.0047-.0029.0095-.0057.0142-.0086%202.6896-1.6664%205.921-3.0912%208.9308-2.6346%203.4001.5144%206.0243%201.6238%207.7372%203.4778%201.6692%201.8076%202.4205%204.3086%202.2699%207.5221-.1583%203.3773-1.494%204.9462-2.3381%206.6221-1.0564%202.0965-1.6513%204.3133.396%209.0028%202.0605%204.7207%201.9733%208.6854%201.6256%2010.9771l-12.5791-11.2661c-.1942-.4642-.8071-2.4849%201.6712-5.4284%202.3779-2.8231%204.3427-6.0139%204.7813-8.7072.3591-2.2036-.1942-4.1334-1.998-5.5336-3.9533-3.0666-10.6891-1.9572-14.4378%205.3356-3.2874%206.3957-6.8305%2016.1147-7.4842%2019.7573-.0588.3297-3.0411%2015.6116-7.1782%2024.7509-.9938%202.195-2.0359%204.0244-3.1434%205.1252-.4879.4851-.9473.8356-1.4542.8356-.5068%200-.9663-.3505-1.4542-.8356-1.1075-1.1008-2.1496-2.9302-3.1433-5.1252-4.1372-9.1393-7.1195-24.4212-7.1782-24.7509-.6537-3.6426-4.1969-13.3616-7.4842-19.7573-3.7487-7.2928-10.4845-8.4022-14.4379-5.3356-1.8038%201.4002-2.357%203.33-1.998%205.5336.4387%202.6933%202.4035%205.8841%204.7814%208.7072%202.4783%202.9435%201.8653%204.9652%201.6711%205.4275%200%20.0009-12.57909%2011.267-12.57909%2011.267-.34768-2.2907-.43579-6.2564%201.62569-10.9771%202.0473-4.6895%201.4523-6.9063.396-9.0028-.84411-1.6759-2.1799-3.2448-2.33811-6.6221-.15063-3.2135.60063-5.7145%202.26991-7.5221%201.7128-1.854%204.337-2.9634%207.7371-3.4778%203.0117-.4566%206.2451.9692%208.9422%202.6261z%22%2F%3E%3Cpath%20d%3D%22m42.7144%2054.8755c1.4106%201.3027%202.8449%201.8607%204.2556%201.8408%201.0781-.0142%202.1704-.3752%203.2542-1.0999%201.1055.72%202.2168%201.0222%203.3186.9957%201.3689-.0342%202.7559-.5931%204.1248-1.6598.6186-.4813.7304-1.3756.2482-1.9942-.4812-.6187-1.3756-.7305-1.9942-.2482-.8213.6404-1.6266%201.0402-2.4489%201.061-.7778.019-1.5376-.3268-2.3154-1.008-.5334-.468-1.331-.4708-1.8672-.0047-.7949.6887-1.566%201.1055-2.3599%201.1169-.7712.0104-1.5168-.3761-2.2879-1.0876-.576-.5324-1.476-.4964-2.0075.0796-.5324.576-.4964%201.476.0796%202.0084z%22%2F%3E%3Cpath%20d%3D%22m51.2031%2083.938v-8.876c0-.5862-.448-1.062-1-1.062s-1%20.4758-1%201.062v8.876c0%20.5862.448%201.062%201%201.062s1-.4758%201-1.062z%22%2F%3E%3Cpath%20d%3D%22m51.6151%2053.6921c-.9834-10.0212-3.9818-18.5674-9.4433-25.2899-.4946-.6091-1.3898-.702-1.999-.2075-.6082.4946-.701%201.3908-.2065%201.999%205.13%206.3151%207.8963%2014.362%208.82%2023.776.0767.7806.773%201.3519%201.5527%201.2752.7806-.0758%201.3528-.7721%201.2761-1.5528z%22%2F%3E%3Cpath%20d%3D%22m51.6482%2053.9697c.9237-9.414%203.69-17.4609%208.82-23.776.4945-.6082.4017-1.5044-.2065-1.999-.6092-.4945-1.5044-.4016-1.999.2075-5.4615%206.7225-8.4599%2015.2687-9.4433%2025.2899-.0767.7807.4955%201.477%201.2761%201.5528.7806.0767%201.476-.4946%201.5527-1.2752z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-envelope-simple:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M32%2C56H224a0%2C0%2C0%2C0%2C1%2C0%2C0V192a8%2C8%2C0%2C0%2C1-8%2C8H40a8%2C8%2C0%2C0%2C1-8-8V56A0%2C0%2C0%2C0%2C1%2C32%2C56Z%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3Cpolyline%20points%3D%22224%2056%20128%20144%2032%2056%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3C%2Fsvg%3E\");--lds-icon-environmental-factors:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20107%20107%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m48.4844%2073.5625c0%20.8868-.3523%201.7373-.9794%202.3644s-1.4776.9793-2.3644.9793h-11.7031c-.8868%200-1.7373-.3522-2.3644-.9793s-.9793-1.4776-.9793-2.3644.3522-1.7373.9793-2.3644%201.4776-.9793%202.3644-.9793h11.7031c.8868%200%201.7373.3522%202.3644.9793s.9794%201.4776.9794%202.3644zm25.0781-3.3437h-11.7031c-.8868%200-1.7373.3522-2.3644.9793s-.9794%201.4776-.9794%202.3644.3523%201.7373.9794%202.3644%201.4776.9793%202.3644.9793h11.7031c.8868%200%201.7373-.3522%202.3644-.9793s.9793-1.4776.9793-2.3644-.3522-1.7373-.9793-2.3644-1.4776-.9793-2.3644-.9793zm26.7495%2020.0624c0%20.8869-.3518%201.7374-.9789%202.3644-.627.6271-1.4775.9794-2.3643.9794h-86.9376c-.88677%200-1.73726-.3523-2.36434-.9794-.62707-.627-.97936-1.4775-.97936-2.3644%200-.8868.35229-1.7373.97936-2.3643.62708-.6271%201.47757-.9794%202.36434-.9794h3.3438v-50.1563c0-.6209.1729-1.2296.4994-1.7579.3265-.5282.7936-.9551%201.349-1.2328s1.1772-.3953%201.7956-.3395c.6185.0558%201.2092.2827%201.706.6552l21.4%2016.05v-13.375c0-.6209.1729-1.2296.4994-1.7579.3265-.5282.7936-.9551%201.349-1.2328s1.1772-.3953%201.7956-.3395c.6185.0558%201.2092.2827%201.706.6552l16.1921%2012.142%204.8317-33.8178c.234-1.591%201.0307-3.04534%202.2455-4.09906s2.7671-1.63695%204.3752-1.64384h7.5735c1.6081.00689%203.1604.59012%204.3752%201.64384s2.0115%202.50806%202.2455%204.09906l6.2695%2043.941s.0334.3261.0334.4724v30.0937h3.3438c.4398-.0011.8755.0846%201.2822.2521.4066.1676.7762.4137%201.0876.7243s.5584.6796.7268%201.0858c.169.4062.256.8417.255%201.2815zm-32.5425-39.4562%203.5652%202.675h15.0929l-5.7346-40.125h-7.5735zm-47.707%2036.1125h66.875v-26.75h-16.7187c-.7235%200-1.4275-.2347-2.0063-.6688l-6.0187-4.514-15.3813-11.5359v13.375c0%20.6209-.1729%201.2296-.4994%201.7579-.3265.5282-.7936.9551-1.349%201.2328s-1.1772.3953-1.7956.3395c-.6185-.0558-1.2092-.2827-1.706-.6553l-21.4-16.0499z%22%20fill%3D%22%23071218%22%2F%3E%3C%2Fsvg%3E%0A\");--lds-icon-eye:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M128%2C56C48%2C56%2C16%2C128%2C16%2C128s32%2C72%2C112%2C72%2C112-72%2C112-72S208%2C56%2C128%2C56Z%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3Ccircle%20cx%3D%22128%22%20cy%3D%22128%22%20r%3D%2240%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3C%2Fsvg%3E\");--lds-icon-fever:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%2095%2095%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m47.5%2056.7773v-38.9648c0-.7874-.3128-1.5425-.8695-2.0992-.5568-.5568-1.3119-.8695-2.0992-.8695-.7874%200-1.5425.3127-2.0993.8695-.5567.5567-.8695%201.3118-.8695%202.0992v38.9648c-2.7985.7226-5.2374%202.441-6.8596%204.8332-1.6222%202.3921-2.3162%205.2938-1.952%208.1611.3642%202.8672%201.7616%205.5032%203.9303%207.4139%202.1687%201.9106%204.9598%202.9648%207.8501%202.9648%202.8902%200%205.6813-1.0542%207.85-2.9648%202.1687-1.9107%203.5661-4.5467%203.9303-7.4139.3642-2.8673-.3298-5.769-1.952-8.1611-1.6222-2.3922-4.0611-4.1106-6.8596-4.8332zm-2.9687%2017.4415c-1.1744%200-2.3223-.3483-3.2987-1.0007-.9765-.6524-1.7375-1.5797-2.1869-2.6647-.4494-1.0849-.567-2.2787-.3379-3.4305s.7946-2.2097%201.625-3.0401%201.8883-1.3959%203.0401-1.625%202.3456-.1115%203.4305.3379c1.085.4494%202.0123%201.2104%202.6647%202.1868.6524.9765%201.0007%202.1244%201.0007%203.2987%200%201.5748-.6256%203.085-1.7391%204.1985s-2.6237%201.7391-4.1984%201.7391zm14.8437-24.4922v-31.9141c0-3.9368-1.5639-7.7124-4.3476-10.49612-2.7838-2.78374-6.5593-4.34763-10.4961-4.34763-3.9369%200-7.7124%201.56389-10.4962%204.34763-2.7837%202.78372-4.3476%206.55932-4.3476%2010.49612v31.9141c-3.8411%203.0753-6.6322%207.2678-7.9875%2011.9981-1.3554%204.7302-1.208%209.7646.4216%2014.4075%201.6297%204.6429%204.6612%208.665%208.6756%2011.5104%204.0144%202.8455%208.8135%204.3738%2013.7341%204.3738%204.9205%200%209.7196-1.5283%2013.734-4.3738%204.0144-2.8454%207.0459-6.8675%208.6756-11.5104%201.6296-4.6429%201.777-9.6773.4217-14.4075-1.3554-4.7303-4.1465-8.9228-7.9876-11.9981zm-14.8437%2036.3672c-3.7928.0003-7.4867-1.2101-10.5439-3.4548-3.0571-2.2448-5.318-5.4068-6.4533-9.0257-1.1354-3.6189-1.086-7.5057.141-11.0945s3.5675-6.6923%206.6808-8.8586c.3939-.2751.7152-.6417.9363-1.0683.221-.4266.3352-.9005.3328-1.381v-33.3984c0-2.3621.9383-4.6274%202.6086-6.2977%201.6702-1.67022%203.9356-2.60855%206.2977-2.60855%202.362%200%204.6274.93833%206.2976%202.60855%201.6703%201.6703%202.6086%203.9356%202.6086%206.2977v33.3984c0%20.478.1153.9489.3363%201.3727.2209.4239.541.7881.9328%201.0617%203.1198%202.1641%205.4664%205.2684%206.6976%208.8601%201.2311%203.5917%201.2824%207.4828.1463%2011.1057s-3.4001%206.788-6.4617%209.0335-6.7607%203.454-10.5575%203.4492zm21.2636-56.1206c-.43-.6594-.5805-1.4626-.4183-2.233.1621-.7704.6236-1.4448%201.283-1.875%205.5664-3.633%209.9713-1.7627%2013.1775-.3933%202.9168%201.2468%204.6832%201.989%207.6037.0927.6599-.43%201.4637-.5804%202.2344-.4179.7708.1625%201.4454.6245%201.8755%201.2845.4301.6599.5804%201.4636.4179%202.2343-.1625.7708-.6245%201.4454-1.2844%201.8755-2.4084%201.5697-4.5904%202.1152-6.561%202.1152-2.5976%200-4.7945-.9425-6.6166-1.7181-2.9168-1.2506-4.6832-1.9928-7.6037-.0965-.3267.2128-.6922.3591-1.0755.4306-.3832.0715-.7769.0668-1.1583-.0139-.3815-.0806-.7434-.2356-1.0649-.4561-.3216-.2205-.5966-.5022-.8093-.829zm25.7539%208.3348c.43.6594.5805%201.4627.4184%202.2331-.1622.7703-.6237%201.4448-1.283%201.8749-2.4084%201.5697-4.5904%202.1152-6.561%202.1152-2.5976%200-4.7945-.9425-6.6166-1.7181-2.9205-1.2469-4.6832-1.9965-7.6037-.0928-.3267.213-.6922.3595-1.0756.4312s-.7771.0672-1.1588-.0133c-.3816-.0804-.7436-.2353-1.0654-.4556-.3218-.2204-.5971-.502-.81-.8288-.4301-.6599-.5805-1.4636-.418-2.2344.1625-.7707.6246-1.4454%201.2845-1.8755%205.5664-3.633%209.9713-1.7626%2013.1775-.3933%202.9205%201.2469%204.6832%202.0002%207.6037.0928.6595-.4301%201.4627-.5805%202.2331-.4184.7704.1622%201.4448.6237%201.8749%201.283z%22%20fill%3D%22%23071218%22%2F%3E%3C%2Fsvg%3E%0A\");--lds-icon-gastric-cancer:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3CclipPath%20id%3D%22a%22%3E%3Cpath%20d%3D%22m0%200h100v100h-100z%22%2F%3E%3C%2FclipPath%3E%3Cg%20clip-path%3D%22url(%23a)%22%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m14.7599%2095.03c-.76%200-1.42-.58-1.49-1.35-.14-1.45-1.38-14.3-1.11-17.31.02-.2%200-.5%200-.88-.07-3.04-.25-10.18%207.04-15.31%204.08-2.87%208.56-3.87%2012.9-4.84%202.07-.46%204.03-.9%205.87-1.52%201.02-.35%201.53-.77%201.51-1.27-.52-13.88%206.41-20.66%209.36-23.55.26-.26.5-.49.69-.69.42-.44.66-1.02.66-1.65v-20.19c0-.83.67-1.5%201.5-1.5s1.5.67%201.5%201.5v20.2c0%201.41-.53%202.73-1.5%203.73-.21.22-.46.47-.75.75-2.9%202.84-8.93%208.75-8.46%2021.3.04%201.11-.37%203.14-3.55%204.22-1.99.68-4.12%201.15-6.18%201.61-4.05.9-8.23%201.84-11.82%204.36-5.98%204.21-5.84%2010-5.77%2012.79.01.5.02.89%200%201.22-.21%202.32.73%2012.88%201.11%2016.75.08.82-.52%201.56-1.35%201.64-.05%200-.1%200-.15%200z%22%2F%3E%3Cpath%20d%3D%22m24.9102%2093.04c-.63%200-1.22-.4-1.43-1.04-.24-.74-5.72-18.06%203.23-22.06%204.23-1.89%206.19-2.12%207.23-.86.77.93.45%202.15-.12%203-.27.53-2.43%204.9-1.05%208.39.72%201.82%202.35%203.16%204.85%203.98%209.63%203.17%2024.36-4.99%2026.02-6.45.27-.45.74-.76%201.34-.73.83.03%201.48.72%201.45%201.55-.03.87-.71%201.41-1.53%201.98-3.05%202.13-17.66%209.97-28.21%206.49-3.39-1.12-5.65-3.05-6.71-5.74-1.51-3.84-.05-8.09.77-9.98-.63.2-1.54.53-2.81%201.1-5.4%202.41-2.99%2014.1-1.6%2018.39.25.79-.18%201.63-.97%201.89-.15.05-.31.07-.46.07z%22%2F%3E%3Cpath%20d%3D%22m84.5902%2043.75s-.1%200-.15%200c-.83-.08-1.43-.81-1.35-1.64.83-8.49-3.33-16.68-7.59-18.33-5.57-2.15-10.22-1.35-12.5-.68-.9.27-1.87.1-2.63-.47-.77-.58-1.21-1.46-1.21-2.42v-13.74c0-.83.67-1.5%201.5-1.5s1.5.67%201.5%201.5v13.74c2.64-.76%208.03-1.7%2014.42.77%205.95%202.3%2010.39%2012.31%209.5%2021.42-.08.78-.73%201.35-1.49%201.35z%22%2F%3E%3Cpath%20d%3D%22m78.88%2080.42c-9.87%200-17.9-8.03-17.9-17.9s8.03-17.9%2017.9-17.9%2017.9%208.03%2017.9%2017.9-8.03%2017.9-17.9%2017.9zm0-32.8c-8.22%200-14.9%206.69-14.9%2014.9s6.69%2014.9%2014.9%2014.9%2014.9-6.69%2014.9-14.9-6.69-14.9-14.9-14.9z%22%2F%3E%3Cpath%20d%3D%22m75.85%2076.14c-.36%200-.72-.06-1.09-.19-3.23-1.11-3.39-3.51-3.51-5.44-.04-.59-.08-1.21-.2-1.8-.16-.81-.89-1.32-2.07-2.07-1.48-.94-3.71-2.37-2.82-5.4.22-.75.83-1.78%202.47-2.42.26-.16.73-.96.76-1.33-.51-1.35-.31-2.8.56-3.9.8-1.01%202.04-1.52%203.2-1.35.53.08.99.26%201.4.42.77.3.96.33%201.2.19.07-.05.23-.33.35-.53.27-.45.64-1.07%201.27-1.69%201.06-1.03%202.45-1.6%203.74-1.51%201.13.08%202.14.63%202.9%201.6%201.1%201.4%201.12%202.75%201.13%203.64%200%20.86.04.99.44%201.28.23.17.43.17%201.1.1.82-.08%202.06-.21%203.34.71%201.89%201.36%202.89%204.36%202.19%206.56-.53%201.65-1.76%202.3-2.66%202.78-.78.41-1.04.58-1.15%201.01-.08.31-.03.53.12%201.04.2.71.48%201.67.09%203-.59%202.01-2.38%203.89-4.38%203.56-1.07-.18-2.15-1.04-2.88-1.75l-.28.26c-1.9%201.76-3.46%203.22-5.21%203.22zm-3.18-20.93c-.06%200-.23.06-.37.25-.15.19-.29.52-.09%201%20.3.73.24%201.63-.18%202.6-.39.91-1.23%202.13-2.29%202.55-.43.17-.66.37-.7.48-.21.71-.1.96%201.56%202.02%201.32.84%202.97%201.89%203.4%204.01.16.79.21%201.54.25%202.2.12%201.85.21%202.36%201.5%202.8.52.19%201.93-1.13%203.29-2.39l.28-.26c.4-.38%201.25-1.17%202.54-1.08.4.03.76.22%201.02.52.62.72%201.52%201.47%201.86%201.55.17-.05.77-.65%201.01-1.45.14-.49.06-.79-.09-1.32-.18-.64-.44-1.51-.14-2.64.46-1.73%201.72-2.4%202.65-2.89.78-.41%201.06-.59%201.2-1.04.31-.98-.23-2.6-1.08-3.21-.33-.24-.59-.23-1.29-.16-.83.09-1.97.2-3.15-.65-1.66-1.2-1.68-2.69-1.69-3.68%200-.74-.01-1.22-.49-1.82-.31-.39-.57-.45-.75-.46-.42-.04-1%20.23-1.45.67-.35.33-.56.69-.78%201.06-.32.54-.69%201.16-1.42%201.59-1.53.89-2.89.36-3.8.01-.29-.11-.57-.22-.77-.25z%22%2F%3E%3Cpath%20d%3D%22m80.4802%2064.49c-1.82%200-3.3-1.53-3.3-3.42s1.48-3.42%203.3-3.42%203.3%201.53%203.3%203.42-1.48%203.42-3.3%203.42zm0-4.72c-.64%200-1.17.58-1.17%201.29s.52%201.29%201.17%201.29%201.17-.58%201.17-1.29-.52-1.29-1.17-1.29z%22%2F%3E%3Cpath%20d%3D%22m78.19%2066.66c0%20.82-.67%201.49-1.49%201.49s-1.49-.67-1.49-1.49.67-1.49%201.49-1.49%201.49.66%201.49%201.49z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-head-and-neck-cancer:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m44.5199%2063.87c-9.74%200-17.66-7.92-17.66-17.66s7.92-17.66%2017.66-17.66%2017.66%207.92%2017.66%2017.66-7.92%2017.66-17.66%2017.66zm0-33.41c-8.68%200-15.75%207.07-15.75%2015.75s7.07%2015.75%2015.75%2015.75%2015.75-7.07%2015.75-15.75-7.07-15.75-15.75-15.75z%22%2F%3E%3Cpath%20d%3D%22m41.0099%2057.15c-.23%200-.47-.03-.7-.1-2.63-.76-2.66-2.7-2.69-4.26%200-.51-.02-1.03-.1-1.54-.12-.74-.75-1.17-1.78-1.77-1.19-.7-3-1.76-2.16-4.16.28-.8.94-1.42%201.97-1.86.37-.16%201.03-1.19%201.02-1.57-.37-1-.2-2.07.47-2.93.63-.82%201.59-1.28%202.5-1.18.42.04.8.17%201.13.28.65.22.96.31%201.37.06.15-.09.28-.28.5-.62.25-.39.57-.88%201.1-1.38.93-.88%202.11-1.36%203.13-1.28.83.06%201.56.46%202.1%201.15.73.92.74%201.91.75%202.7%200%20.84.04%201.14.45%201.41.29.19.59.16%201.16.08.7-.1%201.67-.24%202.66.42%201.52%201.02%202.24%203.39%201.58%205.17-.46%201.24-1.42%201.77-2.19%202.19-.7.38-1.1.63-1.28%201.17-.12.36-.05.61.05%201.02.14.55.33%201.31-.03%202.36-.54%201.53-1.97%203.01-3.46%202.85-.95-.11-1.93-.93-2.48-1.48-.1.08-.21.17-.29.25l-.27.25c-1.74%201.58-3.07%202.79-4.48%202.79zm-1.74-17.48c-.21%200-.51.15-.75.45-.15.2-.38.6-.18%201.12.51%201.35-.94%203.49-2.07%203.97-.49.21-.81.47-.9.72-.28.79-.09%201.06%201.33%201.89%201.08.64%202.43%201.43%202.7%203.12.1.64.11%201.26.13%201.81.03%201.59.1%202.11%201.31%202.46.67.19%201.86-.89%203.37-2.27l.26-.23c.34-.32.98-.9%201.91-.88.27%200%20.52.13.69.33.5.58%201.32%201.24%201.68%201.29.27.04%201.1-.61%201.44-1.58.18-.51.1-.81-.01-1.26-.13-.53-.3-1.18-.02-2.06.41-1.3%201.39-1.84%202.18-2.27.7-.39%201.11-.63%201.32-1.18.35-.95-.07-2.39-.85-2.91-.36-.24-.7-.21-1.32-.12-.67.1-1.59.23-2.5-.38-1.28-.86-1.29-2.09-1.29-2.98%200-.69-.02-1.14-.33-1.53-.22-.27-.45-.41-.75-.43-.49-.03-1.16.26-1.69.76-.36.34-.58.69-.8%201.02-.29.44-.58.9-1.12%201.23-1.19.71-2.21.36-2.96.11-.26-.09-.51-.17-.72-.19-.01%200-.03%200-.04%200z%22%2F%3E%3Cpath%20d%3D%22m46.5201%2048.07c-1.63%200-2.96-1.38-2.96-3.07s1.33-3.07%202.96-3.07%202.96%201.38%202.96%203.07-1.33%203.07-2.96%203.07zm0-4.23c-.58%200-1.05.52-1.05%201.16s.47%201.16%201.05%201.16%201.05-.52%201.05-1.16-.47-1.16-1.05-1.16z%22%2F%3E%3Cpath%20d%3D%22m43.5999%2049.62c0%20.74-.6%201.34-1.34%201.34s-1.34-.6-1.34-1.34.6-1.34%201.34-1.34%201.34.6%201.34%201.34z%22%2F%3E%3Cpath%20d%3D%22m75.6502%2088.95c-.29%200-.58-.14-.77-.39-.23-.32-5.69-7.95-8.85-18.1-2.6-8.35%201.29-14.24%204.12-18.54.76-1.16%201.49-2.25%201.98-3.24l.13-.25c2.56-5.08%207.9-15.64-1.22-26.58-9.38-11.25-22.22-10.03-33.55-7.36-10.54%202.49-14.89%2015.3-15.81%2022.48-.46%203.61-2.55%206.03-4.39%208.16-1.51%201.74-2.81%203.25-2.69%204.92.09%201.2.72%201.42%202.25%201.67.77.13%201.49.25%202.02.72.54.48.65.98.64%201.31%200%20.82-.66%201.38-1.18%201.83-.19.16-.51.43-.59.57.01.16.09.26.34.55.33.38.79.89.89%201.78.1.82-.33%201.46-.64%201.93-.09.14-.23.34-.26.44.05.61.35%201.12.69%201.72.61%201.05%201.36%202.35.85%204.47-.3%201.25-.16%202.3.42%203.12.7.99%202.07%201.66%203.76%201.83.93.1%202.03%200%203.18-.12%202.7-.27%205.76-.57%207.5%201.91.56.8.67%201.9.8%203.28.11%201.14.25%202.55.68%204.16%201.19%204.41.24%207%20.2%207.11-.19.49-.73.73-1.22.55s-.73-.73-.55-1.21c.02-.04.76-2.21-.26-5.96-.47-1.76-.62-3.26-.74-4.47-.1-1.06-.19-1.98-.47-2.38-1.1-1.57-3.37-1.35-5.77-1.12-1.2.12-2.44.24-3.56.12-2.26-.24-4.08-1.17-5.11-2.62-.9-1.27-1.15-2.88-.72-4.66.33-1.38-.1-2.13-.65-3.08-.41-.71-.88-1.51-.94-2.58-.04-.64.3-1.16.58-1.57.15-.22.35-.53.34-.66-.03-.29-.17-.45-.43-.75-.35-.39-.82-.93-.82-1.85%200-.89.69-1.49%201.25-1.96.11-.1.27-.24.39-.35-.22-.08-.65-.15-.95-.2-1.36-.22-3.63-.6-3.84-3.4-.18-2.45%201.44-4.32%203.15-6.3%201.75-2.02%203.56-4.12%203.95-7.16.97-7.66%205.7-21.35%2017.25-24.08%2011.89-2.81001%2025.4-4.06001%2035.44%207.99%209.91%2011.9%203.99%2023.64%201.46%2028.65l-.13.25c-.55%201.09-1.3%202.23-2.1%203.43-2.78%204.21-6.23%209.44-3.9%2016.93%203.06%209.84%208.52%2017.48%208.58%2017.55.31.42.21%201.02-.21%201.32-.17.12-.36.18-.55.18z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-high-blood-sugar:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m51.3802%2036.82c-.67%200-1.22-.5501-1.22-1.2201v-14.9299c0-.67.55-1.22%201.22-1.22s1.22.55%201.22%201.22v14.9299c0%20.67-.55%201.2201-1.22%201.2201z%22%2F%3E%3Cpath%20d%3D%22m51.3802%2042.46c-.33%200-.65-.13-.87-.35-.22-.23-.35-.54-.35-.87%200-.16.04-.32.1-.46.06-.15.15-.28.26-.4.45-.45%201.27-.45%201.73%200%20.11.12.19.26.26.4.06.15.1.3.1.46%200%20.33-.13.63-.35.87-.12.11-.26.19-.4.27-.15.06-.3.09-.46.09z%22%2F%3E%3Cpath%20d%3D%22m67.1202%2050.15h-31.49c-2.42%200-4.39-1.97-4.39-4.39v-27.27c0-2.42%201.97-4.39%204.39-4.39h31.49c2.42%200%204.39%201.97%204.39%204.39v27.27c0%202.42-1.97%204.39-4.39%204.39zm-31.49-33.62c-1.08%200-1.95.88-1.95%201.95v27.27c0%201.08.88%201.95%201.95%201.95h31.49c1.08%200%201.95-.88%201.95-1.95v-27.27c0-1.08-.88-1.95-1.95-1.95z%22%2F%3E%3Cpath%20d%3D%22m53.4697%2099.35h-4.2c-1.81%200-3.28-1.61-3.28-3.59v-17.64c0-1.98%201.47-3.59%203.28-3.59h4.2c1.82%200%203.29%201.61%203.29%203.59v17.64c0%201.98-1.48%203.59-3.29%203.59zm-4.2-22.37c-.45%200-.84.54-.84%201.15v17.64c0%20.61.39%201.15.84%201.15h4.2c.46%200%20.85-.54.85-1.15v-17.64c0-.61-.4-1.15-.85-1.15z%22%2F%3E%3Cpath%20d%3D%22m68.5396%2064.1499h-12.5c-1.64%200-2.98-1.34-2.98-2.98v-3.64c0-1.64%201.34-2.98%202.98-2.98h12.5c1.64%200%202.98%201.34%202.98%202.98v3.64c0%201.64-1.34%202.98-2.98%202.98zm-12.5-7.16c-.29%200-.54.25-.54.54v3.64c0%20.29.25.54.54.54h12.5c.29%200%20.54-.25.54-.54v-3.64c0-.29-.25-.54-.54-.54z%22%2F%3E%3Cpath%20d%3D%22m46.7197%2064.1499h-12.5c-1.64%200-2.98-1.34-2.98-2.98v-3.64c0-1.64%201.34-2.98%202.98-2.98h12.5c1.64%200%202.98%201.34%202.98%202.98v3.64c0%201.64-1.34%202.98-2.98%202.98zm-12.5-7.16c-.29%200-.54.25-.54.54v3.64c0%20.29.25.54.54.54h12.5c.29%200%20.54-.25.54-.54v-3.64c0-.29-.25-.54-.54-.54z%22%2F%3E%3Cpath%20d%3D%22m55.54%2092.1699h-8.33v2.44h8.33z%22%2F%3E%3Cpath%20d%3D%22m41.5098%2079.85c-.22%200-.45-.04-.66-.11-10.96-3.81-18.32-14.16-18.32-25.77v-35c0-9.58003%207.79-17.37002%2017.37-17.37002h22.97c9.57%200%2017.36%207.78999%2017.36%2017.36002v35.01c0%2011.18-7.01%2021.41-17.44%2025.44-.5.19-1.05.17-1.54-.05-.49-.23-.88-.66-1.06-1.18-1.7-4.95-4.39-7.26-8.47-7.26s-6.89%202.41-8.22%207.38c-.15.56-.53%201.04-1.04%201.31-.3.16-.63.24-.96.24zm-1.61-75.81002c-8.23%200-14.93%206.70002-14.93%2014.93002v35c0%2010.43%206.53%2019.75%2016.29%2023.32%202.1-7.27%206.83-8.81%2010.47-8.81%205%200%208.57%202.85%2010.63%208.48%209.25-3.79%2015.44-12.96%2015.44-22.99v-35.01c0-8.23-6.69-14.92002-14.92-14.92002h-22.97z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-house-fill:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M224%2C120v96a8%2C8%2C0%2C0%2C1-8%2C8H160a8%2C8%2C0%2C0%2C1-8-8V164a4%2C4%2C0%2C0%2C0-4-4H108a4%2C4%2C0%2C0%2C0-4%2C4v52a8%2C8%2C0%2C0%2C1-8%2C8H40a8%2C8%2C0%2C0%2C1-8-8V120a16%2C16%2C0%2C0%2C1%2C4.69-11.31l80-80a16%2C16%2C0%2C0%2C1%2C22.62%2C0l80%2C80A16%2C16%2C0%2C0%2C1%2C224%2C120Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-house:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M104%2C216V152h48v64h64V120a8%2C8%2C0%2C0%2C0-2.34-5.66l-80-80a8%2C8%2C0%2C0%2C0-11.32%2C0l-80%2C80A8%2C8%2C0%2C0%2C0%2C40%2C120v96Z%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3C%2Fsvg%3E\");--lds-icon-infection:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m33.3401%2078.02c-5.93%200-16.38-2.66-17.93-12.61l-.08-.47c-.42-2.55-1.19-7.31%201.25-12.97%202.88-6.69%209.47-12.9%2019.58-18.45%2020.96-11.49%2036.23-3.78%2043.47%201.83%203.2%202.48%2010.08%2010.87%209.67%2019.61-.24%205.25-3.01%209.59-8.22%2012.91-4.58%202.91-7.95%203.46-20.08%201.2-6.22-1.16-10.55%201.49-15.13%204.29-3.76%202.3-7.64%204.67-12.52%204.67zm24.05-47.43c-5.74%200-12.37%201.49-19.79%205.55-21.95%2012.03-20.1%2023.44-19.31%2028.31l.08.49c1.53%209.79%2013.6%2010.08%2014.97%2010.08%204.04%200%207.4-2.05%2010.96-4.23%204.64-2.83%209.88-6.05%2017.25-4.68%2012.37%202.3%2014.54%201.37%2017.92-.78%204.34-2.76%206.64-6.3%206.84-10.51.33-7.15-5.38-14.67-8.51-17.1-4.12-3.2-11.08-7.12-20.4-7.12z%22%2F%3E%3Cpath%20d%3D%22m49.22%2031.51c-.83%200-1.5-.67-1.5-1.5v-13.9c0-.83.67-1.5%201.5-1.5s1.5.67%201.5%201.5v13.9c0%20.83-.67%201.5-1.5%201.5z%22%2F%3E%3Cpath%20d%3D%22m62.8301%2030.56c-.07%200-.13%200-.2-.01-.82-.11-1.4001-.86-1.2901-1.68l1.7001-12.95c.11-.82.87-1.4%201.68-1.29.82.11%201.4.86%201.29%201.68l-1.7001%2012.95c-.1.75-.74%201.3-1.49%201.3z%22%2F%3E%3Cpath%20d%3D%22m76.1501%2036.21c-.25%200-.51-.06-.75-.2-.72-.41-.97-1.33-.55-2.05l6.96-12.12c.41-.72%201.33-.96%202.05-.55s.97%201.33.55%202.05l-6.96%2012.12c-.28.48-.78.75-1.3.75z%22%2F%3E%3Cpath%20d%3D%22m84.6%2045.19c-.45%200-.89-.2-1.19-.58-.51-.66-.38-1.6.27-2.1l8.72-6.73c.66-.51%201.6-.38%202.1.27.51.66.38%201.6-.27%202.1l-8.72%206.73c-.27.21-.59.31-.92.31z%22%2F%3E%3Cpath%20d%3D%22m87.6601%2053.48c-.7%200-1.33-.5-1.47-1.21-.16-.81.37-1.6%201.18-1.76l9.34-1.84c.8-.16%201.6.37%201.76%201.18s-.37%201.6-1.18%201.76l-9.34%201.84c-.1.02-.2.03-.29.03z%22%2F%3E%3Cpath%20d%3D%22m95.1599%2065.4c-.2%200-.41-.04-.61-.13l-8.67-3.84c-.76-.33-1.1-1.22-.76-1.98.33-.76%201.22-1.1%201.98-.76l8.67%203.84c.76.33%201.1%201.22.76%201.98-.25.56-.8.89-1.37.89z%22%2F%3E%3Cpath%20d%3D%22m86.4901%2074.47c-.39%200-.78-.15-1.07-.45l-6.21-6.38c-.58-.59-.57-1.54.03-2.12.59-.58%201.54-.57%202.12.03l6.21%206.38c.58.59.57%201.54-.03%202.12-.29.28-.67.43-1.05.43z%22%2F%3E%3Cpath%20d%3D%22m72.19%2080.71c-.7%200-1.32-.49-1.47-1.2l-2.15-10.36c-.17-.81.35-1.61%201.16-1.77.81-.17%201.61.35%201.77%201.16l2.15%2010.36c.17.81-.35%201.61-1.16%201.77-.1.02-.21.03-.31.03z%22%2F%3E%3Cpath%20d%3D%22m56.5901%2078.02c-.68%200-1.29-.46-1.46-1.15l-2.13-8.83c-.19-.8.3-1.62%201.11-1.81.8-.19%201.62.3%201.81%201.11l2.13%208.83c.19.8-.3%201.62-1.11%201.81-.12.03-.24.04-.35.04z%22%2F%3E%3Cpath%20d%3D%22m44.11%2086.38c-.69%200-1.31-.48-1.46-1.18l-2.38-10.85c-.18-.81.33-1.61%201.14-1.79s1.61.33%201.79%201.14l2.38%2010.85c.18.81-.33%201.61-1.14%201.79-.11.02-.22.04-.32.04z%22%2F%3E%3Cpath%20d%3D%22m27.3801%2088.94c-.19%200-.39-.04-.58-.12-.76-.32-1.13-1.2-.81-1.96l4.54-10.92c.32-.76%201.19-1.12%201.96-.81.76.32%201.13%201.2.81%201.96l-4.54%2010.92c-.24.58-.8.92-1.39.92z%22%2F%3E%3Cpath%20d%3D%22m10.5101%2080.96c-.51%200-1.02002-.27-1.30002-.74-.42-.71-.18-1.63.54-2.05l11.08002-6.49c.71-.42%201.63-.18%202.05.54.42.71.18%201.63-.54%202.05l-11.08%206.49c-.24.14-.5.21-.76.21z%22%2F%3E%3Cpath%20d%3D%22m5.97005%2065.4c-.75%200-1.4-.56-1.49-1.32-.1-.82.49-1.57%201.31-1.67l10.54995-1.25c.84-.11%201.57.49%201.67%201.31s-.49%201.57-1.31%201.67l-10.54995%201.25c-.06%200-.12.01-.18.01z%22%2F%3E%3Cpath%20d%3D%22m17.86%2054.29c-.13%200-.26-.02-.39-.05l-13.58996-3.64c-.8-.21-1.28-1.04-1.06-1.84.21-.8%201.03-1.27%201.84-1.06l13.58996%203.64c.8.21%201.28%201.04%201.06%201.84-.18.67-.79%201.11-1.45%201.11z%22%2F%3E%3Cpath%20d%3D%22m25.16%2044.45c-.36%200-.73-.13-1.02-.4l-11.11-10.25c-.61-.56-.65-1.51-.08-2.12.56-.61%201.51-.64%202.12-.08l11.11%2010.25c.61.56.65%201.51.08%202.12-.3.32-.7.48-1.1.48z%22%2F%3E%3Cpath%20d%3D%22m35.27%2037.24c-.5%200-1-.26-1.28-.72l-7.04-11.54c-.43-.71-.21-1.63.5-2.06s1.63-.21%202.06.5l7.04%2011.54c.43.71.21%201.63-.5%202.06-.24.15-.51.22-.78.22z%22%2F%3E%3Cpath%20d%3D%22m75.3901%2062.45c-1.22%200-2.31-.42-2.95-1.55-.72-1.27-.29-2.69.08-3.94.54-1.8.53-2.27-.06-2.68-.66-.15-3.12%201.34-4.6%202.22-3.52%202.1-7.9%204.71-10.01%201.19-1.32-2.2%201.37-4.23%205.09-7.03%201.71-1.28%205.63-4.24%205.73-5.38-.8.09-2.75%201.35-3.84%202.05-2.33%201.5-4.34%202.79-6.05%202.28-.71-.22-1.28-.73-1.6-1.46-.58-1.33-.85-5.11%209.06-11.58.7-.45%201.62-.26%202.08.44.45.69.26%201.62-.44%202.08-4.51%202.95-7.79%206.33-7.98%207.59.79-.25%202.33-1.23%203.29-1.86%202.35-1.51%204.57-2.94%206.43-2.42.77.22%201.38.74%201.74%201.51%201.46%203.06-2.65%206.16-6.64%209.15-1.35%201.02-3.3%202.48-4%203.32%201.05.25%203.82-1.41%205.57-2.45%203.14-1.87%205.85-3.49%207.85-2.11%202.49%201.74%201.69%204.41%201.22%206-.15.51-.41%201.38-.33%201.62.26.12%201.51-.11%202.56-.63.74-.36%201.64-.06%202.01.68s.07%201.64-.67%202.01c-1.09.54-2.39.94-3.57.94z%22%2F%3E%3Cpath%20d%3D%22m33.01%2069.77c-2.28%200-4.28-.71-5.8-2.09-4.58-4.15-3.25-12.84%203.04-19.77%206.28-6.93%2014.8-9.11%2019.38-4.96%202.28%202.07%203.16%205.33%202.47%209.19-.64%203.61-2.6%207.36-5.51%2010.58-2.91%203.21-6.46%205.53-9.99%206.52-1.25.35-2.46.53-3.59.53zm10.81-25.89c-3.45%200-7.88%202.22-11.35%206.05-4.98%205.5-6.47%2012.61-3.25%2015.53%201.49%201.35%203.82%201.67%206.57.9%202.99-.84%206.04-2.85%208.57-5.65%202.54-2.8%204.24-6.03%204.78-9.08.5-2.81-.04-5.1-1.53-6.45-.98-.88-2.29-1.3-3.79-1.3z%22%2F%3E%3Cpath%20d%3D%22m34.39%2061.99s-.05%200-.07%200c-.83-.04-1.46-.74-1.42-1.56.17-3.64%202.48-10.95%2010.03-12.61.82-.18%201.61.33%201.79%201.14s-.33%201.61-1.14%201.79c-7.17%201.57-7.65%209.48-7.67%209.82-.04.8-.7%201.42-1.5%201.42z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-info-fill:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M128%2C24A104%2C104%2C0%2C1%2C0%2C232%2C128%2C104.11%2C104.11%2C0%2C0%2C0%2C128%2C24Zm-4%2C48a12%2C12%2C0%2C1%2C1-12%2C12A12%2C12%2C0%2C0%2C1%2C124%2C72Zm12%2C112a16%2C16%2C0%2C0%2C1-16-16V128a8%2C8%2C0%2C0%2C1%2C0-16%2C16%2C16%2C0%2C0%2C1%2C16%2C16v40a8%2C8%2C0%2C0%2C1%2C0%2C16Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-info:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M128%2C24A104%2C104%2C0%2C1%2C0%2C232%2C128%2C104.11%2C104.11%2C0%2C0%2C0%2C128%2C24Zm0%2C192a88%2C88%2C0%2C1%2C1%2C88-88A88.1%2C88.1%2C0%2C0%2C1%2C128%2C216Zm16-40a8%2C8%2C0%2C0%2C1-8%2C8%2C16%2C16%2C0%2C0%2C1-16-16V128a8%2C8%2C0%2C0%2C1%2C0-16%2C16%2C16%2C0%2C0%2C1%2C16%2C16v40A8%2C8%2C0%2C0%2C1%2C144%2C176ZM112%2C84a12%2C12%2C0%2C1%2C1%2C12%2C12A12%2C12%2C0%2C0%2C1%2C112%2C84Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E\");--lds-icon-joint-pain:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m68.2098%2016.29c-.15%200-.3-.02-.44-.06-.88-.24-1.39-1.15-1.15-2.03l2.45-8.83c.24-.88%201.16-1.39%202.03-1.15.88.24%201.39%201.15%201.15%202.03l-2.45%208.83c-.2.73-.87%201.21-1.59%201.21z%22%2F%3E%3Cpath%20d%3D%22m72.9899%2020.56c-.56%200-1.1-.28-1.41-.79-.47-.78-.22-1.79.55-2.27l8.52-5.17c.78-.47%201.79-.23%202.27.55.47.78.22%201.79-.55%202.27l-8.52%205.17c-.27.16-.56.24-.85.24z%22%2F%3E%3Cpath%20d%3D%22m85.3402%2027.77c-.05%200-.11%200-.16%200l-11.42-1.09c-.91-.09-1.57-.89-1.48-1.8s.89-1.58%201.8-1.48l11.42%201.09c.91.09%201.57.89%201.48%201.8-.08.85-.8%201.49-1.64%201.49z%22%2F%3E%3Cpath%20d%3D%22m49.38%2093.95c-.68%200-1.32-.43-1.56-1.11-.32-.91-7.75-22.4-7.74-32.48%200-7.99.46-14.44.73-17.6-19.38%202.45-28.38-3.83-28.77-4.11-.74-.53-.91-1.56-.38-2.3s1.56-.91%202.3-.38c.12.08%209.13%206.19%2028.44%203.24.51-.08%201.02.08%201.39.44.37.35.55.86.5%201.37%200%20.08-.89%208.17-.9%2019.34-.01%209.52%207.48%2031.18%207.55%2031.39.3.86-.16%201.8-1.02%202.1-.18.06-.36.09-.54.09z%22%2F%3E%3Cpath%20d%3D%22m64.6099%2093.95c-.05%200-.1%200-.15%200-.91-.08-1.58-.88-1.49-1.79.04-.41%203.72-41.27%202.48-51.44-1.23-10.11-2.42-12.65-3.84-14.9-2.11-3.35-5.59-4.9-12.61-7.1-3.66-1.15-24.83-7.07-25.04-7.13-.88-.25-1.39-1.16-1.14-2.03.25-.88%201.16-1.39%202.03-1.14.87.24%2021.44%206%2025.14%207.16%206.62%202.07%2011.53%203.9%2014.41%208.49%201.64%202.61%203%205.47%204.32%2016.26%201.28%2010.52-2.32%2050.44-2.47%2052.14-.08.86-.8%201.5-1.64%201.5z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-lilly-monogram:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20121%20121%22%20%3E%3Cpath%20d%3D%22M71.6499%2059.0945C78.772%2049.2639%2085.7242%2041.2979%2091.3195%2035.3646C98.951%2028.0762%20104.546%2024.1772%20107.258%2024.1772C108.276%2024.1772%20108.615%2024.5169%20108.615%2025.5323C108.615%2029.0917%20103.528%2036.5499%2097.4227%2042.8212C90.4705%2049.6002%2081.3141%2056.0412%2071.6482%2059.0928L71.6499%2059.0945ZM8.73874%2090.6206C8.73874%2088.2482%2011.7903%2086.3837%2016.3702%2086.3837C21.4579%2086.3837%2026.8834%2088.5879%2030.4444%2091.13C26.0361%2093.1644%2021.4579%2094.5195%2016.54%2094.5195C12.4696%2094.5195%208.74044%2093.3325%208.74044%2090.6206H8.73874ZM15.8608%20101.638C23.6603%20101.638%2031.122%2099.7736%2037.5665%2096.0444C48.0797%20102.655%2058.2533%20105.367%2067.7493%20105.367C85.5543%20105.367%20100.476%2095.7065%20113.025%2078.4177L107.43%2073.6714C94.8822%2089.4335%2083.0122%2098.0788%2068.2587%2098.0788C61.1367%2098.0788%2053.507%2095.7065%2045.1979%2091.13C51.3028%2086.0457%2057.5757%2079.0952%2064.8675%2068.7569C84.1992%2064.858%2098.2734%2053.3327%20105.903%2045.7063C110.651%2040.96%20118.281%2031.4691%20118.281%2022.6557C118.281%2018.5886%20115.567%2015.3672%20110.312%2015.3672C92.8462%2015.3672%2072.3275%2043.8417%2058.9325%2062.3176C56.3887%2062.8253%2053.8449%2062.9951%2051.1329%2062.9951C36.2113%2062.9951%2029.0893%2056.5541%2029.0893%2050.2828C29.0893%2040.6221%2042.8239%2030.7915%2059.442%2028.9269C58.4248%2026.7227%2057.5774%2024.5203%2056.3904%2021.9781C39.6025%2023.8427%2020.2725%2035.5378%2020.2725%2050.7923C20.2725%2054.6912%2021.4596%2058.4203%2024.1732%2061.3004C29.2608%2067.0639%2038.4172%2070.2836%2049.2701%2070.2836C50.6269%2070.2836%2051.8139%2070.2836%2053.0009%2070.1138C47.2357%2077.4022%2042.3179%2082.4864%2037.7397%2086.2156C32.9917%2082.8261%2025.1921%2079.2668%2017.0529%2079.2668C7.55684%2079.2668%200.434814%2083.8433%200.434814%2090.7921C0.434814%2099.0977%209.93084%20101.64%2015.8659%20101.64L15.8608%20101.638Z%22%2F%3E%3C%2Fsvg%3E%0A\");--lds-icon-liver:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m12.3402%2087.04c-.89%200-1.86-.17-2.77998-.69-2.77-1.58-3.2-5.2-3.38-6.75-.57-4.85-1.54-7.3-2.47-9.67-1.06-2.7-2.07-5.26-2.42-10.55-.509996-7.75-1.459996-22.18%208.21-31.25%207.01998-6.58%2016.32998-7.36%2022.71998-7.37h.17c15.31%200%2021.72%203.84%2025.97%206.38.36.22.71.42%201.04.62.61-.66%201.32-1.25%202.14-1.75%201.84-1.1%203.17-1.02%205.01-.91%201.23.07%202.77.16%205.1-.05%202.04-.18%203.05-.45%204.57-.85%201.54-.4%203.66-.96%207.79-1.67%205.92-1.02%207.98-.99%2010.03.15%203.18%201.77%204.32%205.18%204.52%205.85.48%201.63.06%203.69-1.23%205.95-3.94%206.93-16.66%2017.07-39.61%2023.01-2.69%205.63-8.07%208.36-12.42%2010.57-2.05%201.04-3.11%201.34-4.72%201.8-1.65.47-3.91%201.12-8.66%202.93-9.43%203.6-10.35%204.85-10.9%205.59-.83%201.12-1.3%202.24-1.76%203.32-.76%201.8-1.54%203.65-3.82%204.69-.08.04-1.43.64-3.09.64zm20.05-63.64h-.17c-6.45.01-14.65.78-20.91%206.65-8.74998%208.21-7.85998%2021.82-7.37998%2029.14.32%204.89%201.25%207.25%202.24%209.76.95%202.41%202.03%205.14%202.63%2010.24.14%201.24.46%203.93%202.06998%204.85%201.46.83%203.45-.05%203.47-.05%201.28-.58%201.73-1.54%202.48-3.31.49-1.17%201.05-2.5%202.07-3.87%201.06-1.43%202.7-2.9%2012.08-6.49%204.85-1.86%207.18-2.52%208.88-3%201.56-.44%202.42-.69%204.24-1.62%204.12-2.09%209.25-4.7%2011.46-9.85v-.02c1.91-4.47%201.34-9.94%201.07-12.58-.13-1.2-.29-2.14-.44-2.98-.31-1.78-.56-3.19-.13-5.4.25-1.3.76-3.17%201.78-4.97-.27-.16-.55-.33-.84-.5-4-2.39-10.03-6.01-24.61-6.01zm32.71%204.28c-.84%200-1.41.12-2.2.6-2.94%201.76-3.95%205.55-4.25%207.1-.33%201.73-.16%202.75.14%204.44.15.88.33%201.87.46%203.16.25%202.41.73%207.02-.44%2011.47%2019.73-5.44%2032.35-14.5%2036.21-21.29.9-1.58%201.26-3%20.99-3.89-.15-.49-.99-3.01-3.27-4.28-1.3-.72-2.74-.81-8.29.15-4.02.69-5.98%201.21-7.56%201.62-1.6.42-2.75.72-5.01.92-2.53.22-4.24.13-5.49.05-.51-.03-.93-.05-1.29-.05z%22%20fill%3D%22%23071218%22%2F%3E%3C%2Fsvg%3E%0A\");--lds-icon-low-physical-activity-2:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m64.3501%2060.2v1.31c0-.08.01-.16.02-.24.02-.14.06-.27.13-.39.02-.06.05-.12.1-.18.01-.03.03-.07.07-.1zm-6.41-8.03.62.78v-1.98c0%20.49-.24.94-.62%201.2zm6.41%208.03v1.31c0-.08.01-.16.02-.24.02-.14.06-.27.13-.39.02-.06.05-.12.1-.18.01-.03.03-.07.07-.1zm-6.41-8.03.62.78v-1.98c0%20.49-.24.94-.62%201.2zm-2.38-2.98v.28h.23zm2.38%202.98.62.78v-1.98c0%20.49-.24.94-.62%201.2zm8.65%2010.84.76.95v-.95zm-2.24-2.81v1.31c0-.08.01-.16.02-.24.02-.14.06-.27.13-.39.02-.06.05-.12.1-.18.01-.03.03-.07.07-.1zm-6.41-8.03.62.78v-1.98c0%20.49-.24.94-.62%201.2zm6.41%208.03v1.31c0-.08.01-.16.02-.24.02-.14.06-.27.13-.39.02-.06.05-.12.1-.18.01-.03.03-.07.07-.1z%22%2F%3E%3Cpath%20d%3D%22m50.3501%207.21002c-24.13%200-43.76001%2019.62998-43.76001%2043.75998s19.63001%2043.75%2043.76001%2043.75%2043.76-19.63%2043.76-43.75-19.63-43.75998-43.76-43.75998zm0%2084.50998c-22.47%200-40.76001-18.28-40.76001-40.75%200-13.66%206.75001-25.77%2017.09001-33.16l12.63%2015.83h-3.35c-1.79%200-3.26%201.46-3.26%203.26v2.02h-3.77c-1.8%200-3.26%201.46-3.26%203.26v7.29h-2.01c-.83%200-1.5.67-1.5%201.5s.67%201.5%201.5%201.5h2.01v7.29c0%201.79%201.46%203.25%203.26%203.25h3.77v2.02c0%201.8%201.47%203.26%203.26%203.26h5.28c1.79%200%203.26-1.46%203.26-3.26v-12.56h11.06v12.56c0%201.8%201.46%203.26%203.26%203.26h5.27c.85%200%201.62-.32%202.19-.86l11.15%2013.97c-7.2%206.42-16.69%2010.32-27.08%2010.32zm-9.11-55.08c.14%200%20.26.12.26.26v28.13c0%20.14-.12.26-.26.26h-5.28c-.14%200-.26-.12-.26-.26v-28.13c0-.14.12-.26.26-.26zm-12.57%205.54c0-.15.12-.26.26-.26h3.77v18.09h-3.77c-.14%200-.26-.11-.26-.25zm15.83%207.29v-9.33l7.45%209.33zm20.17%2011.13s-.06.07-.07.1c-.05.06-.08.12-.1.18-.07.12-.11.25-.13.39-.01.08-.02.16-.02.24v-1.31l-5.79-7.25-.62-.78c.38-.26.62-.71.62-1.2v-14.07c0-.14.12-.26.26-.26h5.27c.15%200%20.26.12.26.26v23.3zm-.32%204.41v.02c0%20.14-.11.26-.26.26h-5.27c-.14%200-.26-.12-.26-.26v-7.28zm15.25%2014.3-12.25-15.35-.76-.95h4.54c1.79%200%203.25-1.46%203.25-3.25v-7.29h2.02c.83%200%201.5-.68%201.5-1.5s-.67-1.5-1.5-1.5h-2.02v-7.29c0-1.8-1.46-3.26-3.25-3.26h-3.78v-2.02c0-1.8-1.46-3.26-3.26-3.26h-5.27c-1.8%200-3.26%201.46-3.26%203.26v12.29l.23.28h-.23v-.28l-26.37-33.05c6.17-3.76%2013.42-5.93%2021.16-5.93%2022.48%200%2040.76%2018.28%2040.76%2040.76%200%2011.01-4.38%2021-11.51%2028.34zm-12.25-19.3v-18.09h3.78c.14%200%20.25.11.25.26v17.58c0%20.14-.11.25-.25.25z%22%2F%3E%3Cpath%20d%3D%22m55.5601%2052.47v1.52l-1.22-1.52z%22%2F%3E%3Cpath%20d%3D%22m55.7901%2049.47h-.23v-.28z%22%2F%3E%3Cpath%20d%3D%22m64.6701%2060.6s-.06.07-.07.1c-.05.06-.08.12-.1.18-.07.12-.11.25-.13.39-.01.08-.02.16-.02.24v-1.31z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-low-physical-activity:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m83.05%2058.4v-.4c0%20.14-.01.27-.01.4zm-.01-18.39v.4l.01-.4z%22%2F%3E%3Cpath%20d%3D%22m89.2099%2037.11h-6.16v-3.79c0-1.82-1.48-3.3-3.3-3.3h-63.77c-1.82%200-3.3%201.48-3.3%203.3v30.51c0%201.82%201.48%203.3%203.3%203.3h63.77c1.82%200%203.3-1.48%203.3-3.3v-2.53h6.16c1.82%200%203.3-1.48%203.3-3.3v-17.59c0-1.82-1.48-3.3-3.3-3.3zm-73.23%2027.12c-.22%200-.4-.18-.4-.4v-27.45l12.77%2027.85zm64.17-.4c0%20.22-.18.4-.4.4h-48.21l-14.35-31.31h62.56c.22%200%20.4.17.4.4zm9.46-5.83c0%20.22-.18.4-.4.4h-6.17c0-.13.01-.26.01-.4v-17.96l-.01-.03h6.17c.22%200%20.4.18.4.4z%22%2F%3E%3Cpath%20d%3D%22m80.1399%2058.43c-.01.28-.02.59.01.9v-1.33c0%20.15-.01.29-.01.43z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-lung-cancer:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m25.45%2042.01c-.92%200-1.87-.19-2.81-.67-1.51-.77-3.35-2.47-4.28-3.96-.44-.7-.22-1.63.48-2.07s1.63-.23%202.07.48c.71%201.14%202.17%202.41%203.1%202.88%202.09%201.07%204.78-.73%205.55-1.3%201.5-1.11%203.13-1.78%204.7-2.43%203.59-1.48%205.62-2.5%205.64-6.34.04-5.09-.12-9.94-.24-13.49-.08-2.33-.13-4.01-.11-4.94.02-.81.69-1.46%201.5-1.46h.04c.83.02%201.48.71%201.46%201.54-.02.84.04%202.57.11%204.76.12%203.57.28%208.46.24%2013.61-.04%206.02-4%207.65-7.5%209.1-1.41.58-2.86%201.18-4.04%202.05-1.07.79-3.37%202.24-5.91%202.24z%22%2F%3E%3Cpath%20d%3D%22m18.36%2056.12c-3.32%200-5.35-3.95-5.57-4.4-.36-.74-.06-1.64.69-2.01.74-.36%201.64-.06%202%20.69.44.89%201.72%202.72%202.88%202.72.96%200%202.16-1.34%203.3-3.66%201.78-3.63%207.35-11.44%207.59-11.77.48-.67%201.42-.83%202.09-.35s.83%201.42.35%202.09c-.06.08-5.67%207.93-7.33%2011.34-1.73%203.54-3.75%205.34-6%205.34z%22%2F%3E%3Cpath%20d%3D%22m13.5501%2074.84c-.49%200-.96-.23-1.25-.67-.46-.69-.27-1.62.41-2.08.13-.09%208.85-6.21%208.79-21.97%200-.83.67-1.5%201.5-1.5s1.5.67%201.5%201.5c.06%2017.49-9.71%2024.2-10.13%2024.47-.26.17-.54.25-.83.25z%22%2F%3E%3Cpath%20d%3D%22m26.0002%2073.14c-.12%200-.25-.02-.38-.05-2.03-.53-6.73-2.57-6.53-10.19.02-.81.69-1.46%201.5-1.46h.04c.83.02%201.48.71%201.46%201.54-.13%205%202.26%206.68%204.28%207.2.8.21%201.28%201.03%201.08%201.83-.18.67-.78%201.12-1.45%201.12z%22%2F%3E%3Cpath%20d%3D%22m16.6399%2089.73c-1.3%200-2.57-.13-3.79-.38-3.60998-.76-6.74998-2.14-8.55998-11.4-1.35-6.91-1.47-19.49.98-29.19%204.81998-19.08%209.13998-26.1%2017.11998-27.83%208.42-1.82%2013.73%2011.58%2013.95%2012.16.02.06.04.12.06.17.3%201.18%207.27%2029.11%202.41%2041.09-2.91%207.18-7.97%2010.93-11.7%2012.81-3.35%201.69-7%202.57-10.46%202.57zm7.28-65.96c-.29%200-.59.03-.89.1-5.74%201.25-9.81%205.7-14.83998%2025.63-2.49%209.85-2.05%2022.23-.95%2027.88%201.58%208.06%203.83998%208.54%206.22998%209.04%206.59%201.38%2017.93-1.8%2022.55-13.19%204.36-10.76-2.08-37.38-2.51-39.14-1.22-3.08-5.09-10.32-9.59-10.32z%22%2F%3E%3Cpath%20d%3D%22m65.1699%2042.62c-3.11%200-5.87-2.13-6.37-2.94-1.25-2.02-3.28-2.82-5.42-3.66-2.9-1.14-6.5-2.56-6.49-7.68%200-2.06.01-4.28.02-6.46.03-5.3.05-10.3-.05-11.83-.06-.83.57-1.54%201.39-1.6.82-.08%201.54.57%201.6%201.39.11%201.64.09%206.69.06%2012.05-.01%202.17-.02%204.4-.02%206.45%200%202.95%201.49%203.67%204.59%204.89%202.37.93%205.05%201.99%206.83%204.79.4.39%203.01%202.3%205.22%201.32.95-.42%202.48-1.61%203.25-2.71.48-.68%201.41-.84%202.09-.37.68.48.84%201.41.37%202.09-1.01%201.44-2.93%203.04-4.49%203.73-.86.38-1.73.54-2.57.54zm-3.83-4.54v.01s0%200%200-.01z%22%2F%3E%3Cpath%20d%3D%22m69.6601%2089.48c-3.76%200-7.77-1.1-11.36-3.15-3.63-2.08-8.48-6.09-11.01-13.41-4.22-12.23%204.22-39.74%204.58-40.9.02-.06.04-.12.06-.17.25-.56%206.26-13.67%2014.57-11.4%208.47%202.31%2012.58%208.96%2015.71%2025.37.16.81-.38%201.6-1.19%201.75s-1.6-.38-1.75-1.19c-3.26-17.15-7.28-21.33-13.55-23.04-4.79-1.32-9.54%206.44-11.01%209.65-.53%201.73-8.37%2027.97-4.59%2038.95%204.01%2011.62%2015.18%2015.4%2021.82%2014.37.82-.12%201.59.43%201.71%201.25.13.82-.43%201.58-1.25%201.71-.9.14-1.82.21-2.75.21z%22%2F%3E%3Cpath%20d%3D%22m64.0698%2050.13c-.48%200-.95-.23-1.24-.66-2.63-3.88-3.55-9.15-3.58-9.37-.14-.82.41-1.59%201.23-1.73.81-.13%201.59.41%201.73%201.23%200%20.05.85%204.86%203.11%208.19.46.69.29%201.62-.4%202.08-.26.17-.55.26-.84.26z%22%2F%3E%3Cpath%20d%3D%22m31.1502%2053.01c-.35%200-.7-.12-.99-.37-5.45-4.77-3.75-9.63-3.68-9.83.28-.78%201.15-1.18%201.92-.89.77.28%201.17%201.13.9%201.91-.05.17-.98%203.22%202.83%206.56.62.55.69%201.49.14%202.12-.3.34-.71.51-1.13.51z%22%2F%3E%3Cpath%20d%3D%22m80.2701%2086.16c-.17%200-.33%200-.5%200-10.25-.27-18.37-8.83-18.1-19.08s8.85-18.41%2019.08-18.1c10.25.27%2018.37%208.83%2018.1%2019.08-.27%2010.08-8.56%2018.1-18.58%2018.1zm-.01-34.19c-8.41%200-15.36%206.73-15.59%2015.18-.23%208.6%206.58%2015.78%2015.18%2016h.42c8.41%200%2015.36-6.73%2015.59-15.18.23-8.6-6.58-15.78-15.18-16-.14%200-.28%200-.42%200z%22%2F%3E%3Cpath%20d%3D%22m76.8199%2081.61c-.39%200-.79-.07-1.2-.22-3.29-1.23-3.39-3.71-3.47-5.71-.02-.62-.05-1.26-.16-1.89-.15-.87-.9-1.43-2.12-2.26-1.5-1.01-3.76-2.54-2.76-5.63.25-.76.9-1.8%202.6-2.42.29-.17.84-1.04.87-1.43-.5-1.41-.25-2.9.68-4%20.85-1.02%202.12-1.51%203.31-1.29.54.1%201.01.3%201.43.47.82.34%201.03.38%201.3.23.08-.05.27-.36.4-.56.29-.46.69-1.09%201.36-1.71%201.12-1.03%202.58-1.58%203.88-1.45%201.16.11%202.17.71%202.93%201.72.94%201.26.97%202.57%201%203.53.03%201.05.08%201.33.51%201.66.26.2.5.2%201.19.15.85-.06%202.13-.15%203.41.82%201.91%201.45%202.86%204.57%202.08%206.82-.58%201.68-1.87%202.32-2.81%202.79-.84.42-1.12.59-1.26%201.06-.1.34-.04.59.09%201.12.19.73.45%201.74.01%203.09-.66%202.05-2.56%203.93-4.59%203.54-1.11-.22-2.22-1.17-2.96-1.92%200%200-.01.01-.02.02l-.32.28c-1.98%201.75-3.62%203.19-5.39%203.19zm-2.83-21.9c-.09%200-.28.07-.44.27-.14.17-.35.54-.14%201.1.28.76.2%201.68-.26%202.66-.43.93-1.32%202.16-2.42%202.56-.51.18-.73.39-.77.52-.25.77-.14%201.05%201.59%202.22%201.34.91%203.02%202.04%203.4%204.23.14.82.17%201.6.2%202.29.08%201.93.16%202.51%201.52%203.02.57.22%202.02-1.06%203.56-2.41l.3-.26c.42-.38%201.29-1.19%202.62-1.04.39.04.76.24%201.01.55.64.78%201.57%201.6%201.93%201.68.18-.03.88-.63%201.16-1.52.17-.53.09-.84-.06-1.41-.17-.66-.41-1.57-.07-2.72.52-1.77%201.84-2.42%202.8-2.9.82-.41%201.15-.61%201.31-1.08.36-1.04-.17-2.78-1.06-3.45-.35-.27-.62-.27-1.38-.22-.86.06-2.04.15-3.22-.75-1.62-1.23-1.66-2.81-1.7-3.96-.02-.85-.05-1.35-.41-1.82-.33-.44-.62-.51-.81-.53-.47-.04-1.08.22-1.57.67-.38.35-.61.71-.85%201.1-.35.55-.74%201.18-1.5%201.59-1.6.88-2.99.29-3.91-.1-.3-.13-.59-.25-.81-.29%200%200-.01%200-.02%200z%22%2F%3E%3Cpath%20d%3D%22m82.7399%2070.86c-1.82%200-3.3-1.53-3.3-3.42s1.48-3.42%203.3-3.42%203.3%201.53%203.3%203.42-1.48%203.42-3.3%203.42zm0-4.71c-.64%200-1.17.58-1.17%201.29s.52%201.29%201.17%201.29%201.17-.58%201.17-1.29-.52-1.29-1.17-1.29z%22%2F%3E%3Cpath%20d%3D%22m79.4898%2072.58c0%20.82-.67%201.49-1.49%201.49s-1.49-.67-1.49-1.49.67-1.49%201.49-1.49%201.49.66%201.49%201.49z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-magnifying-glass:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20fill%3D%22none%22%2F%3E%3Ccircle%20cx%3D%22112%22%20cy%3D%22112%22%20r%3D%2280%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3Cline%20x1%3D%22168.57%22%20y1%3D%22168.57%22%20x2%3D%22224%22%20y2%3D%22224%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3C%2Fsvg%3E\");--lds-icon-medical-infusion-bag:url(\"data:image/svg+xml,%3Csvg%20viewBox%3D%22-5%200%2020%2020%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4.31977%200.0253906C3.40211%200.0253906%202.69587%200.839049%202.69587%201.788V8.77093C2.69587%2010.2571%203.73171%2011.5182%205.0941%2011.6668V12.291C5.0941%2013.0255%205.62644%2013.6663%206.33778%2013.7016V16.9804C6.33778%2017.4938%205.96303%2017.87%205.55217%2017.87C5.14143%2017.87%204.76694%2017.4939%204.76694%2016.9804V15.1795C4.76694%2014.0263%203.90972%2013.0462%202.80625%2013.0462C1.70267%2013.0462%200.845215%2014.0261%200.845215%2015.1795V16.8948C0.845486%2017.2147%201.08604%2017.5165%201.43316%2017.5165C1.78%2017.5165%202.02081%2017.215%202.02081%2016.8948V15.1796C2.02081%2014.6663%202.39558%2014.29%202.80639%2014.29C3.21711%2014.29%203.59163%2014.6661%203.59163%2015.1796V16.9806C3.59163%2018.1337%204.44886%2019.1139%205.55233%2019.1139C6.65594%2019.1139%207.51336%2018.1341%207.51336%2016.9806V13.7018C8.22447%2013.6662%208.7567%2013.0256%208.7567%2012.2912V11.667C10.1192%2011.5184%2011.1549%2010.2573%2011.1549%208.7711V1.78819C11.1549%200.83919%2010.4487%200.0255788%209.53104%200.0255788L4.31977%200.0253906ZM3.87113%201.78765C3.87113%201.47867%204.0947%201.26861%204.3197%201.26861H9.53051C9.75555%201.26861%209.97907%201.47848%209.97907%201.78783V4.11582L3.87113%204.11564V1.78765Z%22%2F%3E%3C%2Fsvg%3E%0A\");--lds-icon-migraine:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m18.9201%2056.57c-.82%200-1.49-.66-1.51-1.48-.15-8.49%206.15-11.51%209.51-11.92.84-.1%201.58.49%201.68%201.31s-.48%201.57-1.31%201.68c-.29.04-7.01%201.02-6.87%208.88.01.83-.65%201.52-1.48%201.53h-.03z%22%2F%3E%3Cpath%20d%3D%22m18.9101%2050.43c-.23%200-.46-.05-.67-.16-.22-.11-5.36-2.73-6.74-7.55-.74-2.57-.28-5.22%201.35-7.89%201.82-2.98%204.18-4.73%207.01-5.2%201.81-.3%203.56-.03%205.08.46-.85-2.58-.88-5.73%201.24-8.82%202.96-4.3%207.46-6.4%2012.68-5.89%204.84.46%209.44%203.26%2010.92%206.65.33.76-.01%201.65-.78%201.98-.76.34-1.65-.01-1.98-.78-.9-2.05-4.16-4.45-8.45-4.86-2.36-.22-6.79.07-9.91%204.6-3.41%204.95%201.17%209.67%201.37%209.87.56.57.58%201.49.04%202.08s-1.45.66-2.07.15c-.04-.03-3.89-3.12-7.66-2.47-1.93.33-3.58%201.61-4.93%203.8-1.19%201.94-1.52%203.73-1.03%205.47%201.01%203.54%205.15%205.67%205.19%205.69.74.38%201.04%201.28.67%202.02-.26.53-.8.83-1.35.83z%22%2F%3E%3Cpath%20d%3D%22m88.86%2051.4-.44-.35c-2.34-1.82-6.11-6.63-3.68-11.8.35-.75%201.25-1.08%202-.72.75.35%201.08%201.25.72%202-1.66%203.53%201.19%206.67%202.35%207.75%201.57-.3%205.57-1.71%205.44-8.32-.06-2.8-2.25-6.1-5.22-7.85-1.64-.96-4.96-2.27-8.79-.24-.74.39-1.65.11-2.04-.63s-.11-1.65.63-2.04c3.8-2.01%207.97-1.9%2011.73.31%203.87%202.28%206.63%206.55%206.71%2010.39.22%2010.84-8.76%2011.46-8.85%2011.46l-.56.03z%22%2F%3E%3Cpath%20d%3D%22m87.6399%2051.48c-7.3%200-12.03-5.6-12.25-5.86-.53-.64-.44-1.59.2-2.12s1.59-.44%202.12.2c.09.11%204.77%205.55%2011.43%204.67.83-.11%201.58.47%201.69%201.3s-.47%201.58-1.3%201.69c-.65.09-1.28.13-1.9.13z%22%2F%3E%3Cpath%20d%3D%22m88.0899%2068.07c-1.13%200-2.1-.26-2.81-.53-3.06-1.18-5.64-4.35-5.64-6.92%200-.83.67-1.51%201.51-1.51s1.51.67%201.51%201.51c0%20.94%201.41%203.22%203.71%204.11%202.06.8%204.04.16%205.9-1.88%202.02-2.21%202.8-5.22%202.1-8.03-.48-1.92-1.59-3.36-2.98-3.86-.78-.28-1.19-1.14-.91-1.93.28-.78%201.14-1.19%201.93-.91%202.34.84%204.17%203.07%204.9%205.96.95%203.79-.1%207.83-2.8%2010.79-2.27%202.49-4.56%203.19-6.41%203.19z%22%2F%3E%3Cpath%20d%3D%22m77.23%2076.56c-3.68%200-6.29-2.08-7.36-3.57-.49-.67-.33-1.62.34-2.1.67-.49%201.61-.33%202.1.33.13.17%202.97%203.87%208.22%201.58%201.59-.69%203.87-4.54%204.36-5.91.28-.78%201.15-1.19%201.93-.91s1.19%201.15.91%201.93-2.87%206.29-5.99%207.65c-1.63.71-3.14%201-4.5%201z%22%2F%3E%3Cpath%20d%3D%22m81.16%2092.14c-3.92%200-5.38-2.1-7.89-5.69-.87-1.25-1.95-2.8-3.36-4.6-5.25-6.71-9.94-4.23-10.3-4.03-.02%200-.03.02-.04.02l-1.55-2.59s.01%200%20.03-.02c.41-.24%2010.07-6.01%207.89-15.21-.19-.81.31-1.62%201.12-1.81.81-.2%201.62.31%201.81%201.12%201.59%206.75-1.8%2011.89-4.93%2015.03%202.44.42%205.39%201.88%208.32%205.63%201.46%201.86%202.57%203.45%203.46%204.73%202.71%203.87%203.32%204.6%206.17%204.37.61-.05%201.13-.49%201.41-1.19%201.58-4%202.47-8.73%202.01-19.93-.03-.83.61-1.53%201.44-1.57.83-.05%201.53.61%201.57%201.44.48%2011.74-.49%2016.8-2.22%2021.17-.7%201.77-2.22%202.95-3.98%203.09-.34.03-.67.04-.98.04z%22%2F%3E%3Cpath%20d%3D%22m65.7401%2061.36c-3.32%200-6.25-1.46-6.41-1.54-.74-.38-1.04-1.28-.66-2.03.38-.74%201.28-1.04%202.02-.67%200%200%204.18%202.06%207.33.82%201.4-.55%202.39-1.67%203.04-3.42.29-.78%201.16-1.17%201.94-.89.78.29%201.18%201.16.89%201.94-.96%202.57-2.57%204.31-4.78%205.18-1.11.43-2.26.6-3.37.6z%22%2F%3E%3Cpath%20d%3D%22m37.2799%2081.94c-.65%200-1.33-.05-2.04-.15-5.92-.86-10.13-4.32-10.72-8.82-.56-4.25%202.29-8.14%207.61-10.43.76-.33%201.65.03%201.98.79.33.77-.03%201.65-.79%201.98-4.01%201.72-6.18%204.43-5.81%207.26.4%203.08%203.68%205.58%208.16%206.23%208.97%201.31%2010.67-8.72%2010.74-9.15.13-.82.89-1.39%201.73-1.25.82.13%201.38.9%201.25%201.72-.68%204.29-4.06%2011.81-12.12%2011.81z%22%2F%3E%3Cpath%20d%3D%22m32.09%2065.46c-5.92%200-8.17-5.03-8.53-7.8-.11-.83.47-1.58%201.3-1.69.82-.1%201.58.47%201.69%201.29.08.57.95%205.51%206.08%205.16.82-.07%201.55.57%201.61%201.4s-.57%201.55-1.4%201.61c-.25.02-.5.03-.74.03z%22%2F%3E%3Cpath%20d%3D%22m52.0201%2080.05c-3.94%200-6.42-1.85-6.57-1.97-.66-.51-.79-1.45-.28-2.11.5-.66%201.44-.78%202.11-.28.2.15%204.49%203.22%2010.78-.44.72-.42%201.64-.18%202.06.55.42.72.18%201.64-.54%202.06-2.85%201.66-5.42%202.2-7.55%202.2z%22%2F%3E%3Cpath%20d%3D%22m43.6099%2059.15c-.69%200-1.32-.48-1.47-1.19-.31-1.45-.97-3.3-2.29-3.81-1.45-.56-3.41.49-4.05.94-.68.48-1.62.33-2.1-.35-.48-.67-.33-1.61.34-2.1.15-.11%203.61-2.57%206.88-1.31%202.08.8%203.48%202.81%204.17%205.99.18.81-.34%201.62-1.16%201.79-.11.02-.21.03-.32.03z%22%2F%3E%3Cpath%20d%3D%22m37.6599%2046.16c-.28%200-.56-.01-.86-.04-2.15-.18-3.79-.99-4.87-2.42-1.8-2.37-1.28-5.43-1.22-5.78.15-.82.95-1.36%201.76-1.2.82.16%201.35.94%201.2%201.76-.01.06-.35%202.09.66%203.41.55.72%201.44%201.12%202.71%201.23%201.79.15%202.99-.39%204.24-.95%201.23-.55%202.62-1.18%204.45-1.05.83.06%201.46.78%201.4%201.61s-.74%201.45-1.61%201.4c-1.07-.08-1.92.31-3%20.79-1.25.56-2.76%201.25-4.88%201.25z%22%2F%3E%3Cpath%20d%3D%22m18.69%2081.11c-1.68%200-3.56-.34-5.63-1.18-8.90003-3.62-7.90003-11.39-7.05003-14.56.11-.41-.02-.84-.32-1.05-4.5-3.14-4.54-8.69-3.2-12.49%202.54-7.23%2012.25003-7.32%2012.67003-7.32.83%200%201.5.67%201.51%201.5%200%20.83-.67%201.51-1.5%201.51-.08%200-7.99003.09-9.82003%205.3-.98%202.8-1.03%206.84%202.08%209.02%201.33.93%201.94%202.66%201.51%204.3-.97%203.64-.84%208.5%205.28003%2010.99%207.56%203.08%2011.03-2.18%2011.17-2.4.45-.7%201.38-.91%202.08-.47s.92%201.36.48%202.07c-1.23%201.97-4.42%204.78-9.24%204.78z%22%2F%3E%3Cpath%20d%3D%22m51.61%2058.97c-.43%200-.86-.12-1.24-.36-.89-.56-1.28-1.61-.96-2.61l7.05-22.13-10.5%201.16c-.5.06-1-.15-1.32-.53-.32-.39-.43-.91-.29-1.4l8.07-26.98999c.2-.66.8-1.09%201.51-1.07l27.29%201.19c.55.02%201.04.35%201.29.84.24.49.2%201.08-.12%201.53l-10.62%2015.12999%2014.53-.13c.55%200%201.18.37%201.41.94s.09%201.23-.36%201.66l-1.58%201.5-32.58%2030.64c-.44.42-1.01.64-1.58.64zm6.98-28.36c.45%200%20.88.2%201.16.55.32.39.43.92.27%201.41l-6.91%2021.69%2029.36-27.62-13.63.13c-.6-.03-1.09-.31-1.35-.81s-.22-1.11.1-1.57l10.73-15.27999-23.37-1.02-7.08%2023.67999%2010.54-1.16h.16z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-minus-circle:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22%23000000%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M176%2C128a8%2C8%2C0%2C0%2C1-8%2C8H88a8%2C8%2C0%2C0%2C1%2C0-16h80A8%2C8%2C0%2C0%2C1%2C176%2C128Zm56%2C0A104%2C104%2C0%2C1%2C1%2C128%2C24%2C104.11%2C104.11%2C0%2C0%2C1%2C232%2C128Zm-16%2C0a88%2C88%2C0%2C1%2C0-88%2C88A88.1%2C88.1%2C0%2C0%2C0%2C216%2C128Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E\");--lds-icon-minus:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20fill%3D%22none%22%2F%3E%3Cline%20x1%3D%2240%22%20y1%3D%22128%22%20x2%3D%22216%22%20y2%3D%22128%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3C%2Fsvg%3E\");--lds-icon-mouth:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m51.22%2083.71c-.6%200-1.02-.02-1.22-.03-1.09.06-8.17.34-17.35-3.29-8.95-3.54-21.67-11.65-31.41998-30.14-.33-.62-.22-1.37.26-1.87.13-.14%203.47-3.75%2015.21998-21.98%203.59-5.57%208.2-8.88%2013.69-9.82%208.64-1.48%2016.83%203.37%2019.61%205.26%202.78-1.89%2010.97-6.73%2019.61-5.26%205.49.94%2010.1%204.24%2013.69%209.82%2011.74%2018.24%2015.08%2021.85%2015.22%2021.99.47.5.58%201.26.26%201.87-9.75%2018.5-22.47%2026.6-31.42%2030.14-7.46%202.95-13.54%203.32-16.13%203.32zm-1.22-3.27h.13c1.14.09%2027.59%201.78%2045.27-30.75-1.57-1.93-5.74-7.46-14.82-21.56-3.08-4.77-6.95-7.59-11.5-8.38-9.03-1.56-18%205.26-18.09%205.33-.58.45-1.39.45-1.97%200-.09-.07-9.07-6.88-18.09-5.33-4.55.79-8.43%203.61-11.5%208.38-9.08%2014.1-13.25998%2019.63-14.81998%2021.56%2017.68998%2032.54%2044.14998%2030.84%2045.27998%2030.75h.13z%22%2F%3E%3Cpath%20d%3D%22m49.9998%2057.06c-18.21%200-32.77-5.32-33.38-5.55-.63-.24-1.05-.84-1.05-1.51s.42-1.28%201.05-1.51c.15-.06%203.84-1.41%209.81-2.78%205.5-1.26%2014.05-2.77%2023.57-2.77%2018.21%200%2032.77%205.32%2033.38%205.55.63.24%201.05.84%201.05%201.51s-.42%201.28-1.05%201.51c-.61.23-15.18%205.55-33.38%205.55zm-27.38-7.06c5.72%201.58%2015.9%203.84%2027.39%203.84s21.65-2.25%2027.37-3.83c-5.72-1.58-15.89-3.83-27.37-3.83-9.21%200-17.51%201.46-22.85%202.68-1.71.39-3.24.79-4.54%201.15z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-over-30-bmi:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m50.47%2045.12c-11.97-.01-21.7-9.75-21.7-21.7%200-.95.06-1.87.18-2.74%201.34-10.78998%2010.59-18.94998%2021.52-18.96998%2010.93.01%2020.18%208.17%2021.52%2018.97998.12.85.18%201.77.18%202.72%200%2011.96-9.74%2021.69-21.7%2021.7zm0-41.24998c-9.84.01-18.17%207.35998-19.38%2017.08998-.11.79-.16%201.61-.16%202.45%200%2010.77%208.77%2019.54%2019.55%2019.55%2010.78-.01%2019.55-8.78%2019.55-19.55%200-.85-.05-1.67-.16-2.44-1.21-9.75-9.54-17.09998-19.39-17.10998z%22%2F%3E%3Cpath%20d%3D%22m31.07%2097.62c-4.9%200-8.9-3.51-10.73-9.39-9.01-29.04-9.12-48.41-9.12-48.6%200-8.07%208-13.23%2017.26-19.2l1.04-.67h1.73l-.17%201.23c-.11.78-.16%201.61-.16%202.47%200%2010.9%208.77%2019.77%2019.55%2019.78%2010.78-.01%2019.55-8.88%2019.55-19.78%200-.86-.05-1.69-.16-2.47l-.17-1.23h1.73l1.04.67c9.26%205.97%2017.26%2011.12%2017.26%2019.2v.05c-.01.24-1.1%2023.91-8.55%2047.88-1.83%205.88-5.83%209.39-10.71%209.39l-39.38.68zm-2.29-74.82c-8.35%205.39-15.4%2010.15-15.4%2016.82%200%20.19.11%2019.27%209.02%2047.96%201.53%204.93%204.77%207.88%208.65%207.88l39.38-.68c3.9%200%207.14-2.94%208.67-7.88%207.26-23.37%208.41-46.46%208.45-47.31-.02-6.65-7.05-11.41-15.4-16.79v.65c0%2012.09-9.74%2021.93-21.7%2021.94-11.97-.01-21.7-9.85-21.7-21.94%200-.22%200-.43%200-.65z%22%2F%3E%3Cpath%20d%3D%22m52.1%2028.31c-.27%200-.54-.03-.81-.08-1.64-.31-3.02-1.52-3.67-3.25l-3.07-8.11c-.28-.74-.05-1.59.57-2.05.57-.43%201.31-.44%201.89-.01l7.95%205.88c.86.64%201.42%201.66%201.54%202.82.12%201.2-.24%202.37-1%203.21-.92%201.03-2.13%201.58-3.39%201.58zm-4.98-10.72%202.51%206.63c.39%201.02%201.15%201.73%202.05%201.9.81.15%201.59-.14%202.2-.83.35-.39.52-.97.46-1.56-.06-.55-.3-1.02-.68-1.3l-6.55-4.84z%22%2F%3E%3Cpath%20d%3D%22m42.9102%2069.6v.24c0%20.44-.22.66-.64.66h-4.21v4.08c0%20.42-.22.66-.66.66h-.44c-.42%200-.64-.24-.64-.66v-4.08h-4.23c-.42%200-.64-.22-.64-.66v-.24c0-.42.22-.66.64-.66h4.23v-3.99c0-.42.22-.66.64-.66h.46c.42%200%20.64.24.64.66v3.99h4.21c.42%200%20.64.24.64.66z%22%2F%3E%3Cpath%20d%3D%22m37.4101%2075.39h-.44c-.48%200-.77-.3-.77-.79v-3.95h-4.09c-.5%200-.77-.28-.77-.79v-.25c0-.5.29-.79.77-.79h4.09v-3.85c0-.5.29-.79.77-.79h.46c.48%200%20.77.3.77.79v3.85h4.07c.48%200%20.77.3.77.79v.25c0%20.51-.27.79-.77.79h-4.07v3.95c0%20.51-.29.79-.79.79zm-5.31-6.31c-.33%200-.5.18-.5.53v.25c0%20.36.15.53.5.53h4.36v4.22c0%20.35.17.53.5.53h.44c.35%200%20.52-.17.52-.53v-4.22h4.34c.35%200%20.5-.16.5-.53v-.25c0-.35-.17-.53-.5-.53h-4.34v-4.12c0-.35-.17-.53-.5-.53h-.46c-.33%200-.5.18-.5.53v4.12z%22%2F%3E%3Cpath%20d%3D%22m55.4101%2072.76c0%202.74-2.25%204.62-5.53%204.62-2.15%200-4.01-.88-5.23-2.25-.27-.32-.42-.71-.07-1.03l.27-.22c.34-.32.71-.37%201.05%200%20.95%201.08%202.27%201.76%203.96%201.76%202.08%200%203.55-1.2%203.55-2.96%200-2.05-1.71-3.4-4.03-3.4h-.37c-.47%200-.69-.22-.69-.69v-.12c0-.44.22-.69.69-.69h.32c2.01%200%203.55-1.17%203.55-2.76%200-1.42-1.22-2.4-2.96-2.4-1.32%200-2.35.39-3.45%201.39-.34.29-.76.39-1.08.05l-.22-.22c-.32-.34-.17-.81.12-1.08%201.39-1.27%202.91-1.88%204.82-1.88%202.81%200%204.77%201.64%204.77%204.01%200%201.57-.93%202.84-2.37%203.52%201.76.73%202.91%202.27%202.91%204.33z%22%2F%3E%3Cpath%20d%3D%22m49.89%2077.52c-2.09%200-4.03-.84-5.33-2.29-.39-.45-.41-.9-.07-1.22l.28-.23c.41-.38.87-.38%201.24.01%201%201.13%202.33%201.72%203.86%201.72%202.01%200%203.41-1.16%203.41-2.82%200-1.92-1.6-3.26-3.9-3.26h-.37c-.54%200-.82-.28-.82-.82v-.12c0-.53.29-.82.82-.82h.32c1.94%200%203.41-1.13%203.41-2.63%200-1.33-1.16-2.26-2.82-2.26-1.31%200-2.31.41-3.36%201.36-.45.38-.93.4-1.27.04l-.22-.22c-.15-.16-.23-.36-.22-.57.01-.25.14-.51.35-.7%201.43-1.31%202.99-1.92%204.91-1.92%202.89%200%204.9%201.7%204.9%204.15%200%201.47-.81%202.76-2.19%203.51%201.74.83%202.73%202.39%202.73%204.34%200%202.8-2.33%204.76-5.66%204.76zm-4.5-3.76c-.14%200-.29.07-.45.22l-.28.23c-.23.21-.2.5.09.84%201.25%201.4%203.12%202.2%205.13%202.2%203.22%200%205.39-1.8%205.39-4.49%200-1.92-1.03-3.46-2.83-4.2l-.28-.12.27-.13c1.46-.69%202.3-1.93%202.3-3.4%200-2.28-1.91-3.88-4.63-3.88-1.84%200-3.34.59-4.73%201.85-.15.14-.25.33-.26.51%200%20.14.04.27.14.38l.22.22c.32.34.7.11.89-.06%201.1-1%202.16-1.43%203.54-1.43%201.82%200%203.09%201.04%203.09%202.53%200%201.65-1.58%202.9-3.68%202.9h-.32c-.38%200-.55.17-.55.55v.12c0%20.39.16.55.55.55h.37c2.46%200%204.17%201.45%204.17%203.53%200%201.82-1.51%203.09-3.68%203.09-1.61%200-3.01-.62-4.06-1.81-.13-.14-.27-.21-.41-.21z%22%2F%3E%3Cpath%20d%3D%22m64.0501%2077.38c-3.69%200-6.21-3.3-6.21-8.24s2.52-8.24%206.21-8.24%206.24%203.3%206.24%208.24-2.55%208.24-6.24%208.24zm0-1.73c2.52%200%204.26-2.62%204.26-6.51s-1.74-6.5-4.26-6.5-4.26%202.62-4.26%206.5%201.74%206.51%204.26%206.51z%22%2F%3E%3Cpath%20d%3D%22m64.0502%2077.52c-3.8%200-6.35-3.37-6.35-8.38s2.55-8.38%206.35-8.38%206.37%203.37%206.37%208.38-2.56%208.38-6.37%208.38zm0-16.49c-3.64%200-6.08%203.26-6.08%208.11s2.44%208.11%206.08%208.11%206.1-3.26%206.1-8.11-2.45-8.11-6.1-8.11zm0%2014.75c-2.63%200-4.39-2.67-4.39-6.64s1.76-6.64%204.39-6.64%204.39%202.67%204.39%206.64-1.76%206.64-4.39%206.64zm0-13.01c-2.46%200-4.12%202.56-4.12%206.37s1.66%206.37%204.12%206.37%204.12-2.56%204.12-6.37-1.66-6.37-4.12-6.37z%22%2F%3E%3Cpath%20d%3D%22m68.1299%2091.52h-35.31c-4.02%200-7.29-2.93-8.75-7.84-1.75-5.87-3.09-13.02-4.28-19.32-.3-1.58-.59-3.11-.86-4.53-.18-.91-.39-1.92-.63-3.02-1.52-7.12-3.6-16.88-.38-20.95%201.33-1.68%203.03-2.53%204.93-2.47%203.1.1%205.92%202.6%207.06%204.24%205.38%207.77%2014.5%2010.69%2021.24%2010.82%208.09-.16%2015.17-4%2019.89-10.82%201.14-1.65%203.95-4.14%207.06-4.24%201.92-.06%203.6.79%204.93%202.47%203.22%204.07%201.14%2013.82-.38%2020.95-.23%201.09-.45%202.11-.63%203.02-.28%201.42-.56%202.94-.86%204.53-1.19%206.31-2.53%2013.46-4.28%2019.33-1.46%204.91-4.73%207.84-8.75%207.84zm-45.49-55.98c-1.16%200-2.16.54-3.04%201.66-2.59%203.27-.55%2012.83.8%2019.16.24%201.11.46%202.14.64%203.05.28%201.43.57%202.96.87%204.55%201.18%206.25%202.51%2013.34%204.23%2019.11.56%201.9%202.34%206.3%206.69%206.3h35.31c4.34%200%206.12-4.41%206.69-6.3%201.72-5.77%203.05-12.86%204.23-19.11.3-1.59.59-3.11.87-4.54.18-.92.4-1.95.64-3.05%201.35-6.33%203.39-15.89.8-19.16-.92-1.15-1.93-1.7-3.17-1.65-2.17.07-4.44%201.98-5.36%203.31-5.13%207.4-12.82%2011.58-21.67%2011.75-9.46-.18-18.05-4.58-23.02-11.75-.92-1.33-3.19-3.24-5.36-3.32-.04%200-.09%200-.13%200z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-pause:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M200%2C32H160a16%2C16%2C0%2C0%2C0-16%2C16V208a16%2C16%2C0%2C0%2C0%2C16%2C16h40a16%2C16%2C0%2C0%2C0%2C16-16V48A16%2C16%2C0%2C0%2C0%2C200%2C32Zm0%2C176H160V48h40ZM96%2C32H56A16%2C16%2C0%2C0%2C0%2C40%2C48V208a16%2C16%2C0%2C0%2C0%2C16%2C16H96a16%2C16%2C0%2C0%2C0%2C16-16V48A16%2C16%2C0%2C0%2C0%2C96%2C32Zm0%2C176H56V48H96Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-play:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M232.4%2C114.49%2C88.32%2C26.35a16%2C16%2C0%2C0%2C0-16.2-.3A15.86%2C15.86%2C0%2C0%2C0%2C64%2C39.87V216.13A15.94%2C15.94%2C0%2C0%2C0%2C80%2C232a16.07%2C16.07%2C0%2C0%2C0%2C8.36-2.35L232.4%2C141.51a15.81%2C15.81%2C0%2C0%2C0%2C0-27ZM80%2C215.94V40l143.83%2C88Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-plus-circle:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22%23000000%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M128%2C24A104%2C104%2C0%2C1%2C0%2C232%2C128%2C104.11%2C104.11%2C0%2C0%2C0%2C128%2C24Zm0%2C192a88%2C88%2C0%2C1%2C1%2C88-88A88.1%2C88.1%2C0%2C0%2C1%2C128%2C216Zm48-88a8%2C8%2C0%2C0%2C1-8%2C8H136v32a8%2C8%2C0%2C0%2C1-16%2C0V136H88a8%2C8%2C0%2C0%2C1%2C0-16h32V88a8%2C8%2C0%2C0%2C1%2C16%2C0v32h32A8%2C8%2C0%2C0%2C1%2C176%2C128Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-psoriasis:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m78.63%2044.1c.74-2.78%201.04-4.97.88-6.51-.17-1.61-1.57-2.79-3.17-2.67-5.24.37-8.53%205.05-9.25%2013.17-.03.41-.2.8-.47%201.13-.74.88-1.28%201.97-1.69%203.07-.39-4.6-.73-11.42-.51-15.16.09-1.66.28-3.94.49-6.57.83-10.19%201.34-17.57.47-19.63-.55-1.31-1.46-2.24-2.62-2.69-1.49-.57-3.15-.24-4.12.22-2.42%201.07-4.06%206.21-4.89%2015.27-.12%201.29-.23%202.52-.33%203.7-.35%204-.71%208.09-1.16%2010.47-.75-4.13-1.5-12.69-1.78-15.95-.17-1.91-.28-3.17-.34-3.67-.04-.28-.07-.87-.11-1.55-.19-3.52-.54-10.07-3.47-12.54-.93-.78-2.06-1.12-3.28-.97-3.66.42-5.26%204.04-4.73%2010.73.01.18.03.32.03.39%200%20.34.12%201.35.5%204.38.49%203.99%201.24%2010.02%201.52%2014.01.2%202.8.28%204.84.23%206.14-.81-1.98-1.88-5.44-2.39-7.77-.22-1-.85-4.04-1.46-6.98-.59-2.87-1.19-5.75-1.46-6.99-.74-3.47-3.04-6.89-6.31-6.22-3.84.79-4.5%205.38-3.83%209.41.59%203.54%202.64%2014.12%202.67%2014.24.96%204.63%201.96%209.68%202.54%2012.95-1.6-2.94-5.78-10.75-7.27-13.99-1.5-3.26-3.31-4.45-4.56-4.87-1.21-.4-2.48-.3-3.59.29-1.46.79-2.89%202.59-1.4%206.75%201.54%204.28%206.07%2014.01%207.86%2017.14%201.11%201.94%202.82%207.62%203.73%2010.68.29.97.52%201.74.67%202.17v.01c.24.73.46%201.96.7%203.26.33%201.8.7%203.83%201.29%205.65.53%201.63%202.13%205.37%204.38%207.83.46.51%201.14%202.17%201.86%204.26.03.1.07.19.1.29.82%202.42%201.66%205.32%202.26%207.6.17.64.82%201.02%201.46.85s1.02-.82.85-1.46c-.23-.91-.97-3.65-1.86-6.42.78.16%201.89.66%203.16%202.03%201.2%201.3%202.32%201.92%203.43%201.92h.21c1.64-.12%202.61-1.52%203.46-2.76.81-1.18%201.23-1.69%201.6-1.54%202.82%201.08%207.77%201.24%209.73-1.3.93-1.2%201.5-3.38-1.06-6.96-.07-.1-.15-.18-.24-.25.03-.08.05-.17.07-.25.09-.38.13-.77.13-1.15%200-.48-.06-.95-.19-1.4%201.41-.57%202.51-1.69%203.07-3.14.59-1.52.51-3.21-.22-4.5-1.29-2.27-3.37-2.53-5.21-2.75-1.78-.22-3.45-.42-4.97-2.14-.19-.33-.23-1.71-.26-2.63-.08-2.41-.17-5.41-1.94-6.95-.84-.74-1.93-1.04-3.25-.9-3.4.35-4.17%203.24-4.73%205.35-.39%201.45-.68%202.41-1.29%202.58-.57.16-1.28.03-2.1-.39-2.88-1.47-6.46-.66-8.5%201.93l-.34.42c-1.01-3.38-2.68-8.96-3.93-11.13-1.75-3.05-6.19-12.58-7.69-16.76-1.11-3.09-.06-3.65.28-3.83.37-.2.96-.38%201.7-.13%201.14.38%202.25%201.66%203.15%203.6%201.8%203.92%207.62%2014.72%208.04%2015.39.01.03%201.65%202.38%203.06%202.38.36%200%20.72-.17.94-.45.44-.54.71-.87-2.81-17.74-.02-.11-2.07-10.66-2.65-14.16-.11-.62-.92-6.09%201.94-6.68%201.7-.35%203.06%202.36%203.5%204.38.27%201.24.86%204.11%201.45%206.97.64%203.09%201.24%206%201.46%207.01.3%201.36.99%203.88%201.74%206.08%201.37%203.99%202.15%204.78%203.12%204.85.52.04%201.01-.14%201.37-.51.97-.97%201.12-3.09.66-9.46-.29-4.05-1.04-10.12-1.53-14.13-.24-1.95-.47-3.8-.48-4.09%200-.1-.01-.3-.04-.58-.4-5.17.48-7.92%202.62-8.17.57-.07%201.04.07%201.46.43%202.14%201.8%202.48%208.13%202.62%2010.84.05.8.08%201.37.13%201.75.06.43.18%201.8.34%203.54%201.37%2015.77%202.07%2018.81%203.13%2019.65.31.25.7.35%201.07.29%202.15-.32%202.55-3.73%203.49-14.46.1-1.18.21-2.41.33-3.69%201.11-12.12%203.38-13.26%203.48-13.3%200%200%20.05-.03.06-.03.33-.15%201.36-.47%202.23-.14.56.21.97.67%201.27%201.38.71%201.68-.14%2012.22-.65%2018.51-.21%202.65-.4%204.94-.49%206.63-.33%205.79.59%2018.68%201.18%2020.58.33%201.08%201.03%201.22%201.4%201.21%201.07-.03%201.3-.96%201.66-2.48.37-1.54.99-4.12%202.18-5.54.59-.7.95-1.55%201.03-2.46.43-4.82%202-10.64%207.03-11%20.32-.02.6.22.63.53.09.85.02%202.53-.81%205.64-.14.52-.17%201.04-.11%201.56.17%201.26.49%204.53.01%207.6-.77%204.91-6.86%2018.73-9.44%2024.43-.76%201.69-1.26%203.5-1.46%205.4-.35%203.13-1.38%208.78-4.35%2011.43-.5.44-.54%201.19-.1%201.69.23.27.56.4.9.4.28%200%20.56-.1.79-.3%203.58-3.17%204.76-9.48%205.14-12.95.18-1.65.61-3.22%201.27-4.68%203.26-7.21%208.84-20.04%209.62-25.05.53-3.37.17-6.9%200-8.27-.03-.21%200-.42.05-.64zm-48.8%2019.72c1.35-1.7%203.68-2.25%205.54-1.29%201.37.7%202.66.89%203.83.56%201.98-.54%202.5-2.52%202.96-4.27.62-2.31%201.07-3.43%202.66-3.59.95-.1%201.31.22%201.43.33.98.85%201.06%203.38%201.12%205.23.06%201.83.1%203.28.84%204.11%202.15%202.43%204.56%202.73%206.5%202.96%201.79.22%202.75.39%203.41%201.56.38.66.4%201.6.07%202.46-.2.52-.73%201.46-1.95%201.86-.02%200-.05.02-.07.03-.9-.96-2.15-1.55-3.55-1.55-2.71%200-4.92%202.26-4.92%205.05s2.21%205.05%204.92%205.05c.73%200%201.43-.16%202.08-.48.5-.23.95-.55%201.33-.94.7%201.11%201.41%202.63.72%203.52-1.03%201.34-4.7%201.41-6.98.53-2.19-.84-3.54%201.13-4.43%202.42-.52.76-1.17%201.69-1.66%201.73-.18.02-.71-.07-1.71-1.16-2.31-2.49-4.45-2.9-5.74-2.85-.7-1.93-1.44-3.6-2.08-4.3-1.82-1.99-3.34-5.33-3.87-6.96-.54-1.66-.9-3.62-1.21-5.35-.21-1.13-.39-2.14-.61-2.96l1.36-1.73zm25.85%2013.45c0%20.25-.03.5-.08.73-.22.95-.85%201.75-1.7%202.15-.4.19-.83.29-1.28.29-1.69%200-3.06-1.42-3.06-3.18s1.37-3.18%203.06-3.18%203.06%201.42%203.06%203.18z%22%2F%3E%3Cpath%20d%3D%22m34.34%2086.96s-.02-.05-.03-.07c-.03-.07-.05-.14-.06-.22.03.09.07.19.1.28z%22%2F%3E%3Cpath%20d%3D%22m42.1601%2074.07c-2.26%200-4.1-1.84-4.1-4.1s1.84-4.1%204.1-4.1%204.1%201.84%204.1%204.1-1.84%204.1-4.1%204.1zm0-6.37c-1.25%200-2.27%201.02-2.27%202.27s1.02%202.27%202.27%202.27%202.27-1.02%202.27-2.27-1.02-2.27-2.27-2.27z%22%2F%3E%3Cpath%20d%3D%22m35.7899%2067.29c0%20.79-.64%201.43-1.43%201.43s-1.43-.64-1.43-1.43.64-1.43%201.43-1.43%201.43.64%201.43%201.43z%22%2F%3E%3Cpath%20d%3D%22m42.25%2081.25c0%201.16-.9399%202.1-2.0999%202.1s-2.1001-.94-2.1001-2.1.9401-2.1%202.1001-2.1%202.0999.94%202.0999%202.1z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-psoriatic-arthritis:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m35.5299%2087.57s-.03-.06-.04-.08c-.03-.08-.06-.16-.07-.25.02.06.04.12.06.18.02.05.04.1.05.15z%22%2F%3E%3Cpath%20d%3D%22m43.4801%2066.08c-2.3%200-4.17%201.87-4.17%204.17s1.87%204.18%204.17%204.18%204.18-1.87%204.18-4.18-1.87-4.17-4.18-4.17zm0%206.49c-1.27%200-2.3-1.04-2.3-2.31s1.03-2.3%202.3-2.3%202.31%201.03%202.31%202.3-1.04%202.31-2.31%202.31z%22%2F%3E%3Cpath%20d%3D%22m36.9901%2067.54c0%20.8-.65%201.45-1.45%201.45s-1.45-.65-1.45-1.45.65-1.45%201.45-1.45%201.45.65%201.45%201.45z%22%2F%3E%3Cpath%20d%3D%22m43.57%2081.75c0%201.18-.96%202.14-2.14%202.14s-2.14-.96-2.14-2.14.96-2.14%202.14-2.14%202.14.96%202.14%202.14z%22%2F%3E%3Cpath%20d%3D%22m80.59%2043.94c.75-2.83%201.05-5.06.89-6.62-.16-1.64-1.58-2.84-3.23-2.72-5.34.38-8.68%205.14-9.41%2013.42-.03.41-.2.81-.48%201.14-.75.89-1.3%202.01-1.72%203.13-.4-4.68-.74-11.62-.52-15.43.07-1.29.2-2.98.35-4.78%201.71-1.5%202.68-3.63%202.68-5.93%200-1.87-.65-3.65-1.85-5.07.49-7.97.2-9.95-.2-10.89-.57-1.33999-1.49-2.27999-2.67-2.72999-1.51-.58-3.2-.24-4.18.22-1.24.57-3.03%202.54999-4.25%2013.01999-1.4%201.46-2.19%203.42-2.19%205.45%200%201.55.44%203.03%201.28%204.3-.39%204.04-.89%206.48-1.3%207.82-.64-2.51-1.46-7.62-1.98-13.15%201.23-1.43%201.9-3.23%201.9-5.14%200-2.34-1.05-4.56-2.82-6.06-.26-3.72-.65-8.63999-3.1-10.66999-.9-.75-1.97-1.06-3.18-.92-1.27.14-2.32.73-3.05%201.7-1.92%202.52-1.19%207.08999-.88%209.03999.04.25.08.54.09.59%200%20.18.02.49.15%201.56-1.03%201.36-1.59%203.03-1.59%204.76%200%202.37%201.07%204.62%202.89%206.11.29%202.61.49%204.66.6%206.28.32%204.37-.12%206.32-.44%207.13-.98-1.51-2.74-5.44-3.43-7.95.78-1.25%201.19-2.68%201.19-4.18%200-2.61-1.31-5.07-3.45-6.53-.39-1.87-.72-3.5-.91-4.36-.5-2.32-1.53-7.14999-5.49-6.33-3.92.8-4.58%205.48-3.89%209.58.12.72.29%201.71.5%202.85-1.05%201.37-1.63%203.05-1.63%204.8%200%202.8%201.45%205.34%203.82%206.76.01.06.02.09.02.09%201.15%205.56%202.36%2011.7%202.87%2014.77-.27-.18-.49-.35-.57-.45-.11-.17-.9-1.61-2.28-4.18.35-.91.53-1.86.53-2.85%200-3.66-2.47-6.79-5.96-7.66-.12-.25-.23-.48-.33-.69-1.34-2.9-2.69-4.49-4.25-5.02-1-.33-2.04-.22-3.12.36-1.49.8-2.94%202.64-1.42%206.87.26.73.61%201.62%201.03%202.64-.54%201.08-.82%202.29-.82%203.51%200%203.63%202.44%206.75%205.9%207.64.79%201.59%201.44%202.85%201.9%203.65%201.13%201.98%202.87%207.77%203.8%2010.89.29.98.52%201.75.67%202.19.24.75.48%202.01.72%203.34.33%201.83.71%203.89%201.3%205.73.54%201.66%202.17%205.47%204.45%207.97.15.17.74.98%201.89%204.31.02.06.04.12.06.18.02.05.04.1.05.15%201.21%203.56%202.28%207.68%202.29%207.73.14.52.61.9%201.15.91.64-.04%201.09-.63.95-1.25-.42-1.87-1.09-5.05-1.64-6.8.79.16%201.92.67%203.22%202.07%201.22%201.32%202.36%201.96%203.49%201.96h.21c1.67-.12%202.65-1.55%203.52-2.81.83-1.2%201.26-1.72%201.63-1.57%202.87%201.1%207.91%201.25%209.9-1.33.95-1.22%201.52-3.44-1.08-7.09-.07-.1-.15-.18-.24-.25.03-.09.05-.17.07-.26.09-.38.13-.78.13-1.17%200-.49-.07-.97-.2-1.42%201.43-.58%202.56-1.72%203.13-3.19.6-1.56.52-3.27-.22-4.58-1.31-2.31-3.43-2.58-5.3-2.8-1.8-.22-3.51-.43-5.06-2.18-.19-.33-.24-1.75-.27-2.68-.08-2.45-.17-5.51-1.97-7.08-.86-.75-1.98-1.06-3.31-.92-3.47.36-4.24%203.3-4.81%205.45-.39%201.47-.69%202.45-1.31%202.62-.58.16-1.3.03-2.14-.4-2.93-1.5-6.57-.67-8.66%201.97l-.34.43c-1.03-3.44-2.74-9.12-4-11.32-.48-.84-1.22-2.28-2.08-4.05-.17-.35-.5-.59-.88-.66-2.61-.46-4.51-2.72-4.51-5.38%200-.99.27-1.96.77-2.8.2-.34.24-.75.08-1.11-.51-1.21-.91-2.25-1.21-3.06-1.13-3.14-.07-3.72.28-3.9.61-.32.95-.27%201.19-.19.59.2%201.56%201%202.81%203.73.17.37.37.79.6%201.27.17.36.5.61.9.68%202.65.44%204.56%202.71%204.56%205.39%200%20.83-.18%201.63-.54%202.37-.17.35-.16.76.02%201.11.87%201.62%202.4%204.46%202.64%204.85.57.91%203.11%202.43%204.05%202.43.36%200%20.73-.17.96-.46.45-.55.72-.88-2.86-18.07%200%200-.05-.23-.12-.61-.07-.37-.31-.7-.65-.86-1.86-.93-3.01-2.8-3.01-4.88%200-1.35.5-2.64%201.4-3.64.25-.28.36-.66.29-1.03-.25-1.35-.46-2.55-.6-3.37-.1-.63-.95-6.19%201.98-6.8%201.16-.23%201.87.97%202.62%204.46.2.93.58%202.77%201.01%204.85.07.34.28.63.57.8%201.68.98%202.72%202.79%202.72%204.73%200%201.18-.37%202.31-1.07%203.25-.2.27-.27.63-.19.96.34%201.49%201.27%203.99%202.3%206.22%201.89%204.11%202.77%204.5%203.5%204.55.57.04%201.14-.18%201.58-.63%201.62-1.62%201.66-6.08%201.42-9.53-.13-1.75-.35-4-.67-6.88-.04-.35-.22-.66-.51-.86-1.45-1.02-2.32-2.69-2.32-4.47%200-1.33.48-2.6%201.35-3.58.23-.26.34-.61.29-.95-.05-.39-.19-1.58-.2-1.79%200-.21-.04-.44-.12-.97-.24-1.5-.87-5.49999.42-7.18999.34-.44.78-.68%201.39-.75.54-.07.97.05%201.35.36%201.72%201.43%202.05%206.35999%202.25%209.29999v.21c.04.36.22.7.51.91%201.43%201.03%202.28%202.69%202.28%204.44%200%201.45-.56%202.82-1.59%203.85-.25.26-.38.61-.35.97.14%201.56%201.42%2015.27%203.36%2016.79.32.26.72.36%201.1.3.89-.13%202.73-.4%203.75-11.68.03-.29-.06-.59-.23-.83-1.2-1.62-1.44-3.78-.48-5.83.26-.55.69-1%201.14-1.41.22-.2.36-.47.4-.77%201.18-10.43%202.11-12.21999%205.19-11.66999.6.11.99.66999%201.29%201.39999.21.5.48%202.49-.01%2010.3-.02.35.1.68.34.93.99%201.02%201.53%202.36%201.53%203.79%200%201.72-.79%203.31-2.15%204.35-.28.21-.45.52-.48.87-.16%202.01-.31%203.92-.39%205.35-.33%205.89.6%2019.01%201.2%2020.95.34%201.1%201.03%201.24%201.42%201.23%201.09-.04%201.32-.98%201.69-2.53.38-1.57%201.01-4.2%202.22-5.63.61-.72.98-1.59%201.05-2.5.43-4.91%202.03-10.83%207.16-11.2.32-.02.61.21.64.54.09.87.02%202.58-.83%205.75-.14.53-.17%201.06-.11%201.57.17%201.29.5%204.6.02%207.74-.78%204.98-6.98%2019.05-9.61%2024.87-.78%201.71-1.28%203.56-1.49%205.49-.32%202.86-1.19%207.78-3.55%2010.71-.31.39-.36.92-.1%201.35.43.72%201.46.78%201.96.1%201.34-1.82%203.5-5.61%204.11-11.88.17-1.68.62-3.29%201.29-4.76%203.32-7.34%209-20.42%209.8-25.5.53-3.44.17-7.03%200-8.41-.02-.21%200-.43.05-.65zm-49.66%2020.06c1.36-1.73%203.73-2.28%205.64-1.31%201.4.72%202.71.91%203.89.57%202.01-.55%202.55-2.57%203.01-4.35.63-2.36%201.09-3.49%202.71-3.65.96-.1%201.34.23%201.46.34%201%20.87%201.08%203.44%201.14%205.32.06%201.86.11%203.34.85%204.18%202.19%202.47%204.65%202.77%206.62%203.01%201.82.22%202.8.39%203.48%201.58.38.68.41%201.64.07%202.51-.21.53-.74%201.49-1.99%201.9-.03%200-.05.02-.07.03-.91-.97-2.19-1.58-3.61-1.58-2.76%200-5.01%202.3-5.01%205.14s2.25%205.14%205.01%205.14c.74%200%201.46-.16%202.12-.48.5-.24.96-.56%201.35-.95.72%201.13%201.44%202.68.74%203.58-1.06%201.36-4.79%201.44-7.11.55-2.22-.86-3.6%201.14-4.51%202.46-.53.77-1.19%201.72-1.69%201.76-.18.02-.72-.07-1.74-1.18-2.35-2.54-4.53-2.95-5.84-2.9-1.09-3.02-1.72-3.94-2.12-4.38-1.85-2.02-3.4-5.42-3.94-7.08-.54-1.68-.9-3.67-1.22-5.42-.21-1.16-.4-2.2-.62-3.03l1.39-1.77zm26.31%2013.69c0%20.26-.03.51-.08.75-.22.96-.86%201.78-1.73%202.19-.41.2-.84.29-1.3.29-1.72%200-3.11-1.45-3.11-3.24s1.4-3.24%203.11-3.24%203.11%201.45%203.11%203.24z%22%2F%3E%3Cpath%20d%3D%22m70.9899%2017.63s-.02-.01-.03-.02c-.65-.34-.9-1.14-.56-1.79l4.21-8.05001c.33-.64%201.12-.89%201.76-.58.01%200%20.02.01.03.02.65.34.9%201.14.56%201.79l-4.21%208.05001c-.33.64-1.12.89-1.76.58z%22%2F%3E%3Cpath%20d%3D%22m74.74%2022.76c-.3-.15-.55-.41-.67-.76-.24-.69.13-1.45.82-1.69l9.33-3.24c.69-.24%201.45.13%201.69.82s-.13%201.45-.82%201.69l-9.33%203.24c-.35.12-.71.09-1.02-.06z%22%2F%3E%3Cpath%20d%3D%22m74.6%2029.42c-.58-.28-.88-.96-.68-1.59.22-.7.97-1.09%201.66-.87l10.84%203.42c.71.22%201.09.97.87%201.66-.22.7-.97%201.09-1.66.87l-10.84-3.42c-.07-.02-.13-.05-.19-.08z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-regulatory-triangle-uk:url(\"data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M8%2014L2.08986e-06%202.74376e-06L16%204.14252e-06L8%2014Z%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E%0A\");--lds-icon-share-fat:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M30.93%2C198.72C47.39%2C181.19%2C90.6%2C144%2C152%2C144v48l80-80L152%2C32V80C99.2%2C80%2C31.51%2C130.45%2C24%2C195.54A4%2C4%2C0%2C0%2C0%2C30.93%2C198.72Z%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%2216%22%2F%3E%3C%2Fsvg%3E\");--lds-icon-stress:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m27.5099%2049.8c-8.04%200-14.57-6.92-14.57-15.43s6.54-15.43%2014.57-15.43%2014.57%206.92%2014.57%2015.43-6.54%2015.43-14.57%2015.43zm0-27.69c-6.28%200-11.4%205.5-11.4%2012.25s5.11%2012.25%2011.4%2012.25%2011.4-5.5%2011.4-12.25-5.11-12.25-11.4-12.25z%22%2F%3E%3Cpath%20d%3D%22m33.6699%2084.24c-.75%200-1.42-.54-1.56-1.31l-3.21-17.91c-.15-.53-.5-2.21.5-3.95.99-1.72%202.93-2.87%205.77-3.41%206.7-1.27%2025.48-3.41%2030.4-3.96.79-4.36%203.1-20.6-4.97-27.9-5.01-4.53-13.29-4.89-24.63-1.08-.83.28-1.73-.17-2.01-1s.17-1.73%201-2.01c12.51-4.21%2021.85-3.62%2027.78%201.74%2010.7%209.69%205.92%2031.15%205.71%2032.06-.15.66-.7%201.15-1.38%201.22-.24.03-23.86%202.63-31.31%204.05-1.84.35-3.08.98-3.59%201.83-.45.74-.23%201.5-.22%201.53.02.06.04.15.05.22l3.22%2018c.15.86-.42%201.69-1.28%201.84-.09.02-.19.02-.28.02z%22%2F%3E%3Cpath%20d%3D%22m43.29%2049.8c-.48%200-.94-.22-1.24-.6l-12.99-16.31c-.55-.69-.43-1.69.25-2.23.69-.55%201.69-.43%202.23.25l11.65%2014.64%2015.15-21.84c.5-.72%201.49-.9%202.21-.4s.9%201.49.4%202.21l-16.37%2023.6c-.29.41-.75.67-1.25.68-.02%200-.04%200-.05%200z%22%2F%3E%3Cpath%20d%3D%22m51.3%2089.34c-.66%200-1.28-.42-1.51-1.08l-4.82-14.28c-.87-2.09-1.39-6.56%202.75-8.96%204-2.32%2018.21-11.12%2018.36-11.21.3-.19.65-.27%201-.23l16.9%201.77c.4-3.33%201.26-11.66%201.03-20.06-.26-9.46-1.95-20.95-8.49-21.96-1.52-.24-2.81.11-3.91%201.07-3.97%203.44-4.73%2013.65-4.69%2017.29%200%20.88-.69%201.6-1.57%201.61h-.02c-.87%200-1.58-.7-1.59-1.57%200-.59-.11-14.62%205.78-19.73%201.83-1.59%204.01-2.2%206.48-1.81%207%201.08%2010.76%209.51%2011.19%2025.05.3%2011.06-1.19%2021.63-1.26%2022.08-.12.85-.9%201.44-1.74%201.35l-17.9-1.87c-2.53%201.56-14.3%208.84-17.97%2010.97-2.73%201.58-1.54%204.69-1.39%205.03.01.03.03.08.04.11l4.84%2014.34c.28.83-.17%201.73-1%202.01-.17.06-.34.08-.51.08z%22%2F%3E%3Cpath%20d%3D%22m85.3599%2084.24c-.88%200-1.59-.71-1.59-1.59v-23.19l-18.67%207.71c-.44.18-.94.16-1.36-.07l-6.21-3.31c-.77-.41-1.07-1.38-.65-2.15.41-.78%201.38-1.07%202.15-.65l5.54%202.96%2020.15-8.33c.49-.2%201.05-.15%201.49.15.44.29.71.79.71%201.32l.02%2025.56c0%20.88-.71%201.59-1.59%201.59z%22%2F%3E%3Cpath%20d%3D%22m64.5002%2086.6c-.88%200-1.59-.71-1.59-1.59v-19.3c0-.88.71-1.59%201.59-1.59s1.59.71%201.59%201.59v19.3c0%20.88-.71%201.59-1.59%201.59z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-surgery:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m12.8902%2058.75c-.16%200-.33-.03-.49-.08-.43-.14-.77-.46-.94-.88l-9.97999-24.49c-.31-.77.04-1.65.81-1.99l34.14999-15.03c.38-.17.8-.17%201.19-.02.38.15.69.45.85.83l8.5%2019.89c.3.71.04%201.53-.62%201.92l-8.42%205.06c-.65.39-1.49.25-1.98-.34-2.6-3.13-4.76-3.26-5-3.26-.51%200-.98-.27-1.26-.69s-.33-.96-.13-1.44c.25-.61.38-1.26.38-1.93%200-2.77-2.26-5.03-5.04-5.03s-5.04%202.26-5.04%205.03c0%201.93%201.08%203.66%202.8%204.51.37.18.66.51.79.9s.09.83-.1%201.19c-.06.12-1.6%203.27-.08%208.52.19.67-.09%201.39-.69%201.75l-8.9%205.35c-.24.15-.52.22-.79.22zm-7.98999-25.22%208.73999%2021.44%206.38-3.83c-.87-3.82-.38-6.69.09-8.28-2.08-1.5-3.32-3.91-3.32-6.55%200-4.47%203.64-8.11%208.11-8.11s8.11%203.64%208.11%208.11c0%20.45-.04.9-.11%201.34%201.21.4%202.82%201.25%204.53%203.02l6.18-3.72-7.36-17.22z%22%2F%3E%3Cpath%20d%3D%22m24.8898%2044.42c-1.26%200-2.47-.28-3.59-.84-2.79-1.36-4.52-4.15-4.52-7.27%200-4.47%203.64-8.11%208.11-8.11s8.11%203.64%208.11%208.11c0%201.08-.21%202.12-.62%203.11-1.26%203.04-4.2%205-7.49%205zm0-13.14c-2.78%200-5.04%202.26-5.04%205.03%200%201.93%201.08%203.66%202.8%204.51.71.35%201.45.53%202.23.53%202.04%200%203.87-1.22%204.65-3.1.25-.62.38-1.26.38-1.93%200-2.77-2.26-5.03-5.04-5.03z%22%2F%3E%3Cpath%20d%3D%22m72.31%2077.21c-.09%200-.18%200-.27-.02l-55.98-10.02c-.52-.09-.95-.45-1.15-.93l-3.44-8.44c-.29-.7-.02-1.51.63-1.9l32.66-19.62c.38-.23.84-.28%201.27-.15.42.14.77.45.94.86l2.94%206.88%206.94.52c.43.03.83.25%201.1.59%203.5%204.5%208.77%207.08%2014.47%207.08%204.72%200%209.21-1.79%2012.63-5.05.32-.3.74-.45%201.18-.42l10.28.77c.58.04%201.09.42%201.31.96s.11%201.17-.28%201.6l-24.08%2026.79c-.29.33-.71.51-1.14.51zm-54.87-12.93%2054.3%209.72%2021.42-23.82-6.49-.49c-3.93%203.5-8.96%205.43-14.25%205.43-6.42%200-12.38-2.81-16.47-7.72l-7.21-.54c-.57-.04-1.07-.4-1.3-.93l-2.62-6.12-30.02%2018.04%202.62%206.43z%22%2F%3E%3Cpath%20d%3D%22m16.33%2080.69c-.85%200-1.54-.69-1.54-1.54v-13.5c0-.85.69-1.54%201.54-1.54s1.54.69%201.54%201.54v13.5c0%20.85-.69%201.54-1.54%201.54z%22%2F%3E%3Cpath%20d%3D%22m72.53%2088.29c-.84%200-1.52-.67-1.54-1.51l-.22-11.08c-.02-.85.66-1.55%201.51-1.57h.03c.84%200%201.52.67%201.54%201.51l.22%2011.08c.02.85-.66%201.55-1.51%201.57z%22%2F%3E%3Cpath%20d%3D%22m96.4301%2061.39c-.85%200-1.54-.69-1.54-1.53l-.04-10.97c0-.85.68-1.54%201.53-1.54s1.54.69%201.54%201.53l.04%2010.97c0%20.85-.68%201.54-1.53%201.54z%22%2F%3E%3Cpath%20d%3D%22m24.8898%2044.42c-1.26%200-2.47-.28-3.59-.84-2.79-1.36-4.52-4.15-4.52-7.27%200-4.47%203.64-8.11%208.11-8.11s8.11%203.64%208.11%208.11c0%201.08-.21%202.12-.62%203.11-1.26%203.04-4.2%205-7.49%205zm0-13.14c-2.78%200-5.04%202.26-5.04%205.03%200%201.93%201.08%203.66%202.8%204.51.71.35%201.45.53%202.23.53%202.04%200%203.87-1.22%204.65-3.1.25-.62.38-1.26.38-1.93%200-2.77-2.26-5.03-5.04-5.03z%22%2F%3E%3Cpath%20d%3D%22m21.7902%2053.4c-.19%200-.38-.04-.56-.11-.44-.17-.78-.55-.92-1-1.88-6.51.22-10.63.31-10.8.39-.74%201.3-1.04%202.05-.66.7.35%201.44.52%202.22.52%202.04%200%203.87-1.22%204.65-3.1.24-.58.8-.95%201.42-.95h.02c.88.01%204%20.37%207.32%204.38.29.35.41.8.33%201.24s-.34.83-.72%201.06l-15.34%209.22c-.24.14-.51.22-.79.22zm1.13-9.22c-.27%201.11-.5%202.91-.11%205.27l11.88-7.14c-1.18-1.08-2.2-1.56-2.88-1.78-1.46%202.39-4.06%203.89-6.93%203.89-.67%200-1.33-.08-1.97-.24z%22%2F%3E%3Cpath%20d%3D%22m30.9601%2040.37h-.05c-.85%200-1.54-.69-1.54-1.54s.69-1.54%201.54-1.54%201.56.69%201.56%201.54-.66%201.54-1.51%201.54z%22%2F%3E%3Cpath%20d%3D%22m72.4198%2055.13c-6.65%200-12.81-3.01-16.9-8.26-2.95-3.79-4.51-8.34-4.51-13.15%200-11.81%209.61-21.42%2021.42-21.42s21.42%209.61%2021.42%2021.42c0%205.92-2.37%2011.43-6.66%2015.52-4%203.8-9.24%205.9-14.76%205.9zm0-39.76c-10.11%200-18.34%208.23-18.34%2018.34%200%204.12%201.34%208.02%203.86%2011.26%203.5%204.5%208.78%207.08%2014.47%207.08%204.72%200%209.21-1.79%2012.63-5.05%203.68-3.5%205.7-8.22%205.7-13.29%200-10.11-8.23-18.34-18.34-18.34z%22%2F%3E%3Cpath%20d%3D%22m14.7401%2063.28c-.52%200-1.02-.26-1.31-.74-.44-.72-.21-1.67.51-2.12l32.61-19.94c.72-.44%201.67-.21%202.12.51.44.72.21%201.67-.51%202.12l-32.62%2019.95c-.25.15-.53.23-.8.23z%22%2F%3E%3Cpath%20d%3D%22m73.99%2050.29h-3.15c-1.75%200-3.18-1.42-3.18-3.18v-8.49h-7.94c-1.75%200-3.18-1.42-3.18-3.18v-2.95c0-1.75%201.42-3.18%203.18-3.18h7.94v-8.38c0-1.75%201.42-3.18%203.18-3.18h3.15c1.75%200%203.18%201.42%203.18%203.18v8.38h7.94c1.75%200%203.18%201.42%203.18%203.18v2.95c0%201.75-1.42%203.18-3.18%203.18h-7.94v8.49c0%201.75-1.42%203.18-3.18%203.18zm-14.26-17.89c-.05%200-.1.04-.1.1v2.95c0%20.05.04.1.1.1h11.02v11.57c0%20.05.04.1.1.1h3.15c.05%200%20.1-.04.1-.1v-11.57h11.02c.05%200%20.1-.04.1-.1v-2.95c0-.05-.04-.1-.1-.1h-11.02v-11.46c0-.05-.04-.1-.1-.1h-3.15c-.05%200-.1.04-.1.1v11.46z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-thirsty:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22m78.3798%2030.75c-.12-2.76-2.56-4-4.58-4.22-.12-.01-.22-.01-.33-.01h-5.59l.03-6.08c0-.8-.3-1.55-.87-2.12-.56-.56-1.3-.87-2.1-.87h-.01l-11.63.07-.18-13.72-3.12.05.19%2013.69h-.04c-.19-.01-.4-.02-.61-.02l-10.74.07c-2.73.02-2.73%202.69-2.73%203.76v41.48c0%20.88.3%201.73.86%202.4l3.53%204.26c.1.12.15.26.15.41l.15%2019.72c0%201.22.61%202.37%201.61%203.07%201.93%201.35%205.07%202.92%209.19%202.92.15%200%20.31%200%20.47-.01%204.27-.12%207.96-1.39%209.72-2.59%201.03-.7%201.64-1.86%201.64-3.1v-19.74c0-.09.02-.17.05-.25l3.6-4.5.13-.19c.33-.57.51-1.22.51-1.87l.02-3.07c1.59-.17%204.74-.67%206.77-2.07%203.89-2.68%203.89-7.86%203.89-10.96v-.19c0-1.28.01-3.11.03-5.09.03-4.43.07-9.46-.01-11.23zm-13.82%2032.59c0%20.09-.02.17-.05.25l-3.6%204.5-.13.18c-.33.58-.51%201.24-.51%201.9v19.74c0%20.21-.1.41-.27.52-1.34.92-4.44%201.95-8.06%202.06-3.48.1-6.16-1.23-7.78-2.36-.18-.12-.28-.32-.29-.53l-.14-19.72c0-.87-.31-1.71-.86-2.38l-3.54-4.26c-.09-.11-.14-.26-.14-.41v-33.2h25.55zm.2-36.82h-25.57v-5.81l10.91-.06h.03c.31.01.66.02%201.01%200l13.65-.08zm10.51%2015.43c-.01%202-.03%203.83-.03%205.11v.2c0%202.64%200%206.64-2.54%208.39-1.25.86-3.49%201.31-4.99%201.5l.15-27.52h5.58c.3.03%201.79.24%201.83%201.26.07%201.69.03%206.89%200%2011.06z%22%20fill%3D%22%23071218%22%2F%3E%3C%2Fsvg%3E%0A\");--lds-icon-thyroid-cancer:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m62.99%2040.44c-.13%200-.27-.03-.39-.09-2-.95-5.61-2.44-6.85-2.35-.38.02-1.1.36-1.74.66-.99.46-1.92.91-2.76.86-.8-.03-1.74-.44-2.74-.88-.69-.3-1.55-.68-1.95-.7-1.37-.06-5.42%201.09-6.86%201.54-.27.08-.56.04-.79-.13s-.37-.42-.38-.71c-.06-1.54-.32-5.84-.85-7.14-.18-.44-.64-1.11-1.09-1.76-.91-1.31-1.84-2.66-1.84-3.88%200-1.5.22-2.45.41-3.29.31-1.34.6-2.6-.05-6.31-.27-1.54.49-3.07%201.84-3.7.75-.35%201.5-.32%202.11.1%201.28.88%201.67%203.45%201.76%205.64%201.4-1.86%203.29-3.92%204.82-3.98%201.74-.07%203%201.27%204.01%202.35.5.53%201.19%201.26%201.54%201.28h.02c.5%200%201.53-1.03%202.22-1.72%201.18-1.18%202.29-2.3%203.58-2.25%201.45.05%202.99%201.89%204.16%203.69.15-1.58.56-3.3%201.56-4.29.68-.66%201.56-.95%202.54-.82.5.06.89.28%201.15.63.47.65.32%201.47.12%202.52-.21%201.12-.48%202.52-.15%204.18.83%204.16.93%205.47.58%207.02-.29%201.28-2.14%203.88-2.61%204.53-.3.59-.46%201.25-.46%201.92v6.17c0%20.31-.16.6-.42.76-.15.09-.31.14-.48.14zm-7.18-4.24c1.58%200%204.54%201.18%206.27%201.94v-4.77c0-.98.24-1.96.7-2.82.02-.04.04-.07.07-.11.88-1.2%202.19-3.21%202.35-3.92.26-1.16.22-2.18-.59-6.26-.4-2.01-.08-3.66.15-4.87.07-.35.15-.77.16-1.02-.37-.03-.67.08-.92.33-1.11%201.09-1.21%204.48-1.01%206.37.05.44-.23.84-.65.96s-.87-.08-1.06-.47c-1.65-3.35-3.61-5.72-4.34-5.75%200%200%200%200-.01%200-.5%200-1.53%201.03-2.22%201.72-1.14%201.14-2.31%202.33-3.62%202.25-1.07-.06-1.89-.93-2.75-1.84-.84-.9-1.72-1.82-2.63-1.79-.95.04-3.39%202.94-5.07%205.63-.22.35-.65.51-1.04.38s-.65-.51-.62-.92c.19-2.97-.13-6.52-.92-7.06-.03-.02-.09-.06-.32.05-.61.29-.95%201.02-.83%201.75.71%204.06.37%205.57.03%207.03-.19.82-.37%201.59-.37%202.89%200%20.65.88%201.92%201.52%202.85.53.76%201.03%201.48%201.28%202.11.56%201.39.82%204.76.92%206.59%201.72-.5%204.89-1.34%206.36-1.28.75.03%201.65.43%202.6.85.76.33%201.62.71%202.08.73.39%200%201.25-.38%201.93-.7.86-.4%201.67-.78%202.39-.82h.18z%22%2F%3E%3Cpath%20d%3D%22m41.2602%2086.77c-.48%200-.87-.39-.88-.87-.01-1.56-.2-2.8-.39-4.11-.41-2.75-.83-5.6.53-11.14.12-.47.6-.76%201.06-.64.47.12.76.59.64%201.06-1.28%205.21-.9%207.76-.5%2010.46.2%201.32.4%202.68.41%204.36%200%20.49-.39.88-.87.88z%22%2F%3E%3Cpath%20d%3D%22m42.62%2050.99c-.5%200-.9-.41-.9-.9%200-.75-.15-1.74-.31-2.78-.19-1.27-.39-2.59-.39-3.85%200-1.17.21-2.23.4-3.16.16-.76.3-1.49.3-2.14%200-.5.41-.9.9-.9s.9.41.9.9c0%20.84-.16%201.65-.34%202.5-.18.89-.37%201.81-.37%202.8%200%201.12.19%202.37.37%203.57.17%201.11.33%202.16.33%203.05%200%20.5-.41.9-.9.9z%22%2F%3E%3Cpath%20d%3D%22m59.6499%2051.08h-.02c-.47-.01-.84-.4-.82-.87.02-.9.17-1.85.32-2.86.18-1.18.36-2.4.35-3.6%200-.91-.17-1.86-.34-2.78-.15-.84-.31-1.7-.33-2.52-.01-.47.36-.86.83-.87.47%200%20.86.36.87.83.02.69.16%201.45.3%202.26.18.99.36%202.01.37%203.08%200%201.33-.19%202.61-.37%203.85-.14.96-.28%201.86-.3%202.65-.01.46-.39.82-.85.82z%22%2F%3E%3Cpath%20d%3D%22m59.65%2087.67c-.48%200-.86-.4-.85-.87.02-1.68.23-3.32.44-4.91.42-3.26.82-6.34-.32-9.69-.15-.45.09-.94.54-1.09s.94.09%201.09.54c1.27%203.73.83%207.16.4%2010.47-.2%201.54-.41%203.14-.42%204.71%200%20.47-.39.85-.86.85z%22%2F%3E%3Cpath%20d%3D%22m61.3701%2072.81c-2.73%200-5.34-1.5-6.42-3.72-.24-.49-.55-1.25-.84-1.99-.22-.55-.52-1.3-.62-1.46-.35-.6-1.07-.99-1.9-1.05-.85-.05-1.63.25-2.07.81-.13.16-.32.59-.48.93-.22.48-.43.94-.68%201.26-.06.08-.19.29-.31.49-.36.59-.85%201.39-1.41%201.87-1.49%201.27-3.76%201.94-5.79%201.71-1.31-.15-2.35-.65-2.94-1.43-.3-.4-.22-.97.18-1.27s.97-.22%201.27.18c.27.36.9.63%201.69.72%201.27.14%203.14-.2%204.42-1.29.34-.29.76-.97%201.03-1.43.17-.27.3-.49.42-.65.13-.16.32-.58.47-.91.23-.49.44-.96.7-1.29.81-1.03%202.16-1.6%203.61-1.5%201.44.1%202.69.82%203.34%201.94.15.26.37.79.73%201.7.27.68.58%201.44.79%201.87.81%201.67%202.88%202.77%205%202.7%201.53-.06%204.35-.78%206.04-5.01.54-1.36%201.33-2.04%201.9-2.53.63-.54.89-.76.83-1.66-.14-2.19.79-3.16%201.48-3.87.36-.37.55-.58.6-.85.19-1.08-.1-1.72-.4-2.39-.32-.72-.69-1.54-.28-2.62%201.34-3.57-.11-4.84-1.07-5.67-.15-.13-.29-.26-.4-.37-.91-.91-.98-2.37-1.05-3.78-.03-.71-.07-1.45-.22-1.98-1.15-4.1-2.52-5.57-3.35-5.59-.55-.02-1.02.61-1.21%201.22-.31.97-.27%201.96-.22%203.1l.02.52s.04%201.35.51%203.92c.26%201.43-.5%202.09-1.01%202.53-.44.38-.75.65-.81%201.48-.13%201.7-1%202.73-1.21%202.96-1.76%202.17-3.39%201.55-4.04%201.16-.24-.05-.97.17-1.23.38-.31.25-1.18%201.12-1.66%201.62-.05.05-.11.1-.17.14-.98.62-1.99.17-2.72-.16-.35-.15-.71-.31-.98-.34-.79-.06-1.02.13-1.34.41-.33.29-.84.71-1.72.6-1.17-.15-1.75-.98-2.18-1.59-.31-.44-.52-.72-.8-.82-.09%200-.23-.01-.41-.02-1.5-.07-3.03-.19-3.77-.85-.63-.56-.81-1.47-.98-2.36-.08-.42-.18-.89-.29-1.11-.05-.04-.15-.1-.23-.15-.53-.34-1.51-.97-1.56-2.74-.03-1.16.3-1.82.56-2.36.21-.42.37-.75.39-1.36%200-.29-.05-2.74-.08-4.23-.12-1.56-.68-2.15-1.03-2.17-.33%200-.74.4-.87%201.14-.02.11-.06.57-.09.93-.08.88-.13%201.53-.21%201.9l-.08.39c-.17.83-.32%201.61-.95%202.81-.26.5-.78.97-1.39%201.5-.74.65-1.65%201.46-1.96%202.3-.17.47-.69.71-1.16.54s-.71-.69-.54-1.16c.46-1.27%201.57-2.25%202.46-3.04.39-.34.87-.77.98-.98.51-.97.63-1.57.78-2.33l.08-.4c.06-.29.13-1.1.18-1.68.05-.57.08-.9.11-1.09.29-1.61%201.42-2.7%202.75-2.62%201.19.06%202.53%201.11%202.74%203.86v.05c.01.4.1%203.92.08%204.36-.03%201.01-.33%201.62-.58%202.11-.23.46-.39.8-.38%201.51.02.81.3.99.73%201.27.27.17.58.37.79.73.28.47.4%201.07.52%201.71.08.42.24%201.2.41%201.36.17.13.77.31%202.65.4.44.02.62.03.79.08.94.27%201.43.97%201.82%201.53s.59.79.93.83h.06c.04-.01.16-.12.24-.19.42-.36%201.13-.96%202.66-.83.58.05%201.11.28%201.57.49.38.17.77.34.96.3.34-.35%201.29-1.32%201.73-1.67.53-.42%202.22-1.15%203.27-.51.2.12.74.46%201.7-.73l.04-.04s.04-.04.06-.06.64-.69.73-1.86c.12-1.57.91-2.25%201.44-2.71.43-.37.48-.42.41-.83-.5-2.73-.54-4.14-.54-4.19l-.02-.49c-.05-1.2-.11-2.45.3-3.73.48-1.51%201.67-2.48%202.97-2.48%201.43.03%203.47%201.25%205.06%206.91.2.73.25%201.57.29%202.38.05%201.02.11%202.17.52%202.59.09.09.19.18.31.28%201.09.95%203.35%202.93%201.58%207.67-.13.36-.05.6.24%201.25.34.77.81%201.82.53%203.44-.14.83-.64%201.35-1.08%201.8-.57.59-1.06%201.1-.97%202.5.12%201.8-.72%202.52-1.45%203.15-.53.45-1.02.88-1.4%201.83-1.51%203.78-4.3%206.02-7.65%206.15-.09%200-.18%200-.27%200z%22%2F%3E%3Cpath%20d%3D%22m50.7899%2043.9c-5.52%200-8.81-3.71-8.85-3.77-.33-.38-.28-.95.1-1.28s.95-.28%201.27.09c.26.3%206.33%207.05%2016.14-.14.4-.3.97-.21%201.26.19.3.4.21.97-.19%201.26-3.71%202.72-6.99%203.63-9.72%203.63z%22%2F%3E%3Cpath%20d%3D%22m50.1899%2049.07c-5.07%200-8.26-2.39-8.47-2.55-.39-.3-.46-.87-.16-1.26s.86-.46%201.26-.16c.28.22%207.04%205.21%2016.69-.72.42-.26.97-.13%201.23.3s.13.97-.3%201.23c-3.89%202.39-7.38%203.16-10.26%203.16z%22%2F%3E%3Cpath%20d%3D%22m50.86%2076.79c-5.52%200-9.69-2.39-9.95-2.54-.43-.25-.57-.81-.32-1.24s.81-.58%201.24-.32c.09.05%208.86%205.06%2017.39%200%20.43-.25.98-.11%201.24.32.25.43.11.98-.32%201.24-3.22%201.91-6.44%202.54-9.28%202.54z%22%2F%3E%3Cpath%20d%3D%22m50.5899%2083.53c-5.32%200-9.35-1.83-9.6-1.95-.45-.21-.65-.75-.44-1.2s.75-.65%201.2-.44c.09.04%209.05%204.1%2017.55-.27.44-.23.99-.05%201.22.39s.05.99-.39%201.22c-3.3%201.69-6.62%202.25-9.54%202.25z%22%2F%3E%3Cpath%20d%3D%22m51.1899%2070.03c-2.05%200-3.71-.94-4.54-1.74-.34-.33-.36-.87-.03-1.22.33-.34.87-.36%201.22-.03.14.13%203.11%202.83%206.96-.06.38-.29.92-.21%201.21.17s.21.92-.17%201.21c-1.64%201.23-3.23%201.67-4.64%201.67z%22%2F%3E%3Cpath%20d%3D%22m25.5801%2076.96c-9.22%200-16.73-7.5-16.73-16.73s7.5-16.73%2016.73-16.73%2016.73%207.5%2016.73%2016.73-7.5%2016.73-16.73%2016.73zm0-31.64c-8.23%200-14.92%206.69-14.92%2014.92s6.69%2014.92%2014.92%2014.92%2014.92-6.69%2014.92-14.92-6.69-14.92-14.92-14.92z%22%2F%3E%3Cpath%20d%3D%22m27.4802%2062c-1.55%200-2.8-1.31-2.8-2.91s1.26-2.91%202.8-2.91%202.8%201.31%202.8%202.91-1.26%202.91-2.8%202.91zm0-4.01c-.55%200-.99.49-.99%201.1s.45%201.1.99%201.1.99-.49.99-1.1-.45-1.1-.99-1.1z%22%2F%3E%3Cpath%20d%3D%22m24.7099%2063.46c0%20.7-.57%201.27-1.27%201.27s-1.27-.57-1.27-1.27.57-1.27%201.27-1.27%201.27.57%201.27%201.27z%22%2F%3E%3Cpath%20d%3D%22m69.33%2048.96c0%20.7-.57%201.27-1.27%201.27s-1.27-.57-1.27-1.27.57-1.27%201.27-1.27%201.27.57%201.27%201.27z%22%2F%3E%3Cpath%20d%3D%22m64.5102%2053.98c0%20.7-.57%201.27-1.27%201.27s-1.27-.57-1.27-1.27.57-1.27%201.27-1.27%201.27.57%201.27%201.27z%22%2F%3E%3Cpath%20d%3D%22m68.06%2061.69c0%20.7-.57%201.27-1.27%201.27s-1.27-.57-1.27-1.27.57-1.27%201.27-1.27%201.27.57%201.27%201.27z%22%2F%3E%3Cpath%20d%3D%22m62.04%2063.57c0%20.7-.57%201.27-1.27%201.27s-1.27-.57-1.27-1.27.57-1.27%201.27-1.27%201.27.57%201.27%201.27z%22%2F%3E%3Cpath%20d%3D%22m53.9199%2057.91c0%20.7-.57%201.27-1.27%201.27s-1.27-.57-1.27-1.27.57-1.27%201.27-1.27%201.27.57%201.27%201.27z%22%2F%3E%3Cpath%20d%3D%22m43.1899%2055.38c0%20.7-.57%201.27-1.27%201.27s-1.27-.57-1.27-1.27.57-1.27%201.27-1.27%201.27.57%201.27%201.27z%22%2F%3E%3Cpath%20d%3D%22m43.54%2065.05c0%20.7-.57%201.27-1.27%201.27s-1.27-.57-1.27-1.27.57-1.27%201.27-1.27%201.27.57%201.27%201.27z%22%2F%3E%3Cpath%20d%3D%22m22.2601%2071c-.22%200-.44-.03-.67-.1-2.49-.72-2.52-2.56-2.55-4.04%200-.48-.02-.97-.1-1.46-.11-.71-.71-1.1-1.69-1.68-1.13-.66-2.84-1.67-2.05-3.94.26-.75.89-1.35%201.86-1.76.35-.15.98-1.12.97-1.49-.35-.95-.19-1.96.44-2.78.6-.78%201.5-1.21%202.37-1.12.4.04.75.16%201.07.27.62.21.91.29%201.3.05.14-.08.26-.27.47-.59.24-.37.54-.83%201.04-1.31.88-.83%201.99-1.28%202.97-1.21.79.06%201.47.43%201.99%201.09.69.88.7%201.81.71%202.56%200%20.8.04%201.08.42%201.34.27.18.56.15%201.1.07.67-.1%201.58-.23%202.52.4%201.44.96%202.12%203.21%201.5%204.89-.44%201.18-1.35%201.68-2.08%202.07-.66.36-1.05.59-1.21%201.11-.11.34-.05.58.05.96.13.53.31%201.24-.03%202.24-.51%201.45-1.87%202.86-3.28%202.7-.9-.1-1.82-.88-2.35-1.4-.1.07-.19.16-.27.23l-.26.23c-1.65%201.5-2.91%202.64-4.24%202.65zm-1.65-16.56c-.19%200-.49.14-.71.43-.14.19-.36.57-.17%201.06.48%201.28-.89%203.31-1.96%203.76-.47.2-.77.44-.86.69-.26.75-.09%201%201.26%201.79%201.03.6%202.3%201.35%202.56%202.95.1.61.11%201.19.12%201.71.03%201.51.09%202%201.24%202.33.63.18%201.76-.85%203.19-2.15l.25-.22c.32-.3.93-.85%201.81-.83.25%200%20.49.12.66.31.47.54%201.25%201.18%201.6%201.22.26.04%201.04-.58%201.36-1.5.17-.48.1-.77-.01-1.2-.13-.5-.28-1.12-.02-1.95.39-1.23%201.32-1.74%202.07-2.15.67-.37%201.05-.6%201.25-1.12.33-.9-.07-2.26-.81-2.76-.34-.23-.66-.2-1.25-.11-.64.09-1.51.22-2.37-.36-1.21-.81-1.22-1.98-1.22-2.82%200-.66-.02-1.08-.31-1.45-.2-.26-.43-.39-.71-.41-.47-.03-1.1.25-1.6.72-.34.32-.55.65-.76.97-.27.42-.55.86-1.06%201.16-1.12.67-2.09.34-2.8.11-.25-.08-.49-.16-.68-.18-.01%200-.02%200-.04%200z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-tingling-hands:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m63.5099%2094.1c-.44%200-.87-.19-1.17-.55-.52-.64-.42-1.59.22-2.11%203.05-2.48%204.1-7.82%204.46-10.79.23-1.88.76-3.68%201.58-5.35%205.65-11.45%209.35-20.23%209.91-23.49.49-2.9.16-6-.01-7.2-.08-.56-.04-1.12.13-1.69.85-2.94.93-4.5.84-5.28-.01-.1-.18-.24-.42-.22-5.14.33-6.74%205.8-7.18%2010.32-.09.96-.5%201.86-1.18%202.6-1.2%201.3-1.83%203.73-2.21%205.19-.38%201.45-.68%202.59-1.96%202.63-.36.02-1.27-.09-1.7-1.37-.69-2.05-1.59-14.78-1.26-20.05.1-1.63.3-3.85.52-6.41.5-5.62%201.42-16.08.72-17.66-.95-2.08-3.33-1.08-3.43-1.04-.09.04-2.41%201.1-3.55%2012.58-.12%201.24-.24%202.43-.35%203.57-.95%209.83-1.34%2013.91-3.9%2014.26-.47.06-.93-.07-1.32-.37-1.16-.92-1.93-3.91-3.37-19.19-.15-1.6-.28-2.98-.35-3.38-.06-.39-.09-.96-.14-1.74-.15-2.51-.49-8.37001-2.55-10.12001-.43-.37-.9-.5-1.5-.44-2.09.22-2.95%202.75-2.54%207.51001.02.29.04.5.04.6.01.29.25%202.04.5%203.89.52%203.88%201.31%209.74%201.62%2013.66.49%206.21.33%208.32-.73%209.39-.44.45-1.04.67-1.66.63-2.68-.18-4.92-9.03-5.34-10.81-.23-.98-.9-3.92-1.56-6.87-.61-2.72-1.23-5.45-1.51-6.63-.34-1.45-1.61-4.35-3.43-3.98-2.7.51-2.01%205.11-1.84%206.03.61%203.38%202.77%2013.56%202.79%2013.66%203.73%2016.42%203.48%2016.74%202.92%2017.43-.29.36-.73.57-1.19.57-1.57%200-3.38-2.39-3.4-2.41-.45-.66-6.6-11.12-8.5-14.9-1.66-3.31-3.59-3.83-4.85-3.21-.32.16-1.18.58-.15%203.21%201.69%204.3%206.4%2013.45%208.07%2016.12%201.24%201.97%202.75%206.46%204.2%2010.88.3.91.53%201.62.67%202.02.32.89.57%202.12.85%203.53.33%201.65.7%203.52%201.26%205.1.55%201.55%202.12%204.7%203.99%206.58%201.88%201.88%204.39%2010.32%205.11%2012.87.23.8-.23%201.63-1.03%201.85-.79.22-1.63-.23-1.85-1.03-1.38-4.85-3.44-10.66-4.35-11.57-2.42-2.42-4.13-6.09-4.7-7.7-.63-1.78-1.02-3.76-1.37-5.52-.25-1.24-.48-2.42-.73-3.09-.15-.41-.4-1.16-.71-2.11-.96-2.93-2.74-8.39-3.89-10.22-1.94-3.1-6.66-12.39-8.32-16.62-1.78-4.53.25-6.33%201.62-7%202.43-1.19%206.2-.71%208.85%204.56%201.39%202.76%204.95%208.92%206.93%2012.28-.62-3.06-1.51-7.15-2.38-10.98-.09-.44-2.19-10.35-2.81-13.77-.74-4.07-.01-8.71%204.24-9.51%203.57-.67%206.09%202.77%206.91%206.25.28%201.19.9%203.92%201.51%206.66.66%202.93%201.32%205.86%201.55%206.83.44%201.86%201.3%204.51%202.07%206.42-.01-1.08-.08-2.59-.25-4.7-.3-3.84-1.09-9.65-1.6-13.5-.42-3.11-.53-3.94-.53-4.29%200-.06-.01-.18-.03-.34-.4-4.61001.19-10.21001%205.21-10.75001%201.41-.15%202.71.24%203.76%201.13%203.04%202.58%203.41%208.86001%203.61%2012.23001.04.62.07%201.21.11%201.45.08.49.19%201.71.37%203.56.27%202.83.93%209.84%201.63%2014.07.37-2.35.69-5.69.99-8.77.11-1.14.22-2.34.35-3.58.9-9.03%202.65-13.95001%205.34-15.04001%202.08-.9%205.74-.96%207.35%202.54001.96%202.09.44%208.95-.46%2019.18-.22%202.54-.42%204.74-.52%206.33-.21%203.45.1%209.32.47%2013.62.39-.81.88-1.59%201.47-2.24.23-.25.37-.55.4-.86.78-8.04%204.32-12.66%209.97-13.03%201.79-.11%203.39%201.14%203.59%202.87.18%201.54-.14%203.71-.94%206.46-.04.15-.06.3-.04.44.19%201.34.56%204.81%200%208.12-.83%204.9-6.73%2017.33-10.18%2024.31-.67%201.36-1.11%202.84-1.29%204.38-.41%203.42-1.68%209.62-5.55%2012.76-.28.23-.61.34-.95.34z%22%2F%3E%3Cpath%20d%3D%22m82.74%2067.3c-.51%200-1-.26-1.28-.72-.43-.71-.2-1.63.51-2.06l5.85-3.54-2.46-4.07c-.43-.71-.2-1.63.51-2.06l4.07-2.46-2.24-3.71c-.23-.38-.28-.83-.14-1.25s.45-.75.86-.92l4.44-1.79-3.73-6.16c-.43-.71-.2-1.63.51-2.06s1.63-.2%202.06.51l4.64%207.67c.23.38.28.83.14%201.25s-.45.75-.86.92l-4.44%201.79%202.11%203.49c.21.34.27.75.17%201.14-.09.39-.34.72-.68.92l-4.07%202.46%202.46%204.07c.43.71.2%201.63-.51%202.06l-7.13%204.31c-.24.15-.51.22-.78.22z%22%2F%3E%3Cpath%20d%3D%22m28.0201%2086.61c-.21%200-.4201-.04-.6301-.14l-7.58-3.48c-.36-.17-.64-.47-.78-.84s-.12-.79.04-1.15l1.99-4.32-4.32-1.99c-.75-.35-1.08-1.24-.74-1.99l1.7-3.7-4.61-1.28c-.42-.12-.77-.42-.96-.81-.19-.4-.19-.86%200-1.26l3.75-8.14c.34-.75%201.24-1.08%201.99-.74.75.35%201.08%201.24.74%201.99l-3.01%206.54%204.61%201.28c.42.12.77.42.96.81.19.4.19.86%200%201.26l-1.81%203.94%204.32%201.99c.75.35%201.08%201.24.74%201.99l-1.99%204.32%206.21%202.86c.75.35%201.08%201.24.74%201.99-.25.55-.7999.87-1.3599.87z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-ulcerative-colitis:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m89.9%2058.44c-.22-2.07-1.07-4.17-2.56-6.26-.35-.5-.35-1.13.02-1.58%205.03-6.2%205.69-12.38%201.8-16.97-.77-.91-.93-2.16-.4-3.17%201.64-3.18%203.87-9.45.27-15.71-2.57-4.46-8.89-6.03-16.5-4.1-.19.05-.38.02-.51-.07-2.46-1.65-10.85-6.39-18.26-.2-.2-.11-.42-.23-.62-.34-2.83-1.53-9.31-5.06-16.56%201.32-2.01-1.23-6.54-3.52-10.61-2.28-2.59.79-4.49%202.8-5.64%205.98-.12.32-.4.55-.74.61-2.51.45-7.08%201.82-9.41%206.03-1.94002%203.5-1.85002%208.1.26%2013.7-.94002%201.36-2.70002%204.41-2.37002%207.79.19%201.9.99%203.6%202.39002%205.07-1.22002%201.74-3.15002%205.2-2.54002%208.89.47%202.88%202.34002%205.27%205.56002%207.09%201.97%201.12%204.46%201.34%206.14%201.34.28%200%20.54-.01.77-.01.81%201.56%202.66%204.54%205.5%205.96.21.1.44.15.67.15.55%200%201.08-.3%201.34-.83.37-.74.07-1.64-.67-2.01-1.93-.96-3.33-3.1-4.03-4.37%203.46-2.75%205.32-5.73%205.52-8.86.19-2.86-1.06-5.08-1.96-6.28%201.38-2.22%204.02-7.67.83-13.02-.17-.29-.21-.41-.23-.41.01-.03.05-.12.18-.3.72-1.04%201.04-2.33.96-3.86%202.28.95%204.9.77%207.59-.57.29-.15.6-.36.95-.59.29-.2.83-.56%201.16-.71%206.42%203.35%2012.05.37%2014.78-1.08.34-.18.74-.39%201.01-.51%204.03%201.98%207.63%201.96%2010.74-.06.41%202.83%202.2%205.91%207.02%208.32.13.06.18.17.21.24.02.08.05.23-.04.39l-.08.14c-1.57%202.87-3.95%207.2.4%2012.91-.05.03-.11.06-.16.1-4.57%202.58-6.78%206.92-6.05%2011.94.02.15.05.31.08.46-3.25-.28-7.19-.05-9.75%202.02-6.38%205.13-4.75%2010.92-2.61%2015.39%201.64%203.43%202.36%206.67%202.26%2010.2-.07%202.75%201.95%205.08%204.61%205.32.14%200%20.28.02.42.02%201.17%200%202.17-.45%202.91-1.3%201.61-1.86%201.83-5.51.66-11.41%202.41.59%206.02%201%208.97-.7%202.44-1.42%203.93-3.94%204.42-7.52.12-.84.59-1.54%201.3-1.9.93-.48%202.06-1.12%203.23-1.94.06-.03.11-.06.16-.1%202.92-2.01%206.06-5%207-8.9.25-1.04.32-2.09.24-3.15.01-.1%200-.21-.03-.31zm-32.82-32.13c-.65-.21-1.35-.5-2.1-.89-.16-.09-.34-.15-.52-.17-.83-.2-1.69.26-2.89.89-1.22.65-2.8%201.49-4.66%201.94-.88-1.22-1.96-3.29-1.73-4.31.03-.17.11-.31.36-.44.97-.52%201.83-.4%202.92-.26%201.54.21%203.66.51%205.58-1.83%201.44-1.75%204.39-2.77%205.79-2.38.38.11.4.23.42.37.03.21-.04.35-.97%201.01-1.25.88-3.44%202.45-2.2%206.07zm12.39%204.98c4.66-3%206.46-2.56%206.91-2.34.53.26.71.83.77%201.12-1.25%205.11.47%207.17%201.86%208.83.96%201.15%201.72%202.06%201.72%204.11%200%201.61-3.23%204.28-5.8%205.87-.08-.16-.17-.31-.28-.45-3.19-4.19-1.66-6.98-.18-9.68l.08-.14c.45-.83.55-1.82.27-2.72s-.89-1.62-1.73-2.03c-1.54-.77-2.74-1.62-3.62-2.57zm9.76%2038.16c-.5.29-.94.53-1.31.72-1.56.81-2.64%202.36-2.89%204.16-.36%202.61-1.35%204.4-2.95%205.33-3.28%201.89-8.27-.05-8.84-.28-.54-.21-1.16-.11-1.6.27-.42.37-.62%201-.49%201.54%202.04%208.62.92%2010.76.53%2011.21-.13.16-.32.3-.8.26-1.06-.09-1.9-1.1-1.87-2.25.11-4.02-.7-7.7-2.55-11.57-2.57-5.37-2.07-8.67%201.78-11.77%201.63-1.31%204.75-1.76%208.79-1.24%201.07.14%201.67-.27%201.98-.63.7-.82.41-1.81.19-2.52-.08-.29-.17-.58-.21-.85-.69-4.82%202.08-7.5%204.58-8.91%200%200%200-.01.01-.01%202.28-.82%2010.15-5.46%2010.15-9.9%200-3.14-1.34-4.74-2.42-6.03-1.26-1.52-2.18-2.62-1.19-6.44.04-.15.06-.3.05-.45-.05-.99-.61-2.91-2.43-3.81-2.27-1.13-5.48-.34-9.82%202.43-.34-1.05-.38-2.19-.14-3.43.14-.68-.19-1.35-.79-1.67-.59-.31-1.37-.19-1.84.28-.08.08-.16.17-.27.28-.74.8-2.08%202.26-4.39%202.54-.04-.13-.08-.25-.14-.37-1.2-2.33-.65-2.72.67-3.66.99-.71%202.5-1.78%202.2-3.88-.2-1.39-1.14-2.43-2.58-2.83-2.66-.75-6.83.83-8.91%203.36-.86%201.05-1.49.96-2.87.77-1.29-.17-2.9-.4-4.73.58-1%20.53-1.65%201.38-1.89%202.45-.38%201.77.47%203.81%201.29%205.24-1.33-.1-2.74-.49-4.21-1.3-1.33-.74-2.79.23-3.95%201.01-.25.17-.46.32-.63.4-3.7%201.86-6.06.31-7.39-1.31-.01-.02-.03-.04-.05-.05-.1-.13-.18-.2-.22-.24-.04-.03-.07-.06-.11-.08-.06-.05-.12-.09-.18-.11-.03-.02-.05-.03-.07-.03-.08-.05-.17-.08-.26-.09-.01-.01-.02-.01-.03-.01-.11-.03-.22-.04-.33-.04-.08%200-.17%200-.25.02-.04.01-.07.01-.11.03-.09.01-.17.04-.25.08s-.16.08-.24.14c-.1.07-.2.15-.28.25-.06.07-.12.15-.16.23-.04.06-.07.12-.09.19-.03.05-.05.11-.06.16-.01.03-.02.06-.02.09-.03.1-.04.19-.04.29s.01.2.03.31c.01.06.03.12.05.18.01.05.03.1.05.14%201.23%203.23.74%204.68.34%205.26-1.14%201.65-.7%202.87-.06%203.95%202.99%205.02-1.14%2010.44-1.31%2010.67-.47.6-.41%201.47.14%202.01.02.02%202.09%202.06%201.89%204.92-.17%202.39-1.83%204.78-4.95%207.1-.98.07-3.89.19-5.82-.91-2.38-1.35-3.75-3.02-4.08-4.95-.62-3.75%202.69-7.56%202.73-7.6.27-.3.4-.71.37-1.12s-.23-.78-.55-1.04c-1.44-1.16-2.22-2.47-2.37-4.01-.26-2.59%201.34-5.11%201.98-5.99%203.93-1.28%205.99-3.65%205.68-6.56-.2-1.94-1.13-2.99-1.87-3.53-1.77-1.3-4-.9-4.25-.85-.31.06-.57.22-.77.43.12-1.22.44-2.31.97-3.26%201.73-3.12%205.33-4.17%207.31-4.52%201.4-.25%202.56-1.22%203.04-2.54.82-2.28%202.03-3.63%203.69-4.14%203.87-1.18%208.97%202.48%209.02%202.52.59.43%201.42.37%201.94-.15%206.02-5.93%2010.96-3.24%2013.91-1.64.82.44%201.43.77%202.02.88.29.07.6.05.88-.06.17-.07.34-.17.48-.31.04-.04.09-.08.13-.12l.05-.05c5.77-5.21%2012.45-1.71%2015.08.05.84.57%201.9.74%202.92.49%206.15-1.57%2011.32-.51%2013.16%202.68%202.74%204.77%201.33%209.62-.34%2012.84-1.08%202.1-.78%204.65.78%206.49%203.92%204.63.53%2010.22-1.84%2013.14-1.21%201.49-1.26%203.63-.13%205.21.59.82%201.05%201.64%201.38%202.44-2.97-.88-7.17-1.4-8.97%202.55-2.15%204.71-.22%208.42%201.92%2010.54zm-67.4-40.97c.34.36.84.54%201.36.45.32-.07%201.3-.12%201.89.32.14.1.55.41.66%201.43.15%201.5-1.38%202.48-2.72%203.04-.68-1.91-1.08-3.66-1.19-5.24zm75.13%2031.29c-.01.48-.08.96-.19%201.43-.65%202.69-2.83%204.92-4.97%206.54-1.31-1.09-3.55-3.67-1.76-7.59.98-2.15%203.98-1.48%206.92-.39z%22%2F%3E%3Cpath%20d%3D%22m22.3298%2040.8199c0%201.11-.9%202.01-2%202.01s-2.01-.9-2.01-2.01.9-2%202.01-2%202%20.9%202%202z%22%2F%3E%3Cpath%20d%3D%22m20.3898%2022.85c0%201.05-.85%201.9-1.9%201.9s-1.9-.85-1.9-1.9.85-1.9%201.9-1.9%201.9.85%201.9%201.9z%22%2F%3E%3Cpath%20d%3D%22m69.0899%2019.0301c0%201.09-.89%201.97-1.97%201.97s-1.97-.88-1.97-1.97.88-1.97%201.97-1.97%201.97.89%201.97%201.97z%22%2F%3E%3Cpath%20d%3D%22m74.92%2067.41c0%201.14-.93%202.07-2.07%202.07s-2.08-.93-2.08-2.07.93-2.08%202.08-2.08%202.07.93%202.07%202.08z%22%2F%3E%3Cpath%20d%3D%22m39.1902%2021.66c0%201.11-.9%202.01-2%202.01s-2.01-.9-2.01-2.01.9-2%202.01-2%202%20.9%202%202z%22%2F%3E%3Cpath%20d%3D%22m82.4198%2022.45c0%201.15-.93%202.09-2.08%202.09s-2.08-.94-2.08-2.09.93-2.08%202.08-2.08%202.08.94%202.08%202.08z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-warning-circle-fill:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M128%2C24A104%2C104%2C0%2C1%2C0%2C232%2C128%2C104.11%2C104.11%2C0%2C0%2C0%2C128%2C24Zm-8%2C56a8%2C8%2C0%2C0%2C1%2C16%2C0v56a8%2C8%2C0%2C0%2C1-16%2C0Zm8%2C104a12%2C12%2C0%2C1%2C1%2C12-12A12%2C12%2C0%2C0%2C1%2C128%2C184Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-warning-circle:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M128%2C24A104%2C104%2C0%2C1%2C0%2C232%2C128%2C104.11%2C104.11%2C0%2C0%2C0%2C128%2C24Zm0%2C192a88%2C88%2C0%2C1%2C1%2C88-88A88.1%2C88.1%2C0%2C0%2C1%2C128%2C216Zm-8-80V80a8%2C8%2C0%2C0%2C1%2C16%2C0v56a8%2C8%2C0%2C0%2C1-16%2C0Zm20%2C36a12%2C12%2C0%2C1%2C1-12-12A12%2C12%2C0%2C0%2C1%2C140%2C172Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E\");--lds-icon-warning-fill:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20%20%20%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M236.8%2C188.09%2C149.35%2C36.22h0a24.76%2C24.76%2C0%2C0%2C0-42.7%2C0L19.2%2C188.09a23.51%2C23.51%2C0%2C0%2C0%2C0%2C23.72A24.35%2C24.35%2C0%2C0%2C0%2C40.55%2C224h174.9a24.35%2C24.35%2C0%2C0%2C0%2C21.33-12.19A23.51%2C23.51%2C0%2C0%2C0%2C236.8%2C188.09ZM120%2C104a8%2C8%2C0%2C0%2C1%2C16%2C0v40a8%2C8%2C0%2C0%2C1-16%2C0Zm8%2C88a12%2C12%2C0%2C1%2C1%2C12-12A12%2C12%2C0%2C0%2C1%2C128%2C192Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%0A\");--lds-icon-warning:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M236.8%2C188.09%2C149.35%2C36.22h0a24.76%2C24.76%2C0%2C0%2C0-42.7%2C0L19.2%2C188.09a23.51%2C23.51%2C0%2C0%2C0%2C0%2C23.72A24.35%2C24.35%2C0%2C0%2C0%2C40.55%2C224h174.9a24.35%2C24.35%2C0%2C0%2C0%2C21.33-12.19A23.51%2C23.51%2C0%2C0%2C0%2C236.8%2C188.09ZM222.93%2C203.8a8.5%2C8.5%2C0%2C0%2C1-7.48%2C4.2H40.55a8.5%2C8.5%2C0%2C0%2C1-7.48-4.2%2C7.59%2C7.59%2C0%2C0%2C1%2C0-7.72L120.52%2C44.21a8.75%2C8.75%2C0%2C0%2C1%2C15%2C0l87.45%2C151.87A7.59%2C7.59%2C0%2C0%2C1%2C222.93%2C203.8ZM120%2C144V104a8%2C8%2C0%2C0%2C1%2C16%2C0v40a8%2C8%2C0%2C0%2C1-16%2C0Zm20%2C36a12%2C12%2C0%2C1%2C1-12-12A12%2C12%2C0%2C0%2C1%2C140%2C180Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E\");--lds-icon-weight-loss:url(\"data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22%23071218%22%3E%3Cpath%20d%3D%22m52.16%2046.59c-12.24-.01-22.2-9.69-22.2-21.57%200-.94.06-1.86.19-2.73%201.37-10.72%2010.83-18.82999%2022-18.83999%2011.18.01%2020.64%208.11999%2022.01%2018.85999.12.85.18%201.76.18%202.71%200%2011.88-9.96%2021.56-22.19%2021.57zm0-40.13999c-9.67%200-17.85%206.98999-19.03%2016.23999-.11.75-.16%201.53-.16%202.33%200%2010.23%208.61%2018.56%2019.2%2018.57%2010.58%200%2019.19-8.34%2019.19-18.57%200-.8-.05-1.58-.16-2.3-1.19-9.27-9.37-16.24999-19.04-16.25999z%22%2F%3E%3Cpath%20d%3D%22m32.7101%2097.67c-5.11%200-9.27-3.53-11.17-9.45-9.07-28.33-9.17-46.67-9.17-47.44%200-8.12%208.12-13.19%2017.53-19.07l1.14-.71h2.33l-.24%201.71c-.11.74-.16%201.52-.16%202.34%200%2010.36%208.61%2018.79%2019.2%2018.8%2010.58%200%2019.19-8.44%2019.19-18.8%200-.81-.05-1.6-.16-2.34l-.24-1.71h2.33l1.14.71c9.41%205.88%2017.53%2010.95%2017.53%2019.07v.07c-.01.23-1.11%2023.33-8.6%2046.72-1.9%205.91-6.06%209.45-11.14%209.45l-39.5.66zm-2.74-72.46c-7.99%205.01-14.6%209.5-14.6%2015.58%200%20.18.12%2018.69%209.03%2046.53.71%202.21%202.93%207.36%208.29%207.36l39.5-.66c5.37%200%207.6-5.15%208.31-7.36%207.24-22.59%208.41-44.91%208.46-45.9-.02-6.06-6.63-10.54-14.6-15.54-.09%2011.93-10.01%2021.63-22.19%2021.64-12.19-.01-22.11-9.7-22.19-21.64z%22%2F%3E%3Cpath%20d%3D%22m53.7999%2030.23c-.31%200-.61-.03-.92-.09-1.77-.33-3.26-1.62-3.96-3.43l-3.08-7.89c-.35-.9-.07-1.93.67-2.51.71-.55%201.68-.57%202.41-.05l7.98%205.72c.97.7%201.61%201.82%201.73%203.08.13%201.29-.28%202.56-1.13%203.48-1.01%201.09-2.32%201.67-3.7%201.67zm-4.08-9.68%201.98%205.07c.33.85.96%201.43%201.73%201.57.68.13%201.34-.11%201.86-.67.26-.28.39-.71.34-1.14-.04-.4-.22-.75-.5-.95l-5.42-3.88z%22%2F%3E%3Cpath%20d%3D%22m69.8801%2091.74h-35.43c-4.22%200-7.66-2.97-9.18-7.94-1.76-5.73-3.11-12.7-4.3-18.84-.3-1.54-.59-3.03-.87-4.41-.18-.88-.4-1.87-.63-2.93-1.55-7.03-3.66-16.65-.28-20.78%201.42-1.74%203.26-2.61%205.28-2.56%203.26.11%206.21%202.64%207.4%204.31%205.31%207.44%2014.32%2010.22%2020.99%2010.35%207.98-.15%2014.96-3.83%2019.62-10.35%201.19-1.67%204.14-4.19%207.39-4.3%202-.05%203.86.81%205.28%202.56%203.38%204.13%201.26%2013.75-.28%2020.78-.23%201.06-.45%202.05-.63%202.94-.28%201.38-.57%202.86-.87%204.4-1.19%206.15-2.55%2013.12-4.31%2018.86-1.52%204.97-4.96%207.94-9.18%207.94zm-45.64-54.47c-1.04%200-1.94.48-2.74%201.46-2.46%203.01-.36%2012.54.89%2018.24.24%201.08.46%202.08.64%202.98.28%201.39.57%202.88.87%204.43%201.18%206.07%202.51%2012.95%204.23%2018.54.54%201.75%202.23%205.82%206.31%205.82h35.43c4.09%200%205.78-4.07%206.31-5.82%201.72-5.59%203.05-12.47%204.23-18.55.3-1.55.59-3.04.87-4.43.18-.9.4-1.91.64-2.99%201.25-5.7%203.35-15.23.89-18.23-.83-1.02-1.74-1.51-2.86-1.46-2.02.07-4.21%201.86-5.05%203.05-5.22%207.32-13.06%2011.44-22.06%2011.61-9.64-.18-18.37-4.52-23.43-11.61-.85-1.19-3.04-2.98-5.05-3.05-.04%200-.08%200-.12%200z%22%2F%3E%3Cpath%20d%3D%22m50.3099%2083.77-8.16-8.58c-.54-.57-.51-1.47.08-1.99.59-.53%201.51-.49%202.06.08l6.42%206.75v-21.3c0-.78.65-1.41%201.45-1.41s1.45.63%201.45%201.41v21.29l6.41-6.75c.54-.57%201.46-.61%202.06-.08.59.53.63%201.42.08%201.99l-8.16%208.58c-.48.5-1.15.79-1.85.79-.71%200-1.38-.28-1.86-.79z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A\");--lds-icon-x-circle:url(\"data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cpath%20d%3D%22M165.66%2C101.66%2C139.31%2C128l26.35%2C26.34a8%2C8%2C0%2C0%2C1-11.32%2C11.32L128%2C139.31l-26.34%2C26.35a8%2C8%2C0%2C0%2C1-11.32-11.32L116.69%2C128%2C90.34%2C101.66a8%2C8%2C0%2C0%2C1%2C11.32-11.32L128%2C116.69l26.34-26.35a8%2C8%2C0%2C0%2C1%2C11.32%2C11.32ZM232%2C128A104%2C104%2C0%2C1%2C1%2C128%2C24%2C104.11%2C104.11%2C0%2C0%2C1%2C232%2C128Zm-16%2C0a88%2C88%2C0%2C1%2C0-88%2C88A88.1%2C88.1%2C0%2C0%2C0%2C216%2C128Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E\");--lds-icon-x:url(\"data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M12.5%203.5L3.5%2012.5%22%20stroke%3D%22%23191919%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M12.5%2012.5L3.5%203.5%22%20stroke%3D%22%23191919%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E%0A\")}.lds-icon.alopecia{mask-image:var(--lds-icon-alopecia)}.lds-icon.anatomical-heart{mask-image:var(--lds-icon-anatomical-heart)}.lds-icon.arrow-down{mask-image:var(--lds-icon-arrow-down)}.lds-icon.arrow-left{mask-image:var(--lds-icon-arrow-left)}.lds-icon.arrow-right{mask-image:var(--lds-icon-arrow-right)}.lds-icon.arrow-square-out-bold{mask-image:var(--lds-icon-arrow-square-out-bold)}.lds-icon.arrow-square-out{mask-image:var(--lds-icon-arrow-square-out)}.lds-icon.arrow-up{mask-image:var(--lds-icon-arrow-up)}.lds-icon.arthritis{mask-image:var(--lds-icon-arthritis)}.lds-icon.autoimmune{mask-image:var(--lds-icon-autoimmune)}.lds-icon.biologic-pharmaceuticals{mask-image:var(--lds-icon-biologic-pharmaceuticals)}.lds-icon.blood-cancer{mask-image:var(--lds-icon-blood-cancer)}.lds-icon.bookmark-simple{mask-image:var(--lds-icon-bookmark-simple)}.lds-icon.brain{mask-image:var(--lds-icon-brain)}.lds-icon.breast-cancer{mask-image:var(--lds-icon-breast-cancer)}.lds-icon.calendar-blank{mask-image:var(--lds-icon-calendar-blank)}.lds-icon.cancer-cell{mask-image:var(--lds-icon-cancer-cell)}.lds-icon.caret-circle-down-fill{mask-image:var(--lds-icon-caret-circle-down-fill)}.lds-icon.caret-circle-down{mask-image:var(--lds-icon-caret-circle-down)}.lds-icon.caret-circle-up-fill{mask-image:var(--lds-icon-caret-circle-up-fill)}.lds-icon.caret-circle-up{mask-image:var(--lds-icon-caret-circle-up)}.lds-icon.caret-down-fill{mask-image:var(--lds-icon-caret-down-fill)}.lds-icon.caret-down{mask-image:var(--lds-icon-caret-down)}.lds-icon.caret-left{mask-image:var(--lds-icon-caret-left)}.lds-icon.caret-right{mask-image:var(--lds-icon-caret-right)}.lds-icon.caret-up-down-fill{mask-image:var(--lds-icon-caret-up-down-fill)}.lds-icon.caret-up-down{mask-image:var(--lds-icon-caret-up-down)}.lds-icon.caret-up-fill{mask-image:var(--lds-icon-caret-up-fill)}.lds-icon.caret-up{mask-image:var(--lds-icon-caret-up)}.lds-icon.check-circle-fill{mask-image:var(--lds-icon-check-circle-fill)}.lds-icon.check-circle{mask-image:var(--lds-icon-check-circle)}.lds-icon.check-toggle{mask-image:var(--lds-icon-check-toggle)}.lds-icon.check{mask-image:var(--lds-icon-check)}.lds-icon.copy-simple{mask-image:var(--lds-icon-copy-simple)}.lds-icon.cpap{mask-image:var(--lds-icon-cpap)}.lds-icon.cream{mask-image:var(--lds-icon-cream)}.lds-icon.crohns{mask-image:var(--lds-icon-crohns)}.lds-icon.diabetes{mask-image:var(--lds-icon-diabetes)}.lds-icon.dry-skin{mask-image:var(--lds-icon-dry-skin)}.lds-icon.eczema{mask-image:var(--lds-icon-eczema)}.lds-icon.endocrinology{mask-image:var(--lds-icon-endocrinology)}.lds-icon.envelope-simple{mask-image:var(--lds-icon-envelope-simple)}.lds-icon.environmental-factors{mask-image:var(--lds-icon-environmental-factors)}.lds-icon.eye{mask-image:var(--lds-icon-eye)}.lds-icon.fever{mask-image:var(--lds-icon-fever)}.lds-icon.gastric-cancer{mask-image:var(--lds-icon-gastric-cancer)}.lds-icon.head-and-neck-cancer{mask-image:var(--lds-icon-head-and-neck-cancer)}.lds-icon.high-blood-sugar{mask-image:var(--lds-icon-high-blood-sugar)}.lds-icon.house-fill{mask-image:var(--lds-icon-house-fill)}.lds-icon.house{mask-image:var(--lds-icon-house)}.lds-icon.infection{mask-image:var(--lds-icon-infection)}.lds-icon.info-fill{mask-image:var(--lds-icon-info-fill)}.lds-icon.info{mask-image:var(--lds-icon-info)}.lds-icon.joint-pain{mask-image:var(--lds-icon-joint-pain)}.lds-icon.lilly-monogram{mask-image:var(--lds-icon-lilly-monogram)}.lds-icon.liver{mask-image:var(--lds-icon-liver)}.lds-icon.low-physical-activity-2{mask-image:var(--lds-icon-low-physical-activity-2)}.lds-icon.low-physical-activity{mask-image:var(--lds-icon-low-physical-activity)}.lds-icon.lung-cancer{mask-image:var(--lds-icon-lung-cancer)}.lds-icon.magnifying-glass{mask-image:var(--lds-icon-magnifying-glass)}.lds-icon.medical-infusion-bag{mask-image:var(--lds-icon-medical-infusion-bag)}.lds-icon.migraine{mask-image:var(--lds-icon-migraine)}.lds-icon.minus-circle{mask-image:var(--lds-icon-minus-circle)}.lds-icon.minus{mask-image:var(--lds-icon-minus)}.lds-icon.mouth{mask-image:var(--lds-icon-mouth)}.lds-icon.over-30-bmi{mask-image:var(--lds-icon-over-30-bmi)}.lds-icon.pause{mask-image:var(--lds-icon-pause)}.lds-icon.play{mask-image:var(--lds-icon-play)}.lds-icon.plus-circle{mask-image:var(--lds-icon-plus-circle)}.lds-icon.psoriasis{mask-image:var(--lds-icon-psoriasis)}.lds-icon.psoriatic-arthritis{mask-image:var(--lds-icon-psoriatic-arthritis)}.lds-icon.regulatory-triangle-uk{mask-image:var(--lds-icon-regulatory-triangle-uk)}.lds-icon.share-fat{mask-image:var(--lds-icon-share-fat)}.lds-icon.stress{mask-image:var(--lds-icon-stress)}.lds-icon.surgery{mask-image:var(--lds-icon-surgery)}.lds-icon.thirsty{mask-image:var(--lds-icon-thirsty)}.lds-icon.thyroid-cancer{mask-image:var(--lds-icon-thyroid-cancer)}.lds-icon.tingling-hands{mask-image:var(--lds-icon-tingling-hands)}.lds-icon.ulcerative-colitis{mask-image:var(--lds-icon-ulcerative-colitis)}.lds-icon.warning-circle-fill{mask-image:var(--lds-icon-warning-circle-fill)}.lds-icon.warning-circle{mask-image:var(--lds-icon-warning-circle)}.lds-icon.warning-fill{mask-image:var(--lds-icon-warning-fill)}.lds-icon.warning{mask-image:var(--lds-icon-warning)}.lds-icon.weight-loss{mask-image:var(--lds-icon-weight-loss)}.lds-icon.x-circle{mask-image:var(--lds-icon-x-circle)}.lds-icon.x{mask-image:var(--lds-icon-x)}h1,.h1,.lds-text-heading-1{font:var(--lds-g-typography-ringside-heading-1-default);letter-spacing:var(--lds-g-typography-ringside-heading-1-letter-spacing)}@media (width >= 768px){h1,.h1,.lds-text-heading-1{font:var(--lds-g-typography-ringside-heading-1-desktop)}}h1.fluid-size,.h1.fluid-size,.lds-text-heading-1.fluid-size{font-size:var(--lds-g-typography-ringside-heading-1-fluid-font-size)}h1.serif,.h1.serif,.lds-text-heading-1-serif{font:var(--lds-g-typography-garamond-heading-1-default);letter-spacing:var(--lds-g-typography-garamond-heading-1-letter-spacing)}@media (width >= 768px){h1.serif,.h1.serif,.lds-text-heading-1-serif{font:var(--lds-g-typography-garamond-heading-1-desktop)}}h1.serif.fluid-size,.h1.serif.fluid-size,.lds-text-heading-1-serif.fluid-size{font-size:var(--lds-g-typography-garamond-heading-1-fluid-font-size)}h2,.h2,.lds-text-heading-2{font:var(--lds-g-typography-ringside-heading-2-default);letter-spacing:var(--lds-g-typography-ringside-heading-2-letter-spacing)}@media (width >= 768px){h2,.h2,.lds-text-heading-2{font:var(--lds-g-typography-ringside-heading-2-desktop)}}h2.fluid-size,.h2.fluid-size,.lds-text-heading-2.fluid-size{font-size:var(--lds-g-typography-ringside-heading-2-fluid-font-size)}h2.serif,.h2.serif,.lds-text-heading-2-serif{font:var(--lds-g-typography-garamond-heading-2-default);letter-spacing:var(--lds-g-typography-garamond-heading-2-letter-spacing)}@media (width >= 768px){h2.serif,.h2.serif,.lds-text-heading-2-serif{font:var(--lds-g-typography-garamond-heading-2-desktop)}}h2.serif.fluid-size,.h2.serif.fluid-size,.lds-text-heading-2-serif.fluid-size{font-size:var(--lds-g-typography-garamond-heading-2-fluid-font-size)}h3,.h3,.lds-text-heading-3{font:var(--lds-g-typography-ringside-heading-3-default);letter-spacing:var(--lds-g-typography-ringside-heading-3-letter-spacing)}@media (width >= 768px){h3,.h3,.lds-text-heading-3{font:var(--lds-g-typography-ringside-heading-3-desktop)}}h3.fluid-size,.h3.fluid-size,.lds-text-heading-3.fluid-size{font-size:var(--lds-g-typography-ringside-heading-3-fluid-font-size)}h3.serif,.h3.serif,.lds-text-heading-3-serif{font:var(--lds-g-typography-garamond-heading-3-default);letter-spacing:var(--lds-g-typography-garamond-heading-3-letter-spacing)}@media (width >= 768px){h3.serif,.h3.serif,.lds-text-heading-3-serif{font:var(--lds-g-typography-garamond-heading-3-desktop)}}h3.serif.fluid-size,.h3.serif.fluid-size,.lds-text-heading-3-serif.fluid-size{font-size:var(--lds-g-typography-garamond-heading-3-fluid-font-size)}h4,.h4,.lds-text-heading-4{font:var(--lds-g-typography-ringside-heading-4-default);letter-spacing:var(--lds-g-typography-ringside-heading-4-letter-spacing)}@media (width >= 768px){h4,.h4,.lds-text-heading-4{font:var(--lds-g-typography-ringside-heading-4-desktop)}}h4.fluid-size,.h4.fluid-size,.lds-text-heading-4.fluid-size{font-size:var(--lds-g-typography-ringside-heading-4-fluid-font-size)}h4.serif,.h4.serif,.lds-text-heading-4-serif{font:var(--lds-g-typography-garamond-heading-4-default);letter-spacing:var(--lds-g-typography-garamond-heading-4-letter-spacing)}@media (width >= 768px){h4.serif,.h4.serif,.lds-text-heading-4-serif{font:var(--lds-g-typography-garamond-heading-4-desktop)}}h4.serif.fluid-size,.h4.serif.fluid-size,.lds-text-heading-4-serif.fluid-size{font-size:var(--lds-g-typography-garamond-heading-4-fluid-font-size)}h5,.h5,.lds-text-heading-5{font:var(--lds-g-typography-ringside-heading-5-default);letter-spacing:var(--lds-g-typography-ringside-heading-5-letter-spacing)}@media (width >= 768px){h5,.h5,.lds-text-heading-5{font:var(--lds-g-typography-ringside-heading-5-desktop)}}h5.fluid-size,.h5.fluid-size,.lds-text-heading-5.fluid-size{font-size:var(--lds-g-typography-ringside-heading-5-fluid-font-size)}h5.serif,.h5.serif,.lds-text-heading-5-serif{font:var(--lds-g-typography-garamond-heading-5-default);letter-spacing:var(--lds-g-typography-garamond-heading-5-letter-spacing)}@media (width >= 768px){h5.serif,.h5.serif,.lds-text-heading-5-serif{font:var(--lds-g-typography-garamond-heading-5-desktop)}}h5.serif.fluid-size,.h5.serif.fluid-size,.lds-text-heading-5-serif.fluid-size{font-size:var(--lds-g-typography-garamond-heading-5-fluid-font-size)}h6,.h6,.lds-text-heading-6{font:var(--lds-g-typography-ringside-heading-6-default);letter-spacing:var(--lds-g-typography-ringside-heading-6-letter-spacing)}@media (width >= 768px){h6,.h6,.lds-text-heading-6{font:var(--lds-g-typography-ringside-heading-6-desktop)}}h6.fluid-size,.h6.fluid-size,.lds-text-heading-6.fluid-size{font-size:var(--lds-g-typography-ringside-heading-6-fluid-font-size)}h6.serif,.h6.serif,.lds-text-heading-6-serif{font:var(--lds-g-typography-garamond-heading-6-default);letter-spacing:var(--lds-g-typography-garamond-heading-6-letter-spacing)}@media (width >= 768px){h6.serif,.h6.serif,.lds-text-heading-6-serif{font:var(--lds-g-typography-garamond-heading-6-desktop)}}h6.serif.fluid-size,.h6.serif.fluid-size,.lds-text-heading-6-serif.fluid-size{font-size:var(--lds-g-typography-garamond-heading-6-fluid-font-size)}.lds-text-display-1{font:var(--lds-g-typography-ringside-display-1-default);letter-spacing:var(--lds-g-typography-ringside-display-1-letter-spacing)}@media (width >= 768px){.lds-text-display-1{font:var(--lds-g-typography-ringside-display-1-desktop)}}.lds-text-display-1.fluid-size{font-size:var(--lds-g-typography-ringside-display-1-fluid-font-size)}.lds-text-display-1-serif,.lds-text-display-1.serif{font:var(--lds-g-typography-garamond-display-1-default);letter-spacing:var(--lds-g-typography-garamond-display-1-letter-spacing)}@media (width >= 768px){.lds-text-display-1-serif,.lds-text-display-1.serif{font:var(--lds-g-typography-garamond-display-1-desktop)}}.lds-text-display-1-serif.fluid-size,.lds-text-display-1.serif.fluid-size{font-size:var(--lds-g-typography-garamond-display-1-fluid-font-size)}.lds-text-display-2{font:var(--lds-g-typography-ringside-display-2-default);letter-spacing:var(--lds-g-typography-ringside-display-2-letter-spacing)}@media (width >= 768px){.lds-text-display-2{font:var(--lds-g-typography-ringside-display-2-desktop)}}.lds-text-display-2.fluid-size{font-size:var(--lds-g-typography-ringside-display-2-fluid-font-size)}.lds-text-body-large{font:var(--lds-g-typography-ringside-body-large);letter-spacing:normal}@media (width >= 768px){.lds-text-body-large{font:var(--lds-g-typography-ringside-body-large-desktop)}}.lds-text-body-medium,body{font:var(--lds-g-typography-ringside-body-medium);letter-spacing:normal}@media (width >= 768px){.lds-text-body-medium,body{font:var(--lds-g-typography-ringside-body-medium-desktop)}}.lds-text-body-small{font:var(--lds-g-typography-ringside-body-small);letter-spacing:normal}@media (width >= 768px){.lds-text-body-small{font:var(--lds-g-typography-ringside-body-small-desktop)}}.lds-text-special-caption{font:var(--lds-g-typography-ringside-special-caption-default);letter-spacing:normal}@media (width >= 768px){.lds-text-special-caption{font:var(--lds-g-typography-ringside-special-caption-desktop)}}.lds-text-special-cta-button{font:var(--lds-g-typography-ringside-special-cta-button-default);letter-spacing:normal}@media (width >= 768px){.lds-text-special-cta-button{font:var(--lds-g-typography-ringside-special-cta-button-desktop)}}.lds-text-special-cta-text-link{font:var(--lds-g-typography-ringside-special-cta-text-link-default);letter-spacing:normal}@media (width >= 768px){.lds-text-special-cta-text-link{font:var(--lds-g-typography-ringside-special-cta-text-link-desktop)}}.lds-text-special-eyebrow{font:var(--lds-g-typography-ringside-special-eyebrow-default);letter-spacing:normal}@media (width >= 768px){.lds-text-special-eyebrow{font:var(--lds-g-typography-ringside-special-eyebrow-desktop)}}body{color:var(--lds-g-color-on-surface-1);text-underline-offset:0.24em}:where(h1,h2,h3,h4,h5,h6){text-wrap:balance;overflow-wrap:break-word}h1,.h1,.lds-text-heading-1{--lds-link-underline-offset:auto;color:inherit}h1.bold,.h1.bold,.lds-text-heading-1.bold{font-weight:900}h1.serif.italic,.h1.serif.italic,.lds-text-heading-1-serif.italic{font-style:italic}h2,.h2,.lds-text-heading-2{--lds-link-underline-offset:auto;color:inherit}h2.bold,.h2.bold,.lds-text-heading-2.bold{font-weight:900}h2.serif.italic,.h2.serif.italic,.lds-text-heading-2-serif.italic{font-style:italic}h3,.h3,.lds-text-heading-3{--lds-link-underline-offset:auto;color:inherit}h3.bold,.h3.bold,.lds-text-heading-3.bold{font-weight:900}h3.serif.italic,.h3.serif.italic,.lds-text-heading-3-serif.italic{font-style:italic}h4,.h4,.lds-text-heading-4{--lds-link-underline-offset:auto;color:inherit}h4.bold,.h4.bold,.lds-text-heading-4.bold{font-weight:900}h4.serif.italic,.h4.serif.italic,.lds-text-heading-4-serif.italic{font-style:italic}h5,.h5,.lds-text-heading-5{--lds-link-underline-offset:auto;color:inherit}h5.bold,.h5.bold,.lds-text-heading-5.bold{font-weight:900}h5.serif.italic,.h5.serif.italic,.lds-text-heading-5-serif.italic{font-style:italic}h6,.h6,.lds-text-heading-6{--lds-link-underline-offset:auto;color:inherit}h6.bold,.h6.bold,.lds-text-heading-6.bold{font-weight:900}h6.serif.italic,.h6.serif.italic,.lds-text-heading-6-serif.italic{font-style:italic}:root{--_monospace-font-family:ui-monospace, \"SFMono-Regular\", monospace}pre{font-family:var(--_monospace-font-family)}b,.b,strong,.strong{font-weight:700}code,.code,samp,kbd{font-family:var(--_monospace-font-family);background-color:var(--lds-g-color-palette-teal-020);padding:0 var(--lds-g-spacing-100);text-decoration:none}del,.del{background-color:var(--lds-g-color-error-container-1);padding:0 var(--lds-g-spacing-100);text-decoration:line-through}del.no-strike,.del.no-strike{text-decoration:none}em,.em,i,.i,dfn{font-style:italic}ins,.ins{background-color:var(--lds-g-color-success-container-1);padding:0 var(--lds-g-spacing-100);text-decoration:none}mark,.mark{background-color:var(--lds-g-color-warning-container-1);padding:0 var(--lds-g-spacing-100);text-decoration:none}s,strike{text-decoration:line-through}sub,.sub,.subscript{font-size:75%;line-height:75%;vertical-align:sub}sup,.sup,.superscript{font-size:75%;line-height:75%;vertical-align:super}u{text-decoration:var(--lds-g-color-error-1) wavy underline}:where(p,li,dd){text-wrap:pretty}.lds-content-block ul,.lds-content-block ol{padding-inline-start:0.75rem;margin-inline-start:0.75rem}.lds-content-block ul li,.lds-content-block ol li{margin-block-end:0.625em}.lds-content-block ul{list-style-type:disc}.lds-content-block :is(ul,ol) :is(ul,ol) li:first-child{margin-block-start:0.625em}.lds-content-block :is(ul,ol)+:is(ul,ol){margin-block-start:2em}.lds-text-display-1-serif.italic,.lds-text-display-1.serif.italic{font-style:italic}.italic{font-style:italic}.bold{font-weight:900}.uppercase{text-transform:uppercase}";
+
+/*
+ Stencil Client Platform v4.38.2 | MIT Licensed | https://stenciljs.com
+ */
+var __defProp = Object.defineProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+
+// src/utils/constants.ts
+var SVG_NS = "http://www.w3.org/2000/svg";
+var HTML_NS = "http://www.w3.org/1999/xhtml";
+
+// src/utils/es2022-rewire-class-members.ts
+var reWireGetterSetter = (instance, hostRef) => {
+  var _a;
+  const cmpMeta = hostRef.$cmpMeta$;
+  const members = Object.entries((_a = cmpMeta.$members$) != null ? _a : {});
+  members.map(([memberName, [memberFlags]]) => {
+    if ((memberFlags & 31 /* Prop */ || memberFlags & 32 /* State */)) {
+      const ogValue = instance[memberName];
+      const ogDescriptor = getPropertyDescriptor(Object.getPrototypeOf(instance), memberName) || Object.getOwnPropertyDescriptor(instance, memberName);
+      if (ogDescriptor) {
+        Object.defineProperty(instance, memberName, {
+          get() {
+            return ogDescriptor.get.call(this);
+          },
+          set(newValue) {
+            ogDescriptor.set.call(this, newValue);
+          },
+          configurable: true,
+          enumerable: true
+        });
+      }
+      instance[memberName] = hostRef.$instanceValues$.has(memberName) ? hostRef.$instanceValues$.get(memberName) : ogValue;
+    }
+  });
+};
+function getPropertyDescriptor(obj, memberName) {
+  while (obj) {
+    const desc = Object.getOwnPropertyDescriptor(obj, memberName);
+    if (desc == null ? void 0 : desc.get) return desc;
+    obj = Object.getPrototypeOf(obj);
+  }
+  return void 0;
+}
+
+// src/client/client-host-ref.ts
+var getHostRef = (ref) => {
+  if (ref.__stencil__getHostRef) {
+    return ref.__stencil__getHostRef();
+  }
+  return void 0;
+};
+var registerInstance = (lazyInstance, hostRef) => {
+  if (!hostRef) return;
+  lazyInstance.__stencil__getHostRef = () => hostRef;
+  hostRef.$lazyInstance$ = lazyInstance;
+  {
+    reWireGetterSetter(lazyInstance, hostRef);
+  }
+};
+var registerHost = (hostElement, cmpMeta) => {
+  const hostRef = {
+    $flags$: 0,
+    $hostElement$: hostElement,
+    $cmpMeta$: cmpMeta,
+    $instanceValues$: /* @__PURE__ */ new Map(),
+    $serializerValues$: /* @__PURE__ */ new Map()
+  };
+  {
+    hostRef.$onInstancePromise$ = new Promise((r) => hostRef.$onInstanceResolve$ = r);
+  }
+  {
+    hostRef.$onReadyPromise$ = new Promise((r) => hostRef.$onReadyResolve$ = r);
+    hostElement["s-p"] = [];
+    hostElement["s-rc"] = [];
+  }
+  {
+    hostRef.$fetchedCbList$ = [];
+  }
+  const ref = hostRef;
+  hostElement.__stencil__getHostRef = () => ref;
+  return ref;
+};
+var isMemberInElement = (elm, memberName) => memberName in elm;
+var consoleError = (e, el) => (0, console.error)(e, el);
+
+// src/client/client-load-module.ts
+var cmpModules = /* @__PURE__ */ new Map();
+var loadModule = (cmpMeta, hostRef, hmrVersionId) => {
+  const exportName = cmpMeta.$tagName$.replace(/-/g, "_");
+  const bundleId = cmpMeta.$lazyBundleId$;
+  if (!bundleId) {
+    return void 0;
+  }
+  const module = cmpModules.get(bundleId) ;
+  if (module) {
+    return module[exportName];
+  }
+  /*!__STENCIL_STATIC_IMPORT_SWITCH__*/
+  return import(
+    /* @vite-ignore */
+    /* webpackInclude: /\.entry\.js$/ */
+    /* webpackExclude: /\.system\.entry\.js$/ */
+    /* webpackMode: "lazy" */
+    `./${bundleId}.entry.js${""}`
+  ).then(
+    (importedModule) => {
+      {
+        cmpModules.set(bundleId, importedModule);
+      }
+      return importedModule[exportName];
+    },
+    (e) => {
+      consoleError(e, hostRef.$hostElement$);
+    }
+  );
+};
+
+// src/client/client-style.ts
+var styles = /* @__PURE__ */ new Map();
+var HYDRATED_CSS = "{visibility:hidden}.hydrated{visibility:inherit}";
+var SLOT_FB_CSS = "slot-fb{display:contents}slot-fb[hidden]{display:none}";
+var win = typeof window !== "undefined" ? window : {};
+var plt = {
+  $flags$: 0,
+  $resourcesUrl$: "",
+  jmp: (h2) => h2(),
+  raf: (h2) => requestAnimationFrame(h2),
+  ael: (el, eventName, listener, opts) => el.addEventListener(eventName, listener, opts),
+  rel: (el, eventName, listener, opts) => el.removeEventListener(eventName, listener, opts),
+  ce: (eventName, opts) => new CustomEvent(eventName, opts)
+};
+var supportsListenerOptions = /* @__PURE__ */ (() => {
+  var _a;
+  let supportsListenerOptions2 = false;
+  try {
+    (_a = win.document) == null ? void 0 : _a.addEventListener(
+      "e",
+      null,
+      Object.defineProperty({}, "passive", {
+        get() {
+          supportsListenerOptions2 = true;
+        }
+      })
+    );
+  } catch (e) {
+  }
+  return supportsListenerOptions2;
+})();
+var promiseResolve = (v) => Promise.resolve(v);
+var supportsConstructableStylesheets = /* @__PURE__ */ (() => {
+  try {
+    new CSSStyleSheet();
+    return typeof new CSSStyleSheet().replaceSync === "function";
+  } catch (e) {
+  }
+  return false;
+})() ;
+var supportsMutableAdoptedStyleSheets = supportsConstructableStylesheets ? /* @__PURE__ */ (() => !!win.document && Object.getOwnPropertyDescriptor(win.document.adoptedStyleSheets, "length").writable)() : false;
+var queuePending = false;
+var queueDomReads = [];
+var queueDomWrites = [];
+var queueTask = (queue, write) => (cb) => {
+  queue.push(cb);
+  if (!queuePending) {
+    queuePending = true;
+    if (write && plt.$flags$ & 4 /* queueSync */) {
+      nextTick(flush);
+    } else {
+      plt.raf(flush);
+    }
+  }
+};
+var consume = (queue) => {
+  for (let i2 = 0; i2 < queue.length; i2++) {
+    try {
+      queue[i2](performance.now());
+    } catch (e) {
+      consoleError(e);
+    }
+  }
+  queue.length = 0;
+};
+var flush = () => {
+  consume(queueDomReads);
+  {
+    consume(queueDomWrites);
+    if (queuePending = queueDomReads.length > 0) {
+      plt.raf(flush);
+    }
+  }
+};
+var nextTick = (cb) => promiseResolve().then(cb);
+var writeTask = /* @__PURE__ */ queueTask(queueDomWrites, true);
+var isComplexType = (o) => {
+  o = typeof o;
+  return o === "object" || o === "function";
+};
+
+// src/utils/query-nonce-meta-tag-content.ts
+function queryNonceMetaTagContent(doc) {
+  var _a, _b, _c;
+  return (_c = (_b = (_a = doc.head) == null ? void 0 : _a.querySelector('meta[name="csp-nonce"]')) == null ? void 0 : _b.getAttribute("content")) != null ? _c : void 0;
+}
+
+// src/utils/regular-expression.ts
+var escapeRegExpSpecialCharacters = (text) => {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+};
+
+// src/utils/result.ts
+var result_exports = {};
+__export(result_exports, {
+  err: () => err,
+  map: () => map,
+  ok: () => ok,
+  unwrap: () => unwrap,
+  unwrapErr: () => unwrapErr
+});
+var ok = (value) => ({
+  isOk: true,
+  isErr: false,
+  value
+});
+var err = (value) => ({
+  isOk: false,
+  isErr: true,
+  value
+});
+function map(result, fn) {
+  if (result.isOk) {
+    const val = fn(result.value);
+    if (val instanceof Promise) {
+      return val.then((newVal) => ok(newVal));
+    } else {
+      return ok(val);
+    }
+  }
+  if (result.isErr) {
+    const value = result.value;
+    return err(value);
+  }
+  throw "should never get here";
+}
+var unwrap = (result) => {
+  if (result.isOk) {
+    return result.value;
+  } else {
+    throw result.value;
+  }
+};
+var unwrapErr = (result) => {
+  if (result.isErr) {
+    return result.value;
+  } else {
+    throw result.value;
+  }
+};
+
+// src/utils/style.ts
+function createStyleSheetIfNeededAndSupported(styles2) {
+  if (!supportsConstructableStylesheets) return void 0;
+  const sheet = new CSSStyleSheet();
+  sheet.replaceSync(styles2);
+  return sheet;
+}
+
+// src/utils/shadow-root.ts
+var globalStyleSheet;
+function createShadowRoot(cmpMeta) {
+  var _a;
+  const shadowRoot = this.attachShadow({ mode: "open" });
+  if (globalStyleSheet === void 0) globalStyleSheet = (_a = createStyleSheetIfNeededAndSupported(globalStyles)) != null ? _a : null;
+  if (globalStyleSheet) {
+    if (supportsMutableAdoptedStyleSheets) {
+      shadowRoot.adoptedStyleSheets.push(globalStyleSheet);
+    } else {
+      shadowRoot.adoptedStyleSheets = [...shadowRoot.adoptedStyleSheets, globalStyleSheet];
+    }
+  }
+}
+var createTime = (fnName, tagName = "") => {
+  {
+    return () => {
+      return;
+    };
+  }
+};
+var uniqueTime = (key, measureText) => {
+  {
+    return () => {
+      return;
+    };
+  }
+};
+var rootAppliedStyles = /* @__PURE__ */ new WeakMap();
+var registerStyle = (scopeId2, cssText, allowCS) => {
+  let style = styles.get(scopeId2);
+  if (supportsConstructableStylesheets && allowCS) {
+    style = style || new CSSStyleSheet();
+    if (typeof style === "string") {
+      style = cssText;
+    } else {
+      style.replaceSync(cssText);
+    }
+  } else {
+    style = cssText;
+  }
+  styles.set(scopeId2, style);
+};
+var addStyle = (styleContainerNode, cmpMeta, mode) => {
+  var _a;
+  const scopeId2 = getScopeId(cmpMeta);
+  const style = styles.get(scopeId2);
+  if (!win.document) {
+    return scopeId2;
+  }
+  styleContainerNode = styleContainerNode.nodeType === 11 /* DocumentFragment */ ? styleContainerNode : win.document;
+  if (style) {
+    if (typeof style === "string") {
+      styleContainerNode = styleContainerNode.head || styleContainerNode;
+      let appliedStyles = rootAppliedStyles.get(styleContainerNode);
+      let styleElm;
+      if (!appliedStyles) {
+        rootAppliedStyles.set(styleContainerNode, appliedStyles = /* @__PURE__ */ new Set());
+      }
+      if (!appliedStyles.has(scopeId2)) {
+        {
+          styleElm = win.document.createElement("style");
+          styleElm.innerHTML = style;
+          const nonce = (_a = plt.$nonce$) != null ? _a : queryNonceMetaTagContent(win.document);
+          if (nonce != null) {
+            styleElm.setAttribute("nonce", nonce);
+          }
+          if (!(cmpMeta.$flags$ & 1 /* shadowDomEncapsulation */)) {
+            if (styleContainerNode.nodeName === "HEAD") {
+              const preconnectLinks = styleContainerNode.querySelectorAll("link[rel=preconnect]");
+              const referenceNode2 = preconnectLinks.length > 0 ? preconnectLinks[preconnectLinks.length - 1].nextSibling : styleContainerNode.querySelector("style");
+              styleContainerNode.insertBefore(
+                styleElm,
+                (referenceNode2 == null ? void 0 : referenceNode2.parentNode) === styleContainerNode ? referenceNode2 : null
+              );
+            } else if ("host" in styleContainerNode) {
+              if (supportsConstructableStylesheets) {
+                const stylesheet = new CSSStyleSheet();
+                stylesheet.replaceSync(style);
+                if (supportsMutableAdoptedStyleSheets) {
+                  styleContainerNode.adoptedStyleSheets.unshift(stylesheet);
+                } else {
+                  styleContainerNode.adoptedStyleSheets = [stylesheet, ...styleContainerNode.adoptedStyleSheets];
+                }
+              } else {
+                const existingStyleContainer = styleContainerNode.querySelector("style");
+                if (existingStyleContainer) {
+                  existingStyleContainer.innerHTML = style + existingStyleContainer.innerHTML;
+                } else {
+                  styleContainerNode.prepend(styleElm);
+                }
+              }
+            } else {
+              styleContainerNode.append(styleElm);
+            }
+          }
+          if (cmpMeta.$flags$ & 1 /* shadowDomEncapsulation */) {
+            styleContainerNode.insertBefore(styleElm, null);
+          }
+        }
+        if (cmpMeta.$flags$ & 4 /* hasSlotRelocation */) {
+          styleElm.innerHTML += SLOT_FB_CSS;
+        }
+        if (appliedStyles) {
+          appliedStyles.add(scopeId2);
+        }
+      }
+    } else if (!styleContainerNode.adoptedStyleSheets.includes(style)) {
+      if (supportsMutableAdoptedStyleSheets) {
+        styleContainerNode.adoptedStyleSheets.push(style);
+      } else {
+        styleContainerNode.adoptedStyleSheets = [...styleContainerNode.adoptedStyleSheets, style];
+      }
+    }
+  }
+  return scopeId2;
+};
+var attachStyles = (hostRef) => {
+  const cmpMeta = hostRef.$cmpMeta$;
+  const elm = hostRef.$hostElement$;
+  const flags = cmpMeta.$flags$;
+  const endAttachStyles = createTime("attachStyles", cmpMeta.$tagName$);
+  const scopeId2 = addStyle(
+    elm.shadowRoot ? elm.shadowRoot : elm.getRootNode(),
+    cmpMeta);
+  if (flags & 10 /* needsScopedEncapsulation */) {
+    elm["s-sc"] = scopeId2;
+    elm.classList.add(scopeId2 + "-h");
+  }
+  endAttachStyles();
+};
+var getScopeId = (cmp, mode) => "sc-" + (cmp.$tagName$);
+var h = (nodeName, vnodeData, ...children) => {
+  let child = null;
+  let key = null;
+  let simple = false;
+  let lastSimple = false;
+  const vNodeChildren = [];
+  const walk = (c) => {
+    for (let i2 = 0; i2 < c.length; i2++) {
+      child = c[i2];
+      if (Array.isArray(child)) {
+        walk(child);
+      } else if (child != null && typeof child !== "boolean") {
+        if (simple = typeof nodeName !== "function" && !isComplexType(child)) {
+          child = String(child);
+        }
+        if (simple && lastSimple) {
+          vNodeChildren[vNodeChildren.length - 1].$text$ += child;
+        } else {
+          vNodeChildren.push(simple ? newVNode(null, child) : child);
+        }
+        lastSimple = simple;
+      }
+    }
+  };
+  walk(children);
+  if (vnodeData) {
+    if (vnodeData.key) {
+      key = vnodeData.key;
+    }
+    {
+      const classData = vnodeData.className || vnodeData.class;
+      if (classData) {
+        vnodeData.class = typeof classData !== "object" ? classData : Object.keys(classData).filter((k) => classData[k]).join(" ");
+      }
+    }
+  }
+  if (typeof nodeName === "function") {
+    return nodeName(
+      vnodeData === null ? {} : vnodeData,
+      vNodeChildren,
+      vdomFnUtils
+    );
+  }
+  const vnode = newVNode(nodeName, null);
+  vnode.$attrs$ = vnodeData;
+  if (vNodeChildren.length > 0) {
+    vnode.$children$ = vNodeChildren;
+  }
+  {
+    vnode.$key$ = key;
+  }
+  return vnode;
+};
+var newVNode = (tag, text) => {
+  const vnode = {
+    $flags$: 0,
+    $tag$: tag,
+    $text$: text,
+    $elm$: null,
+    $children$: null
+  };
+  {
+    vnode.$attrs$ = null;
+  }
+  {
+    vnode.$key$ = null;
+  }
+  return vnode;
+};
+var Host = {};
+var isHost = (node) => node && node.$tag$ === Host;
+var vdomFnUtils = {
+  forEach: (children, cb) => children.map(convertToPublic).forEach(cb),
+  map: (children, cb) => children.map(convertToPublic).map(cb).map(convertToPrivate)
+};
+var convertToPublic = (node) => ({
+  vattrs: node.$attrs$,
+  vchildren: node.$children$,
+  vkey: node.$key$,
+  vname: node.$name$,
+  vtag: node.$tag$,
+  vtext: node.$text$
+});
+var convertToPrivate = (node) => {
+  if (typeof node.vtag === "function") {
+    const vnodeData = { ...node.vattrs };
+    if (node.vkey) {
+      vnodeData.key = node.vkey;
+    }
+    if (node.vname) {
+      vnodeData.name = node.vname;
+    }
+    return h(node.vtag, vnodeData, ...node.vchildren || []);
+  }
+  const vnode = newVNode(node.vtag, node.vtext);
+  vnode.$attrs$ = node.vattrs;
+  vnode.$children$ = node.vchildren;
+  vnode.$key$ = node.vkey;
+  vnode.$name$ = node.vname;
+  return vnode;
+};
+var createSupportsRuleRe = (selector) => {
+  const safeSelector2 = escapeRegExpSpecialCharacters(selector);
+  return new RegExp(
+    // First capture group: match any context before the selector that's not inside @supports selector()
+    // Using negative lookahead to avoid matching inside @supports selector(...) condition
+    `(^|[^@]|@(?!supports\\s+selector\\s*\\([^{]*?${safeSelector2}))(${safeSelector2}\\b)`,
+    "g"
+  );
+};
+createSupportsRuleRe("::slotted");
+createSupportsRuleRe(":host");
+createSupportsRuleRe(":host-context");
+var parsePropertyValue = (propValue, propType, isFormAssociated) => {
+  if (propValue != null && !isComplexType(propValue)) {
+    if (propType & 4 /* Boolean */) {
+      {
+        return propValue === "false" ? false : propValue === "" || !!propValue;
+      }
+    }
+    if (propType & 2 /* Number */) {
+      return typeof propValue === "string" ? parseFloat(propValue) : typeof propValue === "number" ? propValue : NaN;
+    }
+    if (propType & 1 /* String */) {
+      return String(propValue);
+    }
+    return propValue;
+  }
+  return propValue;
+};
+var getElement = (ref) => {
+  var _a;
+  return (_a = getHostRef(ref)) == null ? void 0 : _a.$hostElement$ ;
+};
+
+// src/runtime/event-emitter.ts
+var createEvent = (ref, name, flags) => {
+  const elm = getElement(ref);
+  return {
+    emit: (detail) => {
+      return emitEvent(elm, name, {
+        bubbles: true,
+        composed: true,
+        cancelable: true,
+        detail
+      });
+    }
+  };
+};
+var emitEvent = (elm, name, opts) => {
+  const ev = plt.ce(name, opts);
+  elm.dispatchEvent(ev);
+  return ev;
+};
+var setAccessor = (elm, memberName, oldValue, newValue, isSvg, flags, initialRender) => {
+  if (oldValue === newValue) {
+    return;
+  }
+  let isProp = isMemberInElement(elm, memberName);
+  let ln = memberName.toLowerCase();
+  if (memberName === "class") {
+    const classList = elm.classList;
+    const oldClasses = parseClassList(oldValue);
+    let newClasses = parseClassList(newValue);
+    {
+      classList.remove(...oldClasses.filter((c) => c && !newClasses.includes(c)));
+      classList.add(...newClasses.filter((c) => c && !oldClasses.includes(c)));
+    }
+  } else if (memberName === "style") {
+    {
+      for (const prop in oldValue) {
+        if (!newValue || newValue[prop] == null) {
+          if (prop.includes("-")) {
+            elm.style.removeProperty(prop);
+          } else {
+            elm.style[prop] = "";
+          }
+        }
+      }
+    }
+    for (const prop in newValue) {
+      if (!oldValue || newValue[prop] !== oldValue[prop]) {
+        if (prop.includes("-")) {
+          elm.style.setProperty(prop, newValue[prop]);
+        } else {
+          elm.style[prop] = newValue[prop];
+        }
+      }
+    }
+  } else if (memberName === "key") ; else if (memberName === "ref") {
+    if (newValue) {
+      newValue(elm);
+    }
+  } else if ((!isProp ) && memberName[0] === "o" && memberName[1] === "n") {
+    if (memberName[2] === "-") {
+      memberName = memberName.slice(3);
+    } else if (isMemberInElement(win, ln)) {
+      memberName = ln.slice(2);
+    } else {
+      memberName = ln[2] + memberName.slice(3);
+    }
+    if (oldValue || newValue) {
+      const capture = memberName.endsWith(CAPTURE_EVENT_SUFFIX);
+      memberName = memberName.replace(CAPTURE_EVENT_REGEX, "");
+      if (oldValue) {
+        plt.rel(elm, memberName, oldValue, capture);
+      }
+      if (newValue) {
+        plt.ael(elm, memberName, newValue, capture);
+      }
+    }
+  } else {
+    const isComplex = isComplexType(newValue);
+    if ((isProp || isComplex && newValue !== null) && !isSvg) {
+      try {
+        if (!elm.tagName.includes("-")) {
+          const n = newValue == null ? "" : newValue;
+          if (memberName === "list") {
+            isProp = false;
+          } else if (oldValue == null || elm[memberName] != n) {
+            if (typeof elm.__lookupSetter__(memberName) === "function") {
+              elm[memberName] = n;
+            } else {
+              elm.setAttribute(memberName, n);
+            }
+          }
+        } else if (elm[memberName] !== newValue) {
+          elm[memberName] = newValue;
+        }
+      } catch (e) {
+      }
+    }
+    if (newValue == null || newValue === false) {
+      if (newValue !== false || elm.getAttribute(memberName) === "") {
+        {
+          elm.removeAttribute(memberName);
+        }
+      }
+    } else if ((!isProp || flags & 4 /* isHost */ || isSvg) && !isComplex && elm.nodeType === 1 /* ElementNode */) {
+      newValue = newValue === true ? "" : newValue;
+      {
+        elm.setAttribute(memberName, newValue);
+      }
+    }
+  }
+};
+var parseClassListRegex = /\s/;
+var parseClassList = (value) => {
+  if (typeof value === "object" && value && "baseVal" in value) {
+    value = value.baseVal;
+  }
+  if (!value || typeof value !== "string") {
+    return [];
+  }
+  return value.split(parseClassListRegex);
+};
+var CAPTURE_EVENT_SUFFIX = "Capture";
+var CAPTURE_EVENT_REGEX = new RegExp(CAPTURE_EVENT_SUFFIX + "$");
+
+// src/runtime/vdom/update-element.ts
+var updateElement = (oldVnode, newVnode, isSvgMode2, isInitialRender) => {
+  const elm = newVnode.$elm$.nodeType === 11 /* DocumentFragment */ && newVnode.$elm$.host ? newVnode.$elm$.host : newVnode.$elm$;
+  const oldVnodeAttrs = oldVnode && oldVnode.$attrs$ || {};
+  const newVnodeAttrs = newVnode.$attrs$ || {};
+  {
+    for (const memberName of sortedAttrNames(Object.keys(oldVnodeAttrs))) {
+      if (!(memberName in newVnodeAttrs)) {
+        setAccessor(
+          elm,
+          memberName,
+          oldVnodeAttrs[memberName],
+          void 0,
+          isSvgMode2,
+          newVnode.$flags$);
+      }
+    }
+  }
+  for (const memberName of sortedAttrNames(Object.keys(newVnodeAttrs))) {
+    setAccessor(
+      elm,
+      memberName,
+      oldVnodeAttrs[memberName],
+      newVnodeAttrs[memberName],
+      isSvgMode2,
+      newVnode.$flags$);
+  }
+};
+function sortedAttrNames(attrNames) {
+  return attrNames.includes("ref") ? (
+    // we need to sort these to ensure that `'ref'` is the last attr
+    [...attrNames.filter((attr) => attr !== "ref"), "ref"]
+  ) : (
+    // no need to sort, return the original array
+    attrNames
+  );
+}
+var hostTagName;
+var isSvgMode = false;
+var createElm = (oldParentVNode, newParentVNode, childIndex) => {
+  const newVNode2 = newParentVNode.$children$[childIndex];
+  let i2 = 0;
+  let elm;
+  let childNode;
+  if (newVNode2.$text$ !== null) {
+    elm = newVNode2.$elm$ = win.document.createTextNode(newVNode2.$text$);
+  } else {
+    if (!isSvgMode) {
+      isSvgMode = newVNode2.$tag$ === "svg";
+    }
+    if (!win.document) {
+      throw new Error(
+        "You are trying to render a Stencil component in an environment that doesn't support the DOM. Make sure to populate the [`window`](https://developer.mozilla.org/en-US/docs/Web/API/Window/window) object before rendering a component."
+      );
+    }
+    elm = newVNode2.$elm$ = win.document.createElementNS(
+      isSvgMode ? SVG_NS : HTML_NS,
+      newVNode2.$tag$
+    ) ;
+    if (isSvgMode && newVNode2.$tag$ === "foreignObject") {
+      isSvgMode = false;
+    }
+    {
+      updateElement(null, newVNode2, isSvgMode);
+    }
+    if (newVNode2.$children$) {
+      for (i2 = 0; i2 < newVNode2.$children$.length; ++i2) {
+        childNode = createElm(oldParentVNode, newVNode2, i2);
+        if (childNode) {
+          elm.appendChild(childNode);
+        }
+      }
+    }
+    {
+      if (newVNode2.$tag$ === "svg") {
+        isSvgMode = false;
+      } else if (elm.tagName === "foreignObject") {
+        isSvgMode = true;
+      }
+    }
+  }
+  elm["s-hn"] = hostTagName;
+  return elm;
+};
+var addVnodes = (parentElm, before, parentVNode, vnodes, startIdx, endIdx) => {
+  let containerElm = parentElm;
+  let childNode;
+  if (containerElm.shadowRoot && containerElm.tagName === hostTagName) {
+    containerElm = containerElm.shadowRoot;
+  }
+  for (; startIdx <= endIdx; ++startIdx) {
+    if (vnodes[startIdx]) {
+      childNode = createElm(null, parentVNode, startIdx);
+      if (childNode) {
+        vnodes[startIdx].$elm$ = childNode;
+        insertBefore(containerElm, childNode, before);
+      }
+    }
+  }
+};
+var removeVnodes = (vnodes, startIdx, endIdx) => {
+  for (let index = startIdx; index <= endIdx; ++index) {
+    const vnode = vnodes[index];
+    if (vnode) {
+      const elm = vnode.$elm$;
+      nullifyVNodeRefs(vnode);
+      if (elm) {
+        elm.remove();
+      }
+    }
+  }
+};
+var updateChildren = (parentElm, oldCh, newVNode2, newCh, isInitialRender = false) => {
+  let oldStartIdx = 0;
+  let newStartIdx = 0;
+  let idxInOld = 0;
+  let i2 = 0;
+  let oldEndIdx = oldCh.length - 1;
+  let oldStartVnode = oldCh[0];
+  let oldEndVnode = oldCh[oldEndIdx];
+  let newEndIdx = newCh.length - 1;
+  let newStartVnode = newCh[0];
+  let newEndVnode = newCh[newEndIdx];
+  let node;
+  let elmToMove;
+  while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
+    if (oldStartVnode == null) {
+      oldStartVnode = oldCh[++oldStartIdx];
+    } else if (oldEndVnode == null) {
+      oldEndVnode = oldCh[--oldEndIdx];
+    } else if (newStartVnode == null) {
+      newStartVnode = newCh[++newStartIdx];
+    } else if (newEndVnode == null) {
+      newEndVnode = newCh[--newEndIdx];
+    } else if (isSameVnode(oldStartVnode, newStartVnode, isInitialRender)) {
+      patch(oldStartVnode, newStartVnode, isInitialRender);
+      oldStartVnode = oldCh[++oldStartIdx];
+      newStartVnode = newCh[++newStartIdx];
+    } else if (isSameVnode(oldEndVnode, newEndVnode, isInitialRender)) {
+      patch(oldEndVnode, newEndVnode, isInitialRender);
+      oldEndVnode = oldCh[--oldEndIdx];
+      newEndVnode = newCh[--newEndIdx];
+    } else if (isSameVnode(oldStartVnode, newEndVnode, isInitialRender)) {
+      patch(oldStartVnode, newEndVnode, isInitialRender);
+      insertBefore(parentElm, oldStartVnode.$elm$, oldEndVnode.$elm$.nextSibling);
+      oldStartVnode = oldCh[++oldStartIdx];
+      newEndVnode = newCh[--newEndIdx];
+    } else if (isSameVnode(oldEndVnode, newStartVnode, isInitialRender)) {
+      patch(oldEndVnode, newStartVnode, isInitialRender);
+      insertBefore(parentElm, oldEndVnode.$elm$, oldStartVnode.$elm$);
+      oldEndVnode = oldCh[--oldEndIdx];
+      newStartVnode = newCh[++newStartIdx];
+    } else {
+      idxInOld = -1;
+      {
+        for (i2 = oldStartIdx; i2 <= oldEndIdx; ++i2) {
+          if (oldCh[i2] && oldCh[i2].$key$ !== null && oldCh[i2].$key$ === newStartVnode.$key$) {
+            idxInOld = i2;
+            break;
+          }
+        }
+      }
+      if (idxInOld >= 0) {
+        elmToMove = oldCh[idxInOld];
+        if (elmToMove.$tag$ !== newStartVnode.$tag$) {
+          node = createElm(oldCh && oldCh[newStartIdx], newVNode2, idxInOld);
+        } else {
+          patch(elmToMove, newStartVnode, isInitialRender);
+          oldCh[idxInOld] = void 0;
+          node = elmToMove.$elm$;
+        }
+        newStartVnode = newCh[++newStartIdx];
+      } else {
+        node = createElm(oldCh && oldCh[newStartIdx], newVNode2, newStartIdx);
+        newStartVnode = newCh[++newStartIdx];
+      }
+      if (node) {
+        {
+          insertBefore(oldStartVnode.$elm$.parentNode, node, oldStartVnode.$elm$);
+        }
+      }
+    }
+  }
+  if (oldStartIdx > oldEndIdx) {
+    addVnodes(
+      parentElm,
+      newCh[newEndIdx + 1] == null ? null : newCh[newEndIdx + 1].$elm$,
+      newVNode2,
+      newCh,
+      newStartIdx,
+      newEndIdx
+    );
+  } else if (newStartIdx > newEndIdx) {
+    removeVnodes(oldCh, oldStartIdx, oldEndIdx);
+  }
+};
+var isSameVnode = (leftVNode, rightVNode, isInitialRender = false) => {
+  if (leftVNode.$tag$ === rightVNode.$tag$) {
+    if (!isInitialRender) {
+      return leftVNode.$key$ === rightVNode.$key$;
+    }
+    if (isInitialRender && !leftVNode.$key$ && rightVNode.$key$) {
+      leftVNode.$key$ = rightVNode.$key$;
+    }
+    return true;
+  }
+  return false;
+};
+var patch = (oldVNode, newVNode2, isInitialRender = false) => {
+  const elm = newVNode2.$elm$ = oldVNode.$elm$;
+  const oldChildren = oldVNode.$children$;
+  const newChildren = newVNode2.$children$;
+  const tag = newVNode2.$tag$;
+  const text = newVNode2.$text$;
+  if (text === null) {
+    {
+      isSvgMode = tag === "svg" ? true : tag === "foreignObject" ? false : isSvgMode;
+    }
+    {
+      updateElement(oldVNode, newVNode2, isSvgMode);
+    }
+    if (oldChildren !== null && newChildren !== null) {
+      updateChildren(elm, oldChildren, newVNode2, newChildren, isInitialRender);
+    } else if (newChildren !== null) {
+      if (oldVNode.$text$ !== null) {
+        elm.textContent = "";
+      }
+      addVnodes(elm, null, newVNode2, newChildren, 0, newChildren.length - 1);
+    } else if (
+      // don't do this on initial render as it can cause non-hydrated content to be removed
+      !isInitialRender && BUILD.updatable && oldChildren !== null
+    ) {
+      removeVnodes(oldChildren, 0, oldChildren.length - 1);
+    } else ;
+    if (isSvgMode && tag === "svg") {
+      isSvgMode = false;
+    }
+  } else if (oldVNode.$text$ !== text) {
+    elm.data = text;
+  }
+};
+var nullifyVNodeRefs = (vNode) => {
+  {
+    vNode.$attrs$ && vNode.$attrs$.ref && vNode.$attrs$.ref(null);
+    vNode.$children$ && vNode.$children$.map(nullifyVNodeRefs);
+  }
+};
+var insertBefore = (parent, newNode, reference) => {
+  {
+    return parent == null ? void 0 : parent.insertBefore(newNode, reference);
+  }
+};
+var renderVdom = (hostRef, renderFnResults, isInitialLoad = false) => {
+  const hostElm = hostRef.$hostElement$;
+  const cmpMeta = hostRef.$cmpMeta$;
+  const oldVNode = hostRef.$vnode$ || newVNode(null, null);
+  const isHostElement = isHost(renderFnResults);
+  const rootVnode = isHostElement ? renderFnResults : h(null, null, renderFnResults);
+  hostTagName = hostElm.tagName;
+  if (cmpMeta.$attrsToReflect$) {
+    rootVnode.$attrs$ = rootVnode.$attrs$ || {};
+    cmpMeta.$attrsToReflect$.forEach(([propName, attribute]) => {
+      {
+        rootVnode.$attrs$[attribute] = hostElm[propName];
+      }
+    });
+  }
+  if (isInitialLoad && rootVnode.$attrs$) {
+    for (const key of Object.keys(rootVnode.$attrs$)) {
+      if (hostElm.hasAttribute(key) && !["key", "ref", "style", "class"].includes(key)) {
+        rootVnode.$attrs$[key] = hostElm[key];
+      }
+    }
+  }
+  rootVnode.$tag$ = null;
+  rootVnode.$flags$ |= 4 /* isHost */;
+  hostRef.$vnode$ = rootVnode;
+  rootVnode.$elm$ = oldVNode.$elm$ = hostElm.shadowRoot || hostElm ;
+  patch(oldVNode, rootVnode, isInitialLoad);
+};
+
+// src/runtime/update-component.ts
+var attachToAncestor = (hostRef, ancestorComponent) => {
+  if (ancestorComponent && !hostRef.$onRenderResolve$ && ancestorComponent["s-p"]) {
+    const index = ancestorComponent["s-p"].push(
+      new Promise(
+        (r) => hostRef.$onRenderResolve$ = () => {
+          ancestorComponent["s-p"].splice(index - 1, 1);
+          r();
+        }
+      )
+    );
+  }
+};
+var scheduleUpdate = (hostRef, isInitialLoad) => {
+  {
+    hostRef.$flags$ |= 16 /* isQueuedForUpdate */;
+  }
+  if (hostRef.$flags$ & 4 /* isWaitingForChildren */) {
+    hostRef.$flags$ |= 512 /* needsRerender */;
+    return;
+  }
+  attachToAncestor(hostRef, hostRef.$ancestorComponent$);
+  const dispatch = () => dispatchHooks(hostRef, isInitialLoad);
+  if (isInitialLoad) {
+    queueMicrotask(() => {
+      dispatch();
+    });
+    return;
+  }
+  return writeTask(dispatch) ;
+};
+var dispatchHooks = (hostRef, isInitialLoad) => {
+  const elm = hostRef.$hostElement$;
+  const endSchedule = createTime("scheduleUpdate", hostRef.$cmpMeta$.$tagName$);
+  const instance = hostRef.$lazyInstance$ ;
+  if (!instance) {
+    throw new Error(
+      `Can't render component <${elm.tagName.toLowerCase()} /> with invalid Stencil runtime! Make sure this imported component is compiled with a \`externalRuntime: true\` flag. For more information, please refer to https://stenciljs.com/docs/custom-elements#externalruntime`
+    );
+  }
+  let maybePromise;
+  if (isInitialLoad) {
+    {
+      {
+        hostRef.$flags$ |= 256 /* isListenReady */;
+        if (hostRef.$queuedListeners$) {
+          hostRef.$queuedListeners$.map(([methodName, event]) => safeCall(instance, methodName, event, elm));
+          hostRef.$queuedListeners$ = void 0;
+        }
+      }
+      if (hostRef.$fetchedCbList$.length) {
+        hostRef.$fetchedCbList$.forEach((cb) => cb(elm));
+      }
+    }
+    maybePromise = safeCall(instance, "componentWillLoad", void 0, elm);
+  } else {
+    maybePromise = safeCall(instance, "componentWillUpdate", void 0, elm);
+  }
+  maybePromise = enqueue(maybePromise, () => safeCall(instance, "componentWillRender", void 0, elm));
+  endSchedule();
+  return enqueue(maybePromise, () => updateComponent(hostRef, instance, isInitialLoad));
+};
+var enqueue = (maybePromise, fn) => isPromisey(maybePromise) ? maybePromise.then(fn).catch((err2) => {
+  console.error(err2);
+  fn();
+}) : fn();
+var isPromisey = (maybePromise) => maybePromise instanceof Promise || maybePromise && maybePromise.then && typeof maybePromise.then === "function";
+var updateComponent = async (hostRef, instance, isInitialLoad) => {
+  var _a;
+  const elm = hostRef.$hostElement$;
+  const endUpdate = createTime("update", hostRef.$cmpMeta$.$tagName$);
+  const rc = elm["s-rc"];
+  if (isInitialLoad) {
+    attachStyles(hostRef);
+  }
+  const endRender = createTime("render", hostRef.$cmpMeta$.$tagName$);
+  {
+    callRender(hostRef, instance, elm, isInitialLoad);
+  }
+  if (rc) {
+    rc.map((cb) => cb());
+    elm["s-rc"] = void 0;
+  }
+  endRender();
+  endUpdate();
+  {
+    const childrenPromises = (_a = elm["s-p"]) != null ? _a : [];
+    const postUpdate = () => postUpdateComponent(hostRef);
+    if (childrenPromises.length === 0) {
+      postUpdate();
+    } else {
+      Promise.all(childrenPromises).then(postUpdate);
+      hostRef.$flags$ |= 4 /* isWaitingForChildren */;
+      childrenPromises.length = 0;
+    }
+  }
+};
+var callRender = (hostRef, instance, elm, isInitialLoad) => {
+  try {
+    instance = instance.render() ;
+    {
+      hostRef.$flags$ &= -17 /* isQueuedForUpdate */;
+    }
+    {
+      hostRef.$flags$ |= 2 /* hasRendered */;
+    }
+    {
+      {
+        {
+          renderVdom(hostRef, instance, isInitialLoad);
+        }
+      }
+    }
+  } catch (e) {
+    consoleError(e, hostRef.$hostElement$);
+  }
+  return null;
+};
+var postUpdateComponent = (hostRef) => {
+  const tagName = hostRef.$cmpMeta$.$tagName$;
+  const elm = hostRef.$hostElement$;
+  const endPostUpdate = createTime("postUpdate", tagName);
+  const instance = hostRef.$lazyInstance$ ;
+  const ancestorComponent = hostRef.$ancestorComponent$;
+  safeCall(instance, "componentDidRender", void 0, elm);
+  if (!(hostRef.$flags$ & 64 /* hasLoadedComponent */)) {
+    hostRef.$flags$ |= 64 /* hasLoadedComponent */;
+    {
+      addHydratedFlag(elm);
+    }
+    safeCall(instance, "componentDidLoad", void 0, elm);
+    endPostUpdate();
+    {
+      hostRef.$onReadyResolve$(elm);
+      if (!ancestorComponent) {
+        appDidLoad();
+      }
+    }
+  } else {
+    safeCall(instance, "componentDidUpdate", void 0, elm);
+    endPostUpdate();
+  }
+  {
+    hostRef.$onInstanceResolve$(elm);
+  }
+  {
+    if (hostRef.$onRenderResolve$) {
+      hostRef.$onRenderResolve$();
+      hostRef.$onRenderResolve$ = void 0;
+    }
+    if (hostRef.$flags$ & 512 /* needsRerender */) {
+      nextTick(() => scheduleUpdate(hostRef, false));
+    }
+    hostRef.$flags$ &= -517;
+  }
+};
+var appDidLoad = (who) => {
+  nextTick(() => emitEvent(win, "appload", { detail: { namespace: NAMESPACE } }));
+};
+var safeCall = (instance, method, arg, elm) => {
+  if (instance && instance[method]) {
+    try {
+      return instance[method](arg);
+    } catch (e) {
+      consoleError(e, elm);
+    }
+  }
+  return void 0;
+};
+var addHydratedFlag = (elm) => {
+  var _a;
+  return elm.classList.add((_a = BUILD.hydratedSelectorName) != null ? _a : "hydrated") ;
+};
+
+// src/runtime/set-value.ts
+var getValue = (ref, propName) => getHostRef(ref).$instanceValues$.get(propName);
+var setValue = (ref, propName, newVal, cmpMeta) => {
+  const hostRef = getHostRef(ref);
+  if (!hostRef) {
+    return;
+  }
+  if (!hostRef) {
+    throw new Error(
+      `Couldn't find host element for "${cmpMeta.$tagName$}" as it is unknown to this Stencil runtime. This usually happens when integrating a 3rd party Stencil component with another Stencil component or application. Please reach out to the maintainers of the 3rd party Stencil component or report this on the Stencil Discord server (https://chat.stenciljs.com) or comment on this similar [GitHub issue](https://github.com/stenciljs/core/issues/5457).`
+    );
+  }
+  const elm = hostRef.$hostElement$ ;
+  const oldVal = hostRef.$instanceValues$.get(propName);
+  const flags = hostRef.$flags$;
+  const instance = hostRef.$lazyInstance$ ;
+  newVal = parsePropertyValue(
+    newVal,
+    cmpMeta.$members$[propName][0]);
+  const areBothNaN = Number.isNaN(oldVal) && Number.isNaN(newVal);
+  const didValueChange = newVal !== oldVal && !areBothNaN;
+  if ((!(flags & 8 /* isConstructingInstance */) || oldVal === void 0) && didValueChange) {
+    hostRef.$instanceValues$.set(propName, newVal);
+    if (instance) {
+      if (cmpMeta.$watchers$ && flags & 128 /* isWatchReady */) {
+        const watchMethods = cmpMeta.$watchers$[propName];
+        if (watchMethods) {
+          watchMethods.map((watchMethodName) => {
+            try {
+              instance[watchMethodName](newVal, oldVal, propName);
+            } catch (e) {
+              consoleError(e, elm);
+            }
+          });
+        }
+      }
+      if ((flags & (2 /* hasRendered */ | 16 /* isQueuedForUpdate */)) === 2 /* hasRendered */) {
+        if (instance.componentShouldUpdate) {
+          if (instance.componentShouldUpdate(newVal, oldVal, propName) === false) {
+            return;
+          }
+        }
+        scheduleUpdate(hostRef, false);
+      }
+    }
+  }
+};
+
+// src/runtime/proxy-component.ts
+var proxyComponent = (Cstr, cmpMeta, flags) => {
+  var _a, _b;
+  const prototype = Cstr.prototype;
+  if (cmpMeta.$members$ || BUILD.propChangeCallback) {
+    {
+      if (Cstr.watchers && !cmpMeta.$watchers$) {
+        cmpMeta.$watchers$ = Cstr.watchers;
+      }
+      if (Cstr.deserializers && !cmpMeta.$deserializers$) {
+        cmpMeta.$deserializers$ = Cstr.deserializers;
+      }
+      if (Cstr.serializers && !cmpMeta.$serializers$) {
+        cmpMeta.$serializers$ = Cstr.serializers;
+      }
+    }
+    const members = Object.entries((_a = cmpMeta.$members$) != null ? _a : {});
+    members.map(([memberName, [memberFlags]]) => {
+      if ((memberFlags & 31 /* Prop */ || (flags & 2 /* proxyState */) && memberFlags & 32 /* State */)) {
+        const { get: origGetter, set: origSetter } = Object.getOwnPropertyDescriptor(prototype, memberName) || {};
+        if (origGetter) cmpMeta.$members$[memberName][0] |= 2048 /* Getter */;
+        if (origSetter) cmpMeta.$members$[memberName][0] |= 4096 /* Setter */;
+        if (flags & 1 /* isElementConstructor */ || !origGetter) {
+          Object.defineProperty(prototype, memberName, {
+            get() {
+              {
+                if ((cmpMeta.$members$[memberName][0] & 2048 /* Getter */) === 0) {
+                  return getValue(this, memberName);
+                }
+                const ref = getHostRef(this);
+                const instance = ref ? ref.$lazyInstance$ : prototype;
+                if (!instance) return;
+                return instance[memberName];
+              }
+            },
+            configurable: true,
+            enumerable: true
+          });
+        }
+        Object.defineProperty(prototype, memberName, {
+          set(newValue) {
+            const ref = getHostRef(this);
+            if (!ref) {
+              return;
+            }
+            if (origSetter) {
+              const currentValue = memberFlags & 32 /* State */ ? this[memberName] : ref.$hostElement$[memberName];
+              if (typeof currentValue === "undefined" && ref.$instanceValues$.get(memberName)) {
+                newValue = ref.$instanceValues$.get(memberName);
+              }
+              origSetter.apply(this, [
+                parsePropertyValue(
+                  newValue,
+                  memberFlags)
+              ]);
+              newValue = memberFlags & 32 /* State */ ? this[memberName] : ref.$hostElement$[memberName];
+              setValue(this, memberName, newValue, cmpMeta);
+              return;
+            }
+            {
+              if ((flags & 1 /* isElementConstructor */) === 0 || (cmpMeta.$members$[memberName][0] & 4096 /* Setter */) === 0) {
+                setValue(this, memberName, newValue, cmpMeta);
+                if (flags & 1 /* isElementConstructor */ && !ref.$lazyInstance$) {
+                  ref.$fetchedCbList$.push(() => {
+                    if (cmpMeta.$members$[memberName][0] & 4096 /* Setter */ && ref.$lazyInstance$[memberName] !== ref.$instanceValues$.get(memberName)) {
+                      ref.$lazyInstance$[memberName] = newValue;
+                    }
+                  });
+                }
+                return;
+              }
+              const setterSetVal = () => {
+                const currentValue = ref.$lazyInstance$[memberName];
+                if (!ref.$instanceValues$.get(memberName) && currentValue) {
+                  ref.$instanceValues$.set(memberName, currentValue);
+                }
+                ref.$lazyInstance$[memberName] = parsePropertyValue(
+                  newValue,
+                  memberFlags);
+                setValue(this, memberName, ref.$lazyInstance$[memberName], cmpMeta);
+              };
+              if (ref.$lazyInstance$) {
+                setterSetVal();
+              } else {
+                ref.$fetchedCbList$.push(() => {
+                  setterSetVal();
+                });
+              }
+            }
+          }
+        });
+      } else if (flags & 1 /* isElementConstructor */ && memberFlags & 64 /* Method */) {
+        Object.defineProperty(prototype, memberName, {
+          value(...args) {
+            var _a2;
+            const ref = getHostRef(this);
+            return (_a2 = ref == null ? void 0 : ref.$onInstancePromise$) == null ? void 0 : _a2.then(() => {
+              var _a3;
+              return (_a3 = ref.$lazyInstance$) == null ? void 0 : _a3[memberName](...args);
+            });
+          }
+        });
+      }
+    });
+    if ((flags & 1 /* isElementConstructor */)) {
+      const attrNameToPropName = /* @__PURE__ */ new Map();
+      prototype.attributeChangedCallback = function(attrName, oldValue, newValue) {
+        plt.jmp(() => {
+          var _a2;
+          const propName = attrNameToPropName.get(attrName);
+          const hostRef = getHostRef(this);
+          if (this.hasOwnProperty(propName) && BUILD.lazyLoad) {
+            newValue = this[propName];
+            delete this[propName];
+          }
+          if (prototype.hasOwnProperty(propName) && typeof this[propName] === "number" && // cast type to number to avoid TS compiler issues
+          this[propName] == newValue) {
+            return;
+          } else if (propName == null) {
+            const flags2 = hostRef == null ? void 0 : hostRef.$flags$;
+            if (hostRef && flags2 && !(flags2 & 8 /* isConstructingInstance */) && flags2 & 128 /* isWatchReady */ && newValue !== oldValue) {
+              const instance = hostRef.$lazyInstance$ ;
+              const entry = (_a2 = cmpMeta.$watchers$) == null ? void 0 : _a2[attrName];
+              entry == null ? void 0 : entry.forEach((callbackName) => {
+                if (instance[callbackName] != null) {
+                  instance[callbackName].call(instance, newValue, oldValue, attrName);
+                }
+              });
+            }
+            return;
+          }
+          const propFlags = members.find(([m]) => m === propName);
+          if (propFlags && propFlags[1][0] & 4 /* Boolean */) {
+            newValue = newValue === null || newValue === "false" ? false : true;
+          }
+          const propDesc = Object.getOwnPropertyDescriptor(prototype, propName);
+          if (newValue != this[propName] && (!propDesc.get || !!propDesc.set)) {
+            this[propName] = newValue;
+          }
+        });
+      };
+      Cstr.observedAttributes = Array.from(
+        /* @__PURE__ */ new Set([
+          ...Object.keys((_b = cmpMeta.$watchers$) != null ? _b : {}),
+          ...members.filter(([_, m]) => m[0] & 31 /* HasAttribute */).map(([propName, m]) => {
+            var _a2;
+            const attrName = m[1] || propName;
+            attrNameToPropName.set(attrName, propName);
+            if (m[0] & 512 /* ReflectAttr */) {
+              (_a2 = cmpMeta.$attrsToReflect$) == null ? void 0 : _a2.push([propName, attrName]);
+            }
+            return attrName;
+          })
+        ])
+      );
+    }
+  }
+  return Cstr;
+};
+
+// src/runtime/initialize-component.ts
+var initializeComponent = async (elm, hostRef, cmpMeta, hmrVersionId) => {
+  let Cstr;
+  if ((hostRef.$flags$ & 32 /* hasInitializedComponent */) === 0) {
+    hostRef.$flags$ |= 32 /* hasInitializedComponent */;
+    const bundleId = cmpMeta.$lazyBundleId$;
+    if (bundleId) {
+      const CstrImport = loadModule(cmpMeta, hostRef);
+      if (CstrImport && "then" in CstrImport) {
+        const endLoad = uniqueTime();
+        Cstr = await CstrImport;
+        endLoad();
+      } else {
+        Cstr = CstrImport;
+      }
+      if (!Cstr) {
+        throw new Error(`Constructor for "${cmpMeta.$tagName$}#${hostRef.$modeName$}" was not found`);
+      }
+      if (!Cstr.isProxied) {
+        {
+          cmpMeta.$watchers$ = Cstr.watchers;
+          cmpMeta.$serializers$ = Cstr.serializers;
+          cmpMeta.$deserializers$ = Cstr.deserializers;
+        }
+        proxyComponent(Cstr, cmpMeta, 2 /* proxyState */);
+        Cstr.isProxied = true;
+      }
+      const endNewInstance = createTime("createInstance", cmpMeta.$tagName$);
+      {
+        hostRef.$flags$ |= 8 /* isConstructingInstance */;
+      }
+      try {
+        new Cstr(hostRef);
+      } catch (e) {
+        consoleError(e, elm);
+      }
+      {
+        hostRef.$flags$ &= -9 /* isConstructingInstance */;
+      }
+      {
+        hostRef.$flags$ |= 128 /* isWatchReady */;
+      }
+      endNewInstance();
+      fireConnectedCallback(hostRef.$lazyInstance$, elm);
+    } else {
+      Cstr = elm.constructor;
+      const cmpTag = elm.localName;
+      customElements.whenDefined(cmpTag).then(() => hostRef.$flags$ |= 128 /* isWatchReady */);
+    }
+    if (Cstr && Cstr.style) {
+      let style;
+      if (typeof Cstr.style === "string") {
+        style = Cstr.style;
+      }
+      const scopeId2 = getScopeId(cmpMeta);
+      if (!styles.has(scopeId2)) {
+        const endRegisterStyles = createTime("registerStyles", cmpMeta.$tagName$);
+        registerStyle(scopeId2, style, !!(cmpMeta.$flags$ & 1 /* shadowDomEncapsulation */));
+        endRegisterStyles();
+      }
+    }
+  }
+  const ancestorComponent = hostRef.$ancestorComponent$;
+  const schedule = () => scheduleUpdate(hostRef, true);
+  if (ancestorComponent && ancestorComponent["s-rc"]) {
+    ancestorComponent["s-rc"].push(schedule);
+  } else {
+    schedule();
+  }
+};
+var fireConnectedCallback = (instance, elm) => {
+  {
+    safeCall(instance, "connectedCallback", void 0, elm);
+  }
+};
+
+// src/runtime/connected-callback.ts
+var connectedCallback = (elm) => {
+  if ((plt.$flags$ & 1 /* isTmpDisconnected */) === 0) {
+    const hostRef = getHostRef(elm);
+    if (!hostRef) {
+      return;
+    }
+    const cmpMeta = hostRef.$cmpMeta$;
+    const endConnected = createTime("connectedCallback", cmpMeta.$tagName$);
+    if (!(hostRef.$flags$ & 1 /* hasConnected */)) {
+      hostRef.$flags$ |= 1 /* hasConnected */;
+      {
+        let ancestorComponent = elm;
+        while (ancestorComponent = ancestorComponent.parentNode || ancestorComponent.host) {
+          if (ancestorComponent["s-p"]) {
+            attachToAncestor(hostRef, hostRef.$ancestorComponent$ = ancestorComponent);
+            break;
+          }
+        }
+      }
+      if (cmpMeta.$members$) {
+        Object.entries(cmpMeta.$members$).map(([memberName, [memberFlags]]) => {
+          if (memberFlags & 31 /* Prop */ && memberName in elm && elm[memberName] !== Object.prototype[memberName]) {
+            const value = elm[memberName];
+            delete elm[memberName];
+            elm[memberName] = value;
+          }
+        });
+      }
+      {
+        initializeComponent(elm, hostRef, cmpMeta);
+      }
+    } else {
+      addHostEventListeners(elm, hostRef, cmpMeta.$listeners$);
+      if (hostRef == null ? void 0 : hostRef.$lazyInstance$) {
+        fireConnectedCallback(hostRef.$lazyInstance$, elm);
+      } else if (hostRef == null ? void 0 : hostRef.$onReadyPromise$) {
+        hostRef.$onReadyPromise$.then(() => fireConnectedCallback(hostRef.$lazyInstance$, elm));
+      }
+    }
+    endConnected();
+  }
+};
+var disconnectInstance = (instance, elm) => {
+  {
+    safeCall(instance, "disconnectedCallback", void 0, elm || instance);
+  }
+};
+var disconnectedCallback = async (elm) => {
+  if ((plt.$flags$ & 1 /* isTmpDisconnected */) === 0) {
+    const hostRef = getHostRef(elm);
+    {
+      if (hostRef == null ? void 0 : hostRef.$rmListeners$) {
+        hostRef.$rmListeners$.map((rmListener) => rmListener());
+        hostRef.$rmListeners$ = void 0;
+      }
+    }
+    if (hostRef == null ? void 0 : hostRef.$lazyInstance$) {
+      disconnectInstance(hostRef.$lazyInstance$, elm);
+    } else if (hostRef == null ? void 0 : hostRef.$onReadyPromise$) {
+      hostRef.$onReadyPromise$.then(() => disconnectInstance(hostRef.$lazyInstance$, elm));
+    }
+  }
+  if (rootAppliedStyles.has(elm)) {
+    rootAppliedStyles.delete(elm);
+  }
+  if (elm.shadowRoot && rootAppliedStyles.has(elm.shadowRoot)) {
+    rootAppliedStyles.delete(elm.shadowRoot);
+  }
+};
+
+// src/runtime/bootstrap-lazy.ts
+var bootstrapLazy = (lazyBundles, options = {}) => {
+  var _a;
+  if (!win.document) {
+    console.warn("Stencil: No document found. Skipping bootstrapping lazy components.");
+    return;
+  }
+  const endBootstrap = createTime();
+  const cmpTags = [];
+  const exclude = options.exclude || [];
+  const customElements2 = win.customElements;
+  const head = win.document.head;
+  const metaCharset = /* @__PURE__ */ head.querySelector("meta[charset]");
+  const dataStyles = /* @__PURE__ */ win.document.createElement("style");
+  const deferredConnectedCallbacks = [];
+  let appLoadFallback;
+  let isBootstrapping = true;
+  Object.assign(plt, options);
+  plt.$resourcesUrl$ = new URL(options.resourcesUrl || "./", win.document.baseURI).href;
+  let hasSlotRelocation = false;
+  lazyBundles.map((lazyBundle) => {
+    lazyBundle[1].map((compactMeta) => {
+      var _a2, _b, _c;
+      const cmpMeta = {
+        $flags$: compactMeta[0],
+        $tagName$: compactMeta[1],
+        $members$: compactMeta[2],
+        $listeners$: compactMeta[3]
+      };
+      if (cmpMeta.$flags$ & 4 /* hasSlotRelocation */) {
+        hasSlotRelocation = true;
+      }
+      {
+        cmpMeta.$members$ = compactMeta[2];
+      }
+      {
+        cmpMeta.$listeners$ = compactMeta[3];
+      }
+      {
+        cmpMeta.$attrsToReflect$ = [];
+      }
+      {
+        cmpMeta.$watchers$ = (_a2 = compactMeta[4]) != null ? _a2 : {};
+        cmpMeta.$serializers$ = (_b = compactMeta[5]) != null ? _b : {};
+        cmpMeta.$deserializers$ = (_c = compactMeta[6]) != null ? _c : {};
+      }
+      const tagName = cmpMeta.$tagName$;
+      const HostElement = class extends HTMLElement {
+        // StencilLazyHost
+        constructor(self) {
+          super(self);
+          this.hasRegisteredEventListeners = false;
+          self = this;
+          registerHost(self, cmpMeta);
+          if (cmpMeta.$flags$ & 1 /* shadowDomEncapsulation */) {
+            {
+              if (!self.shadowRoot) {
+                createShadowRoot.call(self, cmpMeta);
+              } else {
+                if (self.shadowRoot.mode !== "open") {
+                  throw new Error(
+                    `Unable to re-use existing shadow root for ${cmpMeta.$tagName$}! Mode is set to ${self.shadowRoot.mode} but Stencil only supports open shadow roots.`
+                  );
+                }
+              }
+            }
+          }
+        }
+        connectedCallback() {
+          const hostRef = getHostRef(this);
+          if (!hostRef) {
+            return;
+          }
+          if (!this.hasRegisteredEventListeners) {
+            this.hasRegisteredEventListeners = true;
+            addHostEventListeners(this, hostRef, cmpMeta.$listeners$);
+          }
+          if (appLoadFallback) {
+            clearTimeout(appLoadFallback);
+            appLoadFallback = null;
+          }
+          if (isBootstrapping) {
+            deferredConnectedCallbacks.push(this);
+          } else {
+            plt.jmp(() => connectedCallback(this));
+          }
+        }
+        disconnectedCallback() {
+          plt.jmp(() => disconnectedCallback(this));
+          plt.raf(() => {
+            var _a3;
+            const hostRef = getHostRef(this);
+            if (!hostRef) {
+              return;
+            }
+            const i2 = deferredConnectedCallbacks.findIndex((host) => host === this);
+            if (i2 > -1) {
+              deferredConnectedCallbacks.splice(i2, 1);
+            }
+            if (((_a3 = hostRef == null ? void 0 : hostRef.$vnode$) == null ? void 0 : _a3.$elm$) instanceof Node && !hostRef.$vnode$.$elm$.isConnected) {
+              delete hostRef.$vnode$.$elm$;
+            }
+          });
+        }
+        componentOnReady() {
+          var _a3;
+          return (_a3 = getHostRef(this)) == null ? void 0 : _a3.$onReadyPromise$;
+        }
+      };
+      cmpMeta.$lazyBundleId$ = lazyBundle[0];
+      if (!exclude.includes(tagName) && !customElements2.get(tagName)) {
+        cmpTags.push(tagName);
+        customElements2.define(
+          tagName,
+          proxyComponent(HostElement, cmpMeta, 1 /* isElementConstructor */)
+        );
+      }
+    });
+  });
+  if (cmpTags.length > 0) {
+    if (hasSlotRelocation) {
+      dataStyles.textContent += SLOT_FB_CSS;
+    }
+    {
+      dataStyles.textContent += cmpTags.sort() + HYDRATED_CSS;
+    }
+    if (dataStyles.innerHTML.length) {
+      dataStyles.setAttribute("data-styles", "");
+      const nonce = (_a = plt.$nonce$) != null ? _a : queryNonceMetaTagContent(win.document);
+      if (nonce != null) {
+        dataStyles.setAttribute("nonce", nonce);
+      }
+      head.insertBefore(dataStyles, metaCharset ? metaCharset.nextSibling : head.firstChild);
+    }
+  }
+  isBootstrapping = false;
+  if (deferredConnectedCallbacks.length) {
+    deferredConnectedCallbacks.map((host) => host.connectedCallback());
+  } else {
+    {
+      plt.jmp(() => appLoadFallback = setTimeout(appDidLoad, 30));
+    }
+  }
+  endBootstrap();
+};
+var addHostEventListeners = (elm, hostRef, listeners, attachParentListeners) => {
+  if (listeners && win.document) {
+    listeners.map(([flags, name, method]) => {
+      const target = getHostListenerTarget(win.document, elm, flags) ;
+      const handler = hostListenerProxy(hostRef, method);
+      const opts = hostListenerOpts(flags);
+      plt.ael(target, name, handler, opts);
+      (hostRef.$rmListeners$ = hostRef.$rmListeners$ || []).push(() => plt.rel(target, name, handler, opts));
+    });
+  }
+};
+var hostListenerProxy = (hostRef, methodName) => (ev) => {
+  var _a;
+  try {
+    {
+      if (hostRef.$flags$ & 256 /* isListenReady */) {
+        (_a = hostRef.$lazyInstance$) == null ? void 0 : _a[methodName](ev);
+      } else {
+        (hostRef.$queuedListeners$ = hostRef.$queuedListeners$ || []).push([methodName, ev]);
+      }
+    }
+  } catch (e) {
+    consoleError(e, hostRef.$hostElement$);
+  }
+};
+var getHostListenerTarget = (doc, elm, flags) => {
+  if (flags & 8 /* TargetWindow */) {
+    return win;
+  }
+  return elm;
+};
+var hostListenerOpts = (flags) => supportsListenerOptions ? {
+  passive: (flags & 1 /* Passive */) !== 0,
+  capture: (flags & 2 /* Capture */) !== 0
+} : (flags & 2 /* Capture */) !== 0;
+
+// src/runtime/nonce.ts
+var setNonce = (nonce) => plt.$nonce$ = nonce;
+
+export { getElement as a, bootstrapLazy as b, createEvent as c, globalScripts as g, h, promiseResolve as p, registerInstance as r, setNonce as s };
+//# sourceMappingURL=index-DClFOSUP.js.map
+
+//# sourceMappingURL=index-DClFOSUP.js.map

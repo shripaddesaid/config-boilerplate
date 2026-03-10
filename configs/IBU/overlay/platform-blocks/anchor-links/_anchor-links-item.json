@@ -1,0 +1,43 @@
+{
+  "definitions": [
+    {
+      "title": "Anchor Links Item",
+      "id": "anchor-links-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Anchor Links Item",
+              "model": "anchor-links-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "anchor-links-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "anchorItem_text",
+          "label": "Pill Label",
+          "valueType": "string",
+          "description": "Enter the Pill/Section name",
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "anchorItem_id",
+          "label": "Pill ID",
+          "valueType": "string",
+          "description": "The Pill ID entered here needs to be entered in the “Content Section Container ID” of the respective Content Section Container which the user should be redirected to when the pill is clicked. UTM parameters allow for hashes and URLs.",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+/* Component styles are dynamically loaded via JavaScript */
+/* Add any EDS-specific Component overrides here if needed */
+.video-wrapper .video-carousel-content-box .placement-center {
+  justify-content: flex-start;
+}
+.video-wrapper .transcript-container .transcript-label p {
+  color: var(--lds-g-color-palette-red-060);
+}
+.video-wrapper .transcript-container .transcript-label-icon svg path {
+  fill: var(--lds-g-color-palette-red-060);
+}
+.video-wrapper .transcript-description {
+  color: var(--lds-g-color-neutral-base-100);
+}
+
+/* Add spacing between all child elements in transcript description (Enter key = 24px) */
+.video-wrapper .transcript-description div > * {
+  margin-bottom: 24px;
+}
+
+/* Remove spacing for last element */
+.video-wrapper .transcript-description div > *:last-child {
+  margin-bottom: 0;
+}
+
+button.cta-icon-right.cta-button-outline {
+  border: 1.5px solid var(--lds-g-color-neutral-base-100);
+  background-color: transparent;
+  color: var(--lds-g-color-neutral-base-100);
+  font: var(--lds-g-typography-ringside-special-cta-button-default);
+}
+button.cta-icon-right.cta-button-outline:focus-visible,
+button.cta-icon-right.cta-button-outline:hover {
+  border-color: var(--lds-g-color-palette-primary-base);
+  color: var(--lds-g-color-palette-primary-base);
+}
+
+/* Override single-video-layout - this loads after platform CSS */
+.single-video-layout .video-carousel-itemlist-warraper.col-12 {
+  margin-right: var(--lds-g-spacing-800);
+}
+.single-video-layout
+  .video-carousel-itemlist-warraper
+  .video-carousel-itemlist-container {
+  display: block;
+  border-radius: var(--lds-g-radius-8);
+}
+
+.video-wrapper .single-video-layout .video-carousel-transcript-footer {
+  width: auto;
+  margin-right: var(--lds-g-spacing-800);
+}
+
+@media (width <= 768px) {
+  .video-wrapper .video-carousel-content-box {
+    height: auto;
+  }
+  .video-wrapper .video-carousel-description.placement-center {
+    margin-bottom: 0;
+  }
+  .video-wrapper .single-video-layout .video-carousel-itemlist-warraper {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: 0;
+  }
+
+  .single-video-layout
+    .video-carousel-itemlist-warraper
+    .video-carousel-itemlist-container {
+    justify-content: center;
+  }
+
+  .single-video-layout
+    .video-carousel-itemlist-warraper
+    .video-carousel-itemlist-container
+    .video-carousel-content-container {
+    width: 100%;
+  }
+
+  .video-wrapper .single-video-layout .video-carousel-transcript-footer {
+    width: 100%;
+    margin-right: var(--lds-g-spacing-800);
+  }
+}

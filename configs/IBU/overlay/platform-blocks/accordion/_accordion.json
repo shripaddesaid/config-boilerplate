@@ -1,0 +1,103 @@
+{
+  "definitions": [
+    {
+      "title": "Accordion",
+      "id": "accordion",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Accordion",
+              "model": "accordion",
+              "filter": "accordion",
+              "classes_style": "accordion-none",
+              "item0": {
+                "sling:resourceType": "core/franklin/components/block/v1/block/item",
+                "name": "Accordion-Item",
+                "model": "accordion-item",
+                "classes_column1ctaNumber": "ctaNumber-column1-one",
+                "classes_column1ctacolorone": "ctaColor-column1-light",
+                "classes_column1ctastyleone": "ctaStyle-column1-primary",
+                "classes_column1targetpathone": "ctaTarget-column1-sameTab",
+                "classes_column1exitinterstitial": "ctaExitInterstitial-column1-select",
+                "classes_column1ctacolortwo": "ctaColor-column1-light-two",
+                "classes_column1ctastyletwo": "ctaStyle-column1-primary-two",
+                "classes_column1targetpathtwo": "ctaTarget-column1-sameTab_two",
+                "classes_column1exitinterstitialtwo": "ctaExitInterstitial-column1-select_two",
+                "classes_column2ctaNumber": "ctaNumber-column2-one",
+                "classes_column2ctacolorone": "ctaColor-column2-light",
+                "classes_column2ctastyleone": "ctaStyle-column2-primary",
+                "classes_column2targetpathone": "ctaTarget-column2-sameTab",
+                "classes_column2exitinterstitialone": "ctaExitInterstitial-column2-select",
+                "classes_column2ctacolortwo": "ctaColor-column2-light-two",
+                "classes_column2ctastyletwo": "ctaStyle-column2-primary-two",
+                "classes_column2targetpathtwo": "ctaTarget-column2-sameTab_two",
+                "classes_column2exitinterstitialtwo": "ctaExitInterstitial-column2-select_two"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [
+    {
+      "id": "accordion",
+      "components": ["accordion-item"]
+    }
+  ],
+  "models": [
+    {
+      "id": "accordion",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "accordiontitle",
+          "label": "Accordion Title",
+          "description": "Enter title for the entire Accordion Block"
+        },
+        {
+          "component": "select",
+          "name": "classes_titleRteFontSize",
+          "label": "Title Font Size",
+          "description": "Select the font size for the title",
+          "options": [
+            { "name": "100px", "value": "title-fs-100px" },
+            { "name": "60px", "value": "title-fs-60px" },
+            { "name": "48px", "value": "title-fs-48px" },
+            { "name": "36px", "value": "title-fs-36px" },
+            { "name": "32px", "value": "title-fs-32px" },
+            { "name": "28px", "value": "title-fs-28px" },
+            { "name": "24px", "value": "title-fs-24px" },
+            { "name": "20px", "value": "title-fs-20px" },
+            { "name": "16px", "value": "title-fs-16px" },
+            { "name": "14px", "value": "title-fs-14px" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_style",
+          "label": "Accordion Expansion",
+          "description": "Select the relevant Accordion Expansion option",
+          "value": "accordion-none",
+          "required": true,
+          "options": [
+            {
+              "name": "None",
+              "value": "accordion-none"
+            },
+            {
+              "name": "First",
+              "value": "accordion-first"
+            },
+            {
+              "name": "All",
+              "value": "accordion-all"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/column-break/_column-break.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/column-break/_column-break.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "column-break",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/column-break/_column-break.json#/models"
+        }
+      ]
+    }
+  ]
+}

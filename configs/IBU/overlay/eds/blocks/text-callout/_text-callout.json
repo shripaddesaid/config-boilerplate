@@ -1,0 +1,18 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/text-callout/_text-callout.json#/definitions"
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "text-callout",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/text-callout/_text-callout.json#/models/text-callout/fields"
+        }
+      ]
+    }
+  ]
+}

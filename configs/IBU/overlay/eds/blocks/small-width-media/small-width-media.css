@@ -1,0 +1,35 @@
+/* Component styles are dynamically loaded via JavaScript */
+/* Add any EDS-specific Component overrides here if needed */
+
+/* Screen reader only utility class */
+.small-width-media-wrapper .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Use the block wrapper class for higher specificity */
+.small-width-media-wrapper .smallwidthmedia-eyebrow {
+  max-width: 503px;
+}
+
+.small-width-media-wrapper .smallwidthmedia-title-desc-cta-wrapper {
+  max-width: 503px;
+  gap: var(--lds-g-spacing-300);
+}
+
+@media (width <= 768px) {
+  .small-width-media-wrapper .smallwidthmedia-container {
+    aspect-ratio: 343 / 606;
+  }
+
+  .small-width-media-wrapper .smallwidthmedia-eyebrow {
+    margin-bottom: 0;
+  }
+}

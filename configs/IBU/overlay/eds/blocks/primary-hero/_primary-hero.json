@@ -1,0 +1,47 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/primary-hero/_primary-hero.json#/definitions",
+      "exclude": [
+        "enableGradient",
+        "classes_ctacolorone",
+        "classes_ctacolortwo"
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/primary-hero/_primary-hero.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "primary-hero",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/primary-hero/_primary-hero.json#/models/primary-hero/fields",
+          "exclude": [
+            "enableGradient",
+            "classes_ctacolorone",
+            "classes_ctacolortwo"
+          ],
+
+          "containerOverrides": {
+            "primary_oneButton.classes_ctastyleone": {
+              "options": [
+                { "name": "Primary", "value": "ctaStyle-primary" },
+                { "name": "Secondary", "value": "ctaStyle-secondary" }
+              ]
+            },
+            "primary_twoButton.classes_ctastyletwo": {
+              "options": [
+                { "name": "Primary", "value": "ctaStyle-primary-two" },
+                { "name": "Secondary", "value": "ctaStyle-secondary-two" }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "definitions": [
+    {
+      "title": "Medium Media Carousel Item",
+      "id": "medium-media-carousel-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Medium Media Carousel Item",
+              "model": "medium-media-carousel-item",
+              "classes_textcolor": "textcolor-white",
+              "classes_targetpathone": "ctaTarget-sameTab",
+              "classes_exitinterstitial": "ctaExitInterstitial-select"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "medium-media-carousel-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "title",
+          "label": "Title",
+          "valueType": "string",
+          "description": "Enter the title",
+          "required": true
+        },
+        {
+          "...": "../utils/eds-commons/_rte-title.json#/rte-title"
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "description": "Upload the image",
+          "required": true
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "imageMimeType"
+        },
+        {
+          "component": "text",
+          "name": "imageAlt",
+          "label": "Image Alt Text",
+          "description": "Pick alt text from AEM DAM with ability to override it",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "select",
+          "name": "classes_textcolor",
+          "label": "Text Color",
+          "description": "Pick the Text Color",
+          "value": "textcolor-white",
+          "options": [
+            {
+              "name": "Black",
+              "value": "textcolor-black"
+            },
+            {
+              "name": "White",
+              "value": "textcolor-white"
+            }
+          ]
+        },
+        {
+          "...": "../../utils/eds-commons/_single-ctafields.json#/cta-one"
+        }
+      ]
+    }
+  ]
+}

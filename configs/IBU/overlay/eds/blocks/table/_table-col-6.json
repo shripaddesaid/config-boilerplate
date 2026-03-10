@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/table/_table-col-6.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/table/_table-col-6.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "table-col-6",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/table/_table-col-6.json#/models/table-col-6/fields"
+        }
+      ]
+    }
+  ]
+}

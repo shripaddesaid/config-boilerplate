@@ -1,0 +1,75 @@
+{
+  "definitions": [
+    {
+      "title": "Cards",
+      "id": "cards",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Cards",
+              "model": "cards",
+              "filter": "cards",
+              "number": 2,
+              "item0": {
+                "name": "Card",
+                "model": "card",
+                "card_titleType": "h3",
+                "classes": "ctaNumber-one",
+                "classes_ctacolorone": "ctaColor-light",
+                "classes_ctastyleone": "ctaStyle-primary",
+                "classes_targetpathone": "ctaTarget-sameTab",
+                "classes_exitinterstitial": "ctaExitInterstitial-select",
+                "classes_ctacolortwo": "ctaColor-light-two",
+                "classes_ctastyletwo": "ctaStyle-primary-two",
+                "classes_targetpathtwo": "ctaTarget-sameTab_two",
+                "classes_exitinterstitialtwo": "ctaExitInterstitial-select_two",
+                "classes_ctatypefieldtwo": "ctaType-textLink_two",
+                "classes_ctatypetieldone": "ctaType-textLink"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [
+    {
+      "id": "cards",
+      "components": ["card"]
+    }
+  ],
+  "models": [
+    {
+      "id": "cards",
+      "fields": [
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "cards",
+          "label": "Section Title",
+          "description": "Enter the title for the entire Card block"
+        },
+        {
+          "component": "select",
+          "name": "classes_cardsRteFontSize",
+          "label": "Section Title Font Size",
+          "description": "Select the font size for the section title",
+          "options": [
+            { "name": "100px", "value": "section-title-fs-100px" },
+            { "name": "60px", "value": "section-title-fs-60px" },
+            { "name": "48px", "value": "section-title-fs-48px" },
+            { "name": "36px", "value": "section-title-fs-36px" },
+            { "name": "32px", "value": "section-title-fs-32px" },
+            { "name": "28px", "value": "section-title-fs-28px" },
+            { "name": "24px", "value": "section-title-fs-24px" },
+            { "name": "20px", "value": "section-title-fs-20px" },
+            { "name": "16px", "value": "section-title-fs-16px" },
+            { "name": "14px", "value": "section-title-fs-14px" }
+          ]
+        }
+      ]
+    }
+  ]
+}

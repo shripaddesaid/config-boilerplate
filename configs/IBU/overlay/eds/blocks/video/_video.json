@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/video/_video.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/video/_video.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "video",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/video/_video.json#/models"
+        }
+      ]
+    }
+  ]
+}

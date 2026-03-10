@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/news-and-story-card/_news-and-story-card-item.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/news-and-story-card/_news-and-story-card-item.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "news-and-story-card-item",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/news-and-story-card/_news-and-story-card-item.json#/models/news-and-story-card-item/fields"
+        }
+      ]
+    }
+  ]
+}

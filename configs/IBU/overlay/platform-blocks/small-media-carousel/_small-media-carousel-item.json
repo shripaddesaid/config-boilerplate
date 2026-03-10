@@ -1,0 +1,93 @@
+{
+  "definitions": [
+    {
+      "title": "Small Media Carousel Item",
+      "id": "small-media-carousel-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Small Media Carousel Item",
+              "model": "small-media-carousel-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "small-media-carousel-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "title",
+          "label": "Title",
+          "description": "Enter the title"
+        },
+        {
+          "component": "select",
+          "name": "classes_titleRteFontSize",
+          "label": "Title Font Size",
+          "description": "Select the font size for the Title",
+          "options": [
+            { "name": "100px", "value": "title-fs-100px" },
+            { "name": "60px", "value": "title-fs-60px" },
+            { "name": "48px", "value": "title-fs-48px" },
+            { "name": "36px", "value": "title-fs-36px" },
+            { "name": "32px", "value": "title-fs-32px" },
+            { "name": "28px", "value": "title-fs-28px" },
+            { "name": "24px", "value": "title-fs-24px" },
+            { "name": "20px", "value": "title-fs-20px" },
+            { "name": "16px", "value": "title-fs-16px" },
+            { "name": "14px", "value": "title-fs-14px" }
+          ]
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "media_image",
+          "label": "Image",
+          "description": "Upload the image",
+          "required": true
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "media_imageMimeType"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "media_imageAlt",
+          "label": "Image Alt Text",
+          "description": "Pick alt text from AEM DAM with ability to override it",
+          "required": true
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "media_mobImage",
+          "label": "Icon",
+          "description": "Select or upload an icon for the tile."
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "media_mobImageMimeType"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "media_mobImageAlt",
+          "label": "IconAlt Text",
+          "description": "Pick alt text from AEM DAM with ability to override it"
+        }
+      ]
+    }
+  ]
+}

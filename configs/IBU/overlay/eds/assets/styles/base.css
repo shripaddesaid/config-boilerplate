@@ -1,0 +1,405 @@
+:root {
+  /* ITC Garamond STD font family tokens */
+  --typography-font-family-garamond-std: "ITC Garamond Std", serif;
+  --typography-font-family-garamond-std-italic: "ITC Garamond Std Italic", serif;
+  --typography-font-family-garamond-std-bold: "ITC Garamond Bold", serif;
+  --typography-font-family-garamond-std-bold-condensed: "ITC Garamond-BdCond",
+    serif;
+  --typography-font-family-garamond-std-bold-condensed-italic: "ITC Garamond-BdcondIta",
+    serif;
+  --typography-font-family-garamond-std-bold-narrow: "ITC Garamond Bold Narrow",
+    serif;
+  --typography-font-family-garamond-std-bold-narrow-italic: "ITC Garamond Narrow Italics",
+    serif;
+  --typography-font-family-garamond-std-black: "ITC Garamond Black", serif;
+  --typography-font-family-garamond-std-black-condensed: "ITC Garamond Black CD",
+    serif;
+  --typography-font-family-garamond-std-black-condensed-italic: "ITC Garamond Black CD Italic",
+    serif;
+  --typography-font-family-garamond-std-black-narrow: "ITC Garamond Black Narrow",
+    serif;
+  --typography-font-family-garamond-std-black-narrow-italic: "ITC Garamond Black Narrow Italics",
+    serif;
+  --typography-font-family-garamond-std-light: "ITC Garamond Light", serif;
+  --typography-font-family-garamond-std-light-condensed: "ITC Garamond Light Condensed",
+    serif;
+  --typography-font-family-garamond-std-light-condensed-italic: "ITC Garamond Light Condensed Italic",
+    serif;
+  --typography-font-family-garamond-std-light-narrow: "ITC Garamond Light Narrow",
+    serif;
+  --typography-font-family-garamond-std-light-narrow-italic: "ITC Garamond Light Narrow Italics",
+    serif;
+  /* Add more if needed for other weights/styles */
+
+  /* Font families */
+  --typography-font-family-ringside-extra-wide: "Ringside Extra Wide",
+    sans-serif; /* Ringside Extra Wide font */
+  --typography-font-family-ringside: "Ringside", sans-serif; /* Ringside font */
+  --typography-font-family-ringside-narrow: "Ringside Narrow", sans-serif; /* Ringside font */
+  --typography-font-family-garamond: "ITC Garamond Std"; /* Garamond font */
+  --typography-font-family-garamond-italic: "ITC Garamond Std Italic"; /* Garamond Italic font */
+
+  /* Font sizes for Ringside */
+  --typography-ringside-display-1-font-size: 100px; /* Display 1 font size */
+  --typography-ringside-display-2-font-size: 60px; /* Display 2 font size */
+  --typography-ringside-heading-1-font-size: 60px; /* Heading 1 font size */
+  --typography-ringside-heading-2-font-size: 48px; /* Heading 2 font size */
+  --typography-ringside-heading-3-font-size: 36px; /* Heading 3 font size */
+  --typography-ringside-heading-4-font-size: 32px; /* Heading 4 font size */
+  --typography-ringside-heading-5-font-size: 28px; /* Heading 5 font size */
+  --typography-ringside-heading-6-font-size: 24px; /* Heading 6 font size */
+  --typography-ringside-body-large-font-size: 20px; /* Body large font size */
+  --typography-ringside-body-medium-font-size: 16px; /* Body medium font size */
+  --typography-ringside-body-small-font-size: 14px; /* Body small font size */
+  --typography-ringside-body-xsmall-font-size: 12px; /* Body xsmall font size */
+
+  /* Font sizes for Garamond */
+  --typography-garamond-display-1-font-size: 100px; /* Display 1 font size */
+  --typography-garamond-heading-1-font-size: 60px; /* Heading 1 font size */
+  --typography-garamond-heading-2-font-size: 48px; /* Heading 2 font size */
+  --typography-garamond-heading-3-font-size: 36px; /* Heading 3 font size */
+  --typography-garamond-heading-4-font-size: 32px; /* Heading 4 font size */
+  --typography-garamond-heading-5-font-size: 28px; /* Heading 5 font size */
+  --typography-garamond-heading-6-font-size: 24px; /* Heading 6 font size */
+  --typography-garamond-body-large-font-size: 20px; /* Body large font size */
+  --typography-garamond-body-medium-font-size: 18px; /* Body medium font size */
+
+  /* Line heights for Ringside */
+  --typography-ringside-display-1-line-height: 100px; /* Display 1 line height */
+  --typography-ringside-display-2-line-height: 66px; /* Display 2 line height */
+  --typography-ringside-heading-1-line-height: 66px; /* Heading 1 line height */
+  --typography-ringside-heading-2-line-height: 58px; /* Heading 2 line height */
+  --typography-ringside-heading-3-line-height: 44px; /* Heading 3 line height */
+  --typography-ringside-heading-4-line-height: 38px; /* Heading 4 line height */
+  --typography-ringside-heading-5-line-height: 36px; /* Heading 5 line height */
+  --typography-ringside-heading-5-1-line-height: 34px; /* Heading 5 line height */
+  --typography-ringside-heading-6-line-height: 32px; /* Heading 6 line height */
+  --typography-ringside-body-large-line-height: 30px; /* Body large line height */
+  --typography-ringside-body-medium-line-height: 24px; /* Body medium line height */
+  --typography-ringside-body-small-line-height: 20px; /* Body small line height */
+  --typography-ringside-body-xsmall-line-height: 18px; /* Body xsmall line height */
+  --typography-ringside-body-xxsmall-line-height: 16px; /* Body xsmall line height */
+
+  /* Line heights for Garamond */
+  --typography-garamond-display-1-line-height: 100px; /* Display 1 line height */
+  --typography-garamond-heading-1-line-height: 66px; /* Heading 1 line height */
+  --typography-garamond-heading-2-line-height: 52px; /* Heading 2 line height */
+  --typography-garamond-heading-3-line-height: 44px; /* Heading 3 line height */
+  --typography-garamond-heading-4-line-height: 38px; /* Heading 4 line height */
+  --typography-garamond-heading-5-line-height: 36px; /* Heading 5 line height */
+  --typography-garamond-heading-6-line-height: 32px; /* Heading 6 line height */
+  --typography-garamond-body-large-line-height: 30px; /* Body large line height */
+  --typography-garamond-body-medium-line-height: 28px; /* Body medium line height */
+}
+em {
+  font-style: italic !important;
+}
+
+u {
+  text-decoration: underline !important;
+  text-decoration-thickness: 4% !important;
+}
+
+strong > u,
+u > strong,
+strong > a > u {
+  text-decoration: underline !important;
+  text-decoration-thickness: 4% !important;
+  font-weight: var(--lds-g-font-weight-900) !important;
+}
+
+em > u,
+u > em,
+em > a > u {
+  text-decoration: underline !important;
+  font-style: italic !important;
+  text-decoration-thickness: 4% !important;
+}
+
+em > strong,
+strong > em {
+  font-style: italic !important;
+  font-weight: var(--lds-g-font-weight-900) !important;
+}
+
+a > strong,
+strong > a {
+  font-weight: var(--lds-g-font-weight-900) !important;
+}
+
+em > a,
+a > em {
+  font-style: italic !important;
+}
+
+a > u,
+u > a,
+em > a > u {
+  text-decoration: underline !important;
+  text-decoration-thickness: 4% !important;
+}
+
+em > strong > u,
+em > u > strong,
+strong > em > u,
+strong > u > em,
+u > em > strong,
+u > strong > em,
+em > strong > a,
+strong > em > a {
+  font-style: italic !important;
+  font-weight: var(--lds-g-font-weight-900) !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 4% !important;
+}
+sub,
+sup {
+  font-size: smaller !important;
+}
+
+/* Double combinations with sub/sup at end */
+strong > sub,
+strong > sup {
+  font-weight: var(--lds-g-font-weight-900) !important;
+  font-size: smaller !important;
+}
+
+strong > sub {
+  vertical-align: sub !important;
+}
+
+strong > sup {
+  vertical-align: super !important;
+}
+
+em > sub,
+em > sup {
+  font-style: italic !important;
+  font-size: smaller !important;
+}
+
+em > sub {
+  vertical-align: sub !important;
+}
+
+em > sup {
+  vertical-align: super !important;
+}
+
+u > sub,
+u > sup {
+  text-decoration: underline !important;
+  text-decoration-thickness: 4% !important;
+  font-size: smaller !important;
+}
+
+u > sub {
+  vertical-align: sub !important;
+}
+
+u > sup {
+  vertical-align: super !important;
+}
+
+/* Triple combinations with sub/sup at end */
+strong > em > sub,
+strong > em > sup,
+em > strong > sub,
+em > strong > sup {
+  font-style: italic !important;
+  font-weight: var(--lds-g-font-weight-900) !important;
+  font-size: smaller !important;
+}
+
+strong > em > sub,
+em > strong > sub {
+  vertical-align: sub !important;
+}
+
+strong > em > sup,
+em > strong > sup {
+  vertical-align: super !important;
+}
+
+strong > u > sub,
+strong > u > sup,
+u > strong > sub,
+u > strong > sup {
+  font-weight: var(--lds-g-font-weight-900) !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 4% !important;
+  font-size: smaller !important;
+}
+
+strong > u > sub,
+u > strong > sub {
+  vertical-align: sub !important;
+}
+
+strong > u > sup,
+u > strong > sup {
+  vertical-align: super !important;
+}
+
+em > u > sub,
+em > u > sup,
+u > em > sub,
+u > em > sup {
+  font-style: italic !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 4% !important;
+  font-size: smaller !important;
+}
+
+em > u > sub,
+u > em > sub {
+  vertical-align: sub !important;
+}
+
+em > u > sup,
+u > em > sup {
+  vertical-align: super !important;
+}
+
+/* Quadruple combinations with sub/sup at end */
+strong > em > u > sub,
+strong > em > u > sup,
+strong > u > em > sub,
+strong > u > em > sup,
+em > strong > u > sub,
+em > strong > u > sup,
+em > u > strong > sub,
+em > u > strong > sup,
+u > strong > em > sub,
+u > strong > em > sup,
+u > em > strong > sub,
+u > em > strong > sup {
+  font-style: italic !important;
+  font-weight: var(--lds-g-font-weight-900) !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 4% !important;
+  font-size: smaller !important;
+}
+
+strong > em > u > sub,
+strong > u > em > sub,
+em > strong > u > sub,
+em > u > strong > sub,
+u > strong > em > sub,
+u > em > strong > sub {
+  vertical-align: sub !important;
+}
+
+strong > em > u > sup,
+strong > u > em > sup,
+em > strong > u > sup,
+em > u > strong > sup,
+u > strong > em > sup,
+u > em > strong > sup {
+  vertical-align: super !important;
+}
+
+/* ===== :has() SELECTOR RULES FOR UNDERLINE MANAGEMENT ===== */
+/* These rules remove underline from u elements when they contain sup/sub, 
+   ensuring only the sup/sub elements themselves are underlined */
+
+/* Remove underline from u elements containing sub/sup at any nesting level */
+u:has(> sub),
+u:has(> sup),
+u:has(> strong > sub),
+u:has(> strong > sup),
+u:has(> em > sub),
+u:has(> em > sup),
+u:has(> strong > em > sub),
+u:has(> strong > em > sup),
+u:has(> em > strong > sub),
+u:has(> em > strong > sup),
+strong > u:has(> sub),
+strong > u:has(> sup),
+strong > u:has(> em > sub),
+strong > u:has(> em > sup),
+em > u:has(> sub),
+em > u:has(> sup),
+em > u:has(> strong > sub),
+em > u:has(> strong > sup),
+em > strong > u:has(> sub),
+em > strong > u:has(> sup),
+strong > em > u:has(> sub),
+strong > em > u:has(> sup) {
+  text-decoration: none !important;
+}
+
+/* Remove underline from intermediate em/strong elements inside u that contain sub/sup */
+u > em:has(sub),
+u > em:has(sup),
+u > em:has(> sub),
+u > em:has(> sup),
+u > em:has(> strong > sub),
+u > em:has(> strong > sup),
+u > strong:has(sub),
+u > strong:has(sup),
+u > strong:has(> sub),
+u > strong:has(> sup),
+u > strong:has(> em > sub),
+u > strong:has(> em > sup),
+u > em > strong:has(sub),
+u > em > strong:has(sup),
+u > strong > em:has(sub),
+u > strong > em:has(sup),
+strong > u > em:has(sub),
+strong > u > em:has(sup),
+em > u > strong:has(sub),
+em > u > strong:has(sup) {
+  text-decoration: none !important;
+}
+@media (width < 768px) {
+  .lds-layout-container {
+    column-gap: var(--lds-g-grid-gutter-mobile) !important;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .lds-layout-container:not(.disable-layout-margins) {
+    padding-left: var(--lds-g-grid-margin-mobile);
+    padding-right: var(--lds-g-grid-margin-mobile);
+  }
+  /* Remove padding for slim sections */
+  .lds-content-section-padding-slim
+    .lds-layout-container:not(.disable-layout-margins) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (width >= 768px) and (width < 1200px) {
+  .lds-layout-container {
+    column-gap: var(--lds-g-grid-gutter-tablet) !important;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .lds-layout-container:not(.disable-layout-margins) {
+    padding-left: var(--lds-g-grid-margin-tablet);
+    padding-right: var(--lds-g-grid-margin-tablet);
+  }
+  /* Remove padding for slim sections */
+  .lds-content-section-padding-slim
+    .lds-layout-container:not(.disable-layout-margins) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+@media (width >= 1200px) {
+  .lds-layout-container {
+    column-gap: var(--lds-g-grid-gutter-desktop) !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .lds-layout-container:not(.disable-layout-margins) {
+    padding-left: var(--lds-g-grid-margin-desktop) !important;
+    padding-right: var(--lds-g-grid-margin-desktop) !important;
+  }
+  /* Remove padding for slim sections */
+  .lds-content-section-padding-slim
+    .lds-layout-container:not(.disable-layout-margins) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

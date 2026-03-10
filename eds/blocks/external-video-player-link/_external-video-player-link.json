@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/external-video-player-link/_external-video-player-link.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/external-video-player-link/_external-video-player-link.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "external-video-player-link",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/external-video-player-link/_external-video-player-link.json#/models"
+        }
+      ]
+    }
+  ]
+}

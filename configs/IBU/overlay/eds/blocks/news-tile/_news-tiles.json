@@ -1,0 +1,13 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/news-tile/_news-tiles.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/news-tile/_news-tiles.json#/filters"
+    }
+  ],
+  "models": []
+}

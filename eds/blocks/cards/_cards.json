@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/cards/_cards.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/cards/_cards.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "cards",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/cards/_cards.json#/models/cards/fields"
+        }
+      ]
+    }
+  ]
+}

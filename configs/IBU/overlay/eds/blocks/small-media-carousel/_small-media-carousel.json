@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/small-media-carousel/_small-media-carousel.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/small-media-carousel/_small-media-carousel.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "small-media-carousel",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/small-media-carousel/_small-media-carousel.json#/models/small-media-carousel/fields"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,474 @@
+{
+  "definitions": [
+    {
+      "title": "Small Width Media",
+      "id": "small-width-media",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Small Width Media",
+              "model": "small-width-media",
+              "classes_textalignment": "textalign-center",
+              "classes_ctatypefieldone": "ctaType-button",
+              "classes_ctacolorone": "ctaColor-light",
+              "classes_ctastyleone": "ctaStyle-primary",
+              "classes_ctatypeone": "ctaSelection-link",
+              "classes_targetpathone": "ctaTarget-sameTab",
+              "classes_exitinterstitial": "ctaExitInterstitial-select",
+              "classes_backgroundverticalposition": "background-vertical-center",
+              "classes_backgroundhorizontalposition": "background-horizontal-center"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [
+    {
+      "id": "small-width-media",
+      "components": ["small-width-media"]
+    }
+  ],
+  "models": [
+    {
+      "id": "small-width-media",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "eyebrowtext",
+          "label": "Eyebrow Text",
+          "description": "Enter the Eyebrow text"
+        },
+        {
+          "component": "select",
+          "name": "classes_textalignment",
+          "label": "Text Alignment",
+          "required": true,
+          "description": "Choose the text alignment within the Media Banner component",
+          "value": "textalign-center",
+          "options": [
+            {
+              "name": "Left",
+              "value": "textalign-left"
+            },
+            {
+              "name": "Center",
+              "value": "textalign-center"
+            },
+            {
+              "name": "Right",
+              "value": "textalign-right"
+            }
+          ]
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "valueType": "string",
+          "name": "smallMedia_image",
+          "label": "Image",
+          "description": "Upload background image for the Media Banner",
+          "required": true
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset-mimetype",
+          "valueType": "string",
+          "name": "smallMedia_imageMimeType"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "smallMedia_imageAlt",
+          "label": "Image Alt Text",
+          "required": true,
+          "description": "Pick alt text for background image from AEM DAM with ability to override it"
+        },
+        {
+          "component": "richtext",
+          "name": "smallMedia_title",
+          "label": "Title",
+          "required": true,
+          "valueType": "string",
+          "description": "Enter the title"
+        },
+        {
+          "component": "select",
+          "name": "classes_textRteFontSize",
+          "label": "Title Font Size",
+          "description": "Select the font size for the title",
+          "options": [
+            { "name": "100px", "value": "title-fs-100px" },
+            { "name": "60px", "value": "title-fs-60px" },
+            { "name": "48px", "value": "title-fs-48px" },
+            { "name": "36px", "value": "title-fs-36px" },
+            { "name": "32px", "value": "title-fs-32px" },
+            { "name": "28px", "value": "title-fs-28px" },
+            { "name": "24px", "value": "title-fs-24px" },
+            { "name": "20px", "value": "title-fs-20px" },
+            { "name": "16px", "value": "title-fs-16px" },
+            { "name": "14px", "value": "title-fs-14px" }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description",
+          "valueType": "string",
+          "description": "Enter the description"
+        },
+        {
+          "component": "select",
+          "name": "classes_descriptionRteFontSize",
+          "label": "Description Font Size",
+          "description": "Select the font size for the description",
+          "options": [
+            { "name": "100px", "value": "description-fs-100px" },
+            { "name": "60px", "value": "description-fs-60px" },
+            { "name": "48px", "value": "description-fs-48px" },
+            { "name": "36px", "value": "description-fs-36px" },
+            { "name": "32px", "value": "description-fs-32px" },
+            { "name": "28px", "value": "description-fs-28px" },
+            { "name": "24px", "value": "description-fs-24px" },
+            { "name": "20px", "value": "description-fs-20px" },
+            { "name": "16px", "value": "description-fs-16px" },
+            { "name": "14px", "value": "description-fs-14px" }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_ctatypefieldone",
+          "label": "CTA Type",
+          "description": "Select the type of CTA(s) required",
+          "value": "ctaType-button",
+          "options": [
+            {
+              "name": "Button",
+              "value": "ctaType-button"
+            },
+            {
+              "name": "Text Link",
+              "value": "ctaType-textLink"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_ctacolorone",
+          "label": "CTA Color",
+          "description": "Select the color for CTA Button Primary implies Green: #79DE00 Secondary implies White: #FFFFFF ",
+          "value": "ctaColor-light",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypefieldone"
+              },
+              "ctaType-button"
+            ]
+          },
+          "options": [
+            {
+              "name": "Light",
+              "value": "ctaColor-light"
+            },
+            {
+              "name": "Dark",
+              "value": "ctaColor-dark"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_ctastyleone",
+          "label": "CTA Style",
+          "description": "Select the style of the Button CTA",
+          "value": "ctaStyle-primary",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypefieldone"
+              },
+              "ctaType-button"
+            ]
+          },
+          "options": [
+            {
+              "name": "Primary",
+              "value": "ctaStyle-primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "ctaStyle-secondary"
+            },
+            {
+              "name": "Neutral",
+              "value": "ctaStyle-neutral"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_ctatypeone",
+          "label": "CTA Selection",
+          "description": "Select the Link selection for that CTA",
+          "value": "ctaSelection-link",
+          "options": [
+            {
+              "name": "Link",
+              "value": "ctaSelection-link"
+            },
+            {
+              "name": "Asset (PDF/Image)",
+              "value": "ctaSelection-asset"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "linkText",
+          "label": "CTA Label for link",
+          "valueType": "string",
+          "description": "Enter label to display on the CTA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypeone"
+              },
+              "ctaSelection-link"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "assetlinkText",
+          "label": "CTA Label for Asset",
+          "valueType": "string",
+          "description": "Enter label to display on the CTA for Asset(PDF/Image)",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypeone"
+              },
+              "ctaSelection-asset"
+            ]
+          }
+        },
+        {
+          "component": "aem-content",
+          "name": "link",
+          "label": "CTA Link",
+          "valueType": "string",
+          "description": "Enter the URL to navigate when CTA is clicked",
+          "validation": {
+            "rootPath": "/content"
+          },
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatypeone"
+                  },
+                  "ctaSelection-link"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "linkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "custom-asset-namespace:custom-asset",
+          "configUrl": "/content/dam/custom-asset-picker/image.config.json",
+          "name": "assetlink",
+          "label": "Asset (PDF/Image)",
+          "description": "Upload the Asset (PDF/Image)",
+          "valueType": "string",
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatypeone"
+                  },
+                  "ctaSelection-asset"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "assetlinkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "linkTitle",
+          "label": "CTA ARIA Label for link",
+          "valueType": "string",
+          "description": "Enter ARIA label to comply ADA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypeone"
+              },
+              "ctaSelection-link"
+            ]
+          }
+        },
+        {
+          "component": "text",
+          "name": "assetlinkTitle",
+          "label": "CTA ARIA Label for Asset",
+          "valueType": "string",
+          "description": "Enter ARIA label to comply ADA",
+          "condition": {
+            "===": [
+              {
+                "var": "classes_ctatypeone"
+              },
+              "ctaSelection-asset"
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_targetpathone",
+          "label": "Target Path",
+          "description": "Select the target path for the authored CTA URL",
+          "value": "ctaTarget-sameTab",
+          "options": [
+            {
+              "name": "Same Tab",
+              "value": "ctaTarget-sameTab"
+            },
+            {
+              "name": "New Tab",
+              "value": "ctaTarget-newTab"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatypeone"
+                  },
+                  "ctaSelection-link"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "linkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "label": "Exit Interstitial",
+          "name": "classes_exitinterstitial",
+          "valueType": "string",
+          "value": "ctaExitInterstitial-select",
+          "description": "Select this option to enable the modal experience that notifies user that they are leaving the site",
+          "options": [
+            {
+              "name": "Select",
+              "value": "ctaExitInterstitial-select"
+            },
+            {
+              "name": "General Third Parties",
+              "value": "ctaExitInterstitial-general-third-parties"
+            },
+            {
+              "name": "Telehealth",
+              "value": "ctaExitInterstitial-telehealth"
+            },
+            {
+              "name": "Account",
+              "value": "ctaExitInterstitial-account"
+            },
+            {
+              "name": "Account Wellbeing",
+              "value": "ctaExitInterstitial-account-wellbeing"
+            },
+            {
+              "name": "Embedded Tools Healthgrades",
+              "value": "ctaExitInterstitial-embedded-tools-healthgrades"
+            },
+            {
+              "name": "Embedded Tools Nourish",
+              "value": "ctaExitInterstitial-embedded-tools-nourish"
+            }
+          ],
+          "condition": {
+            "and": [
+              {
+                "===": [
+                  {
+                    "var": "classes_ctatypeone"
+                  },
+                  "ctaSelection-link"
+                ]
+              },
+              {
+                "!!": {
+                  "var": "linkText"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "component": "select",
+          "name": "classes_backgroundverticalposition",
+          "label": "Background Vertical Position",
+          "description": "This will alter the “background-position” CSS property of the media",
+          "value": "background-vertical-center",
+          "options": [
+            {
+              "name": "Top",
+              "value": "background-vertical-top"
+            },
+            {
+              "name": "Center",
+              "value": "background-vertical-center"
+            },
+            {
+              "name": "Bottom",
+              "value": "background-vertical-bottom"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "classes_backgroundhorizontalposition",
+          "label": "Background Horizontal Position",
+          "description": "This will alter the “background-position” CSS property of the media",
+          "value": "background-horizontal-center",
+          "options": [
+            {
+              "name": "Left",
+              "value": "background-horizontal-left"
+            },
+            {
+              "name": "Center",
+              "value": "background-horizontal-center"
+            },
+            {
+              "name": "Right",
+              "value": "background-horizontal-right"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

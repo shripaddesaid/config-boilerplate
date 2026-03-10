@@ -1,0 +1,296 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section",
+      "tabs-section",
+      "content-section-container",
+      "column-container"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "cards",
+      "fragment",
+      "icon-card",
+      "icon-list-with-eyebrow",
+      "anchor-links",
+      "two-column-with-image",
+      "primary-hero",
+      "table",
+      "table-2-columns",
+      "table-3-columns",
+      "table-4-columns",
+      "table-5-columns",
+      "table-6-columns",
+      "overlapping-block",
+      "brand-card",
+      "image-block",
+      "small-media-carousel",
+      "bulleted-icon-list",
+      "icon-tile",
+      "accordion",
+      "spacer-and-divider",
+      "horizontal-numeric-tile",
+      "additional-resource-card",
+      "interstitial-zepbound",
+      "price-card",
+      "quiz-block",
+      "promo-banner",
+      "crm-weight",
+      "hcp-coverage",
+      "doctor-discussion-guide",
+      "hcp-request-resources",
+      "text-component",
+      "video",
+      "external-video-player-link",
+      "small-width-media",
+      "text-callout",
+      "relatedlinks",
+      "pull-quote",
+      "news-tile",
+      "additional-links",
+      "timeline-card",
+      "news-and-story-card",
+      "federated-components",
+      "tabs",
+      "question-card-carousel",
+      "two-column-text-carousel",
+      "enhanced-related-links",
+      "press-release-feed-configurable",
+      "search-faq",
+      "medium-media-carousel",
+      "timeline"
+    ]
+  },
+  {
+    "id": "content-section-container",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "cards",
+      "fragment",
+      "two-column-with-image",
+      "table",
+      "table-2-columns",
+      "table-3-columns",
+      "table-4-columns",
+      "table-5-columns",
+      "table-6-columns",
+      "overlapping-block",
+      "brand-card",
+      "image-block",
+      "doctor-discussion-guide",
+      "small-media-carousel",
+      "bulleted-icon-list",
+      "primary-hero",
+      "icon-card",
+      "icon-list-with-eyebrow",
+      "icon-tile",
+      "accordion",
+      "spacer-and-divider",
+      "horizontal-numeric-tile",
+      "additional-resource-card",
+      "interstitial-zepbound",
+      "price-card",
+      "quiz-block",
+      "promo-banner",
+      "crm-weight",
+      "hcp-coverage",
+      "hcp-request-resources",
+      "text-component",
+      "video",
+      "text-callout",
+      "relatedlinks",
+      "pull-quote",
+      "news-tile",
+      "additional-links",
+      "timeline-card",
+      "news-and-story-card",
+      "federated-components",
+      "tabs",
+      "question-card-carousel",
+      "two-column-text-carousel",
+      "enhanced-related-links",
+      "press-release-feed-configurable",
+      "press-release-banner",
+      "search-faq",
+      "medium-media-carousel",
+      "timeline"
+    ]
+  },
+  {
+    "id": "column-container",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "cards",
+      "fragment",
+      "two-column-with-image",
+      "table",
+      "transparent-block",
+      "table-2-columns",
+      "table-3-columns",
+      "table-4-columns",
+      "table-5-columns",
+      "table-6-columns",
+      "overlapping-block",
+      "brand-card",
+      "image-block",
+      "small-media-carousel",
+      "bulleted-icon-list",
+      "icon-tile",
+      "row-break",
+      "icon-card",
+      "primary-hero",
+      "accordion",
+      "spacer-and-divider",
+      "horizontal-numeric-tile",
+      "additional-resource-card",
+      "promo-banner",
+      "column-break",
+      "interstitial-zepbound",
+      "text-component",
+      "video",
+      "external-video-player-link",
+      "small-width-media",
+      "text-callout",
+      "relatedlinks",
+      "pull-quote",
+      "news-tile",
+      "icon-list-with-eyebrow",
+      "additional-links",
+      "timeline-card",
+      "news-and-story-card"
+    ]
+  },
+  {
+    "id": "tabs-section",
+    "components": ["tabs"]
+  },
+  {
+    "id": "accordion",
+    "components": ["accordion-item"]
+  },
+  {
+    "id": "additional-links",
+    "components": ["additional-link"]
+  },
+  {
+    "id": "additional-resource-card",
+    "components": ["resource-card"]
+  },
+  {
+    "id": "bulleted-icon-list",
+    "components": ["bulleted-icon-list-item"]
+  },
+  {
+    "id": "cards",
+    "components": ["card"]
+  },
+  {
+    "id": "enhanced-related-links",
+    "components": ["enhanced-related-link"]
+  },
+  {
+    "id": "external-video-player-link",
+    "components": ["external-video-player-link-item"]
+  },
+  {
+    "id": "horizontal-numeric-tile",
+    "components": ["numeric-tile"]
+  },
+  {
+    "id": "icon-card",
+    "components": ["icon-card-item"]
+  },
+  {
+    "id": "icon-tile-eyebrow-grid",
+    "components": ["icon-tile-eyebrow"]
+  },
+  {
+    "id": "icon-tile-grid",
+    "components": ["tile"]
+  },
+  {
+    "id": "medium-media-carousel",
+    "components": ["medium-media-carousel-item"]
+  },
+  {
+    "id": "news-and-story-card",
+    "components": ["news-and-story-card-item"]
+  },
+  {
+    "id": "news-tile",
+    "components": ["news-tile-item"]
+  },
+  {
+    "id": "question-card-carousel",
+    "components": ["question-card-carousel-item"]
+  },
+  {
+    "id": "relatedlinks",
+    "components": ["relatedlink"]
+  },
+  {
+    "id": "search-faq",
+    "components": ["search-faq-item"]
+  },
+  {
+    "id": "small-media-carousel",
+    "components": ["small-media-carousel-item"]
+  },
+  {
+    "id": "small-width-media",
+    "components": ["small-width-media"]
+  },
+  {
+    "id": "table-2-columns",
+    "components": ["table-col-2"]
+  },
+  {
+    "id": "table-3-columns",
+    "components": ["table-col-3"]
+  },
+  {
+    "id": "table-4-columns",
+    "components": ["table-col-4"]
+  },
+  {
+    "id": "table-5-columns",
+    "components": ["table-col-5"]
+  },
+  {
+    "id": "table-6-columns",
+    "components": ["table-col-6"]
+  },
+  {
+    "id": "table",
+    "components": ["table-row"]
+  },
+  {
+    "id": "tabs",
+    "components": ["tab"]
+  },
+  {
+    "id": "timeline",
+    "components": ["timeline-item"]
+  },
+  {
+    "id": "two-column-text-carousel",
+    "components": ["two-column-text-carousel-item"]
+  },
+  {
+    "id": "video",
+    "components": ["video-item"]
+  }
+]

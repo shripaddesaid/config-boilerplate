@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/icontile/_icon-tile-grid.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/icontile/_icon-tile-grid.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "icon-tile-grid",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/icontile/_icon-tile-grid.json#/models/icon-tile-grid/fields"
+        }
+      ]
+    }
+  ]
+}

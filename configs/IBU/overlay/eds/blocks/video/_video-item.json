@@ -1,0 +1,49 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/video/_video-item.json#/definitions",
+      "exclude": [
+        "classes_ctacolor",
+        "classes_buttonctastyle",
+        "classes_titleplacement",
+        "classes_descriptionplacement"
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/video/_video-item.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "video-item",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/video/_video-item.json#/models/video-item/fields",
+          "exclude": [
+            "classes_ctacolor",
+            "classes_buttonctastyle",
+            "classes_ctastyle",
+            "classes_descriptionplacement",
+            "classes_titleplacement"
+          ]
+        },
+        {
+          "...": "../../../platform-blocks/video/_video-item.json#/models/video-item/fields/classes_ctastyle",
+          "insertAt": 6,
+          "options": [
+            {
+              "name": "Primary",
+              "value": "ctaStyle-primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "ctaStyle-secondary"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/tabs/_tabs.json#/definitions"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/tabs/_tabs.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "tabs",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/tabs/_tabs.json#/models/tabs/fields"
+        }
+      ]
+    }
+  ]
+}

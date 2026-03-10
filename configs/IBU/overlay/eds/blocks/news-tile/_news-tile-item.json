@@ -1,0 +1,18 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/news-tile/_news-tile-item.json#/definitions"
+    }
+  ],
+  "filters": [],
+  "models": [
+    {
+      "id": "news-tile-item",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/news-tile/_news-tile-item.json#/models/news-tile-item/fields"
+        }
+      ]
+    }
+  ]
+}

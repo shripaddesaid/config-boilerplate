@@ -1,0 +1,45 @@
+{
+  "definitions": [
+    {
+      "...": "../../../platform-blocks/spacer-and-divider/_spacer-and-divider.json#/definitions",
+      "classes_dividercolor": "primary"
+    }
+  ],
+  "filters": [
+    {
+      "...": "../../../platform-blocks/spacer-and-divider/_spacer-and-divider.json#/filters"
+    }
+  ],
+  "models": [
+    {
+      "id": "spacer-and-divider",
+      "fields": [
+        {
+          "...": "../../../platform-blocks/spacer-and-divider/_spacer-and-divider.json#/models/spacer-and-divider/fields"
+        },
+        {
+          "...": "../../../platform-blocks/spacer-and-divider/_spacer-and-divider.json#/models/spacer-and-divider/fields/classes_dividercolor",
+          "value": "primary",
+          "options": [
+            {
+              "name": "Primary",
+              "value": "primary"
+            },
+            {
+              "name": "Secondary",
+              "value": "secondary"
+            }
+          ],
+          "condition": {
+            "===": [
+              {
+                "var": "classes"
+              },
+              "divider"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
