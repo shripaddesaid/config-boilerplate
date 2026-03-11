@@ -1,55 +1,47 @@
-import { moveInstrumentation } from "../../scripts/scripts.js";
-import { loadCSS } from "../../utils/css-loader.js";
-
-function parseBlockData(block, TabsContract) {
-  if (!block) return {};
-  const children = [...(block?.children || [])];
-  const dropdownTitle = children[0]?.textContent?.trim() || "";
-  const tabItems = children.slice(1).map((row) => {
-    const [tabName, tabId] = row.children;
-    return {
-      title: tabName?.textContent?.trim() || "",
-      id: tabId?.textContent?.trim() || "",
-      originalElement: row,
-    };
-  });
-  // Content data
-  const contentData = {
-    dropdownTitle,
-    tabItems,
-  };
-  // Contract validation
-  const tabsContractObj = new TabsContract("Tabs", tabItems);
-  tabsContractObj.componentName = "Tabs";
-  tabsContractObj.dropdownTitle = dropdownTitle;
-  tabsContractObj.tabItems = tabItems;
-  const parsedData = {
-    content: contentData,
-  };
-  return { parsedData, tabsContractObj };
-}
+// eslint-disable-next-line import/no-unresolved
+import { toClassName } from '../../scripts/aem.js';
 
 export default async function decorate(block) {
-  try {
-    const cssPath = import.meta.resolve(
-      "../../../platform-blocks/tabs/tabs.min.css",
-    );
-    const [, tabsModule] = await Promise.all([
-      loadCSS(cssPath),
-      import("../../../platform-blocks/tabs/tabs.min.js"),
-    ]);
+  // build tablist
+  const tablist = document.createElement('div');
+  tablist.className = 'tabs-list';
+  tablist.setAttribute('role', 'tablist');
 
-    const TabsBlock = tabsModule.default;
-    const TabsContract = tabsModule.TabsContract;
+  // decorate tabs and tabpanels
+  const tabs = [...block.children].map((child) => child.firstElementChild);
+  tabs.forEach((tab, i) => {
+    const id = toClassName(tab.textContent);
 
-    const { parsedData, tabsContractObj } = parseBlockData(block, TabsContract);
-    const tabsBlock = new TabsBlock(block, {
-      moveInstrumentation,
-      parsedData,
-      tabsContractObj,
+    // decorate tabpanel
+    const tabpanel = block.children[i];
+    tabpanel.className = 'tabs-panel';
+    tabpanel.id = `tabpanel-${id}`;
+    tabpanel.setAttribute('aria-hidden', !!i);
+    tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
+    tabpanel.setAttribute('role', 'tabpanel');
+
+    // build tab button
+    const button = document.createElement('button');
+    button.className = 'tabs-tab';
+    button.id = `tab-${id}`;
+    button.innerHTML = tab.innerHTML;
+    button.setAttribute('aria-controls', `tabpanel-${id}`);
+    button.setAttribute('aria-selected', !i);
+    button.setAttribute('role', 'tab');
+    button.setAttribute('type', 'button');
+    button.addEventListener('click', () => {
+      block.querySelectorAll('[role=tabpanel]').forEach((panel) => {
+        panel.setAttribute('aria-hidden', true);
+      });
+      tablist.querySelectorAll('button').forEach((btn) => {
+        btn.setAttribute('aria-selected', false);
+      });
+      tabpanel.setAttribute('aria-hidden', false);
+      button.setAttribute('aria-selected', true);
     });
-    tabsBlock.init();
-  } catch (error) {
-    console.error("Error loading tabs:", error);
-  }
+    tablist.append(button);
+    tab.remove();
+  });
+
+  block.prepend(tablist);
 }

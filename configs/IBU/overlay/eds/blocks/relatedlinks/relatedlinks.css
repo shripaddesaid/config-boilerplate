@@ -1,6 +1,0 @@
-/* Component styles are dynamically loaded via JavaScript */
-/* Add any EDS-specific Componenat overrides here if needed */
-
-.relatedlinks-headlink-description * {
-  color: var(--lds-g-color-on-surface-1);
-}

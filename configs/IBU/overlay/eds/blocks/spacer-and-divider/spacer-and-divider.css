@@ -1,6 +1,0 @@
-/* Component styles are dynamically loaded via JavaScript */
-/* Add any EDS-specific Component overrides here if needed */
-/* Override divider-secondary color to red-030 with increased specificity */
-.spacer-and-divider-wrapper .spacer-divider .divider.divider-secondary p {
-  border-top-color: var(--lds-g-color-palette-red-030);
-}
