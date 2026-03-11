@@ -1,3 +1,8 @@
 /eds/blocks/cards
 configs
-
+styles
+blocks
+fonts
+icons
+scripts
+.github/workflows/create-child-repo.yaml
