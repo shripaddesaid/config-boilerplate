@@ -59,7 +59,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN_PAT }}
         run: |
-          OWNER="orbpb"
+          OWNER="shripaddesaid"
           REPO_NAME="${{ inputs.repo_name }}"
 
           for i in {1..30}; do
