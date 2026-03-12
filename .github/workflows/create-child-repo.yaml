@@ -15,8 +15,8 @@ on:
           - IBU
           - Brands
           - HCP
-      root_folder:
-        description: 'Root folder name in the child repo (e.g. "uk", "it", "co"). Renames the "ibu-region" folder. Leave empty to copy files at root level.'
+      region_name:
+        description: 'Region folder name (e.g. "uk", "it", "co"). If provided and an "ibu-region" folder exists in the overlay, it will be renamed to this value. Leave empty to copy files as-is at root level.'
         required: false
         type: string
         default: ''
@@ -26,13 +26,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout template repo (this repo) to get configs/
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          
+
       - name: Create repo from template
         id: create-repo
         env:
@@ -41,12 +41,12 @@ jobs:
           REPO_NAME="${{ inputs.repo_name }}"
           OWNER="shripaddesaid"
           VISIBILITY="private"
-    
+          
           if gh repo view "$OWNER/$REPO_NAME" &>/dev/null; then
             echo "Repository already exists: $OWNER/$REPO_NAME"
             exit 1
           fi
-    
+          
           gh repo create "$OWNER/$REPO_NAME" \
             --template "shripaddesaid/config-boilerplate" \
             --$VISIBILITY \
@@ -54,7 +54,7 @@ jobs:
             REPO_URL="https://github.com/$OWNER/$REPO_NAME"
             echo "repo_url=$REPO_URL" >> $GITHUB_OUTPUT
             echo "✅ Created repository: $REPO_URL"
-      
+
       - name: Clone newly created repository
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN_PAT }}
@@ -78,12 +78,12 @@ jobs:
           cd new-repo
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-      
+
       - name: Apply configuration
         id: apply-config
         env:
           CONFIG: ${{ inputs.config }}
-          ROOT_FOLDER: ${{ inputs.root_folder }}
+          REGION_NAME: ${{ inputs.region_name }}
         run: |
           set -e
 
@@ -92,60 +92,53 @@ jobs:
 
           cd new-repo
 
-          # Handle root folder renaming
-          if [ -n "$ROOT_FOLDER" ]; then
-            # User provided a root folder name — rename "ibu-region" to the provided name
-            if [ -d "ibu-region" ]; then
-              echo "📁 Renaming 'ibu-region' → '$ROOT_FOLDER'"
-              mv "ibu-region" "$ROOT_FOLDER"
-              echo "✅ Folder renamed to '$ROOT_FOLDER'"
-            fi
+          # Copy overlay files if they exist
+          if [ -d "../$OVERLAY_DIR" ]; then
+            echo "📦 Copying overlay files from configs/$CONFIG/overlay/ to root"
+            cp -r ../$OVERLAY_DIR/. .
+            echo "✅ Overlay files copied"
 
-            # Copy overlay files into the renamed/created root folder
-            if [ -d "../$OVERLAY_DIR" ]; then
-              echo "📦 Copying overlay files from configs/$CONFIG/overlay/ into '$ROOT_FOLDER/'"
-              cp -r ../$OVERLAY_DIR/. "$ROOT_FOLDER/"
-              echo "✅ Overlay files copied into '$ROOT_FOLDER/'"
-            else
-              echo "ℹ️  No overlay directory found at configs/$CONFIG/overlay/"
+            # If region_name is provided and ibu-region folder exists, rename it
+            if [ -n "$REGION_NAME" ]; then
+              if [ -d "ibu-region" ]; then
+                echo "📁 Renaming 'ibu-region' → '$REGION_NAME'"
+                mv "ibu-region" "$REGION_NAME"
+                echo "✅ Folder renamed to '$REGION_NAME'"
+              else
+                echo "ℹ️  No 'ibu-region' folder found in overlay — nothing to rename"
+              fi
             fi
           else
-            # No root folder — copy overlay files at root level (existing behaviour)
-            if [ -d "../$OVERLAY_DIR" ]; then
-              echo "📦 Copying overlay files from configs/$CONFIG/overlay/ to root"
-              cp -r ../$OVERLAY_DIR/. .
-              echo "✅ Overlay files copied to root"
-            else
-              echo "ℹ️  No overlay directory found at configs/$CONFIG/overlay/"
-            fi
+            echo "ℹ️  No overlay directory found at configs/$CONFIG/overlay/"
           fi
           
           # Process delete.txt if it exists
           if [ -f "../$DELETE_FILE" ]; then
             echo "🗑️  Processing deletion list from configs/$CONFIG/delete.txt"
-            
+          
             while IFS= read -r path || [ -n "$path" ]; do
               # Skip empty lines and comments
-              [[ -z "$path" || "$path" =~ ^[[:space:]]*# ]] && continue              
+              [[ -z "$path" || "$path" =~ ^[[:space:]]*# ]] && continue
+          
               # Trim whitespace
               path=$(echo "$path" | xargs)
-              
+          
               # Guardrails: prevent dangerous deletions
               if [[ "$path" == .git/* || "$path" == .git ]]; then
                 echo "⚠️  Blocked: Cannot delete .git directory or its contents: $path"
                 continue
               fi
-              
+          
               if [[ "$path" == *../* || "$path" == ../* ]]; then
                 echo "⚠️  Blocked: Path traversal not allowed: $path"
                 continue
               fi
-              
+          
               if [[ "$path" == .github/workflows/* ]]; then
                 echo "⚠️  Warning: Skipping deletion of workflow file: $path"
                 continue
               fi
-              
+          
               # Delete the file or directory
               if [ -e "$path" ]; then
                 rm -rf "$path"
@@ -154,7 +147,7 @@ jobs:
                 echo "  ℹ️  Not found (skipping): $path"
               fi
             done < "../$DELETE_FILE"
-            
+          
             echo "✅ Deletion processing complete"
           else
             echo "ℹ️  No delete.txt found at configs/$CONFIG/delete.txt"
@@ -166,7 +159,7 @@ jobs:
           else
             echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
-      
+
       - name: Authenticate git for pushes (use gh credential helper)
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN_PAT }}
@@ -189,7 +182,7 @@ jobs:
           else
             echo "ℹ️  No changes to commit - configuration already matches"
           fi
-      
+
       - name: Write job summary
         if: always()
         run: |
@@ -201,11 +194,6 @@ jobs:
           echo "**Repository:** [$REPO_URL]($REPO_URL)" >> $GITHUB_STEP_SUMMARY
           echo "**Configuration:** $CONFIG" >> $GITHUB_STEP_SUMMARY
           echo "**Visibility:** ${{ inputs.visibility }}" >> $GITHUB_STEP_SUMMARY
-          if [[ -n "${{ inputs.root_folder }}" ]]; then
-            echo "**Root Folder:** \`${{ inputs.root_folder }}\` *(renamed from 'ibu-region')*" >> $GITHUB_STEP_SUMMARY
-          else
-            echo "**Root Folder:** *(copied at root level)*" >> $GITHUB_STEP_SUMMARY
-          fi
           echo "" >> $GITHUB_STEP_SUMMARY
           
           if [[ "${{ steps.apply-config.outputs.has_changes }}" == "true" ]]; then
@@ -213,3 +201,4 @@ jobs:
           else
             echo "ℹ️  No changes needed - configuration already matches" >> $GITHUB_STEP_SUMMARY
           fi
+ 
