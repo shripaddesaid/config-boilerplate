@@ -3,6 +3,7 @@ configs
 styles
 blocks
 fonts
+eds
 icons
 scripts
 .github/workflows/create-child-repo.yaml
