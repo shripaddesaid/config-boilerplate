@@ -17,9 +17,9 @@ permissions:
 # -------------------------------------------------------------------
 env:
   BOILER_REPO: shripaddesaid/config-boilerplate          # Source boilerplate repo
-  DEST_ROOT: uk                      # Root folder inside this repo to sync into
+  DEST_ROOT: in                      # Root folder inside this repo to sync into
   SYNC_PATHS: |                      # One boiler source path per line
-    configs/IBU/overlay/eds
+    configs/IBU/overlay/ibu-region/eds
 
 jobs:
   sync:
