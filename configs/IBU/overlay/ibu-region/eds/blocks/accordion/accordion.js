@@ -1,5 +1,5 @@
 /*
- * New comment once again 
+ * New comment once again qwerty
  */
 
 export default function decorate(block) {
